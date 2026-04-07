@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - AWS
+  - Data Analytics
   - Data Preparation
   - ETL
-  - Data Analytics
   - Machine Learning
-  - AWS
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -28,9 +28,9 @@ apis:
     humanURL: https://aws.amazon.com/glue/features/databrew/
     baseURL: https://databrew.amazonaws.com
     tags:
+      - Data Analytics
       - Data Preparation
       - ETL
-      - Data Analytics
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
