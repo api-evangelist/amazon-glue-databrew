@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-threshold-type-structure.json",
+  "name": "ThresholdType",
+  "description": "ThresholdType schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "GREATER_THAN_OR_EQUAL",
+    "LESS_THAN_OR_EQUAL",
+    "GREATER_THAN",
+    "LESS_THAN"
+  ]
+}

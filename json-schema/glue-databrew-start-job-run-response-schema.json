@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-start-job-run-response-schema.json",
+  "title": "StartJobRunResponse",
+  "description": "StartJobRunResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobRunId"
+        },
+        {
+          "description": "A system-generated identifier for this particular job run."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RunId"
+  ]
+}

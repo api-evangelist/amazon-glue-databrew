@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-create-dataset-request-schema.json",
+  "title": "CreateDatasetRequest",
+  "description": "CreateDatasetRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetName"
+        },
+        {
+          "description": "The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+        }
+      ]
+    },
+    "Format": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InputFormat"
+        },
+        {
+          "description": "The file format of a dataset that is created from an Amazon S3 file or folder."
+        }
+      ]
+    },
+    "FormatOptions": {
+      "$ref": "#/components/schemas/FormatOptions"
+    },
+    "Input": {
+      "$ref": "#/components/schemas/Input"
+    },
+    "PathOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PathOptions"
+        },
+        {
+          "description": "A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags to apply to this dataset."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "Input"
+  ]
+}

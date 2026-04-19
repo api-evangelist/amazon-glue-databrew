@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-create-project-response-schema.json",
+  "title": "CreateProjectResponse",
+  "description": "CreateProjectResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "The name of the project that you created."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

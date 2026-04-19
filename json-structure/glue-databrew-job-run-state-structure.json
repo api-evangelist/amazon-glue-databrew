@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-job-run-state-structure.json",
+  "name": "JobRunState",
+  "description": "JobRunState schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "STARTING",
+    "RUNNING",
+    "STOPPING",
+    "STOPPED",
+    "SUCCEEDED",
+    "FAILED",
+    "TIMEOUT"
+  ]
+}

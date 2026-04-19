@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-expression-structure.json",
+  "name": "Expression",
+  "description": "Expression schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "pattern": "^[<>0-9A-Za-z_.,:)(!= ]+$"
+}

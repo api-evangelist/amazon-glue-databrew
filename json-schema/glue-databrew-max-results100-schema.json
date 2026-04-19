@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-max-results100-schema.json",
+  "title": "MaxResults100",
+  "description": "MaxResults100 schema from Amazon Glue DataBrew API",
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 100
+}

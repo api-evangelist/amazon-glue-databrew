@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-compression-format-structure.json",
+  "name": "CompressionFormat",
+  "description": "CompressionFormat schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "GZIP",
+    "LZ4",
+    "SNAPPY",
+    "BZIP2",
+    "DEFLATE",
+    "LZO",
+    "BROTLI",
+    "ZSTD",
+    "ZLIB"
+  ]
+}

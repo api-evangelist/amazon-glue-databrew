@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-csv-options-structure.json",
+  "name": "CsvOptions",
+  "description": "Represents a set of options that define how DataBrew will read a comma-separated value (CSV) file when creating a dataset from that file.",
+  "type": "object",
+  "properties": {
+    "Delimiter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Delimiter"
+        },
+        {
+          "description": "A single character that specifies the delimiter being used in the CSV file."
+        }
+      ]
+    },
+    "HeaderRow": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderRow"
+        },
+        {
+          "description": "A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated."
+        }
+      ]
+    }
+  }
+}

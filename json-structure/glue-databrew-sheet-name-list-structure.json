@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-sheet-name-list-structure.json",
+  "name": "SheetNameList",
+  "description": "SheetNameList schema from Amazon Glue DataBrew API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/SheetName"
+  }
+}

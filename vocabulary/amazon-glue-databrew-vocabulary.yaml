@@ -1,0 +1,117 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Amazon Glue DataBrew
+  description: Vocabulary for Amazon Glue DataBrew visual data preparation APIs
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: amazon-glue-databrew
+      version: "2017-07-25"
+      baseUrl: https://databrew.amazonaws.com
+      status: active
+
+  resources:
+    - name: datasets
+      description: Data sources connected to DataBrew for transformation
+      actions: [list, create, describe, update, delete]
+    - name: recipes
+      description: Sequences of transformation steps applied to datasets
+      actions: [list, create, describe, update, delete, publish]
+    - name: jobs
+      description: Execution units that apply recipes to datasets
+      actions: [list, create, describe, start, stop, delete]
+    - name: projects
+      description: Collaborative workspaces for data preparation
+      actions: [list, create, describe, update, delete]
+    - name: rulesets
+      description: Data quality rule sets for validation
+      actions: [list, create, describe, update, delete]
+
+  actions:
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: describe
+      httpMethod: GET
+      pattern: read
+    - name: update
+      httpMethod: PUT
+      pattern: write
+    - name: delete
+      httpMethod: DELETE
+      pattern: destructive
+    - name: start
+      httpMethod: POST
+      pattern: write
+    - name: publish
+      httpMethod: POST
+      pattern: write
+
+  enums:
+    job-status:
+      - STARTING
+      - RUNNING
+      - STOPPING
+      - STOPPED
+      - SUCCEEDED
+      - FAILED
+      - TIMEOUT
+
+capability:
+  workflows:
+    - name: Amazon Glue DataBrew Data Preparation
+      file: capabilities/amazon-glue-databrew-data-preparation.yaml
+      apis: [amazon-glue-databrew]
+      tools: 12
+      personas: [Data Analyst, Data Scientist]
+
+  personas:
+    - id: data-analyst
+      name: Data Analyst
+      description: Prepares and cleans data for business analytics
+    - id: data-scientist
+      name: Data Scientist
+      description: Prepares datasets for machine learning model training
+
+  domains:
+    - name: Data Preparation
+      resources: [datasets, recipes, jobs]
+    - name: Collaboration
+      resources: [projects]
+    - name: Data Quality
+      resources: [rulesets]
+
+  namespaces:
+    - namespace: amazon-glue-databrew
+      type: consumed
+    - namespace: glue-databrew-data-prep-api
+      type: rest-exposed
+      port: 8082
+    - namespace: glue-databrew-data-prep-mcp
+      type: mcp-exposed
+      port: 9092
+
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - AWS_REGION
+
+crossReference:
+  - resource: datasets
+    operations: [ListDatasets, CreateDataset, DescribeDataset, UpdateDataset, DeleteDataset]
+    workflows: [Amazon Glue DataBrew Data Preparation]
+    personas: [Data Analyst, Data Scientist]
+  - resource: recipes
+    operations: [ListRecipes, CreateRecipe, PublishRecipe, UpdateRecipe, DeleteRecipe]
+    workflows: [Amazon Glue DataBrew Data Preparation]
+    personas: [Data Analyst, Data Scientist]
+  - resource: jobs
+    operations: [ListJobs, CreateRecipeJob, StartJobRun, StopJobRun]
+    workflows: [Amazon Glue DataBrew Data Preparation]
+    personas: [Data Analyst, Data Scientist]

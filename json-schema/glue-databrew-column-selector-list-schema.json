@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-column-selector-list-schema.json",
+  "title": "ColumnSelectorList",
+  "description": "ColumnSelectorList schema from Amazon Glue DataBrew API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ColumnSelector"
+  }
+}

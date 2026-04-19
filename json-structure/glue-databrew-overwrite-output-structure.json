@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-overwrite-output-structure.json",
+  "name": "OverwriteOutput",
+  "description": "OverwriteOutput schema from Amazon Glue DataBrew API",
+  "type": "boolean"
+}

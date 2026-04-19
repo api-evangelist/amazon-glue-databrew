@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-database-input-definition-schema.json",
+  "title": "DatabaseInputDefinition",
+  "description": "Connection information for dataset input files stored in a database.",
+  "type": "object",
+  "properties": {
+    "GlueConnectionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueConnectionName"
+        },
+        {
+          "description": "The Glue Connection that stores the connection information for the target database."
+        }
+      ]
+    },
+    "DatabaseTableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabaseTableName"
+        },
+        {
+          "description": "The table within the target database."
+        }
+      ]
+    },
+    "TempDirectory": {
+      "$ref": "#/components/schemas/S3Location"
+    },
+    "QueryString": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/QueryString"
+        },
+        {
+          "description": "Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs."
+        }
+      ]
+    }
+  },
+  "required": [
+    "GlueConnectionName"
+  ]
+}

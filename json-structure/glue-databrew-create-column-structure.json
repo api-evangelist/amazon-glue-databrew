@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-create-column-structure.json",
+  "name": "CreateColumn",
+  "description": "CreateColumn schema from Amazon Glue DataBrew API",
+  "type": "boolean"
+}

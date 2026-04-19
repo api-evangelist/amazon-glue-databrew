@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-create-schedule-request-schema.json",
+  "title": "CreateScheduleRequest",
+  "description": "CreateScheduleRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "JobNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobNameList"
+        },
+        {
+          "description": "The name or names of one or more jobs to be run."
+        }
+      ]
+    },
+    "CronExpression": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CronExpression"
+        },
+        {
+          "description": "The date or dates and time or times when the jobs are to be run. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html\">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags to apply to this schedule."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScheduleName"
+        },
+        {
+          "description": "A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+        }
+      ]
+    }
+  },
+  "required": [
+    "CronExpression",
+    "Name"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-create-ruleset-request-schema.json",
+  "title": "CreateRulesetRequest",
+  "description": "CreateRulesetRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RulesetName"
+        },
+        {
+          "description": "The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RulesetDescription"
+        },
+        {
+          "description": "The description of the ruleset."
+        }
+      ]
+    },
+    "TargetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with."
+        }
+      ]
+    },
+    "Rules": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleList"
+        },
+        {
+          "description": "A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags to apply to the ruleset."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "TargetArn",
+    "Rules"
+  ]
+}

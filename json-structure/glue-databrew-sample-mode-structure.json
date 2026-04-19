@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-sample-mode-structure.json",
+  "name": "SampleMode",
+  "description": "SampleMode schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "FULL_DATASET",
+    "CUSTOM_ROWS"
+  ]
+}

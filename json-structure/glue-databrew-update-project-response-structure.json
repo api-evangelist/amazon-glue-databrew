@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-update-project-response-structure.json",
+  "name": "UpdateProjectResponse",
+  "description": "UpdateProjectResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the project was last modified."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "The name of the project that you updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

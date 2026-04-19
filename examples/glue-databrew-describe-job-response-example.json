@@ -1,0 +1,10 @@
+{
+  "CreateDate": "example-CreateDate",
+  "CreatedBy": "example-CreatedBy",
+  "DatasetName": "MyDataBrewProject",
+  "EncryptionKeyArn": "arn:aws:databrew:us-east-1:123456789012:project/MyProject",
+  "EncryptionMode": "example-EncryptionMode",
+  "Name": "MyDataBrewProject",
+  "Type": "example-Type",
+  "LastModifiedBy": "example-LastModifiedBy"
+}

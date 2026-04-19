@@ -1,0 +1,10 @@
+{
+  "AccountId": "example-AccountId",
+  "CreatedBy": "example-CreatedBy",
+  "CreateDate": "example-CreateDate",
+  "JobNames": "MyDataBrewProject",
+  "LastModifiedBy": "example-LastModifiedBy",
+  "LastModifiedDate": "example-LastModifiedDat",
+  "ResourceArn": "arn:aws:databrew:us-east-1:123456789012:project/MyProject",
+  "CronExpression": "example-CronExpression"
+}

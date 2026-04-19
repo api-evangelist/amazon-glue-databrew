@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-list-rulesets-response-schema.json",
+  "title": "ListRulesetsResponse",
+  "description": "ListRulesetsResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Rulesets": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RulesetItemList"
+        },
+        {
+          "description": "A list of RulesetItem. RulesetItem contains meta data of a ruleset."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A token that you can use in a subsequent call to retrieve the next set of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Rulesets"
+  ]
+}

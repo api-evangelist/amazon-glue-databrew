@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-values-map-schema.json",
+  "title": "ValuesMap",
+  "description": "ValuesMap schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/ConditionValue"
+  }
+}

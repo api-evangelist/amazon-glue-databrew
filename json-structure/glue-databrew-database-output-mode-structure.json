@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-database-output-mode-structure.json",
+  "name": "DatabaseOutputMode",
+  "description": "DatabaseOutputMode schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "NEW_TABLE"
+  ]
+}

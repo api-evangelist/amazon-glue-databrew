@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-batch-delete-recipe-version-request-schema.json",
+  "title": "BatchDeleteRecipeVersionRequest",
+  "description": "BatchDeleteRecipeVersionRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "RecipeVersions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeVersionList"
+        },
+        {
+          "description": "An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RecipeVersions"
+  ]
+}

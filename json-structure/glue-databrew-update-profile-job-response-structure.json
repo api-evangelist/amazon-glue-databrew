@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-update-profile-job-response-structure.json",
+  "name": "UpdateProfileJobResponse",
+  "description": "UpdateProfileJobResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobName"
+        },
+        {
+          "description": "The name of the job that was updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-ruleset-item-structure.json",
+  "name": "RulesetItem",
+  "description": "Contains metadata about the ruleset.",
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account that owns the ruleset."
+        }
+      ]
+    },
+    "CreatedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who created the ruleset."
+        }
+      ]
+    },
+    "CreateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the ruleset was created."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RulesetDescription"
+        },
+        {
+          "description": "The description of the ruleset."
+        }
+      ]
+    },
+    "LastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastModifiedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who last modified the ruleset."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The modification date and time of the ruleset."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RulesetName"
+        },
+        {
+          "description": "The name of the ruleset."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the ruleset."
+        }
+      ]
+    },
+    "RuleCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleCount"
+        },
+        {
+          "description": "The number of rules that are defined in the ruleset."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags that have been applied to the ruleset."
+        }
+      ]
+    },
+    "TargetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "TargetArn"
+  ]
+}

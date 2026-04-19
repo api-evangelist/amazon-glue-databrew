@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-publish-recipe-request-schema.json",
+  "title": "PublishRecipeRequest",
+  "description": "PublishRecipeRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeDescription"
+        },
+        {
+          "description": "A description of the recipe to be published, for this version of the recipe."
+        }
+      ]
+    }
+  }
+}

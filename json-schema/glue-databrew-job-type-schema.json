@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-job-type-schema.json",
+  "title": "JobType",
+  "description": "JobType schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "PROFILE",
+    "RECIPE"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-update-schedule-response-structure.json",
+  "name": "UpdateScheduleResponse",
+  "description": "UpdateScheduleResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScheduleName"
+        },
+        {
+          "description": "The name of the schedule that was updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

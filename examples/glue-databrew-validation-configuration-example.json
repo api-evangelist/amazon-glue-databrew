@@ -1,0 +1,4 @@
+{
+  "RulesetArn": "arn:aws:databrew:us-east-1:123456789012:project/MyProject",
+  "ValidationMode": "example-ValidationMode"
+}

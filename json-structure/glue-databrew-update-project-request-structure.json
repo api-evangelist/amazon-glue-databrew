@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-update-project-request-structure.json",
+  "name": "UpdateProjectRequest",
+  "description": "UpdateProjectRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Sample": {
+      "$ref": "#/components/schemas/Sample"
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the IAM role to be assumed for this request."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RoleArn"
+  ]
+}

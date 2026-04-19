@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-start-job-run-request-structure.json",
+  "name": "StartJobRunRequest",
+  "description": "StartJobRunRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {}
+}

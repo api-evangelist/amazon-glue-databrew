@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-sample-type-schema.json",
+  "title": "SampleType",
+  "description": "SampleType schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "FIRST_N",
+    "LAST_N",
+    "RANDOM"
+  ]
+}

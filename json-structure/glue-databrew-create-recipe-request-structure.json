@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-create-recipe-request-structure.json",
+  "name": "CreateRecipeRequest",
+  "description": "CreateRecipeRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeDescription"
+        },
+        {
+          "description": "A description for the recipe."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+        }
+      ]
+    },
+    "Steps": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeStepList"
+        },
+        {
+          "description": "An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags to apply to this recipe."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "Steps"
+  ]
+}

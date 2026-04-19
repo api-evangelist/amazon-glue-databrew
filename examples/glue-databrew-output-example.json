@@ -1,0 +1,9 @@
+{
+  "CompressionFormat": "example-CompressionForm",
+  "Format": "example-Format",
+  "PartitionColumns": "example-PartitionColumn",
+  "Location": "example-Location",
+  "Overwrite": "example-Overwrite",
+  "FormatOptions": "example-FormatOptions",
+  "MaxOutputFiles": "example-MaxOutputFiles"
+}

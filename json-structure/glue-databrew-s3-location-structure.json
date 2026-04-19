@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-s3-location-structure.json",
+  "name": "S3Location",
+  "description": "Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.",
+  "type": "object",
+  "properties": {
+    "Bucket": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Bucket"
+        },
+        {
+          "description": "The Amazon S3 bucket name."
+        }
+      ]
+    },
+    "Key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Key"
+        },
+        {
+          "description": "The unique name of the object in the bucket."
+        }
+      ]
+    },
+    "BucketOwner": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BucketOwner"
+        },
+        {
+          "description": "The Amazon Web Services account ID of the bucket owner."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Bucket"
+  ]
+}

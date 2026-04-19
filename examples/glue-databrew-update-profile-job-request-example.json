@@ -1,0 +1,10 @@
+{
+  "Configuration": "example-Configuration",
+  "EncryptionKeyArn": "arn:aws:databrew:us-east-1:123456789012:project/MyProject",
+  "EncryptionMode": "example-EncryptionMode",
+  "LogSubscription": "example-LogSubscription",
+  "MaxCapacity": "example-MaxCapacity",
+  "MaxRetries": "example-MaxRetries",
+  "OutputLocation": "example-OutputLocation",
+  "ValidationConfigurations": "example-ValidationConfi"
+}

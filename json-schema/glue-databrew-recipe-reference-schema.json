@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-recipe-reference-schema.json",
+  "title": "RecipeReference",
+  "description": "Represents the name and version of a DataBrew recipe.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "The name of the recipe."
+        }
+      ]
+    },
+    "RecipeVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeVersion"
+        },
+        {
+          "description": "The identifier for the version for the recipe. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-data-catalog-input-definition-structure.json",
+  "name": "DataCatalogInputDefinition",
+  "description": "Represents how metadata stored in the Glue Data Catalog is defined in a DataBrew dataset. ",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogId"
+        },
+        {
+          "description": "The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabaseName"
+        },
+        {
+          "description": "The name of a database in the Data Catalog."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TableName"
+        },
+        {
+          "description": "The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset."
+        }
+      ]
+    },
+    "TempDirectory": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Location"
+        },
+        {
+          "description": "Represents an Amazon location where DataBrew can store intermediate results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableName"
+  ]
+}

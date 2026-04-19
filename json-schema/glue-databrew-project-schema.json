@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-project-schema.json",
+  "title": "Project",
+  "description": "Represents all of the attributes of a DataBrew project.",
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account that owns the project."
+        }
+      ]
+    },
+    "CreateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the project was created."
+        }
+      ]
+    },
+    "CreatedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who crated the project."
+        }
+      ]
+    },
+    "DatasetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetName"
+        },
+        {
+          "description": "The dataset that the project is to act upon."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The last modification date and time for the project."
+        }
+      ]
+    },
+    "LastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastModifiedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who last modified the project."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "The unique name of a project."
+        }
+      ]
+    },
+    "RecipeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "The name of a recipe that will be developed during a project session."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the project."
+        }
+      ]
+    },
+    "Sample": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Sample"
+        },
+        {
+          "description": "The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample consists of the first 500 rows from the dataset."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags that have been applied to the project."
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the role that will be assumed for this project."
+        }
+      ]
+    },
+    "OpenedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OpenedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user that opened the project for use."
+        }
+      ]
+    },
+    "OpenDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time when the project was opened."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "RecipeName"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-statistic-list-structure.json",
+  "name": "StatisticList",
+  "description": "StatisticList schema from Amazon Glue DataBrew API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Statistic"
+  }
+}

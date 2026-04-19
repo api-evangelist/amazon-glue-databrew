@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-publish-recipe-response-structure.json",
+  "name": "PublishRecipeResponse",
+  "description": "PublishRecipeResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "The name of the recipe that you published."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

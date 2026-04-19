@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-recipe-step-structure.json",
+  "name": "RecipeStep",
+  "description": "Represents a single step from a DataBrew recipe to be performed.",
+  "type": "object",
+  "properties": {
+    "Action": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeAction"
+        },
+        {
+          "description": "The particular action to be performed in the recipe step."
+        }
+      ]
+    },
+    "ConditionExpressions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConditionExpressionList"
+        },
+        {
+          "description": "<p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "Action"
+  ]
+}

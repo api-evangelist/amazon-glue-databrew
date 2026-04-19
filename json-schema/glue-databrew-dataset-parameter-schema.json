@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-dataset-parameter-schema.json",
+  "title": "DatasetParameter",
+  "description": "Represents a dataset parameter that defines type and conditions for a parameter in the Amazon S3 path of the dataset.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PathParameterName"
+        },
+        {
+          "description": "The name of the parameter that is used in the dataset's Amazon S3 path."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ParameterType"
+        },
+        {
+          "description": "The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'."
+        }
+      ]
+    },
+    "DatetimeOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatetimeOptions"
+        },
+        {
+          "description": "Additional parameter options such as a format and a timezone. Required for datetime parameters."
+        }
+      ]
+    },
+    "CreateColumn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreateColumn"
+        },
+        {
+          "description": "Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset."
+        }
+      ]
+    },
+    "Filter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterExpression"
+        },
+        {
+          "description": "The optional filter expression structure to apply additional matching criteria to the parameter."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "Type"
+  ]
+}

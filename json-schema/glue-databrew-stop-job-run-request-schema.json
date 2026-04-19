@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-stop-job-run-request-schema.json",
+  "title": "StopJobRunRequest",
+  "description": "StopJobRunRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {}
+}

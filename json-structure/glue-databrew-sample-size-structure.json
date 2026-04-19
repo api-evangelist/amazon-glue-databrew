@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-sample-size-structure.json",
+  "name": "SampleSize",
+  "description": "SampleSize schema from Amazon Glue DataBrew API",
+  "type": "int32",
+  "minimum": 1,
+  "maximum": 5000
+}

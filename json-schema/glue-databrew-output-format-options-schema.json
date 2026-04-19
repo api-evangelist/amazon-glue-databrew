@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-output-format-options-schema.json",
+  "title": "OutputFormatOptions",
+  "description": "Represents a set of options that define the structure of comma-separated (CSV) job output.",
+  "type": "object",
+  "properties": {
+    "Csv": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CsvOutputOptions"
+        },
+        {
+          "description": "Represents a set of options that define the structure of comma-separated value (CSV) job output."
+        }
+      ]
+    }
+  }
+}

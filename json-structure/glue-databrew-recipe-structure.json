@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-recipe-structure.json",
+  "name": "Recipe",
+  "description": "Represents one or more actions to be performed on a DataBrew dataset.",
+  "type": "object",
+  "properties": {
+    "CreatedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who created the recipe."
+        }
+      ]
+    },
+    "CreateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the recipe was created."
+        }
+      ]
+    },
+    "LastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastModifiedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who last modified the recipe."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The last modification date and time of the recipe."
+        }
+      ]
+    },
+    "ProjectName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "The name of the project that the recipe is associated with."
+        }
+      ]
+    },
+    "PublishedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PublishedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who published the recipe."
+        }
+      ]
+    },
+    "PublishedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time when the recipe was published."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeDescription"
+        },
+        {
+          "description": "The description of the recipe."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "The unique name for the recipe."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the recipe."
+        }
+      ]
+    },
+    "Steps": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeStepList"
+        },
+        {
+          "description": "A list of steps that are defined by the recipe."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags that have been applied to the recipe."
+        }
+      ]
+    },
+    "RecipeVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeVersion"
+        },
+        {
+          "description": "<p>The identifier for the version for the recipe. Must be one of the following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and \"0.0\" isn't a valid version.</p> </li> <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

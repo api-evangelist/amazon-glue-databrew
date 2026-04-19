@@ -1,0 +1,739 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "databrew": "https://aws.amazon.com/glue/databrew/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "DeleteScheduleRequest": "databrew:DeleteScheduleRequest",
+    "S3TableOutputOptions": "databrew:S3TableOutputOptions",
+    "UpdateScheduleRequest": "databrew:UpdateScheduleRequest",
+    "BatchDeleteRecipeVersionRequest": "databrew:BatchDeleteRecipeVersionRequest",
+    "ListSchedulesResponse": "databrew:ListSchedulesResponse",
+    "ParameterMap": "databrew:ParameterMap",
+    "ListRecipesResponse": "databrew:ListRecipesResponse",
+    "UpdateRecipeRequest": "databrew:UpdateRecipeRequest",
+    "TagResourceRequest": "databrew:TagResourceRequest",
+    "ListJobsResponse": "databrew:ListJobsResponse",
+    "CreateProfileJobRequest": "databrew:CreateProfileJobRequest",
+    "RecipeStep": {
+      "@id": "databrew:RecipeStep",
+      "@type": "xsd:string"
+    },
+    "RecipeAction": "databrew:RecipeAction",
+    "ValidationConfiguration": "databrew:ValidationConfiguration",
+    "StartJobRunResponse": "databrew:StartJobRunResponse",
+    "ListDatasetsResponse": "databrew:ListDatasetsResponse",
+    "UpdateRecipeJobResponse": "databrew:UpdateRecipeJobResponse",
+    "CreateRulesetRequest": "databrew:CreateRulesetRequest",
+    "ListJobRunsRequest": "databrew:ListJobRunsRequest",
+    "CsvOutputOptions": "databrew:CsvOutputOptions",
+    "Output": "databrew:Output",
+    "DeleteDatasetRequest": "databrew:DeleteDatasetRequest",
+    "StartProjectSessionResponse": "databrew:StartProjectSessionResponse",
+    "StopJobRunRequest": "databrew:StopJobRunRequest",
+    "CreateDatasetResponse": "databrew:CreateDatasetResponse",
+    "DescribeProjectRequest": "databrew:DescribeProjectRequest",
+    "EntityDetectorConfiguration": {
+      "@id": "databrew:EntityDetectorConfiguration",
+      "@type": "xsd:string"
+    },
+    "DescribeJobRunRequest": "databrew:DescribeJobRunRequest",
+    "DescribeRulesetResponse": "databrew:DescribeRulesetResponse",
+    "StartProjectSessionRequest": "databrew:StartProjectSessionRequest",
+    "ColumnSelector": "databrew:ColumnSelector",
+    "PathOptions": {
+      "@id": "databrew:PathOptions",
+      "@type": "xsd:string"
+    },
+    "PublishRecipeResponse": "databrew:PublishRecipeResponse",
+    "ListRecipeVersionsResponse": "databrew:ListRecipeVersionsResponse",
+    "DeleteRecipeVersionRequest": "databrew:DeleteRecipeVersionRequest",
+    "PathParametersMap": "databrew:PathParametersMap",
+    "DeleteJobRequest": "databrew:DeleteJobRequest",
+    "CreateRecipeJobRequest": "databrew:CreateRecipeJobRequest",
+    "UpdateProfileJobResponse": "databrew:UpdateProfileJobResponse",
+    "Input": {
+      "@id": "databrew:Input",
+      "@type": "xsd:string"
+    },
+    "UpdateScheduleResponse": "databrew:UpdateScheduleResponse",
+    "ListJobRunsResponse": "databrew:ListJobRunsResponse",
+    "Recipe": "databrew:Recipe",
+    "CsvOptions": "databrew:CsvOptions",
+    "FilesLimit": {
+      "@id": "databrew:FilesLimit",
+      "@type": "xsd:string"
+    },
+    "DescribeJobResponse": "databrew:DescribeJobResponse",
+    "UpdateProjectResponse": "databrew:UpdateProjectResponse",
+    "DescribeDatasetRequest": "databrew:DescribeDatasetRequest",
+    "JsonOptions": "databrew:JsonOptions",
+    "DeleteProjectResponse": "databrew:DeleteProjectResponse",
+    "UpdateRulesetRequest": "databrew:UpdateRulesetRequest",
+    "StatisticsConfiguration": "databrew:StatisticsConfiguration",
+    "ViewFrame": {
+      "@id": "databrew:ViewFrame",
+      "@type": "xsd:string"
+    },
+    "DataCatalogOutput": "databrew:DataCatalogOutput",
+    "DeleteScheduleResponse": "databrew:DeleteScheduleResponse",
+    "JobSample": {
+      "@id": "databrew:JobSample",
+      "@type": "xsd:string"
+    },
+    "StopJobRunResponse": "databrew:StopJobRunResponse",
+    "CreateRulesetResponse": "databrew:CreateRulesetResponse",
+    "UpdateRecipeJobRequest": "databrew:UpdateRecipeJobRequest",
+    "SendProjectSessionActionResponse": "databrew:SendProjectSessionActionResponse",
+    "DescribeDatasetResponse": "databrew:DescribeDatasetResponse",
+    "DescribeRecipeResponse": "databrew:DescribeRecipeResponse",
+    "RulesetItem": "databrew:RulesetItem",
+    "Metadata": {
+      "@id": "databrew:Metadata",
+      "@type": "xsd:string"
+    },
+    "DescribeRecipeRequest": "databrew:DescribeRecipeRequest",
+    "StartJobRunRequest": "databrew:StartJobRunRequest",
+    "ListProjectsRequest": "databrew:ListProjectsRequest",
+    "DeleteProjectRequest": "databrew:DeleteProjectRequest",
+    "ListRulesetsResponse": "databrew:ListRulesetsResponse",
+    "DatabaseTableOutputOptions": "databrew:DatabaseTableOutputOptions",
+    "RecipeReference": {
+      "@id": "databrew:RecipeReference",
+      "@type": "xsd:string"
+    },
+    "ProfileConfiguration": {
+      "@id": "databrew:ProfileConfiguration",
+      "@type": "xsd:string"
+    },
+    "PublishRecipeRequest": "databrew:PublishRecipeRequest",
+    "FilterExpression": "databrew:FilterExpression",
+    "Schedule": "databrew:Schedule",
+    "DescribeScheduleRequest": "databrew:DescribeScheduleRequest",
+    "TagResourceResponse": "databrew:TagResourceResponse",
+    "OutputFormatOptions": "databrew:OutputFormatOptions",
+    "ColumnStatisticsConfiguration": "databrew:ColumnStatisticsConfiguration",
+    "DatasetParameter": "databrew:DatasetParameter",
+    "ListTagsForResourceRequest": "databrew:ListTagsForResourceRequest",
+    "DatabaseInputDefinition": {
+      "@id": "databrew:DatabaseInputDefinition",
+      "@type": "xsd:string"
+    },
+    "UpdateRulesetResponse": "databrew:UpdateRulesetResponse",
+    "CreateRecipeResponse": "databrew:CreateRecipeResponse",
+    "ListRecipeVersionsRequest": "databrew:ListRecipeVersionsRequest",
+    "DescribeJobRunResponse": "databrew:DescribeJobRunResponse",
+    "RecipeVersionErrorDetail": "databrew:RecipeVersionErrorDetail",
+    "UpdateProjectRequest": "databrew:UpdateProjectRequest",
+    "CreateProfileJobResponse": "databrew:CreateProfileJobResponse",
+    "AllowedStatistics": {
+      "@id": "databrew:AllowedStatistics",
+      "@type": "xsd:string"
+    },
+    "DeleteRulesetResponse": "databrew:DeleteRulesetResponse",
+    "UntagResourceRequest": "databrew:UntagResourceRequest",
+    "Dataset": "databrew:Dataset",
+    "CreateProjectResponse": "databrew:CreateProjectResponse",
+    "CreateDatasetRequest": "databrew:CreateDatasetRequest",
+    "DeleteRecipeVersionResponse": "databrew:DeleteRecipeVersionResponse",
+    "DataCatalogInputDefinition": {
+      "@id": "databrew:DataCatalogInputDefinition",
+      "@type": "xsd:string"
+    },
+    "ListRulesetsRequest": "databrew:ListRulesetsRequest",
+    "ConditionExpression": "databrew:ConditionExpression",
+    "DeleteRulesetRequest": "databrew:DeleteRulesetRequest",
+    "ValuesMap": {
+      "@id": "databrew:ValuesMap",
+      "@type": "xsd:string"
+    },
+    "FormatOptions": {
+      "@id": "databrew:FormatOptions",
+      "@type": "xsd:string"
+    },
+    "BatchDeleteRecipeVersionResponse": "databrew:BatchDeleteRecipeVersionResponse",
+    "S3Location": "databrew:S3Location",
+    "DescribeJobRequest": "databrew:DescribeJobRequest",
+    "DatetimeOptions": {
+      "@id": "databrew:DatetimeOptions",
+      "@type": "xsd:string"
+    },
+    "CreateRecipeJobResponse": "databrew:CreateRecipeJobResponse",
+    "Sample": {
+      "@id": "databrew:Sample",
+      "@type": "xsd:string"
+    },
+    "CreateScheduleResponse": "databrew:CreateScheduleResponse",
+    "Rule": "databrew:Rule",
+    "DeleteJobResponse": "databrew:DeleteJobResponse",
+    "JobRun": "databrew:JobRun",
+    "ListRecipesRequest": "databrew:ListRecipesRequest",
+    "ListProjectsResponse": "databrew:ListProjectsResponse",
+    "TagMap": "databrew:TagMap",
+    "CreateScheduleRequest": "databrew:CreateScheduleRequest",
+    "DatabaseOutput": "databrew:DatabaseOutput",
+    "StatisticOverride": "databrew:StatisticOverride",
+    "DescribeScheduleResponse": "databrew:DescribeScheduleResponse",
+    "ListTagsForResourceResponse": "databrew:ListTagsForResourceResponse",
+    "UpdateRecipeResponse": "databrew:UpdateRecipeResponse",
+    "ListJobsRequest": "databrew:ListJobsRequest",
+    "Threshold": {
+      "@id": "databrew:Threshold",
+      "@type": "xsd:string"
+    },
+    "UpdateDatasetResponse": "databrew:UpdateDatasetResponse",
+    "SendProjectSessionActionRequest": "databrew:SendProjectSessionActionRequest",
+    "CreateProjectRequest": "databrew:CreateProjectRequest",
+    "CreateRecipeRequest": "databrew:CreateRecipeRequest",
+    "DeleteDatasetResponse": "databrew:DeleteDatasetResponse",
+    "UpdateProfileJobRequest": "databrew:UpdateProfileJobRequest",
+    "UntagResourceResponse": "databrew:UntagResourceResponse",
+    "ExcelOptions": "databrew:ExcelOptions",
+    "ListSchedulesRequest": "databrew:ListSchedulesRequest",
+    "DescribeRulesetRequest": "databrew:DescribeRulesetRequest",
+    "Project": "databrew:Project",
+    "ListDatasetsRequest": "databrew:ListDatasetsRequest",
+    "UpdateDatasetRequest": "databrew:UpdateDatasetRequest",
+    "Job": "databrew:Job",
+    "DescribeProjectResponse": "databrew:DescribeProjectResponse",
+    "Location": {
+      "@id": "databrew:Location",
+      "@type": "xsd:string"
+    },
+    "JobNames": {
+      "@id": "databrew:JobNames",
+      "@type": "xsd:string"
+    },
+    "CronExpression": {
+      "@id": "databrew:CronExpression",
+      "@type": "xsd:string"
+    },
+    "RecipeVersions": {
+      "@id": "databrew:RecipeVersions",
+      "@type": "xsd:string"
+    },
+    "Schedules": {
+      "@id": "databrew:Schedules",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "databrew:NextToken",
+      "@type": "xsd:string"
+    },
+    "Recipes": {
+      "@id": "databrew:Recipes",
+      "@type": "xsd:string"
+    },
+    "Description": "schema:description",
+    "Steps": {
+      "@id": "databrew:Steps",
+      "@type": "xsd:string"
+    },
+    "Tags": {
+      "@id": "databrew:Tags",
+      "@type": "xsd:string"
+    },
+    "Jobs": {
+      "@id": "databrew:Jobs",
+      "@type": "xsd:string"
+    },
+    "DatasetName": {
+      "@id": "databrew:DatasetName",
+      "@type": "xsd:string"
+    },
+    "EncryptionKeyArn": {
+      "@id": "databrew:EncryptionKeyArn",
+      "@type": "xsd:string"
+    },
+    "EncryptionMode": {
+      "@id": "databrew:EncryptionMode",
+      "@type": "xsd:string"
+    },
+    "Name": "schema:name",
+    "LogSubscription": {
+      "@id": "databrew:LogSubscription",
+      "@type": "xsd:string"
+    },
+    "MaxCapacity": {
+      "@id": "databrew:MaxCapacity",
+      "@type": "xsd:string"
+    },
+    "MaxRetries": {
+      "@id": "databrew:MaxRetries",
+      "@type": "xsd:string"
+    },
+    "OutputLocation": {
+      "@id": "databrew:OutputLocation",
+      "@type": "xsd:string"
+    },
+    "Configuration": {
+      "@id": "databrew:Configuration",
+      "@type": "xsd:string"
+    },
+    "ValidationConfigurations": {
+      "@id": "databrew:ValidationConfigurations",
+      "@type": "xsd:string"
+    },
+    "RoleArn": {
+      "@id": "databrew:RoleArn",
+      "@type": "xsd:string"
+    },
+    "Timeout": {
+      "@id": "databrew:Timeout",
+      "@type": "xsd:string"
+    },
+    "Action": {
+      "@id": "databrew:Action",
+      "@type": "xsd:string"
+    },
+    "ConditionExpressions": {
+      "@id": "databrew:ConditionExpressions",
+      "@type": "xsd:string"
+    },
+    "Operation": {
+      "@id": "databrew:Operation",
+      "@type": "xsd:string"
+    },
+    "Parameters": {
+      "@id": "databrew:Parameters",
+      "@type": "xsd:string"
+    },
+    "RulesetArn": {
+      "@id": "databrew:RulesetArn",
+      "@type": "xsd:string"
+    },
+    "ValidationMode": {
+      "@id": "databrew:ValidationMode",
+      "@type": "xsd:string"
+    },
+    "RunId": {
+      "@id": "databrew:RunId",
+      "@type": "xsd:string"
+    },
+    "Datasets": {
+      "@id": "databrew:Datasets",
+      "@type": "xsd:string"
+    },
+    "TargetArn": {
+      "@id": "databrew:TargetArn",
+      "@type": "xsd:string"
+    },
+    "Rules": {
+      "@id": "databrew:Rules",
+      "@type": "xsd:string"
+    },
+    "Delimiter": {
+      "@id": "databrew:Delimiter",
+      "@type": "xsd:string"
+    },
+    "CompressionFormat": {
+      "@id": "databrew:CompressionFormat",
+      "@type": "xsd:string"
+    },
+    "Format": {
+      "@id": "databrew:Format",
+      "@type": "xsd:string"
+    },
+    "PartitionColumns": {
+      "@id": "databrew:PartitionColumns",
+      "@type": "xsd:string"
+    },
+    "Overwrite": {
+      "@id": "databrew:Overwrite",
+      "@type": "xsd:string"
+    },
+    "MaxOutputFiles": {
+      "@id": "databrew:MaxOutputFiles",
+      "@type": "xsd:string"
+    },
+    "ClientSessionId": {
+      "@id": "databrew:ClientSessionId",
+      "@type": "xsd:string"
+    },
+    "EntityTypes": {
+      "@id": "databrew:EntityTypes",
+      "@type": "xsd:string"
+    },
+    "CreateDate": {
+      "@id": "databrew:CreateDate",
+      "@type": "xsd:string"
+    },
+    "CreatedBy": {
+      "@id": "databrew:CreatedBy",
+      "@type": "xsd:string"
+    },
+    "LastModifiedBy": {
+      "@id": "databrew:LastModifiedBy",
+      "@type": "xsd:string"
+    },
+    "LastModifiedDate": {
+      "@id": "databrew:LastModifiedDate",
+      "@type": "xsd:string"
+    },
+    "ResourceArn": {
+      "@id": "databrew:ResourceArn",
+      "@type": "xsd:string"
+    },
+    "AssumeControl": {
+      "@id": "databrew:AssumeControl",
+      "@type": "xsd:string"
+    },
+    "Regex": {
+      "@id": "databrew:Regex",
+      "@type": "xsd:string"
+    },
+    "LastModifiedDateCondition": {
+      "@id": "databrew:LastModifiedDateCondition",
+      "@type": "xsd:string"
+    },
+    "Outputs": {
+      "@id": "databrew:Outputs",
+      "@type": "xsd:string"
+    },
+    "DataCatalogOutputs": {
+      "@id": "databrew:DataCatalogOutputs",
+      "@type": "xsd:string"
+    },
+    "DatabaseOutputs": {
+      "@id": "databrew:DatabaseOutputs",
+      "@type": "xsd:string"
+    },
+    "ProjectName": {
+      "@id": "databrew:ProjectName",
+      "@type": "xsd:string"
+    },
+    "S3InputDefinition": {
+      "@id": "databrew:S3InputDefinition",
+      "@type": "xsd:string"
+    },
+    "JobRuns": {
+      "@id": "databrew:JobRuns",
+      "@type": "xsd:string"
+    },
+    "PublishedBy": {
+      "@id": "databrew:PublishedBy",
+      "@type": "xsd:string"
+    },
+    "PublishedDate": {
+      "@id": "databrew:PublishedDate",
+      "@type": "xsd:string"
+    },
+    "RecipeVersion": {
+      "@id": "databrew:RecipeVersion",
+      "@type": "xsd:string"
+    },
+    "HeaderRow": {
+      "@id": "databrew:HeaderRow",
+      "@type": "xsd:string"
+    },
+    "MaxFiles": {
+      "@id": "databrew:MaxFiles",
+      "@type": "xsd:string"
+    },
+    "OrderedBy": {
+      "@id": "databrew:OrderedBy",
+      "@type": "xsd:string"
+    },
+    "Order": {
+      "@id": "databrew:Order",
+      "@type": "xsd:string"
+    },
+    "Type": {
+      "@id": "databrew:Type",
+      "@type": "xsd:string"
+    },
+    "MultiLine": {
+      "@id": "databrew:MultiLine",
+      "@type": "xsd:string"
+    },
+    "IncludedStatistics": {
+      "@id": "databrew:IncludedStatistics",
+      "@type": "xsd:string"
+    },
+    "Overrides": {
+      "@id": "databrew:Overrides",
+      "@type": "xsd:string"
+    },
+    "StartColumnIndex": {
+      "@id": "databrew:StartColumnIndex",
+      "@type": "xsd:string"
+    },
+    "ColumnRange": {
+      "@id": "databrew:ColumnRange",
+      "@type": "xsd:string"
+    },
+    "HiddenColumns": {
+      "@id": "databrew:HiddenColumns",
+      "@type": "xsd:string"
+    },
+    "StartRowIndex": {
+      "@id": "databrew:StartRowIndex",
+      "@type": "xsd:string"
+    },
+    "RowRange": {
+      "@id": "databrew:RowRange",
+      "@type": "xsd:string"
+    },
+    "Analytics": {
+      "@id": "databrew:Analytics",
+      "@type": "xsd:string"
+    },
+    "CatalogId": {
+      "@id": "databrew:CatalogId",
+      "@type": "xsd:string"
+    },
+    "DatabaseName": {
+      "@id": "databrew:DatabaseName",
+      "@type": "xsd:string"
+    },
+    "TableName": {
+      "@id": "databrew:TableName",
+      "@type": "xsd:string"
+    },
+    "S3Options": {
+      "@id": "databrew:S3Options",
+      "@type": "xsd:string"
+    },
+    "DatabaseOptions": {
+      "@id": "databrew:DatabaseOptions",
+      "@type": "xsd:string"
+    },
+    "Mode": {
+      "@id": "databrew:Mode",
+      "@type": "xsd:string"
+    },
+    "Size": {
+      "@id": "databrew:Size",
+      "@type": "xsd:string"
+    },
+    "Result": {
+      "@id": "databrew:Result",
+      "@type": "xsd:string"
+    },
+    "ActionId": {
+      "@id": "databrew:ActionId",
+      "@type": "xsd:string"
+    },
+    "Source": {
+      "@id": "databrew:Source",
+      "@type": "xsd:string"
+    },
+    "AccountId": {
+      "@id": "databrew:AccountId",
+      "@type": "xsd:string"
+    },
+    "RuleCount": {
+      "@id": "databrew:RuleCount",
+      "@type": "xsd:string"
+    },
+    "SourceArn": {
+      "@id": "databrew:SourceArn",
+      "@type": "xsd:string"
+    },
+    "Rulesets": {
+      "@id": "databrew:Rulesets",
+      "@type": "xsd:string"
+    },
+    "TempDirectory": {
+      "@id": "databrew:TempDirectory",
+      "@type": "xsd:string"
+    },
+    "DatasetStatisticsConfiguration": {
+      "@id": "databrew:DatasetStatisticsConfiguration",
+      "@type": "xsd:string"
+    },
+    "ProfileColumns": {
+      "@id": "databrew:ProfileColumns",
+      "@type": "xsd:string"
+    },
+    "ColumnStatisticsConfigurations": {
+      "@id": "databrew:ColumnStatisticsConfigurations",
+      "@type": "xsd:string"
+    },
+    "Expression": {
+      "@id": "databrew:Expression",
+      "@type": "xsd:string"
+    },
+    "Csv": {
+      "@id": "databrew:Csv",
+      "@type": "xsd:string"
+    },
+    "Selectors": {
+      "@id": "databrew:Selectors",
+      "@type": "xsd:string"
+    },
+    "Statistics": {
+      "@id": "databrew:Statistics",
+      "@type": "xsd:string"
+    },
+    "CreateColumn": {
+      "@id": "databrew:CreateColumn",
+      "@type": "xsd:string"
+    },
+    "Filter": {
+      "@id": "databrew:Filter",
+      "@type": "xsd:string"
+    },
+    "GlueConnectionName": {
+      "@id": "databrew:GlueConnectionName",
+      "@type": "xsd:string"
+    },
+    "DatabaseTableName": {
+      "@id": "databrew:DatabaseTableName",
+      "@type": "xsd:string"
+    },
+    "QueryString": {
+      "@id": "databrew:QueryString",
+      "@type": "xsd:string"
+    },
+    "Attempt": {
+      "@id": "databrew:Attempt",
+      "@type": "xsd:string"
+    },
+    "CompletedOn": {
+      "@id": "databrew:CompletedOn",
+      "@type": "xsd:string"
+    },
+    "ErrorMessage": {
+      "@id": "databrew:ErrorMessage",
+      "@type": "xsd:string"
+    },
+    "ExecutionTime": {
+      "@id": "databrew:ExecutionTime",
+      "@type": "xsd:string"
+    },
+    "JobName": {
+      "@id": "databrew:JobName",
+      "@type": "xsd:string"
+    },
+    "State": {
+      "@id": "databrew:State",
+      "@type": "xsd:string"
+    },
+    "LogGroupName": {
+      "@id": "databrew:LogGroupName",
+      "@type": "xsd:string"
+    },
+    "StartedBy": {
+      "@id": "databrew:StartedBy",
+      "@type": "xsd:string"
+    },
+    "StartedOn": {
+      "@id": "databrew:StartedOn",
+      "@type": "xsd:string"
+    },
+    "ErrorCode": {
+      "@id": "databrew:ErrorCode",
+      "@type": "xsd:string"
+    },
+    "Condition": {
+      "@id": "databrew:Condition",
+      "@type": "xsd:string"
+    },
+    "Value": {
+      "@id": "databrew:Value",
+      "@type": "xsd:string"
+    },
+    "TargetColumn": {
+      "@id": "databrew:TargetColumn",
+      "@type": "xsd:string"
+    },
+    "Json": {
+      "@id": "databrew:Json",
+      "@type": "xsd:string"
+    },
+    "Excel": {
+      "@id": "databrew:Excel",
+      "@type": "xsd:string"
+    },
+    "Errors": {
+      "@id": "databrew:Errors",
+      "@type": "xsd:string"
+    },
+    "Bucket": {
+      "@id": "databrew:Bucket",
+      "@type": "xsd:string"
+    },
+    "Key": {
+      "@id": "databrew:Key",
+      "@type": "xsd:string"
+    },
+    "BucketOwner": {
+      "@id": "databrew:BucketOwner",
+      "@type": "xsd:string"
+    },
+    "TimezoneOffset": {
+      "@id": "databrew:TimezoneOffset",
+      "@type": "xsd:string"
+    },
+    "LocaleCode": {
+      "@id": "databrew:LocaleCode",
+      "@type": "xsd:string"
+    },
+    "Disabled": {
+      "@id": "databrew:Disabled",
+      "@type": "xsd:string"
+    },
+    "CheckExpression": {
+      "@id": "databrew:CheckExpression",
+      "@type": "xsd:string"
+    },
+    "SubstitutionMap": {
+      "@id": "databrew:SubstitutionMap",
+      "@type": "xsd:string"
+    },
+    "ColumnSelectors": {
+      "@id": "databrew:ColumnSelectors",
+      "@type": "xsd:string"
+    },
+    "Projects": {
+      "@id": "databrew:Projects",
+      "@type": "xsd:string"
+    },
+    "DatabaseOutputMode": {
+      "@id": "databrew:DatabaseOutputMode",
+      "@type": "xsd:string"
+    },
+    "Statistic": {
+      "@id": "databrew:Statistic",
+      "@type": "xsd:string"
+    },
+    "Unit": {
+      "@id": "databrew:Unit",
+      "@type": "xsd:string"
+    },
+    "Preview": {
+      "@id": "databrew:Preview",
+      "@type": "xsd:string"
+    },
+    "StepIndex": {
+      "@id": "databrew:StepIndex",
+      "@type": "xsd:string"
+    },
+    "RecipeName": {
+      "@id": "databrew:RecipeName",
+      "@type": "xsd:string"
+    },
+    "SheetNames": {
+      "@id": "databrew:SheetNames",
+      "@type": "xsd:string"
+    },
+    "SheetIndexes": {
+      "@id": "databrew:SheetIndexes",
+      "@type": "xsd:string"
+    },
+    "OpenedBy": {
+      "@id": "databrew:OpenedBy",
+      "@type": "xsd:string"
+    },
+    "OpenDate": {
+      "@id": "databrew:OpenDate",
+      "@type": "xsd:string"
+    },
+    "SessionStatus": {
+      "@id": "databrew:SessionStatus",
+      "@type": "xsd:string"
+    }
+  }
+}

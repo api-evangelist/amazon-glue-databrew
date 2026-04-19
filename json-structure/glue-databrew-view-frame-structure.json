@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-view-frame-structure.json",
+  "name": "ViewFrame",
+  "description": "Represents the data being transformed during an action.",
+  "type": "object",
+  "properties": {
+    "StartColumnIndex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StartColumnIndex"
+        },
+        {
+          "description": "The starting index for the range of columns to return in the view frame."
+        }
+      ]
+    },
+    "ColumnRange": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnRange"
+        },
+        {
+          "description": "The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list."
+        }
+      ]
+    },
+    "HiddenColumns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HiddenColumnList"
+        },
+        {
+          "description": "A list of columns to hide in the view frame."
+        }
+      ]
+    },
+    "StartRowIndex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StartRowIndex"
+        },
+        {
+          "description": "The starting index for the range of rows to return in the view frame."
+        }
+      ]
+    },
+    "RowRange": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RowRange"
+        },
+        {
+          "description": "The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value."
+        }
+      ]
+    },
+    "Analytics": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnalyticsMode"
+        },
+        {
+          "description": "Controls if analytics computation is enabled or disabled. Enabled by default."
+        }
+      ]
+    }
+  },
+  "required": [
+    "StartColumnIndex"
+  ]
+}

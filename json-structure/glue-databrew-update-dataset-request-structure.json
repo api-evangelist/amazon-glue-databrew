@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-update-dataset-request-structure.json",
+  "name": "UpdateDatasetRequest",
+  "description": "UpdateDatasetRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Format": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InputFormat"
+        },
+        {
+          "description": "The file format of a dataset that is created from an Amazon S3 file or folder."
+        }
+      ]
+    },
+    "FormatOptions": {
+      "$ref": "#/components/schemas/FormatOptions"
+    },
+    "Input": {
+      "$ref": "#/components/schemas/Input"
+    },
+    "PathOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PathOptions"
+        },
+        {
+          "description": "A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Input"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-max-output-files-schema.json",
+  "title": "MaxOutputFiles",
+  "description": "MaxOutputFiles schema from Amazon Glue DataBrew API",
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 999
+}

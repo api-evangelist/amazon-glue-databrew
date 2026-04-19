@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-output-format-structure.json",
+  "name": "OutputFormat",
+  "description": "OutputFormat schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "CSV",
+    "JSON",
+    "PARQUET",
+    "GLUEPARQUET",
+    "AVRO",
+    "ORC",
+    "XML",
+    "TABLEAUHYPER"
+  ]
+}

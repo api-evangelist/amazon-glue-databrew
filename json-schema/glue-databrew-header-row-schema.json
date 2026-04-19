@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-header-row-schema.json",
+  "title": "HeaderRow",
+  "description": "HeaderRow schema from Amazon Glue DataBrew API",
+  "type": "boolean"
+}

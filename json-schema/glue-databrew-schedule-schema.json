@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-schedule-schema.json",
+  "title": "Schedule",
+  "description": "Represents one or more dates and times when a job is to run.",
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account that owns the schedule."
+        }
+      ]
+    },
+    "CreatedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who created the schedule."
+        }
+      ]
+    },
+    "CreateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the schedule was created."
+        }
+      ]
+    },
+    "JobNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobNameList"
+        },
+        {
+          "description": "A list of jobs to be run, according to the schedule."
+        }
+      ]
+    },
+    "LastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastModifiedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who last modified the schedule."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time when the schedule was last modified."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the schedule."
+        }
+      ]
+    },
+    "CronExpression": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CronExpression"
+        },
+        {
+          "description": "The dates and times when the job is to run. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html\">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags that have been applied to the schedule."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScheduleName"
+        },
+        {
+          "description": "The name of the schedule."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

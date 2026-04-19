@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-create-ruleset-response-schema.json",
+  "title": "CreateRulesetResponse",
+  "description": "CreateRulesetResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RulesetName"
+        },
+        {
+          "description": "The unique name of the created ruleset."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

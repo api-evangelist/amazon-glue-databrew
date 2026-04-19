@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-describe-recipe-request-structure.json",
+  "name": "DescribeRecipeRequest",
+  "description": "DescribeRecipeRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {}
+}

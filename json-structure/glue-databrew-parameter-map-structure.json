@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-parameter-map-structure.json",
+  "name": "ParameterMap",
+  "description": "ParameterMap schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/ParameterValue"
+  }
+}

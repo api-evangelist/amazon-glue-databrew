@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-describe-project-response-schema.json",
+  "title": "DescribeProjectResponse",
+  "description": "DescribeProjectResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "CreateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the project was created."
+        }
+      ]
+    },
+    "CreatedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedBy"
+        },
+        {
+          "description": "The identifier (user name) of the user who created the project."
+        }
+      ]
+    },
+    "DatasetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetName"
+        },
+        {
+          "description": "The dataset associated with the project."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the project was last modified."
+        }
+      ]
+    },
+    "LastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastModifiedBy"
+        },
+        {
+          "description": "The identifier (user name) of the user who last modified the project."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "The name of the project."
+        }
+      ]
+    },
+    "RecipeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "The recipe associated with this job."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the project."
+        }
+      ]
+    },
+    "Sample": {
+      "$ref": "#/components/schemas/Sample"
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags associated with this project."
+        }
+      ]
+    },
+    "SessionStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SessionStatus"
+        },
+        {
+          "description": "<p>Describes the current state of the session:</p> <ul> <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li> <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li> <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li> </ul>"
+        }
+      ]
+    },
+    "OpenedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OpenedBy"
+        },
+        {
+          "description": "The identifier (user name) of the user that opened the project for use. "
+        }
+      ]
+    },
+    "OpenDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time when the project was opened. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

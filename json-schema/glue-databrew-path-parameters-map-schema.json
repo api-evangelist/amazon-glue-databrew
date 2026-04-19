@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-path-parameters-map-schema.json",
+  "title": "PathParametersMap",
+  "description": "A structure that map names of parameters used in the Amazon S3 path of a dataset to their definitions. A definition includes parameter type and conditions.",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/DatasetParameter"
+  }
+}

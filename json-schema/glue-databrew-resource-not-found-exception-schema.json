@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-resource-not-found-exception-schema.json",
+  "title": "ResourceNotFoundException",
+  "description": "ResourceNotFoundException schema from Amazon Glue DataBrew API"
+}

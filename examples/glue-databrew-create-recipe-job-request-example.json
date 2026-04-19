@@ -1,0 +1,10 @@
+{
+  "DatasetName": "MyDataBrewProject",
+  "EncryptionKeyArn": "arn:aws:databrew:us-east-1:123456789012:project/MyProject",
+  "EncryptionMode": "example-EncryptionMode",
+  "Name": "MyDataBrewProject",
+  "LogSubscription": "example-LogSubscription",
+  "MaxCapacity": "example-MaxCapacity",
+  "MaxRetries": "example-MaxRetries",
+  "Outputs": "example-Outputs"
+}

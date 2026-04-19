@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-threshold-schema.json",
+  "title": "Threshold",
+  "description": "The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ThresholdValue"
+        },
+        {
+          "description": "The value of a threshold."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ThresholdType"
+        },
+        {
+          "description": "The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value."
+        }
+      ]
+    },
+    "Unit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ThresholdUnit"
+        },
+        {
+          "description": "Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Value"
+  ]
+}

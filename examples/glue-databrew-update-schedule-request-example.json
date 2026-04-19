@@ -1,0 +1,4 @@
+{
+  "JobNames": "MyDataBrewProject",
+  "CronExpression": "example-CronExpression"
+}

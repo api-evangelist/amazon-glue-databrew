@@ -1,0 +1,7 @@
+{
+  "Name": "MyDataBrewProject",
+  "Description": "example-Description",
+  "TargetArn": "arn:aws:databrew:us-east-1:123456789012:project/MyProject",
+  "Rules": "example-Rules",
+  "Tags": "example-Tags"
+}

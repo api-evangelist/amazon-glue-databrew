@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-stop-job-run-response-schema.json",
+  "title": "StopJobRunResponse",
+  "description": "StopJobRunResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobRunId"
+        },
+        {
+          "description": "The ID of the job run that you stopped."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RunId"
+  ]
+}

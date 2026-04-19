@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-client-session-id-structure.json",
+  "name": "ClientSessionId",
+  "description": "ClientSessionId schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "format": "password",
+  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-]*$"
+}

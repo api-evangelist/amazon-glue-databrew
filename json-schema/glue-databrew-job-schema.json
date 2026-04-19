@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-job-schema.json",
+  "title": "Job",
+  "description": "Represents all of the attributes of a DataBrew job.",
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account that owns the job."
+        }
+      ]
+    },
+    "CreatedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who created the job."
+        }
+      ]
+    },
+    "CreateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the job was created."
+        }
+      ]
+    },
+    "DatasetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetName"
+        },
+        {
+          "description": "A dataset that the job is to process."
+        }
+      ]
+    },
+    "EncryptionKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionKeyArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href=\"https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html\">Encrypting data written by DataBrew jobs</a> "
+        }
+      ]
+    },
+    "EncryptionMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionMode"
+        },
+        {
+          "description": "<p>The encryption mode for the job, which can be one of the following:</p> <ul> <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> </ul>"
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobName"
+        },
+        {
+          "description": "The unique name of the job."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobType"
+        },
+        {
+          "description": "<p>The job type of the job, which must be one of the following:</p> <ul> <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li> <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li> </ul>"
+        }
+      ]
+    },
+    "LastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastModifiedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who last modified the job."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The modification date and time of the job."
+        }
+      ]
+    },
+    "LogSubscription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LogSubscription"
+        },
+        {
+          "description": "The current status of Amazon CloudWatch logging for the job."
+        }
+      ]
+    },
+    "MaxCapacity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxCapacity"
+        },
+        {
+          "description": "The maximum number of nodes that can be consumed when the job processes data."
+        }
+      ]
+    },
+    "MaxRetries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxRetries"
+        },
+        {
+          "description": "The maximum number of times to retry the job after a job run fails."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutputList"
+        },
+        {
+          "description": "One or more artifacts that represent output from running the job."
+        }
+      ]
+    },
+    "DataCatalogOutputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataCatalogOutputList"
+        },
+        {
+          "description": "One or more artifacts that represent the Glue Data Catalog output from running the job."
+        }
+      ]
+    },
+    "DatabaseOutputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabaseOutputList"
+        },
+        {
+          "description": "Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into."
+        }
+      ]
+    },
+    "ProjectName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "The name of the project that the job is associated with."
+        }
+      ]
+    },
+    "RecipeReference": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeReference"
+        },
+        {
+          "description": "A set of steps that the job runs."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The unique Amazon Resource Name (ARN) for the job."
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the role to be assumed for this job."
+        }
+      ]
+    },
+    "Timeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timeout"
+        },
+        {
+          "description": "The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags that have been applied to the job."
+        }
+      ]
+    },
+    "JobSample": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobSample"
+        },
+        {
+          "description": "A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter."
+        }
+      ]
+    },
+    "ValidationConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValidationConfigurationList"
+        },
+        {
+          "description": "List of validation configurations that are applied to the profile job."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-update-dataset-response-structure.json",
+  "name": "UpdateDatasetResponse",
+  "description": "UpdateDatasetResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetName"
+        },
+        {
+          "description": "The name of the dataset that you updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

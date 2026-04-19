@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-list-datasets-response-schema.json",
+  "title": "ListDatasetsResponse",
+  "description": "ListDatasetsResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Datasets": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetList"
+        },
+        {
+          "description": "A list of datasets that are defined."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A token that you can use in a subsequent call to retrieve the next set of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Datasets"
+  ]
+}

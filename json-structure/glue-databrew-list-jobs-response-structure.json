@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-list-jobs-response-structure.json",
+  "name": "ListJobsResponse",
+  "description": "ListJobsResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Jobs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobList"
+        },
+        {
+          "description": "A list of jobs that are defined."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A token that you can use in a subsequent call to retrieve the next set of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Jobs"
+  ]
+}

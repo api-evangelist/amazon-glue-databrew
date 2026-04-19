@@ -1,0 +1,10 @@
+{
+  "Attempt": "example-Attempt",
+  "CompletedOn": "example-CompletedOn",
+  "DatasetName": "MyDataBrewProject",
+  "ErrorMessage": "example-ErrorMessage",
+  "ExecutionTime": "example-ExecutionTime",
+  "JobName": "MyDataBrewProject",
+  "RunId": "example-RunId",
+  "State": "example-State"
+}

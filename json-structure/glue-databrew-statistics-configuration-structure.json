@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-statistics-configuration-structure.json",
+  "name": "StatisticsConfiguration",
+  "description": "Configuration of evaluations for a profile job. This configuration can be used to select evaluations and override the parameters of selected evaluations. ",
+  "type": "object",
+  "properties": {
+    "IncludedStatistics": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatisticList"
+        },
+        {
+          "description": "List of included evaluations. When the list is undefined, all supported evaluations will be included."
+        }
+      ]
+    },
+    "Overrides": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatisticOverrideList"
+        },
+        {
+          "description": "List of overrides for evaluations."
+        }
+      ]
+    }
+  }
+}

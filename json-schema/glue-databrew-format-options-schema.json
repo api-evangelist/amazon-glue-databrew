@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-format-options-schema.json",
+  "title": "FormatOptions",
+  "description": "Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.",
+  "type": "object",
+  "properties": {
+    "Json": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JsonOptions"
+        },
+        {
+          "description": "Options that define how JSON input is to be interpreted by DataBrew."
+        }
+      ]
+    },
+    "Excel": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExcelOptions"
+        },
+        {
+          "description": "Options that define how Excel input is to be interpreted by DataBrew."
+        }
+      ]
+    },
+    "Csv": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CsvOptions"
+        },
+        {
+          "description": "Options that define how CSV input is to be interpreted by DataBrew."
+        }
+      ]
+    }
+  }
+}

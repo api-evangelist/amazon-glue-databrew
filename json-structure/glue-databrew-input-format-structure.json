@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-input-format-structure.json",
+  "name": "InputFormat",
+  "description": "InputFormat schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "CSV",
+    "JSON",
+    "PARQUET",
+    "EXCEL",
+    "ORC"
+  ]
+}

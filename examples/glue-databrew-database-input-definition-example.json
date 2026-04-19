@@ -1,0 +1,6 @@
+{
+  "GlueConnectionName": "MyDataBrewProject",
+  "DatabaseTableName": "MyDataBrewProject",
+  "TempDirectory": "example-TempDirectory",
+  "QueryString": "example-QueryString"
+}

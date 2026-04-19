@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-files-limit-schema.json",
+  "title": "FilesLimit",
+  "description": "Represents a limit imposed on number of Amazon S3 files that should be selected for a dataset from a connected Amazon S3 path.",
+  "type": "object",
+  "properties": {
+    "MaxFiles": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxFiles"
+        },
+        {
+          "description": "The number of Amazon S3 files to select."
+        }
+      ]
+    },
+    "OrderedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrderedBy"
+        },
+        {
+          "description": "A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value."
+        }
+      ]
+    },
+    "Order": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Order"
+        },
+        {
+          "description": "A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MaxFiles"
+  ]
+}

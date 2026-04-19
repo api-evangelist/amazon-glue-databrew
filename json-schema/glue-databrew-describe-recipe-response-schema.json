@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-describe-recipe-response-schema.json",
+  "title": "DescribeRecipeResponse",
+  "description": "DescribeRecipeResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "CreatedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedBy"
+        },
+        {
+          "description": "The identifier (user name) of the user who created the recipe."
+        }
+      ]
+    },
+    "CreateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the recipe was created."
+        }
+      ]
+    },
+    "LastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastModifiedBy"
+        },
+        {
+          "description": "The identifier (user name) of the user who last modified the recipe."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the recipe was last modified."
+        }
+      ]
+    },
+    "ProjectName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "The name of the project associated with this recipe."
+        }
+      ]
+    },
+    "PublishedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PublishedBy"
+        },
+        {
+          "description": "The identifier (user name) of the user who last published the recipe."
+        }
+      ]
+    },
+    "PublishedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time when the recipe was last published."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeDescription"
+        },
+        {
+          "description": "The description of the recipe."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "The name of the recipe."
+        }
+      ]
+    },
+    "Steps": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeStepList"
+        },
+        {
+          "description": "One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags associated with this project."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the recipe."
+        }
+      ]
+    },
+    "RecipeVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeVersion"
+        },
+        {
+          "description": "The recipe version identifier."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

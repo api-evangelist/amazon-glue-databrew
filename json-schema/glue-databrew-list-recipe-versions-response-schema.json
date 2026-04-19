@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-list-recipe-versions-response-schema.json",
+  "title": "ListRecipeVersionsResponse",
+  "description": "ListRecipeVersionsResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A token that you can use in a subsequent call to retrieve the next set of results."
+        }
+      ]
+    },
+    "Recipes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeList"
+        },
+        {
+          "description": "A list of versions for the specified recipe."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Recipes"
+  ]
+}

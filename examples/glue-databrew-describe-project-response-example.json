@@ -1,0 +1,10 @@
+{
+  "CreateDate": "example-CreateDate",
+  "CreatedBy": "example-CreatedBy",
+  "DatasetName": "MyDataBrewProject",
+  "LastModifiedDate": "example-LastModifiedDat",
+  "LastModifiedBy": "example-LastModifiedBy",
+  "Name": "MyDataBrewProject",
+  "RecipeName": "MyDataBrewProject",
+  "ResourceArn": "arn:aws:databrew:us-east-1:123456789012:project/MyProject"
+}

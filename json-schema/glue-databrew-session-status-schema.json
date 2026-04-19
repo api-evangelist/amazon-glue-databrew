@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-session-status-schema.json",
+  "title": "SessionStatus",
+  "description": "SessionStatus schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "ASSIGNED",
+    "FAILED",
+    "INITIALIZING",
+    "PROVISIONING",
+    "READY",
+    "RECYCLING",
+    "ROTATING",
+    "TERMINATED",
+    "TERMINATING",
+    "UPDATING"
+  ]
+}

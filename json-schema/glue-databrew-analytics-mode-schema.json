@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-analytics-mode-schema.json",
+  "title": "AnalyticsMode",
+  "description": "AnalyticsMode schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "enum": [
+    "ENABLE",
+    "DISABLE"
+  ]
+}

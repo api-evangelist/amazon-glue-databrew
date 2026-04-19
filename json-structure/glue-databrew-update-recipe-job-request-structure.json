@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-update-recipe-job-request-structure.json",
+  "name": "UpdateRecipeJobRequest",
+  "description": "UpdateRecipeJobRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "EncryptionKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionKeyArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of an encryption key that is used to protect the job."
+        }
+      ]
+    },
+    "EncryptionMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionMode"
+        },
+        {
+          "description": "<p>The encryption mode for the job, which can be one of the following:</p> <ul> <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> </ul>"
+        }
+      ]
+    },
+    "LogSubscription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LogSubscription"
+        },
+        {
+          "description": "Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run."
+        }
+      ]
+    },
+    "MaxCapacity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxCapacity"
+        },
+        {
+          "description": "The maximum number of nodes that DataBrew can consume when the job processes data."
+        }
+      ]
+    },
+    "MaxRetries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxRetries"
+        },
+        {
+          "description": "The maximum number of times to retry the job after a job run fails."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutputList"
+        },
+        {
+          "description": "One or more artifacts that represent the output from running the job. "
+        }
+      ]
+    },
+    "DataCatalogOutputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataCatalogOutputList"
+        },
+        {
+          "description": "One or more artifacts that represent the Glue Data Catalog output from running the job."
+        }
+      ]
+    },
+    "DatabaseOutputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabaseOutputList"
+        },
+        {
+          "description": "Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into."
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job."
+        }
+      ]
+    },
+    "Timeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timeout"
+        },
+        {
+          "description": "The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RoleArn"
+  ]
+}

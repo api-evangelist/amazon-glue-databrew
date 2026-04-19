@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-date-structure.json",
+  "name": "Date",
+  "description": "Date schema from Amazon Glue DataBrew API",
+  "type": "datetime"
+}

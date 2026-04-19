@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-delete-ruleset-response-structure.json",
+  "name": "DeleteRulesetResponse",
+  "description": "DeleteRulesetResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RulesetName"
+        },
+        {
+          "description": "The name of the deleted ruleset."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

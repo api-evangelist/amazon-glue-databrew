@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-statistic-override-schema.json",
+  "title": "StatisticOverride",
+  "description": "Override of a particular evaluation for a profile job. ",
+  "type": "object",
+  "properties": {
+    "Statistic": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Statistic"
+        },
+        {
+          "description": "The name of an evaluation"
+        }
+      ]
+    },
+    "Parameters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ParameterMap"
+        },
+        {
+          "description": "A map that includes overrides of an evaluation\u2019s parameters."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Statistic",
+    "Parameters"
+  ]
+}

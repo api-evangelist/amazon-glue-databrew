@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-dataset-structure.json",
+  "name": "Dataset",
+  "description": "Represents a dataset that can be processed by DataBrew.",
+  "type": "object",
+  "properties": {
+    "AccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account that owns the dataset."
+        }
+      ]
+    },
+    "CreatedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who created the dataset."
+        }
+      ]
+    },
+    "CreateDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time that the dataset was created."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetName"
+        },
+        {
+          "description": "The unique name of the dataset."
+        }
+      ]
+    },
+    "Format": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InputFormat"
+        },
+        {
+          "description": "The file format of a dataset that is created from an Amazon S3 file or folder."
+        }
+      ]
+    },
+    "FormatOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FormatOptions"
+        },
+        {
+          "description": "A set of options that define how DataBrew interprets the data in the dataset."
+        }
+      ]
+    },
+    "Input": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Input"
+        },
+        {
+          "description": "Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The last modification date and time of the dataset."
+        }
+      ]
+    },
+    "LastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastModifiedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who last modified the dataset."
+        }
+      ]
+    },
+    "Source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Source"
+        },
+        {
+          "description": "The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog."
+        }
+      ]
+    },
+    "PathOptions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PathOptions"
+        },
+        {
+          "description": "A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags that have been applied to the dataset."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The unique Amazon Resource Name (ARN) for the dataset."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "Input"
+  ]
+}

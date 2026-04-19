@@ -1,0 +1,8 @@
+{
+  "Name": "MyDataBrewProject",
+  "Disabled": "example-Disabled",
+  "CheckExpression": "example-CheckExpression",
+  "SubstitutionMap": "example-SubstitutionMap",
+  "Threshold": "example-Threshold",
+  "ColumnSelectors": "example-ColumnSelectors"
+}

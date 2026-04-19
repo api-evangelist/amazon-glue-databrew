@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-created-by-structure.json",
+  "name": "CreatedBy",
+  "description": "CreatedBy schema from Amazon Glue DataBrew API",
+  "type": "string"
+}

@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-update-profile-job-request-schema.json",
+  "title": "UpdateProfileJobRequest",
+  "description": "UpdateProfileJobRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Configuration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileConfiguration"
+        },
+        {
+          "description": "Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings."
+        }
+      ]
+    },
+    "EncryptionKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionKeyArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of an encryption key that is used to protect the job."
+        }
+      ]
+    },
+    "EncryptionMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionMode"
+        },
+        {
+          "description": "<p>The encryption mode for the job, which can be one of the following:</p> <ul> <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> </ul>"
+        }
+      ]
+    },
+    "LogSubscription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LogSubscription"
+        },
+        {
+          "description": "Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run."
+        }
+      ]
+    },
+    "MaxCapacity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxCapacity"
+        },
+        {
+          "description": "The maximum number of compute nodes that DataBrew can use when the job processes data."
+        }
+      ]
+    },
+    "MaxRetries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxRetries"
+        },
+        {
+          "description": "The maximum number of times to retry the job after a job run fails."
+        }
+      ]
+    },
+    "OutputLocation": {
+      "$ref": "#/components/schemas/S3Location"
+    },
+    "ValidationConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValidationConfigurationList"
+        },
+        {
+          "description": "List of validation configurations that are applied to the profile job."
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job."
+        }
+      ]
+    },
+    "Timeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timeout"
+        },
+        {
+          "description": "The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>."
+        }
+      ]
+    },
+    "JobSample": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobSample"
+        },
+        {
+          "description": "Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter."
+        }
+      ]
+    }
+  },
+  "required": [
+    "OutputLocation",
+    "RoleArn"
+  ]
+}

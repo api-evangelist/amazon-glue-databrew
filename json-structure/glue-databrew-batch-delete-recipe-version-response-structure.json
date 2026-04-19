@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-batch-delete-recipe-version-response-structure.json",
+  "name": "BatchDeleteRecipeVersionResponse",
+  "description": "BatchDeleteRecipeVersionResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "The name of the recipe that was modified."
+        }
+      ]
+    },
+    "Errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeErrorList"
+        },
+        {
+          "description": "Errors, if any, that occurred while attempting to delete the recipe versions."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

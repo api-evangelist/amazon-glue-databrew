@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-recipe-version-error-detail-schema.json",
+  "title": "RecipeVersionErrorDetail",
+  "description": "Represents any errors encountered when attempting to delete multiple recipe versions.",
+  "type": "object",
+  "properties": {
+    "ErrorCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorCode"
+        },
+        {
+          "description": "The HTTP status code for the error."
+        }
+      ]
+    },
+    "ErrorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeErrorMessage"
+        },
+        {
+          "description": "The text of the error message."
+        }
+      ]
+    },
+    "RecipeVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeVersion"
+        },
+        {
+          "description": "The identifier for the recipe version associated with this error."
+        }
+      ]
+    }
+  }
+}

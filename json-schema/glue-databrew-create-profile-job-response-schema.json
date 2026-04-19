@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-create-profile-job-response-schema.json",
+  "title": "CreateProfileJobResponse",
+  "description": "CreateProfileJobResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobName"
+        },
+        {
+          "description": "The name of the job that was created."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

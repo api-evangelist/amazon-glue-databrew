@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-send-project-session-action-response-structure.json",
+  "name": "SendProjectSessionActionResponse",
+  "description": "SendProjectSessionActionResponse schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "Result": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Result"
+        },
+        {
+          "description": "A message indicating the result of performing the action."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "The name of the project that was affected by the action."
+        }
+      ]
+    },
+    "ActionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActionId"
+        },
+        {
+          "description": "A unique identifier for the action that was performed."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

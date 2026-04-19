@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-bucket-owner-structure.json",
+  "name": "BucketOwner",
+  "description": "BucketOwner schema from Amazon Glue DataBrew API",
+  "type": "string",
+  "pattern": "^[0-9]{12}$"
+}

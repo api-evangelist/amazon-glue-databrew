@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-profile-configuration-schema.json",
+  "title": "ProfileConfiguration",
+  "description": "Configuration for profile jobs. Configuration can be used to select columns, do evaluations, and override default parameters of evaluations. When configuration is undefined, the profile job will apply default settings to all supported columns. ",
+  "type": "object",
+  "properties": {
+    "DatasetStatisticsConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatisticsConfiguration"
+        },
+        {
+          "description": "Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations. "
+        }
+      ]
+    },
+    "ProfileColumns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnSelectorList"
+        },
+        {
+          "description": "List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns. "
+        }
+      ]
+    },
+    "ColumnStatisticsConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnStatisticsConfigurationList"
+        },
+        {
+          "description": "List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations. "
+        }
+      ]
+    },
+    "EntityDetectorConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityDetectorConfiguration"
+        },
+        {
+          "description": "Configuration of entity detection for a profile job. When undefined, entity detection is disabled."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-job-run-schema.json",
+  "title": "JobRun",
+  "description": "Represents one run of a DataBrew job.",
+  "type": "object",
+  "properties": {
+    "Attempt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Attempt"
+        },
+        {
+          "description": "The number of times that DataBrew has attempted to run the job."
+        }
+      ]
+    },
+    "CompletedOn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time when the job completed processing."
+        }
+      ]
+    },
+    "DatasetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetName"
+        },
+        {
+          "description": "The name of the dataset for the job to process."
+        }
+      ]
+    },
+    "ErrorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobRunErrorMessage"
+        },
+        {
+          "description": "A message indicating an error (if any) that was encountered when the job ran."
+        }
+      ]
+    },
+    "ExecutionTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExecutionTime"
+        },
+        {
+          "description": "The amount of time, in seconds, during which a job run consumed resources."
+        }
+      ]
+    },
+    "JobName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobName"
+        },
+        {
+          "description": "The name of the job being processed during this run."
+        }
+      ]
+    },
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobRunId"
+        },
+        {
+          "description": "The unique identifier of the job run."
+        }
+      ]
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobRunState"
+        },
+        {
+          "description": "The current state of the job run entity itself."
+        }
+      ]
+    },
+    "LogSubscription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LogSubscription"
+        },
+        {
+          "description": "The current status of Amazon CloudWatch logging for the job run."
+        }
+      ]
+    },
+    "LogGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LogGroupName"
+        },
+        {
+          "description": "The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs."
+        }
+      ]
+    },
+    "Outputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutputList"
+        },
+        {
+          "description": "One or more output artifacts from a job run."
+        }
+      ]
+    },
+    "DataCatalogOutputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataCatalogOutputList"
+        },
+        {
+          "description": "One or more artifacts that represent the Glue Data Catalog output from running the job."
+        }
+      ]
+    },
+    "DatabaseOutputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatabaseOutputList"
+        },
+        {
+          "description": "Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into."
+        }
+      ]
+    },
+    "RecipeReference": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeReference"
+        },
+        {
+          "description": "The set of steps processed by the job."
+        }
+      ]
+    },
+    "StartedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StartedBy"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the user who initiated the job run. "
+        }
+      ]
+    },
+    "StartedOn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Date"
+        },
+        {
+          "description": "The date and time when the job run began. "
+        }
+      ]
+    },
+    "JobSample": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobSample"
+        },
+        {
+          "description": "A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter."
+        }
+      ]
+    },
+    "ValidationConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValidationConfigurationList"
+        },
+        {
+          "description": "List of validation configurations that are applied to the profile job run."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-schema/glue-databrew-multi-line-schema.json",
+  "title": "MultiLine",
+  "description": "MultiLine schema from Amazon Glue DataBrew API",
+  "type": "boolean"
+}

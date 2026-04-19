@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-start-project-session-request-structure.json",
+  "name": "StartProjectSessionRequest",
+  "description": "StartProjectSessionRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "AssumeControl": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssumeControl"
+        },
+        {
+          "description": "A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project."
+        }
+      ]
+    }
+  }
+}

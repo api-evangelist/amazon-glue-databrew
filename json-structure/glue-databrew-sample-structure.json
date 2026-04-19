@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-sample-structure.json",
+  "name": "Sample",
+  "description": "Represents the sample size and sampling type for DataBrew to use for interactive data analysis.",
+  "type": "object",
+  "properties": {
+    "Size": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SampleSize"
+        },
+        {
+          "description": "The number of rows in the sample."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SampleType"
+        },
+        {
+          "description": "The way in which DataBrew obtains rows from a dataset."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Type"
+  ]
+}

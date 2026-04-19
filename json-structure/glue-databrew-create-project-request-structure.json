@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/json-structure/glue-databrew-create-project-request-structure.json",
+  "name": "CreateProjectRequest",
+  "description": "CreateProjectRequest schema from Amazon Glue DataBrew API",
+  "type": "object",
+  "properties": {
+    "DatasetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DatasetName"
+        },
+        {
+          "description": "The name of an existing dataset to associate this project with."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProjectName"
+        },
+        {
+          "description": "A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space."
+        }
+      ]
+    },
+    "RecipeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecipeName"
+        },
+        {
+          "description": "The name of an existing recipe to associate with the project."
+        }
+      ]
+    },
+    "Sample": {
+      "$ref": "#/components/schemas/Sample"
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Metadata tags to apply to this project."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatasetName",
+    "Name",
+    "RecipeName",
+    "RoleArn"
+  ]
+}
