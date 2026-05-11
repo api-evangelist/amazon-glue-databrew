@@ -115,6 +115,18 @@ common:
         description: Use RDS databases as input sources for DataBrew transformation.
       - name: AWS Lake Formation
         description: Integrate with Lake Formation for secure data lake access.
+  - type: Integrations
+    url: https://aws.amazon.com/marketplace
+integrations:
+  - name: Sign in
+  - name: Agent Mode
+  - name: 'Why AWS Marketplace?'
+  - name: Get started in AWS Marketplace
+  - name: Industry
+  - name: Resources
+  - name: Become a Channel Partner
+  - name: Sell in AWS Marketplace
+  - name: Manage Your Account
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
