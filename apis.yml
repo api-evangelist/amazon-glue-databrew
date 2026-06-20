@@ -4,7 +4,7 @@ description: AWS Glue DataBrew is a visual data preparation tool that makes it e
   to clean and normalize data to prepare it for analytics and machine learning. It provides over 250 pre-built transformations
   to automate data preparation tasks.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AWS
 - Data Analytics
