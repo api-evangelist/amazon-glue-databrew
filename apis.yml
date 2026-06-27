@@ -45,7 +45,7 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-glue-databrew.yaml
 common:
 - type: Portal
@@ -64,7 +64,7 @@ common:
   url: https://github.com/aws
 - type: Console
   url: https://console.aws.amazon.com/databrew/
-- type: SignUp
+- type: Signup
   url: https://portal.aws.amazon.com/billing/signup
 - type: StatusPage
   url: https://health.aws.amazon.com/health/status
