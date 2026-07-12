@@ -48,6 +48,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-glue-databrew.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-glue-databrew-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-glue-databrew-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-glue-databrew-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-glue-databrew-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/glue/features/databrew/
 - type: Documentation
