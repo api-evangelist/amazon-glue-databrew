@@ -48,6 +48,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-glue-databrew.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-glue-databrew-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-glue-databrew-trust-center.yml
 - type: VulnerabilityDisclosure
