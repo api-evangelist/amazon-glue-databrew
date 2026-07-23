@@ -1,0 +1,1085 @@
+openapi: 3.0.0
+info:
+  version: 2017-07-25
+  x-release: v4
+  title: AWS Glue DataBrew Datasets Recipes API
+  description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: databrew
+  x-aws-signingName: databrew
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/databrew-2017-07-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: https://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: http://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+- url: https://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Recipes
+paths:
+  /recipes/{name}/batchDeleteRecipeVersion:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: BatchDeleteRecipeVersion
+      description: <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li> <p>There is an invalid version identifier in the list of versions.</p> </li> <li> <p>The version list is empty.</p> </li> <li> <p>The version list size exceeds 50.</p> </li> <li> <p>The version list contains duplicate entries.</p> </li> </ul> <p>The request will complete successfully, but with partial failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A version is being used by a job.</p> </li> <li> <p>You specify <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li> <p>The version fails to be deleted.</p> </li> </ul> <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchDeleteRecipeVersionResponse'
+              examples:
+                BatchDeleteRecipeVersion200Example:
+                  summary: Default BatchDeleteRecipeVersion 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                BatchDeleteRecipeVersion480Example:
+                  summary: Default BatchDeleteRecipeVersion 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                BatchDeleteRecipeVersion481Example:
+                  summary: Default BatchDeleteRecipeVersion 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                BatchDeleteRecipeVersion482Example:
+                  summary: Default BatchDeleteRecipeVersion 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the recipe whose versions are to be deleted.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - RecipeVersions
+              properties:
+                RecipeVersions:
+                  description: An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/RecipeVersion'
+                  minItems: 1
+                  maxItems: 50
+      summary: Amazon Glue DataBrew Batch Delete Recipe Version
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Recipes
+  /recipes:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateRecipe
+      description: Creates a new DataBrew recipe.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRecipeResponse'
+              examples:
+                CreateRecipe200Example:
+                  summary: Default CreateRecipe 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateRecipe480Example:
+                  summary: Default CreateRecipe 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+              examples:
+                CreateRecipe481Example:
+                  summary: Default CreateRecipe 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                CreateRecipe482Example:
+                  summary: Default CreateRecipe 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - Name
+              - Steps
+              properties:
+                Description:
+                  description: A description for the recipe.
+                  type: string
+                  maxLength: 1024
+                Name:
+                  description: A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+                  type: string
+                  minLength: 1
+                  maxLength: 255
+                Steps:
+                  description: An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/RecipeStep'
+                Tags:
+                  description: Metadata tags to apply to this recipe.
+                  type: object
+                  minProperties: 1
+                  maxProperties: 200
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+      summary: Amazon Glue DataBrew Create Recipe
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Recipes
+    get:
+      operationId: ListRecipes
+      description: Lists all of the DataBrew recipes that are defined.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRecipesResponse'
+              examples:
+                ListRecipes200Example:
+                  summary: Default ListRecipes 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListRecipes480Example:
+                  summary: Default ListRecipes 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: 'The maximum number of results to return in this request. '
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: The token returned by a previous call to retrieve the next set of results.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 2000
+      - name: recipeVersion
+        in: query
+        required: false
+        description: '<p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>'
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 16
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      summary: Amazon Glue DataBrew List Recipes
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Recipes
+  /recipes/{name}/recipeVersion/{recipeVersion}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteRecipeVersion
+      description: Deletes a single version of a DataBrew recipe.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteRecipeVersionResponse'
+              examples:
+                DeleteRecipeVersion200Example:
+                  summary: Default DeleteRecipeVersion 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DeleteRecipeVersion480Example:
+                  summary: Default DeleteRecipeVersion 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteRecipeVersion481Example:
+                  summary: Default DeleteRecipeVersion 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DeleteRecipeVersion482Example:
+                  summary: Default DeleteRecipeVersion 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the recipe.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      - name: recipeVersion
+        in: path
+        required: true
+        description: The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 16
+      summary: Amazon Glue DataBrew Delete Recipe Version
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Recipes
+  /recipes/{name}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: DescribeRecipe
+      description: Returns the definition of a specific DataBrew recipe corresponding to a particular version.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeRecipeResponse'
+              examples:
+                DescribeRecipe200Example:
+                  summary: Default DescribeRecipe 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeRecipe480Example:
+                  summary: Default DescribeRecipe 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DescribeRecipe481Example:
+                  summary: Default DescribeRecipe 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the recipe to be described.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      - name: recipeVersion
+        in: query
+        required: false
+        description: The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 16
+      summary: Amazon Glue DataBrew Describe Recipe
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Recipes
+    put:
+      operationId: UpdateRecipe
+      description: Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateRecipeResponse'
+              examples:
+                UpdateRecipe200Example:
+                  summary: Default UpdateRecipe 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                UpdateRecipe480Example:
+                  summary: Default UpdateRecipe 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateRecipe481Example:
+                  summary: Default UpdateRecipe 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the recipe to be updated.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Description:
+                  description: A description of the recipe.
+                  type: string
+                  maxLength: 1024
+                Steps:
+                  description: One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/RecipeStep'
+      summary: Amazon Glue DataBrew Update Recipe
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Recipes
+  /recipes/{name}/publishRecipe:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: PublishRecipe
+      description: Publishes a new version of a DataBrew recipe.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublishRecipeResponse'
+              examples:
+                PublishRecipe200Example:
+                  summary: Default PublishRecipe 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                PublishRecipe480Example:
+                  summary: Default PublishRecipe 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                PublishRecipe481Example:
+                  summary: Default PublishRecipe 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+              examples:
+                PublishRecipe482Example:
+                  summary: Default PublishRecipe 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the recipe to be published.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Description:
+                  description: A description of the recipe to be published, for this version of the recipe.
+                  type: string
+                  maxLength: 1024
+      summary: Amazon Glue DataBrew Publish Recipe
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Recipes
+components:
+  schemas:
+    RecipeName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    DescribeRecipeResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The identifier (user name) of the user who created the recipe.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the recipe was created.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The identifier (user name) of the user who last modified the recipe.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the recipe was last modified.
+        ProjectName:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project associated with this recipe.
+        PublishedBy:
+          allOf:
+          - $ref: '#/components/schemas/PublishedBy'
+          - description: The identifier (user name) of the user who last published the recipe.
+        PublishedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time when the recipe was last published.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/RecipeDescription'
+          - description: The description of the recipe.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe.
+        Steps:
+          allOf:
+          - $ref: '#/components/schemas/RecipeStepList'
+          - description: One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags associated with this project.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the recipe.
+        RecipeVersion:
+          allOf:
+          - $ref: '#/components/schemas/RecipeVersion'
+          - description: The recipe version identifier.
+    ConditionExpressionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConditionExpression'
+    PublishRecipeResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe that you published.
+    DeleteRecipeVersionResponse:
+      type: object
+      required:
+      - Name
+      - RecipeVersion
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe that was deleted.
+        RecipeVersion:
+          allOf:
+          - $ref: '#/components/schemas/RecipeVersion'
+          - description: The version of the recipe that was deleted.
+    RecipeDescription:
+      type: string
+      maxLength: 1024
+    ProjectName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    BatchDeleteRecipeVersionResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe that was modified.
+        Errors:
+          allOf:
+          - $ref: '#/components/schemas/RecipeErrorList'
+          - description: Errors, if any, that occurred while attempting to delete the recipe versions.
+    RecipeErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RecipeVersionErrorDetail'
+    TagValue:
+      type: string
+      maxLength: 256
+    Recipe:
+      type: object
+      required:
+      - Name
+      properties:
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The Amazon Resource Name (ARN) of the user who created the recipe.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the recipe was created.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The Amazon Resource Name (ARN) of the user who last modified the recipe.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The last modification date and time of the recipe.
+        ProjectName:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that the recipe is associated with.
+        PublishedBy:
+          allOf:
+          - $ref: '#/components/schemas/PublishedBy'
+          - description: The Amazon Resource Name (ARN) of the user who published the recipe.
+        PublishedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time when the recipe was published.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/RecipeDescription'
+          - description: The description of the recipe.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The unique name for the recipe.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) for the recipe.
+        Steps:
+          allOf:
+          - $ref: '#/components/schemas/RecipeStepList'
+          - description: A list of steps that are defined by the recipe.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags that have been applied to the recipe.
+        RecipeVersion:
+          allOf:
+          - $ref: '#/components/schemas/RecipeVersion'
+          - description: <p>The identifier for the version for the recipe. Must be one of the following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> </ul>
+      description: Represents one or more actions to be performed on a DataBrew dataset.
+    ErrorCode:
+      type: string
+      pattern: ^[1-5][0-9][0-9]$
+    RecipeErrorMessage:
+      type: string
+    RecipeVersion:
+      type: string
+      minLength: 1
+      maxLength: 16
+    ConflictException: {}
+    Condition:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    ServiceQuotaExceededException: {}
+    ParameterMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParameterValue'
+    RecipeStep:
+      type: object
+      required:
+      - Action
+      properties:
+        Action:
+          allOf:
+          - $ref: '#/components/schemas/RecipeAction'
+          - description: The particular action to be performed in the recipe step.
+        ConditionExpressions:
+          allOf:
+          - $ref: '#/components/schemas/ConditionExpressionList'
+          - description: <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>
+      description: Represents a single step from a DataBrew recipe to be performed.
+    Operation:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    ConditionValue:
+      type: string
+      maxLength: 1024
+    UpdateRecipeResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe that was updated.
+    PublishedBy:
+      type: string
+    Date:
+      type: string
+      format: date-time
+    RecipeStepList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RecipeStep'
+    CreateRecipeResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe that you created.
+    ConditionExpression:
+      type: object
+      required:
+      - Condition
+      - TargetColumn
+      properties:
+        Condition:
+          allOf:
+          - $ref: '#/components/schemas/Condition'
+          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ConditionValue'
+          - description: A value that the condition must evaluate to for the condition to succeed.
+        TargetColumn:
+          allOf:
+          - $ref: '#/components/schemas/TargetColumn'
+          - description: A column to apply this condition to.
+      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
+    ResourceNotFoundException: {}
+    RecipeAction:
+      type: object
+      required:
+      - Operation
+      properties:
+        Operation:
+          allOf:
+          - $ref: '#/components/schemas/Operation'
+          - description: The name of a valid DataBrew transformation to be performed on the data.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParameterMap'
+          - description: Contextual parameters for the transformation.
+      description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
+    CreatedBy:
+      type: string
+    LastModifiedBy:
+      type: string
+    RecipeVersionErrorDetail:
+      type: object
+      properties:
+        ErrorCode:
+          allOf:
+          - $ref: '#/components/schemas/ErrorCode'
+          - description: The HTTP status code for the error.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/RecipeErrorMessage'
+          - description: The text of the error message.
+        RecipeVersion:
+          allOf:
+          - $ref: '#/components/schemas/RecipeVersion'
+          - description: The identifier for the recipe version associated with this error.
+      description: Represents any errors encountered when attempting to delete multiple recipe versions.
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    ParameterValue:
+      type: string
+      minLength: 1
+      maxLength: 32768
+    RecipeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Recipe'
+    ValidationException: {}
+    ListRecipesResponse:
+      type: object
+      required:
+      - Recipes
+      properties:
+        Recipes:
+          allOf:
+          - $ref: '#/components/schemas/RecipeList'
+          - description: A list of recipes that are defined.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    TargetColumn:
+      type: string
+      minLength: 1
+      maxLength: 1024
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/databrew/
+x-hasEquivalentPaths: true

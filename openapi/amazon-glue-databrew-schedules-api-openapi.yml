@@ -1,0 +1,730 @@
+openapi: 3.0.0
+info:
+  version: 2017-07-25
+  x-release: v4
+  title: AWS Glue DataBrew Datasets Schedules API
+  description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: databrew
+  x-aws-signingName: databrew
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/databrew-2017-07-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: https://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: http://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+- url: https://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Schedules
+paths:
+  /schedules:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateSchedule
+      description: Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateScheduleResponse'
+              examples:
+                CreateSchedule200Example:
+                  summary: Default CreateSchedule 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateSchedule480Example:
+                  summary: Default CreateSchedule 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+              examples:
+                CreateSchedule481Example:
+                  summary: Default CreateSchedule 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                CreateSchedule482Example:
+                  summary: Default CreateSchedule 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - CronExpression
+              - Name
+              properties:
+                JobNames:
+                  description: The name or names of one or more jobs to be run.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/JobName'
+                  maxItems: 50
+                CronExpression:
+                  description: The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.
+                  type: string
+                  minLength: 1
+                  maxLength: 512
+                Tags:
+                  description: Metadata tags to apply to this schedule.
+                  type: object
+                  minProperties: 1
+                  maxProperties: 200
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+                Name:
+                  description: A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+                  type: string
+                  minLength: 1
+                  maxLength: 255
+      summary: Amazon Glue DataBrew Create Schedule
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Schedules
+    get:
+      operationId: ListSchedules
+      description: Lists the DataBrew schedules that are defined.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSchedulesResponse'
+              examples:
+                ListSchedules200Example:
+                  summary: Default ListSchedules 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListSchedules480Example:
+                  summary: Default ListSchedules 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: jobName
+        in: query
+        required: false
+        description: The name of the job that these schedules apply to.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 240
+      - name: maxResults
+        in: query
+        required: false
+        description: 'The maximum number of results to return in this request. '
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: The token returned by a previous call to retrieve the next set of results.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 2000
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      summary: Amazon Glue DataBrew List Schedules
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Schedules
+  /schedules/{name}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteSchedule
+      description: Deletes the specified DataBrew schedule.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteScheduleResponse'
+              examples:
+                DeleteSchedule200Example:
+                  summary: Default DeleteSchedule 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteSchedule480Example:
+                  summary: Default DeleteSchedule 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DeleteSchedule481Example:
+                  summary: Default DeleteSchedule 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the schedule to be deleted.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      summary: Amazon Glue DataBrew Delete Schedule
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Schedules
+    get:
+      operationId: DescribeSchedule
+      description: Returns the definition of a specific DataBrew schedule.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeScheduleResponse'
+              examples:
+                DescribeSchedule200Example:
+                  summary: Default DescribeSchedule 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeSchedule480Example:
+                  summary: Default DescribeSchedule 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DescribeSchedule481Example:
+                  summary: Default DescribeSchedule 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the schedule to be described.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      summary: Amazon Glue DataBrew Describe Schedule
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Schedules
+    put:
+      operationId: UpdateSchedule
+      description: Modifies the definition of an existing DataBrew schedule.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateScheduleResponse'
+              examples:
+                UpdateSchedule200Example:
+                  summary: Default UpdateSchedule 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateSchedule480Example:
+                  summary: Default UpdateSchedule 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+              examples:
+                UpdateSchedule481Example:
+                  summary: Default UpdateSchedule 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                UpdateSchedule482Example:
+                  summary: Default UpdateSchedule 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the schedule to update.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - CronExpression
+              properties:
+                JobNames:
+                  description: The name or names of one or more jobs to be run for this schedule.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/JobName'
+                  maxItems: 50
+                CronExpression:
+                  description: The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.
+                  type: string
+                  minLength: 1
+                  maxLength: 512
+      summary: Amazon Glue DataBrew Update Schedule
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Schedules
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    UpdateScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule that was updated.
+    Schedule:
+      type: object
+      required:
+      - Name
+      properties:
+        AccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account that owns the schedule.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The Amazon Resource Name (ARN) of the user who created the schedule.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the schedule was created.
+        JobNames:
+          allOf:
+          - $ref: '#/components/schemas/JobNameList'
+          - description: A list of jobs to be run, according to the schedule.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The Amazon Resource Name (ARN) of the user who last modified the schedule.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time when the schedule was last modified.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the schedule.
+        CronExpression:
+          allOf:
+          - $ref: '#/components/schemas/CronExpression'
+          - description: The dates and times when the job is to run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags that have been applied to the schedule.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule.
+      description: Represents one or more dates and times when a job is to run.
+    ListSchedulesResponse:
+      type: object
+      required:
+      - Schedules
+      properties:
+        Schedules:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleList'
+          - description: A list of schedules that are defined.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    AccountId:
+      type: string
+      maxLength: 255
+    TagValue:
+      type: string
+      maxLength: 256
+    ConflictException: {}
+    ScheduleList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Schedule'
+    ServiceQuotaExceededException: {}
+    JobName:
+      type: string
+      minLength: 1
+      maxLength: 240
+    Date:
+      type: string
+      format: date-time
+    CreateScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule that was created.
+    JobNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobName'
+      maxItems: 50
+    ResourceNotFoundException: {}
+    CreatedBy:
+      type: string
+    LastModifiedBy:
+      type: string
+    ScheduleName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    CronExpression:
+      type: string
+      minLength: 1
+      maxLength: 512
+    ValidationException: {}
+    DeleteScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule that was deleted.
+    DescribeScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the schedule was created.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: 'The identifier (user name) of the user who created the schedule. '
+        JobNames:
+          allOf:
+          - $ref: '#/components/schemas/JobNameList'
+          - description: The name or names of one or more jobs to be run by using the schedule.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The identifier (user name) of the user who last modified the schedule.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the schedule was last modified.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the schedule.
+        CronExpression:
+          allOf:
+          - $ref: '#/components/schemas/CronExpression'
+          - description: The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags associated with this schedule.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule.
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/databrew/
+x-hasEquivalentPaths: true

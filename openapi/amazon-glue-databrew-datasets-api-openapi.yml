@@ -1,0 +1,1227 @@
+openapi: 3.0.0
+info:
+  version: 2017-07-25
+  x-release: v4
+  title: AWS Glue DataBrew Datasets API
+  description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: databrew
+  x-aws-signingName: databrew
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/databrew-2017-07-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: https://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: http://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+- url: https://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Datasets
+paths:
+  /datasets:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateDataset
+      description: Creates a new DataBrew dataset.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateDatasetResponse'
+              examples:
+                CreateDataset200Example:
+                  summary: Default CreateDataset 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                CreateDataset480Example:
+                  summary: Default CreateDataset 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateDataset481Example:
+                  summary: Default CreateDataset 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+              examples:
+                CreateDataset482Example:
+                  summary: Default CreateDataset 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '483':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                CreateDataset483Example:
+                  summary: Default CreateDataset 483 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - Name
+              - Input
+              properties:
+                Name:
+                  description: The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+                  type: string
+                  minLength: 1
+                  maxLength: 255
+                Format:
+                  description: The file format of a dataset that is created from an Amazon S3 file or folder.
+                  type: string
+                  enum:
+                  - CSV
+                  - JSON
+                  - PARQUET
+                  - EXCEL
+                  - ORC
+                FormatOptions:
+                  description: Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.
+                  type: object
+                  properties:
+                    Json:
+                      allOf:
+                      - $ref: '#/components/schemas/JsonOptions'
+                      - description: Options that define how JSON input is to be interpreted by DataBrew.
+                    Excel:
+                      allOf:
+                      - $ref: '#/components/schemas/ExcelOptions'
+                      - description: Options that define how Excel input is to be interpreted by DataBrew.
+                    Csv:
+                      allOf:
+                      - $ref: '#/components/schemas/CsvOptions'
+                      - description: Options that define how CSV input is to be interpreted by DataBrew.
+                Input:
+                  description: Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.
+                  type: object
+                  properties:
+                    S3InputDefinition:
+                      allOf:
+                      - $ref: '#/components/schemas/S3Location'
+                      - description: The Amazon S3 location where the data is stored.
+                    DataCatalogInputDefinition:
+                      allOf:
+                      - $ref: '#/components/schemas/DataCatalogInputDefinition'
+                      - description: The Glue Data Catalog parameters for the data.
+                    DatabaseInputDefinition:
+                      allOf:
+                      - $ref: '#/components/schemas/DatabaseInputDefinition'
+                      - description: Connection information for dataset input files stored in a database.
+                    Metadata:
+                      allOf:
+                      - $ref: '#/components/schemas/Metadata'
+                      - description: Contains additional resource information needed for specific datasets.
+                PathOptions:
+                  description: Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset.
+                  type: object
+                  properties:
+                    LastModifiedDateCondition:
+                      allOf:
+                      - $ref: '#/components/schemas/FilterExpression'
+                      - description: If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.
+                    FilesLimit:
+                      allOf:
+                      - $ref: '#/components/schemas/FilesLimit'
+                      - description: If provided, this structure imposes a limit on a number of files that should be selected.
+                    Parameters:
+                      allOf:
+                      - $ref: '#/components/schemas/PathParametersMap'
+                      - description: A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
+                Tags:
+                  description: Metadata tags to apply to this dataset.
+                  type: object
+                  minProperties: 1
+                  maxProperties: 200
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+      summary: Amazon Glue DataBrew Create Dataset
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Datasets
+    get:
+      operationId: ListDatasets
+      description: Lists all of the DataBrew datasets.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDatasetsResponse'
+              examples:
+                ListDatasets200Example:
+                  summary: Default ListDatasets 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListDatasets480Example:
+                  summary: Default ListDatasets 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: 'The maximum number of results to return in this request. '
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: The token returned by a previous call to retrieve the next set of results.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 2000
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      summary: Amazon Glue DataBrew List Datasets
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Datasets
+  /datasets/{name}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteDataset
+      description: Deletes a dataset from DataBrew.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteDatasetResponse'
+              examples:
+                DeleteDataset200Example:
+                  summary: Default DeleteDataset 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DeleteDataset480Example:
+                  summary: Default DeleteDataset 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteDataset481Example:
+                  summary: Default DeleteDataset 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DeleteDataset482Example:
+                  summary: Default DeleteDataset 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the dataset to be deleted.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      summary: Amazon Glue DataBrew Delete Dataset
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Datasets
+    get:
+      operationId: DescribeDataset
+      description: Returns the definition of a specific DataBrew dataset.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeDatasetResponse'
+              examples:
+                DescribeDataset200Example:
+                  summary: Default DescribeDataset 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeDataset480Example:
+                  summary: Default DescribeDataset 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DescribeDataset481Example:
+                  summary: Default DescribeDataset 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the dataset to be described.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      summary: Amazon Glue DataBrew Describe Dataset
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Datasets
+    put:
+      operationId: UpdateDataset
+      description: Modifies the definition of an existing DataBrew dataset.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateDatasetResponse'
+              examples:
+                UpdateDataset200Example:
+                  summary: Default UpdateDataset 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                UpdateDataset480Example:
+                  summary: Default UpdateDataset 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateDataset481Example:
+                  summary: Default UpdateDataset 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                UpdateDataset482Example:
+                  summary: Default UpdateDataset 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the dataset to be updated.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - Input
+              properties:
+                Format:
+                  description: The file format of a dataset that is created from an Amazon S3 file or folder.
+                  type: string
+                  enum:
+                  - CSV
+                  - JSON
+                  - PARQUET
+                  - EXCEL
+                  - ORC
+                FormatOptions:
+                  description: Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.
+                  type: object
+                  properties:
+                    Json:
+                      allOf:
+                      - $ref: '#/components/schemas/JsonOptions'
+                      - description: Options that define how JSON input is to be interpreted by DataBrew.
+                    Excel:
+                      allOf:
+                      - $ref: '#/components/schemas/ExcelOptions'
+                      - description: Options that define how Excel input is to be interpreted by DataBrew.
+                    Csv:
+                      allOf:
+                      - $ref: '#/components/schemas/CsvOptions'
+                      - description: Options that define how CSV input is to be interpreted by DataBrew.
+                Input:
+                  description: Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.
+                  type: object
+                  properties:
+                    S3InputDefinition:
+                      allOf:
+                      - $ref: '#/components/schemas/S3Location'
+                      - description: The Amazon S3 location where the data is stored.
+                    DataCatalogInputDefinition:
+                      allOf:
+                      - $ref: '#/components/schemas/DataCatalogInputDefinition'
+                      - description: The Glue Data Catalog parameters for the data.
+                    DatabaseInputDefinition:
+                      allOf:
+                      - $ref: '#/components/schemas/DatabaseInputDefinition'
+                      - description: Connection information for dataset input files stored in a database.
+                    Metadata:
+                      allOf:
+                      - $ref: '#/components/schemas/Metadata'
+                      - description: Contains additional resource information needed for specific datasets.
+                PathOptions:
+                  description: Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset.
+                  type: object
+                  properties:
+                    LastModifiedDateCondition:
+                      allOf:
+                      - $ref: '#/components/schemas/FilterExpression'
+                      - description: If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.
+                    FilesLimit:
+                      allOf:
+                      - $ref: '#/components/schemas/FilesLimit'
+                      - description: If provided, this structure imposes a limit on a number of files that should be selected.
+                    Parameters:
+                      allOf:
+                      - $ref: '#/components/schemas/PathParametersMap'
+                      - description: A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
+      summary: Amazon Glue DataBrew Update Dataset
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Datasets
+components:
+  schemas:
+    ValuesMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ConditionValue'
+    DatetimeFormat:
+      type: string
+      minLength: 2
+      maxLength: 100
+    FormatOptions:
+      type: object
+      properties:
+        Json:
+          allOf:
+          - $ref: '#/components/schemas/JsonOptions'
+          - description: Options that define how JSON input is to be interpreted by DataBrew.
+        Excel:
+          allOf:
+          - $ref: '#/components/schemas/ExcelOptions'
+          - description: Options that define how Excel input is to be interpreted by DataBrew.
+        Csv:
+          allOf:
+          - $ref: '#/components/schemas/CsvOptions'
+          - description: Options that define how CSV input is to be interpreted by DataBrew.
+      description: Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.
+    FilterExpression:
+      type: object
+      required:
+      - Expression
+      - ValuesMap
+      properties:
+        Expression:
+          allOf:
+          - $ref: '#/components/schemas/Expression'
+          - description: The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.
+        ValuesMap:
+          allOf:
+          - $ref: '#/components/schemas/ValuesMap'
+          - description: The map of substitution variable names to their values used in this filter expression.
+      description: 'Represents a structure for defining parameter conditions. Supported conditions are described here: <a href="https://docs.aws.amazon.com/databrew/latest/dg/datasets.multiple-files.html#conditions.for.dynamic.datasets">Supported conditions for dynamic datasets</a> in the <i>Glue DataBrew Developer Guide</i>.'
+    InputFormat:
+      type: string
+      enum:
+      - CSV
+      - JSON
+      - PARQUET
+      - EXCEL
+      - ORC
+    Metadata:
+      type: object
+      properties:
+        SourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.
+      description: Contains additional resource information needed for specific datasets.
+    Delimiter:
+      type: string
+      minLength: 1
+      maxLength: 1
+    TagValue:
+      type: string
+      maxLength: 256
+    DatabaseTableName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    SheetIndex:
+      type: integer
+      minimum: 0
+      maximum: 200
+    Expression:
+      type: string
+      pattern: ^[<>0-9A-Za-z_.,:)(!= ]+$
+      minLength: 4
+      maxLength: 1024
+    ParameterType:
+      type: string
+      enum:
+      - Datetime
+      - Number
+      - String
+    LocaleCode:
+      type: string
+      pattern: ^[A-Za-z0-9_\.#@\-]+$
+      minLength: 2
+      maxLength: 100
+    BucketOwner:
+      type: string
+      pattern: ^[0-9]{12}$
+      minLength: 12
+      maxLength: 12
+    AccountId:
+      type: string
+      maxLength: 255
+    UpdateDatasetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/DatasetName'
+          - description: The name of the dataset that you updated.
+    CreateDatasetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/DatasetName'
+          - description: The name of the dataset that you created.
+    SheetNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SheetName'
+      minItems: 1
+      maxItems: 1
+    ConflictException: {}
+    HeaderRow:
+      type: boolean
+    DatetimeOptions:
+      type: object
+      required:
+      - Format
+      properties:
+        Format:
+          allOf:
+          - $ref: '#/components/schemas/DatetimeFormat'
+          - description: Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
+        TimezoneOffset:
+          allOf:
+          - $ref: '#/components/schemas/TimezoneOffset'
+          - description: Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
+        LocaleCode:
+          allOf:
+          - $ref: '#/components/schemas/LocaleCode'
+          - description: Optional value for a non-US locale code, needed for correct interpretation of some date formats.
+      description: Represents additional options for correct interpretation of datetime parameters used in the Amazon S3 path of a dataset.
+    S3Location:
+      type: object
+      required:
+      - Bucket
+      properties:
+        Bucket:
+          allOf:
+          - $ref: '#/components/schemas/Bucket'
+          - description: The Amazon S3 bucket name.
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/Key'
+          - description: The unique name of the object in the bucket.
+        BucketOwner:
+          allOf:
+          - $ref: '#/components/schemas/BucketOwner'
+          - description: The Amazon Web Services account ID of the bucket owner.
+      description: Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.
+    Bucket:
+      type: string
+      minLength: 3
+      maxLength: 63
+    ServiceQuotaExceededException: {}
+    FilesLimit:
+      type: object
+      required:
+      - MaxFiles
+      properties:
+        MaxFiles:
+          allOf:
+          - $ref: '#/components/schemas/MaxFiles'
+          - description: The number of Amazon S3 files to select.
+        OrderedBy:
+          allOf:
+          - $ref: '#/components/schemas/OrderedBy'
+          - description: A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.
+        Order:
+          allOf:
+          - $ref: '#/components/schemas/Order'
+          - description: A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.
+      description: Represents a limit imposed on number of Amazon S3 files that should be selected for a dataset from a connected Amazon S3 path.
+    PathParametersMap:
+      type: object
+      description: A structure that map names of parameters used in the Amazon S3 path of a dataset to their definitions. A definition includes parameter type and conditions.
+      minProperties: 1
+      maxProperties: 10
+      additionalProperties:
+        $ref: '#/components/schemas/DatasetParameter'
+    PathParameterName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    Key:
+      type: string
+      minLength: 1
+      maxLength: 1280
+    PathOptions:
+      type: object
+      properties:
+        LastModifiedDateCondition:
+          allOf:
+          - $ref: '#/components/schemas/FilterExpression'
+          - description: If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.
+        FilesLimit:
+          allOf:
+          - $ref: '#/components/schemas/FilesLimit'
+          - description: If provided, this structure imposes a limit on a number of files that should be selected.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/PathParametersMap'
+          - description: A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
+      description: Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset.
+    DatasetName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ConditionValue:
+      type: string
+      maxLength: 1024
+    TimezoneOffset:
+      type: string
+      pattern: ^(Z|[-+](\d|\d{2}|\d{2}:?\d{2}))$
+      minLength: 1
+      maxLength: 6
+    SheetIndexList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SheetIndex'
+      minItems: 1
+      maxItems: 1
+    DeleteDatasetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/DatasetName'
+          - description: The name of the dataset that you deleted.
+    Input:
+      type: object
+      properties:
+        S3InputDefinition:
+          allOf:
+          - $ref: '#/components/schemas/S3Location'
+          - description: The Amazon S3 location where the data is stored.
+        DataCatalogInputDefinition:
+          allOf:
+          - $ref: '#/components/schemas/DataCatalogInputDefinition'
+          - description: The Glue Data Catalog parameters for the data.
+        DatabaseInputDefinition:
+          allOf:
+          - $ref: '#/components/schemas/DatabaseInputDefinition'
+          - description: Connection information for dataset input files stored in a database.
+        Metadata:
+          allOf:
+          - $ref: '#/components/schemas/Metadata'
+          - description: Contains additional resource information needed for specific datasets.
+      description: Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.
+    Date:
+      type: string
+      format: date-time
+    Order:
+      type: string
+      enum:
+      - DESCENDING
+      - ASCENDING
+    TableName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    JsonOptions:
+      type: object
+      properties:
+        MultiLine:
+          allOf:
+          - $ref: '#/components/schemas/MultiLine'
+          - description: A value that specifies whether JSON input contains embedded new line characters.
+      description: Represents the JSON-specific options that define how input is to be interpreted by Glue DataBrew.
+    CreateColumn:
+      type: boolean
+    Dataset:
+      type: object
+      required:
+      - Name
+      - Input
+      properties:
+        AccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account that owns the dataset.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The Amazon Resource Name (ARN) of the user who created the dataset.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the dataset was created.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/DatasetName'
+          - description: The unique name of the dataset.
+        Format:
+          allOf:
+          - $ref: '#/components/schemas/InputFormat'
+          - description: The file format of a dataset that is created from an Amazon S3 file or folder.
+        FormatOptions:
+          allOf:
+          - $ref: '#/components/schemas/FormatOptions'
+          - description: A set of options that define how DataBrew interprets the data in the dataset.
+        Input:
+          allOf:
+          - $ref: '#/components/schemas/Input'
+          - description: Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The last modification date and time of the dataset.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The Amazon Resource Name (ARN) of the user who last modified the dataset.
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/Source'
+          - description: The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
+        PathOptions:
+          allOf:
+          - $ref: '#/components/schemas/PathOptions'
+          - description: A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags that have been applied to the dataset.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The unique Amazon Resource Name (ARN) for the dataset.
+      description: Represents a dataset that can be processed by DataBrew.
+    ResourceNotFoundException: {}
+    DatabaseInputDefinition:
+      type: object
+      required:
+      - GlueConnectionName
+      properties:
+        GlueConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/GlueConnectionName'
+          - description: The Glue Connection that stores the connection information for the target database.
+        DatabaseTableName:
+          allOf:
+          - $ref: '#/components/schemas/DatabaseTableName'
+          - description: The table within the target database.
+        TempDirectory:
+          $ref: '#/components/schemas/S3Location'
+        QueryString:
+          allOf:
+          - $ref: '#/components/schemas/QueryString'
+          - description: Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.
+      description: Connection information for dataset input files stored in a database.
+    QueryString:
+      type: string
+      minLength: 1
+      maxLength: 10000
+    AccessDeniedException: {}
+    MultiLine:
+      type: boolean
+    CreatedBy:
+      type: string
+    LastModifiedBy:
+      type: string
+    MaxFiles:
+      type: integer
+      minimum: 1
+    OrderedBy:
+      type: string
+      enum:
+      - LAST_MODIFIED_DATE
+    ListDatasetsResponse:
+      type: object
+      required:
+      - Datasets
+      properties:
+        Datasets:
+          allOf:
+          - $ref: '#/components/schemas/DatasetList'
+          - description: A list of datasets that are defined.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    CsvOptions:
+      type: object
+      properties:
+        Delimiter:
+          allOf:
+          - $ref: '#/components/schemas/Delimiter'
+          - description: A single character that specifies the delimiter being used in the CSV file.
+        HeaderRow:
+          allOf:
+          - $ref: '#/components/schemas/HeaderRow'
+          - description: A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.
+      description: Represents a set of options that define how DataBrew will read a comma-separated value (CSV) file when creating a dataset from that file.
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    DatabaseName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    DatasetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Dataset'
+    DescribeDatasetResponse:
+      type: object
+      required:
+      - Name
+      - Input
+      properties:
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The identifier (user name) of the user who created the dataset.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the dataset was created.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/DatasetName'
+          - description: The name of the dataset.
+        Format:
+          allOf:
+          - $ref: '#/components/schemas/InputFormat'
+          - description: The file format of a dataset that is created from an Amazon S3 file or folder.
+        FormatOptions:
+          $ref: '#/components/schemas/FormatOptions'
+        Input:
+          $ref: '#/components/schemas/Input'
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the dataset was last modified.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The identifier (user name) of the user who last modified the dataset.
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/Source'
+          - description: The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
+        PathOptions:
+          allOf:
+          - $ref: '#/components/schemas/PathOptions'
+          - description: A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags associated with this dataset.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the dataset.
+    DataCatalogInputDefinition:
+      type: object
+      required:
+      - DatabaseName
+      - TableName
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogId'
+          - description: The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/DatabaseName'
+          - description: The name of a database in the Data Catalog.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/TableName'
+          - description: The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.
+        TempDirectory:
+          allOf:
+          - $ref: '#/components/schemas/S3Location'
+          - description: Represents an Amazon location where DataBrew can store intermediate results.
+      description: 'Represents how metadata stored in the Glue Data Catalog is defined in a DataBrew dataset. '
+    Source:
+      type: string
+      enum:
+      - S3
+      - DATA-CATALOG
+      - DATABASE
+    ValidationException: {}
+    DatasetParameter:
+      type: object
+      required:
+      - Name
+      - Type
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/PathParameterName'
+          - description: The name of the parameter that is used in the dataset's Amazon S3 path.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ParameterType'
+          - description: The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.
+        DatetimeOptions:
+          allOf:
+          - $ref: '#/components/schemas/DatetimeOptions'
+          - description: Additional parameter options such as a format and a timezone. Required for datetime parameters.
+        CreateColumn:
+          allOf:
+          - $ref: '#/components/schemas/CreateColumn'
+          - description: Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/FilterExpression'
+          - description: The optional filter expression structure to apply additional matching criteria to the parameter.
+      description: Represents a dataset parameter that defines type and conditions for a parameter in the Amazon S3 path of the dataset.
+    GlueConnectionName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ExcelOptions:
+      type: object
+      properties:
+        SheetNames:
+          allOf:
+          - $ref: '#/components/schemas/SheetNameList'
+          - description: One or more named sheets in the Excel file that will be included in the dataset.
+        SheetIndexes:
+          allOf:
+          - $ref: '#/components/schemas/SheetIndexList'
+          - description: One or more sheet numbers in the Excel file that will be included in the dataset.
+        HeaderRow:
+          allOf:
+          - $ref: '#/components/schemas/HeaderRow'
+          - description: A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.
+      description: Represents a set of options that define how DataBrew will interpret a Microsoft Excel file when creating a dataset from that file.
+    CatalogId:
+      type: string
+      minLength: 1
+      maxLength: 255
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    SheetName:
+      type: string
+      minLength: 1
+      maxLength: 31
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/databrew/
+x-hasEquivalentPaths: true

@@ -1,0 +1,857 @@
+openapi: 3.0.0
+info:
+  version: 2017-07-25
+  x-release: v4
+  title: AWS Glue DataBrew Datasets Rulesets API
+  description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: databrew
+  x-aws-signingName: databrew
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/databrew-2017-07-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: https://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: http://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+- url: https://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Rulesets
+paths:
+  /rulesets:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateRuleset
+      description: Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRulesetResponse'
+              examples:
+                CreateRuleset200Example:
+                  summary: Default CreateRuleset 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateRuleset480Example:
+                  summary: Default CreateRuleset 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+              examples:
+                CreateRuleset481Example:
+                  summary: Default CreateRuleset 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                CreateRuleset482Example:
+                  summary: Default CreateRuleset 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - Name
+              - TargetArn
+              - Rules
+              properties:
+                Name:
+                  description: The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+                  type: string
+                  minLength: 1
+                  maxLength: 255
+                Description:
+                  description: The description of the ruleset.
+                  type: string
+                  maxLength: 1024
+                TargetArn:
+                  description: The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.
+                  type: string
+                  minLength: 20
+                  maxLength: 2048
+                Rules:
+                  description: A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Rule'
+                  minItems: 1
+                Tags:
+                  description: Metadata tags to apply to the ruleset.
+                  type: object
+                  minProperties: 1
+                  maxProperties: 200
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+      summary: Amazon Glue DataBrew Create Ruleset
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Rulesets
+    get:
+      operationId: ListRulesets
+      description: List all rulesets available in the current account or rulesets associated with a specific resource (dataset).
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRulesetsResponse'
+              examples:
+                ListRulesets200Example:
+                  summary: Default ListRulesets 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListRulesets480Example:
+                  summary: Default ListRulesets 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListRulesets481Example:
+                  summary: Default ListRulesets 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: targetArn
+        in: query
+        required: false
+        description: The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.
+        schema:
+          type: string
+          minLength: 20
+          maxLength: 2048
+      - name: maxResults
+        in: query
+        required: false
+        description: The maximum number of results to return in this request.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 2000
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      summary: Amazon Glue DataBrew List Rulesets
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Rulesets
+  /rulesets/{name}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteRuleset
+      description: Deletes a ruleset.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteRulesetResponse'
+              examples:
+                DeleteRuleset200Example:
+                  summary: Default DeleteRuleset 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteRuleset480Example:
+                  summary: Default DeleteRuleset 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DeleteRuleset481Example:
+                  summary: Default DeleteRuleset 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DeleteRuleset482Example:
+                  summary: Default DeleteRuleset 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the ruleset to be deleted.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      summary: Amazon Glue DataBrew Delete Ruleset
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Rulesets
+    get:
+      operationId: DescribeRuleset
+      description: Retrieves detailed information about the ruleset.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeRulesetResponse'
+              examples:
+                DescribeRuleset200Example:
+                  summary: Default DescribeRuleset 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeRuleset480Example:
+                  summary: Default DescribeRuleset 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DescribeRuleset481Example:
+                  summary: Default DescribeRuleset 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the ruleset to be described.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      summary: Amazon Glue DataBrew Describe Ruleset
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Rulesets
+    put:
+      operationId: UpdateRuleset
+      description: Updates specified ruleset.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateRulesetResponse'
+              examples:
+                UpdateRuleset200Example:
+                  summary: Default UpdateRuleset 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateRuleset480Example:
+                  summary: Default UpdateRuleset 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                UpdateRuleset481Example:
+                  summary: Default UpdateRuleset 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the ruleset to be updated.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - Rules
+              properties:
+                Description:
+                  description: The description of the ruleset.
+                  type: string
+                  maxLength: 1024
+                Rules:
+                  description: A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Rule'
+                  minItems: 1
+      summary: Amazon Glue DataBrew Update Ruleset
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Rulesets
+components:
+  schemas:
+    ColumnSelectorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnSelector'
+      minItems: 1
+    ValuesMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ConditionValue'
+    RuleName:
+      type: string
+      minLength: 1
+      maxLength: 128
+    AccountId:
+      type: string
+      maxLength: 255
+    Expression:
+      type: string
+      pattern: ^[<>0-9A-Za-z_.,:)(!= ]+$
+      minLength: 4
+      maxLength: 1024
+    TagValue:
+      type: string
+      maxLength: 256
+    DeleteRulesetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The name of the deleted ruleset.
+    ThresholdValue:
+      type: number
+      format: double
+      minimum: 0
+    ConflictException: {}
+    ListRulesetsResponse:
+      type: object
+      required:
+      - Rulesets
+      properties:
+        Rulesets:
+          allOf:
+          - $ref: '#/components/schemas/RulesetItemList'
+          - description: A list of RulesetItem. RulesetItem contains meta data of a ruleset.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    ColumnSelector:
+      type: object
+      properties:
+        Regex:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: A regular expression for selecting a column from a dataset.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of a column from a dataset.
+      description: Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.
+    ThresholdType:
+      type: string
+      enum:
+      - GREATER_THAN_OR_EQUAL
+      - LESS_THAN_OR_EQUAL
+      - GREATER_THAN
+      - LESS_THAN
+    ServiceQuotaExceededException: {}
+    CreateRulesetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The unique name of the created ruleset.
+    ConditionValue:
+      type: string
+      maxLength: 1024
+    Date:
+      type: string
+      format: date-time
+    Rule:
+      type: object
+      required:
+      - Name
+      - CheckExpression
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RuleName'
+          - description: The name of the rule.
+        Disabled:
+          allOf:
+          - $ref: '#/components/schemas/Disabled'
+          - description: A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.
+        CheckExpression:
+          allOf:
+          - $ref: '#/components/schemas/Expression'
+          - description: <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
+        SubstitutionMap:
+          allOf:
+          - $ref: '#/components/schemas/ValuesMap'
+          - description: 'The map of substitution variable names to their values used in a check expression. Variable names should start with a '':'' (colon). Variable values can either be actual values or column names. To differentiate between the two, column names should be enclosed in backticks, for example, <code>":col1": "`Column A`".</code> '
+        Threshold:
+          allOf:
+          - $ref: '#/components/schemas/Threshold'
+          - description: The threshold used with a non-aggregate check expression. Non-aggregate check expressions will be applied to each row in a specific column, and the threshold will be used to determine whether the validation succeeds.
+        ColumnSelectors:
+          allOf:
+          - $ref: '#/components/schemas/ColumnSelectorList'
+          - description: List of column selectors. Selectors can be used to select columns using a name or regular expression from the dataset. Rule will be applied to selected columns.
+      description: Represents a single data quality requirement that should be validated in the scope of this dataset.
+    ColumnName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ResourceNotFoundException: {}
+    Threshold:
+      type: object
+      required:
+      - Value
+      properties:
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ThresholdValue'
+          - description: The value of a threshold.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ThresholdType'
+          - description: The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.
+        Unit:
+          allOf:
+          - $ref: '#/components/schemas/ThresholdUnit'
+          - description: Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.
+      description: The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.
+    Disabled:
+      type: boolean
+    LastModifiedBy:
+      type: string
+    ThresholdUnit:
+      type: string
+      enum:
+      - COUNT
+      - PERCENTAGE
+    CreatedBy:
+      type: string
+    RulesetItem:
+      type: object
+      required:
+      - Name
+      - TargetArn
+      properties:
+        AccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account that owns the ruleset.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The Amazon Resource Name (ARN) of the user who created the ruleset.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the ruleset was created.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/RulesetDescription'
+          - description: The description of the ruleset.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The Amazon Resource Name (ARN) of the user who last modified the ruleset.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The modification date and time of the ruleset.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The name of the ruleset.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) for the ruleset.
+        RuleCount:
+          allOf:
+          - $ref: '#/components/schemas/RuleCount'
+          - description: The number of rules that are defined in the ruleset.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags that have been applied to the ruleset.
+        TargetArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.
+      description: Contains metadata about the ruleset.
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    RulesetDescription:
+      type: string
+      maxLength: 1024
+    RuleCount:
+      type: integer
+      minimum: 0
+    DescribeRulesetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The name of the ruleset.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/RulesetDescription'
+          - description: The description of the ruleset.
+        TargetArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.
+        Rules:
+          allOf:
+          - $ref: '#/components/schemas/RuleList'
+          - description: A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the ruleset was created.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The Amazon Resource Name (ARN) of the user who created the ruleset.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The Amazon Resource Name (ARN) of the user who last modified the ruleset.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The modification date and time of the ruleset.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) for the ruleset.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags that have been applied to the ruleset.
+    ValidationException: {}
+    UpdateRulesetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The name of the updated ruleset.
+    RulesetName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    RulesetItemList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RulesetItem'
+    RuleList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Rule'
+      minItems: 1
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/databrew/
+x-hasEquivalentPaths: true

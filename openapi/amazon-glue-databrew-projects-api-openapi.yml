@@ -1,0 +1,1194 @@
+openapi: 3.0.0
+info:
+  version: 2017-07-25
+  x-release: v4
+  title: AWS Glue DataBrew Datasets Projects API
+  description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: databrew
+  x-aws-signingName: databrew
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/databrew-2017-07-25.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: https://databrew.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue DataBrew multi-region endpoint
+- url: http://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+- url: https://databrew.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue DataBrew endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Projects
+paths:
+  /projects:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateProject
+      description: Creates a new DataBrew project.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateProjectResponse'
+              examples:
+                CreateProject200Example:
+                  summary: Default CreateProject 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                CreateProject480Example:
+                  summary: Default CreateProject 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                CreateProject481Example:
+                  summary: Default CreateProject 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+              examples:
+                CreateProject482Example:
+                  summary: Default CreateProject 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '483':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                CreateProject483Example:
+                  summary: Default CreateProject 483 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - DatasetName
+              - Name
+              - RecipeName
+              - RoleArn
+              properties:
+                DatasetName:
+                  description: The name of an existing dataset to associate this project with.
+                  type: string
+                  minLength: 1
+                  maxLength: 255
+                Name:
+                  description: A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.
+                  type: string
+                  minLength: 1
+                  maxLength: 255
+                RecipeName:
+                  description: The name of an existing recipe to associate with the project.
+                  type: string
+                  minLength: 1
+                  maxLength: 255
+                Sample:
+                  description: Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
+                  type: object
+                  properties:
+                    Size:
+                      allOf:
+                      - $ref: '#/components/schemas/SampleSize'
+                      - description: The number of rows in the sample.
+                    Type:
+                      allOf:
+                      - $ref: '#/components/schemas/SampleType'
+                      - description: The way in which DataBrew obtains rows from a dataset.
+                RoleArn:
+                  description: The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.
+                  type: string
+                  minLength: 20
+                  maxLength: 2048
+                Tags:
+                  description: Metadata tags to apply to this project.
+                  type: object
+                  minProperties: 1
+                  maxProperties: 200
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+      summary: Amazon Glue DataBrew Create Project
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Projects
+    get:
+      operationId: ListProjects
+      description: Lists all of the DataBrew projects that are defined.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListProjectsResponse'
+              examples:
+                ListProjects200Example:
+                  summary: Default ListProjects 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListProjects480Example:
+                  summary: Default ListProjects 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: nextToken
+        in: query
+        required: false
+        description: The token returned by a previous call to retrieve the next set of results.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 2000
+      - name: maxResults
+        in: query
+        required: false
+        description: 'The maximum number of results to return in this request. '
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      summary: Amazon Glue DataBrew List Projects
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Projects
+  /projects/{name}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteProject
+      description: Deletes an existing DataBrew project.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteProjectResponse'
+              examples:
+                DeleteProject200Example:
+                  summary: Default DeleteProject 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                DeleteProject480Example:
+                  summary: Default DeleteProject 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteProject481Example:
+                  summary: Default DeleteProject 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DeleteProject482Example:
+                  summary: Default DeleteProject 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the project to be deleted.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      summary: Amazon Glue DataBrew Delete Project
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Projects
+    get:
+      operationId: DescribeProject
+      description: Returns the definition of a specific DataBrew project.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeProjectResponse'
+              examples:
+                DescribeProject200Example:
+                  summary: Default DescribeProject 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeProject480Example:
+                  summary: Default DescribeProject 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DescribeProject481Example:
+                  summary: Default DescribeProject 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the project to be described.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      summary: Amazon Glue DataBrew Describe Project
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Projects
+    put:
+      operationId: UpdateProject
+      description: Modifies the definition of an existing DataBrew project.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateProjectResponse'
+              examples:
+                UpdateProject200Example:
+                  summary: Default UpdateProject 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateProject480Example:
+                  summary: Default UpdateProject 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                UpdateProject481Example:
+                  summary: Default UpdateProject 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the project to be updated.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - RoleArn
+              properties:
+                Sample:
+                  description: Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
+                  type: object
+                  properties:
+                    Size:
+                      allOf:
+                      - $ref: '#/components/schemas/SampleSize'
+                      - description: The number of rows in the sample.
+                    Type:
+                      allOf:
+                      - $ref: '#/components/schemas/SampleType'
+                      - description: The way in which DataBrew obtains rows from a dataset.
+                RoleArn:
+                  description: The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.
+                  type: string
+                  minLength: 20
+                  maxLength: 2048
+      summary: Amazon Glue DataBrew Update Project
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Projects
+  /projects/{name}/sendProjectSessionAction:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    put:
+      operationId: SendProjectSessionAction
+      description: Performs a recipe step within an interactive DataBrew session that's currently open.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendProjectSessionActionResponse'
+              examples:
+                SendProjectSessionAction200Example:
+                  summary: Default SendProjectSessionAction 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                SendProjectSessionAction480Example:
+                  summary: Default SendProjectSessionAction 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                SendProjectSessionAction481Example:
+                  summary: Default SendProjectSessionAction 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                SendProjectSessionAction482Example:
+                  summary: Default SendProjectSessionAction 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the project to apply the action to.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Preview:
+                  description: If true, the result of the recipe step will be returned, but not applied.
+                  type: boolean
+                RecipeStep:
+                  description: Represents a single step from a DataBrew recipe to be performed.
+                  type: object
+                  properties:
+                    Action:
+                      allOf:
+                      - $ref: '#/components/schemas/RecipeAction'
+                      - description: The particular action to be performed in the recipe step.
+                    ConditionExpressions:
+                      allOf:
+                      - $ref: '#/components/schemas/ConditionExpressionList'
+                      - description: <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>
+                StepIndex:
+                  description: The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.
+                  type: integer
+                  minimum: 0
+                ClientSessionId:
+                  description: A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.
+                  type: string
+                  pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]*$
+                  minLength: 1
+                  maxLength: 255
+                  format: password
+                ViewFrame:
+                  description: Represents the data being transformed during an action.
+                  type: object
+                  properties:
+                    StartColumnIndex:
+                      allOf:
+                      - $ref: '#/components/schemas/StartColumnIndex'
+                      - description: The starting index for the range of columns to return in the view frame.
+                    ColumnRange:
+                      allOf:
+                      - $ref: '#/components/schemas/ColumnRange'
+                      - description: The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.
+                    HiddenColumns:
+                      allOf:
+                      - $ref: '#/components/schemas/HiddenColumnList'
+                      - description: A list of columns to hide in the view frame.
+                    StartRowIndex:
+                      allOf:
+                      - $ref: '#/components/schemas/StartRowIndex'
+                      - description: The starting index for the range of rows to return in the view frame.
+                    RowRange:
+                      allOf:
+                      - $ref: '#/components/schemas/RowRange'
+                      - description: The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.
+                    Analytics:
+                      allOf:
+                      - $ref: '#/components/schemas/AnalyticsMode'
+                      - description: Controls if analytics computation is enabled or disabled. Enabled by default.
+      summary: Amazon Glue DataBrew Send Project Session Action
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Projects
+  /projects/{name}/startProjectSession:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    put:
+      operationId: StartProjectSession
+      description: Creates an interactive session, enabling you to manipulate data in a DataBrew project.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StartProjectSessionResponse'
+              examples:
+                StartProjectSession200Example:
+                  summary: Default StartProjectSession 200 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '480':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+              examples:
+                StartProjectSession480Example:
+                  summary: Default StartProjectSession 480 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                StartProjectSession481Example:
+                  summary: Default StartProjectSession 481 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '482':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+              examples:
+                StartProjectSession482Example:
+                  summary: Default StartProjectSession 482 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+        '483':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                StartProjectSession483Example:
+                  summary: Default StartProjectSession 483 response
+                  x-microcks-default: true
+                  value:
+                    status: SUCCEEDED
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: The name of the project to act upon.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 255
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                AssumeControl:
+                  description: A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.
+                  type: boolean
+      summary: Amazon Glue DataBrew Start Project Session
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Projects
+components:
+  schemas:
+    RecipeName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ConditionExpressionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConditionExpression'
+    DeleteProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that you deleted.
+    Sample:
+      type: object
+      required:
+      - Type
+      properties:
+        Size:
+          allOf:
+          - $ref: '#/components/schemas/SampleSize'
+          - description: The number of rows in the sample.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SampleType'
+          - description: The way in which DataBrew obtains rows from a dataset.
+      description: Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
+    InternalServerException: {}
+    ProjectName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    Result:
+      type: string
+    ActionId:
+      type: integer
+    UpdateProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the project was last modified.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that you updated.
+    AccountId:
+      type: string
+      maxLength: 255
+    TagValue:
+      type: string
+      maxLength: 256
+    StartColumnIndex:
+      type: integer
+      minimum: 0
+    ConflictException: {}
+    Condition:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    ListProjectsResponse:
+      type: object
+      required:
+      - Projects
+      properties:
+        Projects:
+          allOf:
+          - $ref: '#/components/schemas/ProjectList'
+          - description: A list of projects that are defined .
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    OpenedBy:
+      type: string
+    ServiceQuotaExceededException: {}
+    Project:
+      type: object
+      required:
+      - Name
+      - RecipeName
+      properties:
+        AccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account that owns the project.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the project was created.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The Amazon Resource Name (ARN) of the user who crated the project.
+        DatasetName:
+          allOf:
+          - $ref: '#/components/schemas/DatasetName'
+          - description: The dataset that the project is to act upon.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The last modification date and time for the project.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The Amazon Resource Name (ARN) of the user who last modified the project.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The unique name of a project.
+        RecipeName:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of a recipe that will be developed during a project session.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) for the project.
+        Sample:
+          allOf:
+          - $ref: '#/components/schemas/Sample'
+          - description: The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample consists of the first 500 rows from the dataset.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags that have been applied to the project.
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the role that will be assumed for this project.
+        OpenedBy:
+          allOf:
+          - $ref: '#/components/schemas/OpenedBy'
+          - description: The Amazon Resource Name (ARN) of the user that opened the project for use.
+        OpenDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time when the project was opened.
+      description: Represents all of the attributes of a DataBrew project.
+    ParameterMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParameterValue'
+    ColumnRange:
+      type: integer
+      minimum: 0
+      maximum: 20
+    SendProjectSessionActionResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Result:
+          allOf:
+          - $ref: '#/components/schemas/Result'
+          - description: A message indicating the result of performing the action.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that was affected by the action.
+        ActionId:
+          allOf:
+          - $ref: '#/components/schemas/ActionId'
+          - description: A unique identifier for the action that was performed.
+    DescribeProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the project was created.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The identifier (user name) of the user who created the project.
+        DatasetName:
+          allOf:
+          - $ref: '#/components/schemas/DatasetName'
+          - description: The dataset associated with the project.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the project was last modified.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The identifier (user name) of the user who last modified the project.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project.
+        RecipeName:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The recipe associated with this job.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the project.
+        Sample:
+          $ref: '#/components/schemas/Sample'
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags associated with this project.
+        SessionStatus:
+          allOf:
+          - $ref: '#/components/schemas/SessionStatus'
+          - description: <p>Describes the current state of the session:</p> <ul> <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li> <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li> <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li> </ul>
+        OpenedBy:
+          allOf:
+          - $ref: '#/components/schemas/OpenedBy'
+          - description: 'The identifier (user name) of the user that opened the project for use. '
+        OpenDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: 'The date and time when the project was opened. '
+    ClientSessionId:
+      type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]*$
+      minLength: 1
+      maxLength: 255
+      format: password
+    Operation:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    DatasetName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ConditionValue:
+      type: string
+      maxLength: 1024
+    SampleType:
+      type: string
+      enum:
+      - FIRST_N
+      - LAST_N
+      - RANDOM
+    HiddenColumnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnName'
+    RowRange:
+      type: integer
+    Date:
+      type: string
+      format: date-time
+    StartProjectSessionResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project to be acted upon.
+        ClientSessionId:
+          allOf:
+          - $ref: '#/components/schemas/ClientSessionId'
+          - description: A system-generated identifier for the session.
+    CreateProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that you created.
+    ResourceNotFoundException: {}
+    StartRowIndex:
+      type: integer
+      minimum: 0
+    ColumnName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ProjectList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Project'
+    ConditionExpression:
+      type: object
+      required:
+      - Condition
+      - TargetColumn
+      properties:
+        Condition:
+          allOf:
+          - $ref: '#/components/schemas/Condition'
+          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ConditionValue'
+          - description: A value that the condition must evaluate to for the condition to succeed.
+        TargetColumn:
+          allOf:
+          - $ref: '#/components/schemas/TargetColumn'
+          - description: A column to apply this condition to.
+      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
+    RecipeAction:
+      type: object
+      required:
+      - Operation
+      properties:
+        Operation:
+          allOf:
+          - $ref: '#/components/schemas/Operation'
+          - description: The name of a valid DataBrew transformation to be performed on the data.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParameterMap'
+          - description: Contextual parameters for the transformation.
+      description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
+    LastModifiedBy:
+      type: string
+    CreatedBy:
+      type: string
+    SessionStatus:
+      type: string
+      enum:
+      - ASSIGNED
+      - FAILED
+      - INITIALIZING
+      - PROVISIONING
+      - READY
+      - RECYCLING
+      - ROTATING
+      - TERMINATED
+      - TERMINATING
+      - UPDATING
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    AnalyticsMode:
+      type: string
+      enum:
+      - ENABLE
+      - DISABLE
+    ParameterValue:
+      type: string
+      minLength: 1
+      maxLength: 32768
+    SampleSize:
+      type: integer
+      minimum: 1
+      maximum: 5000
+    ValidationException: {}
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    TargetColumn:
+      type: string
+      minLength: 1
+      maxLength: 1024
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/databrew/
+x-hasEquivalentPaths: true
