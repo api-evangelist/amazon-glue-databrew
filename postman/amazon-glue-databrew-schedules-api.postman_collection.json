@@ -1,0 +1,1763 @@
+{
+  "info": {
+    "_postman_id": "502b42ae-0c8e-45d4-be58-65944f5d76ab",
+    "name": "AWS Glue DataBrew Datasets Schedules API",
+    "description": "Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:02.000Z",
+    "updatedAt": "2026-07-28T10:23:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-502b42ae-0c8e-45d4-be58-65944f5d76ab"
+  },
+  "item": [
+    {
+      "name": "schedules",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "Amazon Glue DataBrew Delete Schedule",
+              "id": "e4ca7439-fd94-4969-9106-b8e1a637baca",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schedules/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "e0959e12-fa51-458e-90ad-5b13ae7897c0",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the schedule to be deleted."
+                    }
+                  ]
+                },
+                "description": "Deletes the specified DataBrew schedule."
+              },
+              "response": [
+                {
+                  "id": "195b17a7-69b4-4de6-a394-eda6cd62aa7c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-195b17a7-69b4-4de6-a394-eda6cd62aa7c"
+                },
+                {
+                  "id": "e9240f7e-a486-4c5e-9fb9-93a1f11e4519",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-e9240f7e-a486-4c5e-9fb9-93a1f11e4519"
+                },
+                {
+                  "id": "8e93bae6-f727-4f25-9fb5-42f8faaa4025",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-8e93bae6-f727-4f25-9fb5-42f8faaa4025"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-e4ca7439-fd94-4969-9106-b8e1a637baca"
+            },
+            {
+              "name": "Amazon Glue DataBrew Describe Schedule",
+              "id": "e0bd18fb-be31-4b44-a36c-9a215f2c45c7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schedules/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "9bae1493-a0f7-4a3b-a34c-3d86413f52a4",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the schedule to be described."
+                    }
+                  ]
+                },
+                "description": "Returns the definition of a specific DataBrew schedule."
+              },
+              "response": [
+                {
+                  "id": "b6e6a6f7-a49d-4474-959b-01df72e7acb5",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\",\n  \"CreateDate\": \"<dateTime>\",\n  \"CreatedBy\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"LastModifiedBy\": \"<string>\",\n  \"LastModifiedDate\": \"<dateTime>\",\n  \"ResourceArn\": \"<string>\",\n  \"CronExpression\": \"<string>\",\n  \"Tags\": {\n    \"cillumd\": \"<string>\",\n    \"nisi0\": \"<string>\",\n    \"Ut_b\": \"<string>\",\n    \"et5d\": \"<string>\",\n    \"tempor3\": \"<string>\",\n    \"in_9_\": \"<string>\",\n    \"nisi5ae\": \"<string>\",\n    \"ut_b43\": \"<string>\",\n    \"dolor23b\": \"<string>\",\n    \"magna_9\": \"<string>\",\n    \"ested8\": \"<string>\",\n    \"dolord5\": \"<string>\",\n    \"aliqua_0\": \"<string>\",\n    \"ad2\": \"<string>\",\n    \"amet3c\": \"<string>\",\n    \"proidenta\": \"<string>\",\n    \"inf_\": \"<string>\",\n    \"Utf\": \"<string>\",\n    \"ad_53\": \"<string>\",\n    \"Duis_32_\": \"<string>\",\n    \"Excepteur_424\": \"<string>\",\n    \"consequat10\": \"<string>\",\n    \"Duiscd\": \"<string>\",\n    \"cupidatat4\": \"<string>\",\n    \"eiusmod_a4\": \"<string>\",\n    \"officia_17a\": \"<string>\",\n    \"Ut_0be\": \"<string>\",\n    \"sintd\": \"<string>\",\n    \"sint_8\": \"<string>\",\n    \"exercitation8\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"et56\": \"<string>\",\n    \"nostrud6db\": \"<string>\",\n    \"non_603\": \"<string>\",\n    \"elit_74d\": \"<string>\",\n    \"utbc_\": \"<string>\",\n    \"sed76\": \"<string>\",\n    \"laborum_e\": \"<string>\",\n    \"ipsum_b\": \"<string>\",\n    \"Duis79\": \"<string>\",\n    \"eiusmod_96d\": \"<string>\",\n    \"Duisa4\": \"<string>\",\n    \"in0\": \"<string>\",\n    \"et539\": \"<string>\",\n    \"Duis8\": \"<string>\",\n    \"nulla_1\": \"<string>\",\n    \"dolord\": \"<string>\",\n    \"officia_213\": \"<string>\",\n    \"sint87f\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"consequat9b\": \"<string>\",\n    \"cillum_0\": \"<string>\",\n    \"ete\": \"<string>\",\n    \"fugiat_25\": \"<string>\",\n    \"anim38\": \"<string>\",\n    \"id_b\": \"<string>\",\n    \"fugiatf_0\": \"<string>\",\n    \"do6\": \"<string>\",\n    \"aute9\": \"<string>\",\n    \"ut_0\": \"<string>\",\n    \"laborum_cc\": \"<string>\",\n    \"exercitation_1f\": \"<string>\",\n    \"ipsum_e79\": \"<string>\",\n    \"adipisicing_35f\": \"<string>\",\n    \"labore_9\": \"<string>\",\n    \"Lorem_36\": \"<string>\",\n    \"aliquip_aa7\": \"<string>\",\n    \"esse463\": \"<string>\",\n    \"officia90\": \"<string>\",\n    \"id_c6e\": \"<string>\",\n    \"est_918\": \"<string>\",\n    \"sint_c7\": \"<string>\",\n    \"Lorem_96\": \"<string>\",\n    \"dolor5\": \"<string>\",\n    \"dolore_7d7\": \"<string>\",\n    \"Utedc\": \"<string>\",\n    \"et4e\": \"<string>\",\n    \"Excepteur0\": \"<string>\",\n    \"none7\": \"<string>\",\n    \"Excepteur_9c\": \"<string>\",\n    \"elit5d\": \"<string>\",\n    \"Lorema\": \"<string>\",\n    \"labore2\": \"<string>\",\n    \"culpa_7\": \"<string>\",\n    \"non8d\": \"<string>\",\n    \"eu010\": \"<string>\",\n    \"aliquip02e\": \"<string>\",\n    \"dolor46d\": \"<string>\",\n    \"cupidatat6c8\": \"<string>\",\n    \"laborum0c\": \"<string>\",\n    \"irure_7_e\": \"<string>\",\n    \"voluptate_9d8\": \"<string>\",\n    \"reprehenderitb6\": \"<string>\",\n    \"adipisicingcd3\": \"<string>\",\n    \"deseruntd8\": \"<string>\",\n    \"ut_b\": \"<string>\",\n    \"elit1\": \"<string>\",\n    \"est_7b_\": \"<string>\",\n    \"culpa5\": \"<string>\",\n    \"reprehenderit8e\": \"<string>\",\n    \"esse_bd\": \"<string>\",\n    \"labore47\": \"<string>\",\n    \"ex_d\": \"<string>\",\n    \"occaecat_e\": \"<string>\",\n    \"anim_28\": \"<string>\",\n    \"Lorem_81e\": \"<string>\",\n    \"Excepteurab\": \"<string>\",\n    \"sitc\": \"<string>\",\n    \"fugiat_2f\": \"<string>\",\n    \"dolore9\": \"<string>\",\n    \"elit6_\": \"<string>\",\n    \"adipisicing_a\": \"<string>\",\n    \"non2fc\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"Duise\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"autec\": \"<string>\",\n    \"fugiat18\": \"<string>\",\n    \"dolor_e9\": \"<string>\",\n    \"sunt1\": \"<string>\",\n    \"aliqua1e\": \"<string>\",\n    \"commodof1b\": \"<string>\",\n    \"Lorem_857\": \"<string>\",\n    \"idf\": \"<string>\",\n    \"aliquip2\": \"<string>\",\n    \"officiae3e\": \"<string>\",\n    \"nullab\": \"<string>\",\n    \"sitb_\": \"<string>\",\n    \"consequat__8\": \"<string>\",\n    \"aliquip_2\": \"<string>\",\n    \"eu2a\": \"<string>\",\n    \"cupidatat1b9\": \"<string>\",\n    \"est7c\": \"<string>\",\n    \"sit9\": \"<string>\",\n    \"esse8c7\": \"<string>\",\n    \"in8\": \"<string>\",\n    \"reprehenderitc\": \"<string>\",\n    \"id_92_\": \"<string>\",\n    \"id6b_\": \"<string>\",\n    \"veniam27\": \"<string>\",\n    \"ut_46\": \"<string>\",\n    \"laborum_7\": \"<string>\",\n    \"consequat_0e1\": \"<string>\",\n    \"sed9e\": \"<string>\",\n    \"irure_7\": \"<string>\",\n    \"et8fe\": \"<string>\",\n    \"in2bd\": \"<string>\",\n    \"officiac_\": \"<string>\",\n    \"eiusmod400\": \"<string>\",\n    \"inb7\": \"<string>\",\n    \"velit_5\": \"<string>\",\n    \"reprehenderit9\": \"<string>\",\n    \"Duis_f1\": \"<string>\",\n    \"in047\": \"<string>\",\n    \"in_47\": \"<string>\",\n    \"sed_08a\": \"<string>\",\n    \"nisi_9\": \"<string>\",\n    \"in2\": \"<string>\",\n    \"irure_f1\": \"<string>\",\n    \"ea474\": \"<string>\",\n    \"reprehenderit0e\": \"<string>\",\n    \"Ut_ae\": \"<string>\",\n    \"aute209\": \"<string>\",\n    \"auteb\": \"<string>\",\n    \"sintf\": \"<string>\",\n    \"id_d9e\": \"<string>\",\n    \"in_d7\": \"<string>\",\n    \"do_9\": \"<string>\",\n    \"voluptate8a\": \"<string>\",\n    \"amet96\": \"<string>\",\n    \"Excepteur_49\": \"<string>\",\n    \"nisi_0\": \"<string>\",\n    \"deserunt_2\": \"<string>\",\n    \"nisi3\": \"<string>\",\n    \"veniam_31\": \"<string>\",\n    \"sed_a\": \"<string>\",\n    \"culpa_cc9\": \"<string>\",\n    \"nisi_8ef\": \"<string>\",\n    \"reprehenderit2\": \"<string>\",\n    \"voluptate_45\": \"<string>\",\n    \"quis03\": \"<string>\",\n    \"cillum_d\": \"<string>\",\n    \"ipsum_229\": \"<string>\",\n    \"sunt_b6f\": \"<string>\",\n    \"minimdcd\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"consectetur_6e\": \"<string>\",\n    \"Lorem_89\": \"<string>\",\n    \"cillum200\": \"<string>\",\n    \"dolorde1\": \"<string>\",\n    \"voluptate16\": \"<string>\",\n    \"aliquip_e0\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"quisf3b\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-b6e6a6f7-a49d-4474-959b-01df72e7acb5"
+                },
+                {
+                  "id": "2d8d38ea-d803-4050-932d-ba1dac6dde93",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-2d8d38ea-d803-4050-932d-ba1dac6dde93"
+                },
+                {
+                  "id": "e7340a80-dd81-4bc1-814c-7a46bc9fd1e9",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-e7340a80-dd81-4bc1-814c-7a46bc9fd1e9"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-e0bd18fb-be31-4b44-a36c-9a215f2c45c7"
+            },
+            {
+              "name": "Amazon Glue DataBrew Update Schedule",
+              "id": "ca4c9091-7370-4cdf-861e-e4c7953ac166",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schedules/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "8ac1ff85-2bc5-48ae-b70e-286609fe2cb2",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the schedule to update."
+                    }
+                  ]
+                },
+                "description": "Modifies the definition of an existing DataBrew schedule."
+              },
+              "response": [
+                {
+                  "id": "5b9fb69a-4cba-4f27-9d34-39f930c19c8c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-5b9fb69a-4cba-4f27-9d34-39f930c19c8c"
+                },
+                {
+                  "id": "3b1cccb0-06f3-41b5-9512-e4a50ccff4fd",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-3b1cccb0-06f3-41b5-9512-e4a50ccff4fd"
+                },
+                {
+                  "id": "132bf1a0-6859-45d7-951f-9e812c1cada7",
+                  "name": "ServiceQuotaExceededException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-132bf1a0-6859-45d7-951f-9e812c1cada7"
+                },
+                {
+                  "id": "9108b1d8-968c-428e-a0af-960230aa1ef6",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:02.000Z",
+                  "updatedAt": "2026-07-28T10:23:02.000Z",
+                  "uid": "35240-9108b1d8-968c-428e-a0af-960230aa1ef6"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-ca4c9091-7370-4cdf-861e-e4c7953ac166"
+            }
+          ],
+          "id": "e7726a40-dd71-45e7-b2e7-1882f6e78ef8",
+          "createdAt": "2026-07-28T10:23:02.000Z",
+          "updatedAt": "2026-07-28T10:23:02.000Z",
+          "uid": "35240-e7726a40-dd71-45e7-b2e7-1882f6e78ef8"
+        },
+        {
+          "name": "Amazon Glue DataBrew Create Schedule",
+          "id": "a6dcf394-7e0b-4bcf-8a82-acaa2dd4290a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Tags\": {\n    \"do_5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"aute_6\": \"<string>\",\n    \"aliquipbe4\": \"<string>\",\n    \"in05\": \"<string>\",\n    \"qui79a\": \"<string>\",\n    \"ad_66d\": \"<string>\",\n    \"reprehenderit53\": \"<string>\",\n    \"ad_c_\": \"<string>\",\n    \"nisi0\": \"<string>\",\n    \"fugiat_aa\": \"<string>\",\n    \"eu_99\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"sunt_40\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"non3_5\": \"<string>\",\n    \"nostrudff0\": \"<string>\",\n    \"in45\": \"<string>\",\n    \"amet6f\": \"<string>\",\n    \"ipsum7\": \"<string>\",\n    \"in_b0\": \"<string>\",\n    \"magna_719\": \"<string>\",\n    \"quis_b\": \"<string>\",\n    \"qui_e8e\": \"<string>\",\n    \"exercitation___c\": \"<string>\",\n    \"dolor_9e4\": \"<string>\",\n    \"ullamco_76_\": \"<string>\",\n    \"commodo_189\": \"<string>\",\n    \"dolore_798\": \"<string>\",\n    \"commodo_a14\": \"<string>\",\n    \"culpa_e56\": \"<string>\",\n    \"dolore_4_1\": \"<string>\",\n    \"estf73\": \"<string>\",\n    \"proident_3d8\": \"<string>\",\n    \"minimf\": \"<string>\",\n    \"velit268\": \"<string>\",\n    \"non94b\": \"<string>\",\n    \"nostrud_dbb\": \"<string>\",\n    \"ut_ac\": \"<string>\",\n    \"ipsum_5\": \"<string>\",\n    \"cupidatat_1\": \"<string>\",\n    \"dolore_a7\": \"<string>\",\n    \"laboris08\": \"<string>\",\n    \"commodo_7f1\": \"<string>\",\n    \"elit_8b\": \"<string>\",\n    \"dolor032\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/schedules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "schedules"
+              ]
+            },
+            "description": "Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals."
+          },
+          "response": [
+            {
+              "id": "64b4b90d-688d-420e-b1b4-7560f315014c",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Tags\": {\n    \"do_5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"aute_6\": \"<string>\",\n    \"aliquipbe4\": \"<string>\",\n    \"in05\": \"<string>\",\n    \"qui79a\": \"<string>\",\n    \"ad_66d\": \"<string>\",\n    \"reprehenderit53\": \"<string>\",\n    \"ad_c_\": \"<string>\",\n    \"nisi0\": \"<string>\",\n    \"fugiat_aa\": \"<string>\",\n    \"eu_99\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"sunt_40\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"non3_5\": \"<string>\",\n    \"nostrudff0\": \"<string>\",\n    \"in45\": \"<string>\",\n    \"amet6f\": \"<string>\",\n    \"ipsum7\": \"<string>\",\n    \"in_b0\": \"<string>\",\n    \"magna_719\": \"<string>\",\n    \"quis_b\": \"<string>\",\n    \"qui_e8e\": \"<string>\",\n    \"exercitation___c\": \"<string>\",\n    \"dolor_9e4\": \"<string>\",\n    \"ullamco_76_\": \"<string>\",\n    \"commodo_189\": \"<string>\",\n    \"dolore_798\": \"<string>\",\n    \"commodo_a14\": \"<string>\",\n    \"culpa_e56\": \"<string>\",\n    \"dolore_4_1\": \"<string>\",\n    \"estf73\": \"<string>\",\n    \"proident_3d8\": \"<string>\",\n    \"minimf\": \"<string>\",\n    \"velit268\": \"<string>\",\n    \"non94b\": \"<string>\",\n    \"nostrud_dbb\": \"<string>\",\n    \"ut_ac\": \"<string>\",\n    \"ipsum_5\": \"<string>\",\n    \"cupidatat_1\": \"<string>\",\n    \"dolore_a7\": \"<string>\",\n    \"laboris08\": \"<string>\",\n    \"commodo_7f1\": \"<string>\",\n    \"elit_8b\": \"<string>\",\n    \"dolor032\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schedules",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Name\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-64b4b90d-688d-420e-b1b4-7560f315014c"
+            },
+            {
+              "id": "2800009b-0359-4788-83b7-3d7ec7f8da6c",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Tags\": {\n    \"do_5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"aute_6\": \"<string>\",\n    \"aliquipbe4\": \"<string>\",\n    \"in05\": \"<string>\",\n    \"qui79a\": \"<string>\",\n    \"ad_66d\": \"<string>\",\n    \"reprehenderit53\": \"<string>\",\n    \"ad_c_\": \"<string>\",\n    \"nisi0\": \"<string>\",\n    \"fugiat_aa\": \"<string>\",\n    \"eu_99\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"sunt_40\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"non3_5\": \"<string>\",\n    \"nostrudff0\": \"<string>\",\n    \"in45\": \"<string>\",\n    \"amet6f\": \"<string>\",\n    \"ipsum7\": \"<string>\",\n    \"in_b0\": \"<string>\",\n    \"magna_719\": \"<string>\",\n    \"quis_b\": \"<string>\",\n    \"qui_e8e\": \"<string>\",\n    \"exercitation___c\": \"<string>\",\n    \"dolor_9e4\": \"<string>\",\n    \"ullamco_76_\": \"<string>\",\n    \"commodo_189\": \"<string>\",\n    \"dolore_798\": \"<string>\",\n    \"commodo_a14\": \"<string>\",\n    \"culpa_e56\": \"<string>\",\n    \"dolore_4_1\": \"<string>\",\n    \"estf73\": \"<string>\",\n    \"proident_3d8\": \"<string>\",\n    \"minimf\": \"<string>\",\n    \"velit268\": \"<string>\",\n    \"non94b\": \"<string>\",\n    \"nostrud_dbb\": \"<string>\",\n    \"ut_ac\": \"<string>\",\n    \"ipsum_5\": \"<string>\",\n    \"cupidatat_1\": \"<string>\",\n    \"dolore_a7\": \"<string>\",\n    \"laboris08\": \"<string>\",\n    \"commodo_7f1\": \"<string>\",\n    \"elit_8b\": \"<string>\",\n    \"dolor032\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schedules",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-2800009b-0359-4788-83b7-3d7ec7f8da6c"
+            },
+            {
+              "id": "c4ea25a5-91ad-4673-a12a-b7b00a4acec8",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Tags\": {\n    \"do_5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"aute_6\": \"<string>\",\n    \"aliquipbe4\": \"<string>\",\n    \"in05\": \"<string>\",\n    \"qui79a\": \"<string>\",\n    \"ad_66d\": \"<string>\",\n    \"reprehenderit53\": \"<string>\",\n    \"ad_c_\": \"<string>\",\n    \"nisi0\": \"<string>\",\n    \"fugiat_aa\": \"<string>\",\n    \"eu_99\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"sunt_40\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"non3_5\": \"<string>\",\n    \"nostrudff0\": \"<string>\",\n    \"in45\": \"<string>\",\n    \"amet6f\": \"<string>\",\n    \"ipsum7\": \"<string>\",\n    \"in_b0\": \"<string>\",\n    \"magna_719\": \"<string>\",\n    \"quis_b\": \"<string>\",\n    \"qui_e8e\": \"<string>\",\n    \"exercitation___c\": \"<string>\",\n    \"dolor_9e4\": \"<string>\",\n    \"ullamco_76_\": \"<string>\",\n    \"commodo_189\": \"<string>\",\n    \"dolore_798\": \"<string>\",\n    \"commodo_a14\": \"<string>\",\n    \"culpa_e56\": \"<string>\",\n    \"dolore_4_1\": \"<string>\",\n    \"estf73\": \"<string>\",\n    \"proident_3d8\": \"<string>\",\n    \"minimf\": \"<string>\",\n    \"velit268\": \"<string>\",\n    \"non94b\": \"<string>\",\n    \"nostrud_dbb\": \"<string>\",\n    \"ut_ac\": \"<string>\",\n    \"ipsum_5\": \"<string>\",\n    \"cupidatat_1\": \"<string>\",\n    \"dolore_a7\": \"<string>\",\n    \"laboris08\": \"<string>\",\n    \"commodo_7f1\": \"<string>\",\n    \"elit_8b\": \"<string>\",\n    \"dolor032\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schedules",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-c4ea25a5-91ad-4673-a12a-b7b00a4acec8"
+            },
+            {
+              "id": "1123ee7e-cdd9-45df-82d6-3488799c0c38",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CronExpression\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"JobNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Tags\": {\n    \"do_5\": \"<string>\",\n    \"tempor_8\": \"<string>\",\n    \"aute_6\": \"<string>\",\n    \"aliquipbe4\": \"<string>\",\n    \"in05\": \"<string>\",\n    \"qui79a\": \"<string>\",\n    \"ad_66d\": \"<string>\",\n    \"reprehenderit53\": \"<string>\",\n    \"ad_c_\": \"<string>\",\n    \"nisi0\": \"<string>\",\n    \"fugiat_aa\": \"<string>\",\n    \"eu_99\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"sunt_40\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"non3_5\": \"<string>\",\n    \"nostrudff0\": \"<string>\",\n    \"in45\": \"<string>\",\n    \"amet6f\": \"<string>\",\n    \"ipsum7\": \"<string>\",\n    \"in_b0\": \"<string>\",\n    \"magna_719\": \"<string>\",\n    \"quis_b\": \"<string>\",\n    \"qui_e8e\": \"<string>\",\n    \"exercitation___c\": \"<string>\",\n    \"dolor_9e4\": \"<string>\",\n    \"ullamco_76_\": \"<string>\",\n    \"commodo_189\": \"<string>\",\n    \"dolore_798\": \"<string>\",\n    \"commodo_a14\": \"<string>\",\n    \"culpa_e56\": \"<string>\",\n    \"dolore_4_1\": \"<string>\",\n    \"estf73\": \"<string>\",\n    \"proident_3d8\": \"<string>\",\n    \"minimf\": \"<string>\",\n    \"velit268\": \"<string>\",\n    \"non94b\": \"<string>\",\n    \"nostrud_dbb\": \"<string>\",\n    \"ut_ac\": \"<string>\",\n    \"ipsum_5\": \"<string>\",\n    \"cupidatat_1\": \"<string>\",\n    \"dolore_a7\": \"<string>\",\n    \"laboris08\": \"<string>\",\n    \"commodo_7f1\": \"<string>\",\n    \"elit_8b\": \"<string>\",\n    \"dolor032\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schedules",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-1123ee7e-cdd9-45df-82d6-3488799c0c38"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:02.000Z",
+          "updatedAt": "2026-07-28T10:23:02.000Z",
+          "uid": "35240-a6dcf394-7e0b-4bcf-8a82-acaa2dd4290a"
+        },
+        {
+          "name": "Amazon Glue DataBrew List Schedules",
+          "id": "1f850a45-7b39-4ab7-86dd-94c6e31d49a6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/schedules?jobName=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "schedules"
+              ],
+              "query": [
+                {
+                  "description": "The name of the job that these schedules apply to.",
+                  "key": "jobName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of results to return in this request. ",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The token returned by a previous call to retrieve the next set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Lists the DataBrew schedules that are defined."
+          },
+          "response": [
+            {
+              "id": "063946d1-6387-4ca3-bfe8-a7f11b29be51",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schedules?jobName=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules"
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the job that these schedules apply to.",
+                      "key": "jobName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this request. ",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token returned by a previous call to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Schedules\": [\n    {\n      \"Name\": \"<string>\",\n      \"AccountId\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"JobNames\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"LastModifiedBy\": \"<string>\",\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"ResourceArn\": \"<string>\",\n      \"CronExpression\": \"<string>\",\n      \"Tags\": {\n        \"adipisicing7\": \"<string>\",\n        \"consectetur054\": \"<string>\",\n        \"elit_c\": \"<string>\",\n        \"eiusmod_a03\": \"<string>\",\n        \"laborum_b9\": \"<string>\",\n        \"officia_983\": \"<string>\",\n        \"incididunt5\": \"<string>\",\n        \"exercitation_7\": \"<string>\",\n        \"quis_9\": \"<string>\",\n        \"officiaf49\": \"<string>\",\n        \"Excepteur_f\": \"<string>\",\n        \"consequat_311\": \"<string>\",\n        \"mollit_a9\": \"<string>\",\n        \"incididunt29c\": \"<string>\",\n        \"amet_42b\": \"<string>\",\n        \"ut_5e\": \"<string>\",\n        \"doloreb\": \"<string>\",\n        \"consequat35c\": \"<string>\",\n        \"occaecat_1d\": \"<string>\",\n        \"commodo513\": \"<string>\",\n        \"exercitation_f\": \"<string>\",\n        \"sed_4\": \"<string>\",\n        \"cupidatat_54\": \"<string>\",\n        \"commodo_902\": \"<string>\",\n        \"culpa_4f6\": \"<string>\",\n        \"deserunt_94\": \"<string>\",\n        \"nisi_2\": \"<string>\",\n        \"nostrud_b36\": \"<string>\",\n        \"in5c\": \"<string>\",\n        \"sit_37\": \"<string>\",\n        \"aliquipc89\": \"<string>\",\n        \"dolore_5e\": \"<string>\",\n        \"veniam_11\": \"<string>\",\n        \"officia74e\": \"<string>\",\n        \"ut8\": \"<string>\",\n        \"sint6\": \"<string>\",\n        \"nisi_f\": \"<string>\",\n        \"elitd7d\": \"<string>\",\n        \"aliqua68b\": \"<string>\",\n        \"do661\": \"<string>\",\n        \"anima78\": \"<string>\",\n        \"aliqua_764\": \"<string>\",\n        \"ullamco534\": \"<string>\",\n        \"consecteturf\": \"<string>\",\n        \"qui5\": \"<string>\",\n        \"laboris_e2\": \"<string>\",\n        \"sed_5f\": \"<string>\",\n        \"reprehenderit_9\": \"<string>\",\n        \"cillum_a83\": \"<string>\",\n        \"ea_7a\": \"<string>\",\n        \"anim_87\": \"<string>\",\n        \"do4\": \"<string>\",\n        \"Duis1ef\": \"<string>\",\n        \"id58\": \"<string>\",\n        \"Loremfb\": \"<string>\",\n        \"inf\": \"<string>\",\n        \"anim_d98\": \"<string>\",\n        \"tempor90\": \"<string>\",\n        \"commodo_73\": \"<string>\",\n        \"aliqua7\": \"<string>\",\n        \"Lorem_42\": \"<string>\",\n        \"voluptate_a03\": \"<string>\",\n        \"dolore__\": \"<string>\",\n        \"eu252\": \"<string>\",\n        \"in7\": \"<string>\",\n        \"irure1\": \"<string>\",\n        \"laborum5\": \"<string>\",\n        \"tempor4\": \"<string>\",\n        \"velit_801\": \"<string>\",\n        \"cillum_8\": \"<string>\",\n        \"do_84d\": \"<string>\",\n        \"minim_8be\": \"<string>\",\n        \"cillumb9a\": \"<string>\",\n        \"este6b\": \"<string>\",\n        \"deserunt9aa\": \"<string>\",\n        \"aute_83\": \"<string>\",\n        \"ea8\": \"<string>\",\n        \"Excepteur89_\": \"<string>\",\n        \"Ut_b\": \"<string>\",\n        \"aliqua6e\": \"<string>\",\n        \"Lorem0_\": \"<string>\",\n        \"commodo8\": \"<string>\",\n        \"reprehenderit277\": \"<string>\",\n        \"minim_11a\": \"<string>\",\n        \"ipsum_4b\": \"<string>\",\n        \"sunt_807\": \"<string>\",\n        \"occaecatac7\": \"<string>\",\n        \"irure_8\": \"<string>\",\n        \"aliqua3\": \"<string>\",\n        \"sint4\": \"<string>\",\n        \"nisi24\": \"<string>\",\n        \"enim_022\": \"<string>\",\n        \"dolore_d\": \"<string>\",\n        \"aliqua_5\": \"<string>\",\n        \"qui_cc1\": \"<string>\",\n        \"aute39\": \"<string>\",\n        \"ad2b\": \"<string>\",\n        \"Duis43\": \"<string>\",\n        \"nonc\": \"<string>\",\n        \"eu_c\": \"<string>\",\n        \"enim_cc6\": \"<string>\",\n        \"enim80\": \"<string>\",\n        \"adipisicing_a85\": \"<string>\",\n        \"ipsuma64\": \"<string>\",\n        \"cillum_a8\": \"<string>\",\n        \"labore_c23\": \"<string>\",\n        \"Lorem_1ae\": \"<string>\",\n        \"estc\": \"<string>\",\n        \"in_1\": \"<string>\",\n        \"deserunt1\": \"<string>\",\n        \"exercitation_5\": \"<string>\",\n        \"in238\": \"<string>\",\n        \"none\": \"<string>\",\n        \"sunt01\": \"<string>\",\n        \"minim_7f\": \"<string>\",\n        \"voluptate_6d\": \"<string>\",\n        \"culpa4b\": \"<string>\",\n        \"adipisicing_3_5\": \"<string>\",\n        \"minimb\": \"<string>\",\n        \"eiusmod_60\": \"<string>\",\n        \"veniam_5\": \"<string>\",\n        \"velitc\": \"<string>\",\n        \"auted\": \"<string>\",\n        \"laboreb81\": \"<string>\",\n        \"essed\": \"<string>\",\n        \"sunt_62\": \"<string>\",\n        \"pariatur_9\": \"<string>\",\n        \"sed_e81\": \"<string>\",\n        \"id_4\": \"<string>\",\n        \"dolore_30b\": \"<string>\",\n        \"sit5\": \"<string>\",\n        \"ea6\": \"<string>\",\n        \"sunt946\": \"<string>\",\n        \"dof64\": \"<string>\",\n        \"adipisicing31\": \"<string>\",\n        \"mollit_f\": \"<string>\",\n        \"nostrud_ede\": \"<string>\",\n        \"elit_2\": \"<string>\",\n        \"amet__\": \"<string>\",\n        \"nisi_d\": \"<string>\",\n        \"consectetur1\": \"<string>\",\n        \"aute0bb\": \"<string>\",\n        \"in_5d\": \"<string>\",\n        \"sed__1\": \"<string>\",\n        \"eu__47\": \"<string>\",\n        \"Excepteur6bc\": \"<string>\",\n        \"in_e_a\": \"<string>\",\n        \"incididunt_03\": \"<string>\",\n        \"aliqua_1_6\": \"<string>\",\n        \"consectetur28e\": \"<string>\",\n        \"irurec\": \"<string>\",\n        \"laboris77e\": \"<string>\"\n      }\n    },\n    {\n      \"Name\": \"<string>\",\n      \"AccountId\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"JobNames\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"LastModifiedBy\": \"<string>\",\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"ResourceArn\": \"<string>\",\n      \"CronExpression\": \"<string>\",\n      \"Tags\": {\n        \"officiafd2\": \"<string>\",\n        \"in_1f\": \"<string>\",\n        \"Ut0bc\": \"<string>\",\n        \"cupidatatf\": \"<string>\",\n        \"consecteturb\": \"<string>\",\n        \"voluptate16\": \"<string>\",\n        \"irure3e8\": \"<string>\",\n        \"pariature3_\": \"<string>\",\n        \"voluptate_9\": \"<string>\",\n        \"quis_8\": \"<string>\",\n        \"sit_9\": \"<string>\",\n        \"cillum__0\": \"<string>\",\n        \"occaecat_83\": \"<string>\",\n        \"aliqua_882\": \"<string>\",\n        \"aute_bc\": \"<string>\",\n        \"tempor__d\": \"<string>\",\n        \"esse_4\": \"<string>\",\n        \"exercitationde\": \"<string>\",\n        \"occaecat67\": \"<string>\",\n        \"quis_1\": \"<string>\",\n        \"aute_f\": \"<string>\",\n        \"officia678\": \"<string>\",\n        \"nulla_abf\": \"<string>\",\n        \"incididunte05\": \"<string>\",\n        \"quis5\": \"<string>\",\n        \"ipsumcd8\": \"<string>\",\n        \"dolor_ef\": \"<string>\",\n        \"in_0f\": \"<string>\",\n        \"sint_e\": \"<string>\",\n        \"do72b\": \"<string>\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-063946d1-6387-4ca3-bfe8-a7f11b29be51"
+            },
+            {
+              "id": "a91211e2-c050-464c-bf67-8423320d2229",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schedules?jobName=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules"
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the job that these schedules apply to.",
+                      "key": "jobName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this request. ",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token returned by a previous call to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:02.000Z",
+              "updatedAt": "2026-07-28T10:23:02.000Z",
+              "uid": "35240-a91211e2-c050-464c-bf67-8423320d2229"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:02.000Z",
+          "updatedAt": "2026-07-28T10:23:02.000Z",
+          "uid": "35240-1f850a45-7b39-4ab7-86dd-94c6e31d49a6"
+        }
+      ],
+      "id": "3e0c997d-2c7a-4cf1-b6bd-632a7b0fa97a",
+      "createdAt": "2026-07-28T10:23:02.000Z",
+      "updatedAt": "2026-07-28T10:23:02.000Z",
+      "uid": "35240-3e0c997d-2c7a-4cf1-b6bd-632a7b0fa97a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://databrew.{{region}}.amazonaws.com"
+    }
+  ]
+}

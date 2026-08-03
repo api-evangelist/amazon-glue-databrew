@@ -1,0 +1,1065 @@
+{
+  "info": {
+    "_postman_id": "9e35a394-89a0-4e18-8597-8bd9f4a333aa",
+    "name": "AWS Glue DataBrew Datasets RecipeJobs API",
+    "description": "Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:22:57.000Z",
+    "updatedAt": "2026-07-28T10:22:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9e35a394-89a0-4e18-8597-8bd9f4a333aa"
+  },
+  "item": [
+    {
+      "name": "recipeJobs",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "Amazon Glue DataBrew Update Recipe Job",
+              "id": "f065ceae-6bea-41a3-ba1c-50819001823a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"014285895389\"\n      },\n      \"CompressionFormat\": \"GZIP\",\n      \"Format\": \"GLUEPARQUET\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"763584878589\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"119563707096\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"520924941074\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"Timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipeJobs/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeJobs",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "6895f9e7-7066-4c94-8aa3-3b1a540ac40a",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the job to update."
+                    }
+                  ]
+                },
+                "description": "Modifies the definition of an existing DataBrew recipe job."
+              },
+              "response": [
+                {
+                  "id": "526db373-ef6f-4ce7-87c5-6739ea56a96c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"014285895389\"\n      },\n      \"CompressionFormat\": \"GZIP\",\n      \"Format\": \"GLUEPARQUET\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"763584878589\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"119563707096\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"520924941074\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"Timeout\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipeJobs/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipeJobs",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:22:57.000Z",
+                  "updatedAt": "2026-07-28T10:22:57.000Z",
+                  "uid": "35240-526db373-ef6f-4ce7-87c5-6739ea56a96c"
+                },
+                {
+                  "id": "fe6672ba-ada0-4fdd-b3f7-83d3110d5164",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"014285895389\"\n      },\n      \"CompressionFormat\": \"GZIP\",\n      \"Format\": \"GLUEPARQUET\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"763584878589\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"119563707096\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"520924941074\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"Timeout\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipeJobs/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipeJobs",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:57.000Z",
+                  "updatedAt": "2026-07-28T10:22:57.000Z",
+                  "uid": "35240-fe6672ba-ada0-4fdd-b3f7-83d3110d5164"
+                },
+                {
+                  "id": "21f60fd8-684e-4358-ae3a-7717eced6b99",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"014285895389\"\n      },\n      \"CompressionFormat\": \"GZIP\",\n      \"Format\": \"GLUEPARQUET\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"763584878589\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"119563707096\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"520924941074\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"Timeout\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipeJobs/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipeJobs",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:57.000Z",
+                  "updatedAt": "2026-07-28T10:22:57.000Z",
+                  "uid": "35240-21f60fd8-684e-4358-ae3a-7717eced6b99"
+                },
+                {
+                  "id": "7f4d16b8-c75c-4eb7-9332-586fe99a25e8",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"014285895389\"\n      },\n      \"CompressionFormat\": \"GZIP\",\n      \"Format\": \"GLUEPARQUET\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"763584878589\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"119563707096\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"520924941074\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"Timeout\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipeJobs/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipeJobs",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:57.000Z",
+                  "updatedAt": "2026-07-28T10:22:57.000Z",
+                  "uid": "35240-7f4d16b8-c75c-4eb7-9332-586fe99a25e8"
+                }
+              ],
+              "createdAt": "2026-07-28T10:22:57.000Z",
+              "updatedAt": "2026-07-28T10:22:57.000Z",
+              "uid": "35240-f065ceae-6bea-41a3-ba1c-50819001823a"
+            }
+          ],
+          "id": "18239705-7476-42fe-aeac-e3815a6570fc",
+          "createdAt": "2026-07-28T10:22:57.000Z",
+          "updatedAt": "2026-07-28T10:22:57.000Z",
+          "uid": "35240-18239705-7476-42fe-aeac-e3815a6570fc"
+        },
+        {
+          "name": "Amazon Glue DataBrew Create Recipe Job",
+          "id": "6413201e-54b7-45d1-95ba-257703d4c2fd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"RoleArn\": \"<string>\",\n  \"DatasetName\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"372087331308\"\n      },\n      \"CompressionFormat\": \"BZIP2\",\n      \"Format\": \"JSON\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"624021204730\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"509237392977\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"275139386161\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"ProjectName\": \"<string>\",\n  \"RecipeReference\": {\n    \"Name\": \"<string>\",\n    \"RecipeVersion\": \"<string>\"\n  },\n  \"Tags\": {\n    \"minim1b\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"consectetur_3\": \"<string>\",\n    \"nulla3c\": \"<string>\",\n    \"ad_8f\": \"<string>\",\n    \"in_dfa\": \"<string>\",\n    \"sed_0\": \"<string>\",\n    \"quie7a\": \"<string>\",\n    \"proident_41\": \"<string>\",\n    \"reprehenderit6f_\": \"<string>\",\n    \"aliqua32_\": \"<string>\",\n    \"laborum_c5\": \"<string>\",\n    \"ex_0d0\": \"<string>\",\n    \"fugiat07b\": \"<string>\",\n    \"ipsum_33\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"laborum_\": \"<string>\",\n    \"autec64\": \"<string>\",\n    \"minim_e36\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"ex6f\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"ex_75_\": \"<string>\",\n    \"est62\": \"<string>\",\n    \"eiusmod_9cd\": \"<string>\",\n    \"cupidatat4e_\": \"<string>\",\n    \"deserunt_6\": \"<string>\",\n    \"adipisicinga7a\": \"<string>\",\n    \"tempor_e\": \"<string>\",\n    \"culpa_966\": \"<string>\",\n    \"et90\": \"<string>\",\n    \"irure__\": \"<string>\",\n    \"ut6b8\": \"<string>\",\n    \"pariatur2e4\": \"<string>\",\n    \"qui_3b1\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"sedf8\": \"<string>\",\n    \"Duis_b_\": \"<string>\",\n    \"culpa_8\": \"<string>\",\n    \"irure_8\": \"<string>\",\n    \"ipsumf1\": \"<string>\",\n    \"in1\": \"<string>\",\n    \"utf9\": \"<string>\",\n    \"ut_619\": \"<string>\",\n    \"elita\": \"<string>\",\n    \"reprehenderit1\": \"<string>\",\n    \"officiab\": \"<string>\",\n    \"veniam_b2\": \"<string>\",\n    \"adipisicing9bd\": \"<string>\",\n    \"aliquip_c\": \"<string>\",\n    \"adipisicing_bb9\": \"<string>\",\n    \"nostrud_9\": \"<string>\",\n    \"commodo_195\": \"<string>\",\n    \"deserunt3\": \"<string>\",\n    \"ut09\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"do_e\": \"<string>\",\n    \"sint_e\": \"<string>\",\n    \"ex017\": \"<string>\",\n    \"Ut_8c\": \"<string>\",\n    \"reprehenderit_66\": \"<string>\",\n    \"in_27d\": \"<string>\",\n    \"anim81\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"labore5b3\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"culpaffd\": \"<string>\",\n    \"et_4\": \"<string>\",\n    \"mollit65\": \"<string>\",\n    \"ad_7ef\": \"<string>\",\n    \"ide\": \"<string>\",\n    \"elitb05\": \"<string>\",\n    \"esse_7\": \"<string>\",\n    \"sint_cae\": \"<string>\",\n    \"nulla_fd_\": \"<string>\",\n    \"ut12\": \"<string>\",\n    \"voluptatec\": \"<string>\",\n    \"eu30_\": \"<string>\",\n    \"in_2a\": \"<string>\",\n    \"sint8fe\": \"<string>\",\n    \"Duis_b\": \"<string>\",\n    \"sit9\": \"<string>\",\n    \"sint_115\": \"<string>\",\n    \"fugiatda\": \"<string>\",\n    \"cupidatat_3ac\": \"<string>\",\n    \"id9\": \"<string>\",\n    \"nostrud58f\": \"<string>\",\n    \"aute28\": \"<string>\",\n    \"culpa_4f\": \"<string>\",\n    \"aute2\": \"<string>\",\n    \"in__\": \"<string>\",\n    \"officia_88\": \"<string>\",\n    \"laboris_7c\": \"<string>\",\n    \"essecd\": \"<string>\",\n    \"in38e\": \"<string>\",\n    \"ad_58e\": \"<string>\",\n    \"ut_b\": \"<string>\",\n    \"Ut_28\": \"<string>\",\n    \"reprehenderit_ba5\": \"<string>\",\n    \"voluptate4\": \"<string>\",\n    \"idd4\": \"<string>\",\n    \"ad_88\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"tempor7\": \"<string>\",\n    \"nostrud_0\": \"<string>\",\n    \"commodo33\": \"<string>\",\n    \"aliqua_5c\": \"<string>\",\n    \"laboris8e\": \"<string>\",\n    \"ut5c\": \"<string>\",\n    \"Lorem_2\": \"<string>\",\n    \"autec7\": \"<string>\",\n    \"voluptate_6\": \"<string>\",\n    \"dolore_9\": \"<string>\",\n    \"pariatur1\": \"<string>\",\n    \"exercitation_21\": \"<string>\",\n    \"nostrudd3\": \"<string>\",\n    \"amet433\": \"<string>\",\n    \"laborum_54\": \"<string>\",\n    \"est2\": \"<string>\",\n    \"ipsum3\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/recipeJobs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recipeJobs"
+              ]
+            },
+            "description": "Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe"
+          },
+          "response": [
+            {
+              "id": "b31bad9c-7c08-4f2f-af67-77e0c34aa027",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"RoleArn\": \"<string>\",\n  \"DatasetName\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"372087331308\"\n      },\n      \"CompressionFormat\": \"BZIP2\",\n      \"Format\": \"JSON\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"624021204730\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"509237392977\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"275139386161\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"ProjectName\": \"<string>\",\n  \"RecipeReference\": {\n    \"Name\": \"<string>\",\n    \"RecipeVersion\": \"<string>\"\n  },\n  \"Tags\": {\n    \"minim1b\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"consectetur_3\": \"<string>\",\n    \"nulla3c\": \"<string>\",\n    \"ad_8f\": \"<string>\",\n    \"in_dfa\": \"<string>\",\n    \"sed_0\": \"<string>\",\n    \"quie7a\": \"<string>\",\n    \"proident_41\": \"<string>\",\n    \"reprehenderit6f_\": \"<string>\",\n    \"aliqua32_\": \"<string>\",\n    \"laborum_c5\": \"<string>\",\n    \"ex_0d0\": \"<string>\",\n    \"fugiat07b\": \"<string>\",\n    \"ipsum_33\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"laborum_\": \"<string>\",\n    \"autec64\": \"<string>\",\n    \"minim_e36\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"ex6f\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"ex_75_\": \"<string>\",\n    \"est62\": \"<string>\",\n    \"eiusmod_9cd\": \"<string>\",\n    \"cupidatat4e_\": \"<string>\",\n    \"deserunt_6\": \"<string>\",\n    \"adipisicinga7a\": \"<string>\",\n    \"tempor_e\": \"<string>\",\n    \"culpa_966\": \"<string>\",\n    \"et90\": \"<string>\",\n    \"irure__\": \"<string>\",\n    \"ut6b8\": \"<string>\",\n    \"pariatur2e4\": \"<string>\",\n    \"qui_3b1\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"sedf8\": \"<string>\",\n    \"Duis_b_\": \"<string>\",\n    \"culpa_8\": \"<string>\",\n    \"irure_8\": \"<string>\",\n    \"ipsumf1\": \"<string>\",\n    \"in1\": \"<string>\",\n    \"utf9\": \"<string>\",\n    \"ut_619\": \"<string>\",\n    \"elita\": \"<string>\",\n    \"reprehenderit1\": \"<string>\",\n    \"officiab\": \"<string>\",\n    \"veniam_b2\": \"<string>\",\n    \"adipisicing9bd\": \"<string>\",\n    \"aliquip_c\": \"<string>\",\n    \"adipisicing_bb9\": \"<string>\",\n    \"nostrud_9\": \"<string>\",\n    \"commodo_195\": \"<string>\",\n    \"deserunt3\": \"<string>\",\n    \"ut09\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"do_e\": \"<string>\",\n    \"sint_e\": \"<string>\",\n    \"ex017\": \"<string>\",\n    \"Ut_8c\": \"<string>\",\n    \"reprehenderit_66\": \"<string>\",\n    \"in_27d\": \"<string>\",\n    \"anim81\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"labore5b3\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"culpaffd\": \"<string>\",\n    \"et_4\": \"<string>\",\n    \"mollit65\": \"<string>\",\n    \"ad_7ef\": \"<string>\",\n    \"ide\": \"<string>\",\n    \"elitb05\": \"<string>\",\n    \"esse_7\": \"<string>\",\n    \"sint_cae\": \"<string>\",\n    \"nulla_fd_\": \"<string>\",\n    \"ut12\": \"<string>\",\n    \"voluptatec\": \"<string>\",\n    \"eu30_\": \"<string>\",\n    \"in_2a\": \"<string>\",\n    \"sint8fe\": \"<string>\",\n    \"Duis_b\": \"<string>\",\n    \"sit9\": \"<string>\",\n    \"sint_115\": \"<string>\",\n    \"fugiatda\": \"<string>\",\n    \"cupidatat_3ac\": \"<string>\",\n    \"id9\": \"<string>\",\n    \"nostrud58f\": \"<string>\",\n    \"aute28\": \"<string>\",\n    \"culpa_4f\": \"<string>\",\n    \"aute2\": \"<string>\",\n    \"in__\": \"<string>\",\n    \"officia_88\": \"<string>\",\n    \"laboris_7c\": \"<string>\",\n    \"essecd\": \"<string>\",\n    \"in38e\": \"<string>\",\n    \"ad_58e\": \"<string>\",\n    \"ut_b\": \"<string>\",\n    \"Ut_28\": \"<string>\",\n    \"reprehenderit_ba5\": \"<string>\",\n    \"voluptate4\": \"<string>\",\n    \"idd4\": \"<string>\",\n    \"ad_88\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"tempor7\": \"<string>\",\n    \"nostrud_0\": \"<string>\",\n    \"commodo33\": \"<string>\",\n    \"aliqua_5c\": \"<string>\",\n    \"laboris8e\": \"<string>\",\n    \"ut5c\": \"<string>\",\n    \"Lorem_2\": \"<string>\",\n    \"autec7\": \"<string>\",\n    \"voluptate_6\": \"<string>\",\n    \"dolore_9\": \"<string>\",\n    \"pariatur1\": \"<string>\",\n    \"exercitation_21\": \"<string>\",\n    \"nostrudd3\": \"<string>\",\n    \"amet433\": \"<string>\",\n    \"laborum_54\": \"<string>\",\n    \"est2\": \"<string>\",\n    \"ipsum3\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipeJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeJobs"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Name\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:22:57.000Z",
+              "updatedAt": "2026-07-28T10:22:57.000Z",
+              "uid": "35240-b31bad9c-7c08-4f2f-af67-77e0c34aa027"
+            },
+            {
+              "id": "7bb6bd26-7c71-45ce-b052-b2044f3c7666",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"RoleArn\": \"<string>\",\n  \"DatasetName\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"372087331308\"\n      },\n      \"CompressionFormat\": \"BZIP2\",\n      \"Format\": \"JSON\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"624021204730\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"509237392977\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"275139386161\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"ProjectName\": \"<string>\",\n  \"RecipeReference\": {\n    \"Name\": \"<string>\",\n    \"RecipeVersion\": \"<string>\"\n  },\n  \"Tags\": {\n    \"minim1b\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"consectetur_3\": \"<string>\",\n    \"nulla3c\": \"<string>\",\n    \"ad_8f\": \"<string>\",\n    \"in_dfa\": \"<string>\",\n    \"sed_0\": \"<string>\",\n    \"quie7a\": \"<string>\",\n    \"proident_41\": \"<string>\",\n    \"reprehenderit6f_\": \"<string>\",\n    \"aliqua32_\": \"<string>\",\n    \"laborum_c5\": \"<string>\",\n    \"ex_0d0\": \"<string>\",\n    \"fugiat07b\": \"<string>\",\n    \"ipsum_33\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"laborum_\": \"<string>\",\n    \"autec64\": \"<string>\",\n    \"minim_e36\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"ex6f\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"ex_75_\": \"<string>\",\n    \"est62\": \"<string>\",\n    \"eiusmod_9cd\": \"<string>\",\n    \"cupidatat4e_\": \"<string>\",\n    \"deserunt_6\": \"<string>\",\n    \"adipisicinga7a\": \"<string>\",\n    \"tempor_e\": \"<string>\",\n    \"culpa_966\": \"<string>\",\n    \"et90\": \"<string>\",\n    \"irure__\": \"<string>\",\n    \"ut6b8\": \"<string>\",\n    \"pariatur2e4\": \"<string>\",\n    \"qui_3b1\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"sedf8\": \"<string>\",\n    \"Duis_b_\": \"<string>\",\n    \"culpa_8\": \"<string>\",\n    \"irure_8\": \"<string>\",\n    \"ipsumf1\": \"<string>\",\n    \"in1\": \"<string>\",\n    \"utf9\": \"<string>\",\n    \"ut_619\": \"<string>\",\n    \"elita\": \"<string>\",\n    \"reprehenderit1\": \"<string>\",\n    \"officiab\": \"<string>\",\n    \"veniam_b2\": \"<string>\",\n    \"adipisicing9bd\": \"<string>\",\n    \"aliquip_c\": \"<string>\",\n    \"adipisicing_bb9\": \"<string>\",\n    \"nostrud_9\": \"<string>\",\n    \"commodo_195\": \"<string>\",\n    \"deserunt3\": \"<string>\",\n    \"ut09\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"do_e\": \"<string>\",\n    \"sint_e\": \"<string>\",\n    \"ex017\": \"<string>\",\n    \"Ut_8c\": \"<string>\",\n    \"reprehenderit_66\": \"<string>\",\n    \"in_27d\": \"<string>\",\n    \"anim81\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"labore5b3\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"culpaffd\": \"<string>\",\n    \"et_4\": \"<string>\",\n    \"mollit65\": \"<string>\",\n    \"ad_7ef\": \"<string>\",\n    \"ide\": \"<string>\",\n    \"elitb05\": \"<string>\",\n    \"esse_7\": \"<string>\",\n    \"sint_cae\": \"<string>\",\n    \"nulla_fd_\": \"<string>\",\n    \"ut12\": \"<string>\",\n    \"voluptatec\": \"<string>\",\n    \"eu30_\": \"<string>\",\n    \"in_2a\": \"<string>\",\n    \"sint8fe\": \"<string>\",\n    \"Duis_b\": \"<string>\",\n    \"sit9\": \"<string>\",\n    \"sint_115\": \"<string>\",\n    \"fugiatda\": \"<string>\",\n    \"cupidatat_3ac\": \"<string>\",\n    \"id9\": \"<string>\",\n    \"nostrud58f\": \"<string>\",\n    \"aute28\": \"<string>\",\n    \"culpa_4f\": \"<string>\",\n    \"aute2\": \"<string>\",\n    \"in__\": \"<string>\",\n    \"officia_88\": \"<string>\",\n    \"laboris_7c\": \"<string>\",\n    \"essecd\": \"<string>\",\n    \"in38e\": \"<string>\",\n    \"ad_58e\": \"<string>\",\n    \"ut_b\": \"<string>\",\n    \"Ut_28\": \"<string>\",\n    \"reprehenderit_ba5\": \"<string>\",\n    \"voluptate4\": \"<string>\",\n    \"idd4\": \"<string>\",\n    \"ad_88\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"tempor7\": \"<string>\",\n    \"nostrud_0\": \"<string>\",\n    \"commodo33\": \"<string>\",\n    \"aliqua_5c\": \"<string>\",\n    \"laboris8e\": \"<string>\",\n    \"ut5c\": \"<string>\",\n    \"Lorem_2\": \"<string>\",\n    \"autec7\": \"<string>\",\n    \"voluptate_6\": \"<string>\",\n    \"dolore_9\": \"<string>\",\n    \"pariatur1\": \"<string>\",\n    \"exercitation_21\": \"<string>\",\n    \"nostrudd3\": \"<string>\",\n    \"amet433\": \"<string>\",\n    \"laborum_54\": \"<string>\",\n    \"est2\": \"<string>\",\n    \"ipsum3\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipeJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:57.000Z",
+              "updatedAt": "2026-07-28T10:22:57.000Z",
+              "uid": "35240-7bb6bd26-7c71-45ce-b052-b2044f3c7666"
+            },
+            {
+              "id": "e267cae6-c5f4-4ff1-8d83-f8dc52050db0",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"RoleArn\": \"<string>\",\n  \"DatasetName\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"372087331308\"\n      },\n      \"CompressionFormat\": \"BZIP2\",\n      \"Format\": \"JSON\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"624021204730\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"509237392977\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"275139386161\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"ProjectName\": \"<string>\",\n  \"RecipeReference\": {\n    \"Name\": \"<string>\",\n    \"RecipeVersion\": \"<string>\"\n  },\n  \"Tags\": {\n    \"minim1b\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"consectetur_3\": \"<string>\",\n    \"nulla3c\": \"<string>\",\n    \"ad_8f\": \"<string>\",\n    \"in_dfa\": \"<string>\",\n    \"sed_0\": \"<string>\",\n    \"quie7a\": \"<string>\",\n    \"proident_41\": \"<string>\",\n    \"reprehenderit6f_\": \"<string>\",\n    \"aliqua32_\": \"<string>\",\n    \"laborum_c5\": \"<string>\",\n    \"ex_0d0\": \"<string>\",\n    \"fugiat07b\": \"<string>\",\n    \"ipsum_33\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"laborum_\": \"<string>\",\n    \"autec64\": \"<string>\",\n    \"minim_e36\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"ex6f\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"ex_75_\": \"<string>\",\n    \"est62\": \"<string>\",\n    \"eiusmod_9cd\": \"<string>\",\n    \"cupidatat4e_\": \"<string>\",\n    \"deserunt_6\": \"<string>\",\n    \"adipisicinga7a\": \"<string>\",\n    \"tempor_e\": \"<string>\",\n    \"culpa_966\": \"<string>\",\n    \"et90\": \"<string>\",\n    \"irure__\": \"<string>\",\n    \"ut6b8\": \"<string>\",\n    \"pariatur2e4\": \"<string>\",\n    \"qui_3b1\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"sedf8\": \"<string>\",\n    \"Duis_b_\": \"<string>\",\n    \"culpa_8\": \"<string>\",\n    \"irure_8\": \"<string>\",\n    \"ipsumf1\": \"<string>\",\n    \"in1\": \"<string>\",\n    \"utf9\": \"<string>\",\n    \"ut_619\": \"<string>\",\n    \"elita\": \"<string>\",\n    \"reprehenderit1\": \"<string>\",\n    \"officiab\": \"<string>\",\n    \"veniam_b2\": \"<string>\",\n    \"adipisicing9bd\": \"<string>\",\n    \"aliquip_c\": \"<string>\",\n    \"adipisicing_bb9\": \"<string>\",\n    \"nostrud_9\": \"<string>\",\n    \"commodo_195\": \"<string>\",\n    \"deserunt3\": \"<string>\",\n    \"ut09\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"do_e\": \"<string>\",\n    \"sint_e\": \"<string>\",\n    \"ex017\": \"<string>\",\n    \"Ut_8c\": \"<string>\",\n    \"reprehenderit_66\": \"<string>\",\n    \"in_27d\": \"<string>\",\n    \"anim81\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"labore5b3\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"culpaffd\": \"<string>\",\n    \"et_4\": \"<string>\",\n    \"mollit65\": \"<string>\",\n    \"ad_7ef\": \"<string>\",\n    \"ide\": \"<string>\",\n    \"elitb05\": \"<string>\",\n    \"esse_7\": \"<string>\",\n    \"sint_cae\": \"<string>\",\n    \"nulla_fd_\": \"<string>\",\n    \"ut12\": \"<string>\",\n    \"voluptatec\": \"<string>\",\n    \"eu30_\": \"<string>\",\n    \"in_2a\": \"<string>\",\n    \"sint8fe\": \"<string>\",\n    \"Duis_b\": \"<string>\",\n    \"sit9\": \"<string>\",\n    \"sint_115\": \"<string>\",\n    \"fugiatda\": \"<string>\",\n    \"cupidatat_3ac\": \"<string>\",\n    \"id9\": \"<string>\",\n    \"nostrud58f\": \"<string>\",\n    \"aute28\": \"<string>\",\n    \"culpa_4f\": \"<string>\",\n    \"aute2\": \"<string>\",\n    \"in__\": \"<string>\",\n    \"officia_88\": \"<string>\",\n    \"laboris_7c\": \"<string>\",\n    \"essecd\": \"<string>\",\n    \"in38e\": \"<string>\",\n    \"ad_58e\": \"<string>\",\n    \"ut_b\": \"<string>\",\n    \"Ut_28\": \"<string>\",\n    \"reprehenderit_ba5\": \"<string>\",\n    \"voluptate4\": \"<string>\",\n    \"idd4\": \"<string>\",\n    \"ad_88\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"tempor7\": \"<string>\",\n    \"nostrud_0\": \"<string>\",\n    \"commodo33\": \"<string>\",\n    \"aliqua_5c\": \"<string>\",\n    \"laboris8e\": \"<string>\",\n    \"ut5c\": \"<string>\",\n    \"Lorem_2\": \"<string>\",\n    \"autec7\": \"<string>\",\n    \"voluptate_6\": \"<string>\",\n    \"dolore_9\": \"<string>\",\n    \"pariatur1\": \"<string>\",\n    \"exercitation_21\": \"<string>\",\n    \"nostrudd3\": \"<string>\",\n    \"amet433\": \"<string>\",\n    \"laborum_54\": \"<string>\",\n    \"est2\": \"<string>\",\n    \"ipsum3\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipeJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:57.000Z",
+              "updatedAt": "2026-07-28T10:22:57.000Z",
+              "uid": "35240-e267cae6-c5f4-4ff1-8d83-f8dc52050db0"
+            },
+            {
+              "id": "e6fd2e48-fa9b-4d02-a532-ca7e8f7fc322",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"RoleArn\": \"<string>\",\n  \"DatasetName\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"372087331308\"\n      },\n      \"CompressionFormat\": \"BZIP2\",\n      \"Format\": \"JSON\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"624021204730\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"509237392977\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"275139386161\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"ProjectName\": \"<string>\",\n  \"RecipeReference\": {\n    \"Name\": \"<string>\",\n    \"RecipeVersion\": \"<string>\"\n  },\n  \"Tags\": {\n    \"minim1b\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"consectetur_3\": \"<string>\",\n    \"nulla3c\": \"<string>\",\n    \"ad_8f\": \"<string>\",\n    \"in_dfa\": \"<string>\",\n    \"sed_0\": \"<string>\",\n    \"quie7a\": \"<string>\",\n    \"proident_41\": \"<string>\",\n    \"reprehenderit6f_\": \"<string>\",\n    \"aliqua32_\": \"<string>\",\n    \"laborum_c5\": \"<string>\",\n    \"ex_0d0\": \"<string>\",\n    \"fugiat07b\": \"<string>\",\n    \"ipsum_33\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"laborum_\": \"<string>\",\n    \"autec64\": \"<string>\",\n    \"minim_e36\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"ex6f\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"ex_75_\": \"<string>\",\n    \"est62\": \"<string>\",\n    \"eiusmod_9cd\": \"<string>\",\n    \"cupidatat4e_\": \"<string>\",\n    \"deserunt_6\": \"<string>\",\n    \"adipisicinga7a\": \"<string>\",\n    \"tempor_e\": \"<string>\",\n    \"culpa_966\": \"<string>\",\n    \"et90\": \"<string>\",\n    \"irure__\": \"<string>\",\n    \"ut6b8\": \"<string>\",\n    \"pariatur2e4\": \"<string>\",\n    \"qui_3b1\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"sedf8\": \"<string>\",\n    \"Duis_b_\": \"<string>\",\n    \"culpa_8\": \"<string>\",\n    \"irure_8\": \"<string>\",\n    \"ipsumf1\": \"<string>\",\n    \"in1\": \"<string>\",\n    \"utf9\": \"<string>\",\n    \"ut_619\": \"<string>\",\n    \"elita\": \"<string>\",\n    \"reprehenderit1\": \"<string>\",\n    \"officiab\": \"<string>\",\n    \"veniam_b2\": \"<string>\",\n    \"adipisicing9bd\": \"<string>\",\n    \"aliquip_c\": \"<string>\",\n    \"adipisicing_bb9\": \"<string>\",\n    \"nostrud_9\": \"<string>\",\n    \"commodo_195\": \"<string>\",\n    \"deserunt3\": \"<string>\",\n    \"ut09\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"do_e\": \"<string>\",\n    \"sint_e\": \"<string>\",\n    \"ex017\": \"<string>\",\n    \"Ut_8c\": \"<string>\",\n    \"reprehenderit_66\": \"<string>\",\n    \"in_27d\": \"<string>\",\n    \"anim81\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"labore5b3\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"culpaffd\": \"<string>\",\n    \"et_4\": \"<string>\",\n    \"mollit65\": \"<string>\",\n    \"ad_7ef\": \"<string>\",\n    \"ide\": \"<string>\",\n    \"elitb05\": \"<string>\",\n    \"esse_7\": \"<string>\",\n    \"sint_cae\": \"<string>\",\n    \"nulla_fd_\": \"<string>\",\n    \"ut12\": \"<string>\",\n    \"voluptatec\": \"<string>\",\n    \"eu30_\": \"<string>\",\n    \"in_2a\": \"<string>\",\n    \"sint8fe\": \"<string>\",\n    \"Duis_b\": \"<string>\",\n    \"sit9\": \"<string>\",\n    \"sint_115\": \"<string>\",\n    \"fugiatda\": \"<string>\",\n    \"cupidatat_3ac\": \"<string>\",\n    \"id9\": \"<string>\",\n    \"nostrud58f\": \"<string>\",\n    \"aute28\": \"<string>\",\n    \"culpa_4f\": \"<string>\",\n    \"aute2\": \"<string>\",\n    \"in__\": \"<string>\",\n    \"officia_88\": \"<string>\",\n    \"laboris_7c\": \"<string>\",\n    \"essecd\": \"<string>\",\n    \"in38e\": \"<string>\",\n    \"ad_58e\": \"<string>\",\n    \"ut_b\": \"<string>\",\n    \"Ut_28\": \"<string>\",\n    \"reprehenderit_ba5\": \"<string>\",\n    \"voluptate4\": \"<string>\",\n    \"idd4\": \"<string>\",\n    \"ad_88\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"tempor7\": \"<string>\",\n    \"nostrud_0\": \"<string>\",\n    \"commodo33\": \"<string>\",\n    \"aliqua_5c\": \"<string>\",\n    \"laboris8e\": \"<string>\",\n    \"ut5c\": \"<string>\",\n    \"Lorem_2\": \"<string>\",\n    \"autec7\": \"<string>\",\n    \"voluptate_6\": \"<string>\",\n    \"dolore_9\": \"<string>\",\n    \"pariatur1\": \"<string>\",\n    \"exercitation_21\": \"<string>\",\n    \"nostrudd3\": \"<string>\",\n    \"amet433\": \"<string>\",\n    \"laborum_54\": \"<string>\",\n    \"est2\": \"<string>\",\n    \"ipsum3\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipeJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:57.000Z",
+              "updatedAt": "2026-07-28T10:22:57.000Z",
+              "uid": "35240-e6fd2e48-fa9b-4d02-a532-ca7e8f7fc322"
+            },
+            {
+              "id": "a1ca9547-7c0f-4c9f-aa8e-ba3e71cb63bb",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"RoleArn\": \"<string>\",\n  \"DatasetName\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"372087331308\"\n      },\n      \"CompressionFormat\": \"BZIP2\",\n      \"Format\": \"JSON\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"624021204730\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"509237392977\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"275139386161\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"ProjectName\": \"<string>\",\n  \"RecipeReference\": {\n    \"Name\": \"<string>\",\n    \"RecipeVersion\": \"<string>\"\n  },\n  \"Tags\": {\n    \"minim1b\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"consectetur_3\": \"<string>\",\n    \"nulla3c\": \"<string>\",\n    \"ad_8f\": \"<string>\",\n    \"in_dfa\": \"<string>\",\n    \"sed_0\": \"<string>\",\n    \"quie7a\": \"<string>\",\n    \"proident_41\": \"<string>\",\n    \"reprehenderit6f_\": \"<string>\",\n    \"aliqua32_\": \"<string>\",\n    \"laborum_c5\": \"<string>\",\n    \"ex_0d0\": \"<string>\",\n    \"fugiat07b\": \"<string>\",\n    \"ipsum_33\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"laborum_\": \"<string>\",\n    \"autec64\": \"<string>\",\n    \"minim_e36\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"ex6f\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"ex_75_\": \"<string>\",\n    \"est62\": \"<string>\",\n    \"eiusmod_9cd\": \"<string>\",\n    \"cupidatat4e_\": \"<string>\",\n    \"deserunt_6\": \"<string>\",\n    \"adipisicinga7a\": \"<string>\",\n    \"tempor_e\": \"<string>\",\n    \"culpa_966\": \"<string>\",\n    \"et90\": \"<string>\",\n    \"irure__\": \"<string>\",\n    \"ut6b8\": \"<string>\",\n    \"pariatur2e4\": \"<string>\",\n    \"qui_3b1\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"sedf8\": \"<string>\",\n    \"Duis_b_\": \"<string>\",\n    \"culpa_8\": \"<string>\",\n    \"irure_8\": \"<string>\",\n    \"ipsumf1\": \"<string>\",\n    \"in1\": \"<string>\",\n    \"utf9\": \"<string>\",\n    \"ut_619\": \"<string>\",\n    \"elita\": \"<string>\",\n    \"reprehenderit1\": \"<string>\",\n    \"officiab\": \"<string>\",\n    \"veniam_b2\": \"<string>\",\n    \"adipisicing9bd\": \"<string>\",\n    \"aliquip_c\": \"<string>\",\n    \"adipisicing_bb9\": \"<string>\",\n    \"nostrud_9\": \"<string>\",\n    \"commodo_195\": \"<string>\",\n    \"deserunt3\": \"<string>\",\n    \"ut09\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"do_e\": \"<string>\",\n    \"sint_e\": \"<string>\",\n    \"ex017\": \"<string>\",\n    \"Ut_8c\": \"<string>\",\n    \"reprehenderit_66\": \"<string>\",\n    \"in_27d\": \"<string>\",\n    \"anim81\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"labore5b3\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"culpaffd\": \"<string>\",\n    \"et_4\": \"<string>\",\n    \"mollit65\": \"<string>\",\n    \"ad_7ef\": \"<string>\",\n    \"ide\": \"<string>\",\n    \"elitb05\": \"<string>\",\n    \"esse_7\": \"<string>\",\n    \"sint_cae\": \"<string>\",\n    \"nulla_fd_\": \"<string>\",\n    \"ut12\": \"<string>\",\n    \"voluptatec\": \"<string>\",\n    \"eu30_\": \"<string>\",\n    \"in_2a\": \"<string>\",\n    \"sint8fe\": \"<string>\",\n    \"Duis_b\": \"<string>\",\n    \"sit9\": \"<string>\",\n    \"sint_115\": \"<string>\",\n    \"fugiatda\": \"<string>\",\n    \"cupidatat_3ac\": \"<string>\",\n    \"id9\": \"<string>\",\n    \"nostrud58f\": \"<string>\",\n    \"aute28\": \"<string>\",\n    \"culpa_4f\": \"<string>\",\n    \"aute2\": \"<string>\",\n    \"in__\": \"<string>\",\n    \"officia_88\": \"<string>\",\n    \"laboris_7c\": \"<string>\",\n    \"essecd\": \"<string>\",\n    \"in38e\": \"<string>\",\n    \"ad_58e\": \"<string>\",\n    \"ut_b\": \"<string>\",\n    \"Ut_28\": \"<string>\",\n    \"reprehenderit_ba5\": \"<string>\",\n    \"voluptate4\": \"<string>\",\n    \"idd4\": \"<string>\",\n    \"ad_88\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"tempor7\": \"<string>\",\n    \"nostrud_0\": \"<string>\",\n    \"commodo33\": \"<string>\",\n    \"aliqua_5c\": \"<string>\",\n    \"laboris8e\": \"<string>\",\n    \"ut5c\": \"<string>\",\n    \"Lorem_2\": \"<string>\",\n    \"autec7\": \"<string>\",\n    \"voluptate_6\": \"<string>\",\n    \"dolore_9\": \"<string>\",\n    \"pariatur1\": \"<string>\",\n    \"exercitation_21\": \"<string>\",\n    \"nostrudd3\": \"<string>\",\n    \"amet433\": \"<string>\",\n    \"laborum_54\": \"<string>\",\n    \"est2\": \"<string>\",\n    \"ipsum3\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipeJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:57.000Z",
+              "updatedAt": "2026-07-28T10:22:57.000Z",
+              "uid": "35240-a1ca9547-7c0f-4c9f-aa8e-ba3e71cb63bb"
+            },
+            {
+              "id": "8476cf7b-7db6-4331-970d-46d8edcd3425",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"RoleArn\": \"<string>\",\n  \"DatasetName\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Outputs\": [\n    {\n      \"Location\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"372087331308\"\n      },\n      \"CompressionFormat\": \"BZIP2\",\n      \"Format\": \"JSON\",\n      \"PartitionColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"Overwrite\": \"<boolean>\",\n      \"FormatOptions\": {\n        \"Csv\": {\n          \"Delimiter\": \"<string>\"\n        }\n      },\n      \"MaxOutputFiles\": \"<integer>\"\n    }\n  ],\n  \"DataCatalogOutputs\": [\n    {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"S3Options\": {\n        \"Location\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"624021204730\"\n        }\n      },\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"509237392977\"\n        }\n      },\n      \"Overwrite\": \"<boolean>\"\n    }\n  ],\n  \"DatabaseOutputs\": [\n    {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseOptions\": {\n        \"TableName\": \"<string>\",\n        \"TempDirectory\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"275139386161\"\n        }\n      },\n      \"DatabaseOutputMode\": \"NEW_TABLE\"\n    }\n  ],\n  \"ProjectName\": \"<string>\",\n  \"RecipeReference\": {\n    \"Name\": \"<string>\",\n    \"RecipeVersion\": \"<string>\"\n  },\n  \"Tags\": {\n    \"minim1b\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"consectetur_3\": \"<string>\",\n    \"nulla3c\": \"<string>\",\n    \"ad_8f\": \"<string>\",\n    \"in_dfa\": \"<string>\",\n    \"sed_0\": \"<string>\",\n    \"quie7a\": \"<string>\",\n    \"proident_41\": \"<string>\",\n    \"reprehenderit6f_\": \"<string>\",\n    \"aliqua32_\": \"<string>\",\n    \"laborum_c5\": \"<string>\",\n    \"ex_0d0\": \"<string>\",\n    \"fugiat07b\": \"<string>\",\n    \"ipsum_33\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"laborum_\": \"<string>\",\n    \"autec64\": \"<string>\",\n    \"minim_e36\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"ex6f\": \"<string>\",\n    \"dolor_6\": \"<string>\",\n    \"ex_75_\": \"<string>\",\n    \"est62\": \"<string>\",\n    \"eiusmod_9cd\": \"<string>\",\n    \"cupidatat4e_\": \"<string>\",\n    \"deserunt_6\": \"<string>\",\n    \"adipisicinga7a\": \"<string>\",\n    \"tempor_e\": \"<string>\",\n    \"culpa_966\": \"<string>\",\n    \"et90\": \"<string>\",\n    \"irure__\": \"<string>\",\n    \"ut6b8\": \"<string>\",\n    \"pariatur2e4\": \"<string>\",\n    \"qui_3b1\": \"<string>\",\n    \"ipsumb\": \"<string>\",\n    \"sedf8\": \"<string>\",\n    \"Duis_b_\": \"<string>\",\n    \"culpa_8\": \"<string>\",\n    \"irure_8\": \"<string>\",\n    \"ipsumf1\": \"<string>\",\n    \"in1\": \"<string>\",\n    \"utf9\": \"<string>\",\n    \"ut_619\": \"<string>\",\n    \"elita\": \"<string>\",\n    \"reprehenderit1\": \"<string>\",\n    \"officiab\": \"<string>\",\n    \"veniam_b2\": \"<string>\",\n    \"adipisicing9bd\": \"<string>\",\n    \"aliquip_c\": \"<string>\",\n    \"adipisicing_bb9\": \"<string>\",\n    \"nostrud_9\": \"<string>\",\n    \"commodo_195\": \"<string>\",\n    \"deserunt3\": \"<string>\",\n    \"ut09\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"do_e\": \"<string>\",\n    \"sint_e\": \"<string>\",\n    \"ex017\": \"<string>\",\n    \"Ut_8c\": \"<string>\",\n    \"reprehenderit_66\": \"<string>\",\n    \"in_27d\": \"<string>\",\n    \"anim81\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"sint_7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"labore5b3\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"culpaffd\": \"<string>\",\n    \"et_4\": \"<string>\",\n    \"mollit65\": \"<string>\",\n    \"ad_7ef\": \"<string>\",\n    \"ide\": \"<string>\",\n    \"elitb05\": \"<string>\",\n    \"esse_7\": \"<string>\",\n    \"sint_cae\": \"<string>\",\n    \"nulla_fd_\": \"<string>\",\n    \"ut12\": \"<string>\",\n    \"voluptatec\": \"<string>\",\n    \"eu30_\": \"<string>\",\n    \"in_2a\": \"<string>\",\n    \"sint8fe\": \"<string>\",\n    \"Duis_b\": \"<string>\",\n    \"sit9\": \"<string>\",\n    \"sint_115\": \"<string>\",\n    \"fugiatda\": \"<string>\",\n    \"cupidatat_3ac\": \"<string>\",\n    \"id9\": \"<string>\",\n    \"nostrud58f\": \"<string>\",\n    \"aute28\": \"<string>\",\n    \"culpa_4f\": \"<string>\",\n    \"aute2\": \"<string>\",\n    \"in__\": \"<string>\",\n    \"officia_88\": \"<string>\",\n    \"laboris_7c\": \"<string>\",\n    \"essecd\": \"<string>\",\n    \"in38e\": \"<string>\",\n    \"ad_58e\": \"<string>\",\n    \"ut_b\": \"<string>\",\n    \"Ut_28\": \"<string>\",\n    \"reprehenderit_ba5\": \"<string>\",\n    \"voluptate4\": \"<string>\",\n    \"idd4\": \"<string>\",\n    \"ad_88\": \"<string>\",\n    \"aliquip0\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"tempor7\": \"<string>\",\n    \"nostrud_0\": \"<string>\",\n    \"commodo33\": \"<string>\",\n    \"aliqua_5c\": \"<string>\",\n    \"laboris8e\": \"<string>\",\n    \"ut5c\": \"<string>\",\n    \"Lorem_2\": \"<string>\",\n    \"autec7\": \"<string>\",\n    \"voluptate_6\": \"<string>\",\n    \"dolore_9\": \"<string>\",\n    \"pariatur1\": \"<string>\",\n    \"exercitation_21\": \"<string>\",\n    \"nostrudd3\": \"<string>\",\n    \"amet433\": \"<string>\",\n    \"laborum_54\": \"<string>\",\n    \"est2\": \"<string>\",\n    \"ipsum3\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipeJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:57.000Z",
+              "updatedAt": "2026-07-28T10:22:57.000Z",
+              "uid": "35240-8476cf7b-7db6-4331-970d-46d8edcd3425"
+            }
+          ],
+          "createdAt": "2026-07-28T10:22:57.000Z",
+          "updatedAt": "2026-07-28T10:22:57.000Z",
+          "uid": "35240-6413201e-54b7-45d1-95ba-257703d4c2fd"
+        }
+      ],
+      "id": "d58e2f47-2061-4af0-b645-98519914f2a9",
+      "createdAt": "2026-07-28T10:22:57.000Z",
+      "updatedAt": "2026-07-28T10:22:57.000Z",
+      "uid": "35240-d58e2f47-2061-4af0-b645-98519914f2a9"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://databrew.{{region}}.amazonaws.com"
+    }
+  ]
+}

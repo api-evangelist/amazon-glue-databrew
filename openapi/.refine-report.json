@@ -1,0 +1,32 @@
+{
+  "provider": "amazon-glue-databrew",
+  "sources": [
+    "amazon-glue-databrew-datasets-api-openapi.yml",
+    "amazon-glue-databrew-jobs-api-openapi.yml",
+    "amazon-glue-databrew-profilejobs-api-openapi.yml",
+    "amazon-glue-databrew-projects-api-openapi.yml",
+    "amazon-glue-databrew-recipejobs-api-openapi.yml",
+    "amazon-glue-databrew-recipes-api-openapi.yml",
+    "amazon-glue-databrew-recipeversions-name-api-openapi.yml",
+    "amazon-glue-databrew-rulesets-api-openapi.yml",
+    "amazon-glue-databrew-schedules-api-openapi.yml",
+    "amazon-glue-databrew-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-glue-databrew-datasets-api-openapi.yml",
+    "amazon-glue-databrew-jobs-api-openapi.yml",
+    "amazon-glue-databrew-profilejobs-api-openapi.yml",
+    "amazon-glue-databrew-projects-api-openapi.yml",
+    "amazon-glue-databrew-recipejobs-api-openapi.yml",
+    "amazon-glue-databrew-recipes-api-openapi.yml",
+    "amazon-glue-databrew-recipeversions-name-api-openapi.yml",
+    "amazon-glue-databrew-rulesets-api-openapi.yml",
+    "amazon-glue-databrew-schedules-api-openapi.yml",
+    "amazon-glue-databrew-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

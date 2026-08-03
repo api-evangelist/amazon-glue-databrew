@@ -1,0 +1,334 @@
+{
+  "info": {
+    "_postman_id": "15491b58-c1a0-4dd4-9b8e-7db66ace5ca0",
+    "name": "AWS Glue DataBrew Datasets RecipeVersions#name API",
+    "description": "Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:22:59.000Z",
+    "updatedAt": "2026-07-28T10:22:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-15491b58-c1a0-4dd4-9b8e-7db66ace5ca0"
+  },
+  "item": [
+    {
+      "name": "recipeVersions#name",
+      "item": [
+        {
+          "name": "Amazon Glue DataBrew List Recipe Versions",
+          "id": "e1c6adde-b7a2-491d-bc08-2e0c26ed10c4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/recipeVersions?maxResults=<integer>&nextToken=<string>&name=<string>&MaxResults=<string>&NextToken=<string>#name",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recipeVersions"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of results to return in this request. ",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The token returned by a previous call to retrieve the next set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The name of the recipe for which to return version information.",
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "name"
+            },
+            "description": "Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>."
+          },
+          "response": [
+            {
+              "id": "035ac7ee-faf5-41d7-83bb-6ad880a68d1a",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/recipeVersions?maxResults=<integer>&nextToken=<string>&name=<string>&MaxResults=<string>&NextToken=<string>#name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeVersions"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in this request. ",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token returned by a previous call to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the recipe for which to return version information.",
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "name"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Recipes\": [\n    {\n      \"Name\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"LastModifiedBy\": \"<string>\",\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"ProjectName\": \"<string>\",\n      \"PublishedBy\": \"<string>\",\n      \"PublishedDate\": \"<dateTime>\",\n      \"Description\": \"<string>\",\n      \"ResourceArn\": \"<string>\",\n      \"Steps\": [\n        {\n          \"Action\": {\n            \"Operation\": \"S\",\n            \"Parameters\": {\n              \"animc\": \"<string>\",\n              \"sint_97e\": \"<string>\"\n            }\n          },\n          \"ConditionExpressions\": [\n            {\n              \"Condition\": \"VOG\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            },\n            {\n              \"Condition\": \"TWVDTBVKIOU\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"Action\": {\n            \"Operation\": \"AMV\",\n            \"Parameters\": {\n              \"culpa_3e\": \"<string>\"\n            }\n          },\n          \"ConditionExpressions\": [\n            {\n              \"Condition\": \"DRF\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            },\n            {\n              \"Condition\": \"AIN_ORFUP\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            }\n          ]\n        }\n      ],\n      \"Tags\": {\n        \"ut_1b\": \"<string>\",\n        \"culpa_1\": \"<string>\",\n        \"voluptate_38\": \"<string>\",\n        \"velit9\": \"<string>\",\n        \"do657\": \"<string>\",\n        \"quis_7\": \"<string>\",\n        \"laborum_5c5\": \"<string>\",\n        \"nulla6\": \"<string>\",\n        \"reprehenderit_30\": \"<string>\",\n        \"Excepteur951\": \"<string>\",\n        \"ullamco_726\": \"<string>\",\n        \"nullaf0\": \"<string>\",\n        \"qui45\": \"<string>\",\n        \"exercitation_7\": \"<string>\",\n        \"in_64\": \"<string>\",\n        \"eu_c\": \"<string>\",\n        \"velitc\": \"<string>\",\n        \"anim62\": \"<string>\",\n        \"reprehenderit_9\": \"<string>\",\n        \"deseruntae\": \"<string>\",\n        \"consequatf94\": \"<string>\",\n        \"proident30c\": \"<string>\",\n        \"deserunt_752\": \"<string>\",\n        \"dolor_e8\": \"<string>\",\n        \"in032\": \"<string>\",\n        \"aliquip_b76\": \"<string>\",\n        \"deserunt__\": \"<string>\",\n        \"deserunt__77\": \"<string>\",\n        \"pariatur_2\": \"<string>\",\n        \"qui6_6\": \"<string>\",\n        \"dolor_d40\": \"<string>\",\n        \"sed4d\": \"<string>\",\n        \"et_94\": \"<string>\",\n        \"esse_5c3\": \"<string>\",\n        \"Ut_5d8\": \"<string>\",\n        \"in_1a7\": \"<string>\",\n        \"exb\": \"<string>\",\n        \"eiusmodfed\": \"<string>\",\n        \"exercitation45\": \"<string>\",\n        \"in_41\": \"<string>\",\n        \"reprehenderit73\": \"<string>\",\n        \"ipsum_f\": \"<string>\",\n        \"magna7e\": \"<string>\",\n        \"ut_636\": \"<string>\",\n        \"Ut02\": \"<string>\",\n        \"incididunt___\": \"<string>\",\n        \"mollit_4\": \"<string>\",\n        \"incididuntafa\": \"<string>\",\n        \"ut_2b\": \"<string>\",\n        \"nisi_18\": \"<string>\",\n        \"ea_3\": \"<string>\",\n        \"uteb\": \"<string>\",\n        \"qui9\": \"<string>\",\n        \"occaecat_d\": \"<string>\",\n        \"esse_7\": \"<string>\",\n        \"ut_bf\": \"<string>\",\n        \"cillum54c\": \"<string>\",\n        \"quis717\": \"<string>\",\n        \"fugiat__1\": \"<string>\",\n        \"Excepteur_42f\": \"<string>\",\n        \"id_d25\": \"<string>\",\n        \"laboris_d\": \"<string>\",\n        \"fugiat0\": \"<string>\",\n        \"fugiat9a\": \"<string>\",\n        \"proidentead\": \"<string>\",\n        \"quis_6\": \"<string>\",\n        \"consequat_0\": \"<string>\",\n        \"Excepteur_3\": \"<string>\",\n        \"Ut_628\": \"<string>\",\n        \"minim_b7\": \"<string>\",\n        \"eadc\": \"<string>\",\n        \"commodo_98b\": \"<string>\",\n        \"labore_5\": \"<string>\",\n        \"eu_a7\": \"<string>\",\n        \"exe0\": \"<string>\",\n        \"incididunt0d\": \"<string>\",\n        \"Excepteur_f6c\": \"<string>\",\n        \"anime\": \"<string>\",\n        \"cupidatate3\": \"<string>\",\n        \"doloref_\": \"<string>\",\n        \"est__87\": \"<string>\",\n        \"dolor_6\": \"<string>\",\n        \"ullamco_a0_\": \"<string>\",\n        \"exercitation_e\": \"<string>\",\n        \"anim_\": \"<string>\",\n        \"culpad4\": \"<string>\",\n        \"occaecat_86\": \"<string>\",\n        \"ipsuma\": \"<string>\",\n        \"est_5\": \"<string>\",\n        \"quis_cd\": \"<string>\",\n        \"magna_5f\": \"<string>\",\n        \"none56\": \"<string>\",\n        \"fugiat4\": \"<string>\",\n        \"mollit4\": \"<string>\",\n        \"dolore_266\": \"<string>\",\n        \"laborum410\": \"<string>\",\n        \"sint_c\": \"<string>\",\n        \"Excepteur5\": \"<string>\",\n        \"eiusmod20d\": \"<string>\",\n        \"consecteturf47\": \"<string>\",\n        \"aliquae\": \"<string>\",\n        \"pariatur_ce\": \"<string>\",\n        \"add1\": \"<string>\",\n        \"nulla_1\": \"<string>\",\n        \"nulla60\": \"<string>\",\n        \"amet_de2\": \"<string>\",\n        \"Ut_2\": \"<string>\",\n        \"adipisicingb95\": \"<string>\",\n        \"in_1e\": \"<string>\",\n        \"do_45\": \"<string>\",\n        \"eub08\": \"<string>\",\n        \"irure_a7\": \"<string>\",\n        \"culpa0ce\": \"<string>\",\n        \"inf8\": \"<string>\",\n        \"adipisicing2\": \"<string>\",\n        \"dolore_b2\": \"<string>\",\n        \"dolorc8\": \"<string>\",\n        \"sintc86\": \"<string>\",\n        \"laboris857\": \"<string>\",\n        \"laborum_9\": \"<string>\",\n        \"consequat_198\": \"<string>\",\n        \"in680\": \"<string>\",\n        \"exercitation4\": \"<string>\",\n        \"Ut01\": \"<string>\",\n        \"amet_2\": \"<string>\",\n        \"proident_a5\": \"<string>\",\n        \"Duis9e\": \"<string>\",\n        \"tempor98\": \"<string>\",\n        \"est_404\": \"<string>\",\n        \"consequat_d\": \"<string>\",\n        \"veniam_36c\": \"<string>\",\n        \"id_e5b\": \"<string>\"\n      },\n      \"RecipeVersion\": \"<string>\"\n    },\n    {\n      \"Name\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"LastModifiedBy\": \"<string>\",\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"ProjectName\": \"<string>\",\n      \"PublishedBy\": \"<string>\",\n      \"PublishedDate\": \"<dateTime>\",\n      \"Description\": \"<string>\",\n      \"ResourceArn\": \"<string>\",\n      \"Steps\": [\n        {\n          \"Action\": {\n            \"Operation\": \"JJIZ\",\n            \"Parameters\": {\n              \"dolored\": \"<string>\"\n            }\n          },\n          \"ConditionExpressions\": [\n            {\n              \"Condition\": \"K_PX\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            },\n            {\n              \"Condition\": \"WWUCLXJYQ\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"Action\": {\n            \"Operation\": \"_JFI\",\n            \"Parameters\": {\n              \"dolore_2\": \"<string>\",\n              \"ex2c8\": \"<string>\",\n              \"consectetur_bf\": \"<string>\",\n              \"consequat1dd\": \"<string>\"\n            }\n          },\n          \"ConditionExpressions\": [\n            {\n              \"Condition\": \"JZFJWVA\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            },\n            {\n              \"Condition\": \"KGPXDI\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            }\n          ]\n        }\n      ],\n      \"Tags\": {\n        \"irureb\": \"<string>\",\n        \"id_de\": \"<string>\",\n        \"cillumf\": \"<string>\",\n        \"aliquip_e\": \"<string>\",\n        \"aute668\": \"<string>\",\n        \"culpa_1\": \"<string>\",\n        \"tempor_5f7\": \"<string>\",\n        \"tempor_425\": \"<string>\",\n        \"veniam_0\": \"<string>\",\n        \"sint_a\": \"<string>\",\n        \"commodoc\": \"<string>\",\n        \"voluptate_b6\": \"<string>\",\n        \"ipsum_5\": \"<string>\",\n        \"veniamb\": \"<string>\",\n        \"ipsumd\": \"<string>\",\n        \"Excepteur_2\": \"<string>\",\n        \"cillum_6f8\": \"<string>\",\n        \"ullamco0\": \"<string>\",\n        \"Duis2a\": \"<string>\",\n        \"ad_f5\": \"<string>\",\n        \"veniam_f\": \"<string>\",\n        \"enim_cf\": \"<string>\",\n        \"reprehenderitc4\": \"<string>\",\n        \"mollitaaf\": \"<string>\",\n        \"aute91\": \"<string>\",\n        \"occaecat_5f\": \"<string>\",\n        \"aute_8\": \"<string>\",\n        \"do_a0\": \"<string>\",\n        \"sed9c\": \"<string>\",\n        \"proident_2\": \"<string>\",\n        \"sint__b5\": \"<string>\",\n        \"dolorea9\": \"<string>\",\n        \"consectetur7\": \"<string>\",\n        \"Ut_0fb\": \"<string>\",\n        \"mollit_8\": \"<string>\",\n        \"velit_d\": \"<string>\",\n        \"commodo_215\": \"<string>\",\n        \"qui722\": \"<string>\",\n        \"ipsumec\": \"<string>\",\n        \"mollit82\": \"<string>\",\n        \"ex7\": \"<string>\",\n        \"ex_f\": \"<string>\",\n        \"Excepteur_c7\": \"<string>\",\n        \"reprehenderit3b5\": \"<string>\",\n        \"eiusmod_8\": \"<string>\",\n        \"tempor_a\": \"<string>\",\n        \"laborum_0f8\": \"<string>\",\n        \"culpa05\": \"<string>\",\n        \"sint62\": \"<string>\",\n        \"deserunt5\": \"<string>\",\n        \"magna_d4\": \"<string>\",\n        \"ut3\": \"<string>\",\n        \"enim_c7\": \"<string>\",\n        \"labore6bb\": \"<string>\",\n        \"dolor_5\": \"<string>\",\n        \"do5b8\": \"<string>\",\n        \"dolor0\": \"<string>\",\n        \"ut_29d\": \"<string>\",\n        \"tempor7d6\": \"<string>\",\n        \"non7e7\": \"<string>\",\n        \"aute_b\": \"<string>\",\n        \"nostrud__3e\": \"<string>\",\n        \"dolore_5ca\": \"<string>\",\n        \"esse_1\": \"<string>\",\n        \"nostrudb4_\": \"<string>\",\n        \"laboris_2b\": \"<string>\",\n        \"cupidatat__\": \"<string>\",\n        \"Utf2f\": \"<string>\",\n        \"incididuntbd0\": \"<string>\",\n        \"do_14\": \"<string>\",\n        \"Duis83d\": \"<string>\",\n        \"Excepteur5e4\": \"<string>\",\n        \"dolore_9f\": \"<string>\",\n        \"Duis_\": \"<string>\",\n        \"dob5\": \"<string>\",\n        \"proident_a\": \"<string>\",\n        \"dolorec\": \"<string>\",\n        \"non1dc\": \"<string>\",\n        \"qui7\": \"<string>\",\n        \"elit_6ca\": \"<string>\",\n        \"nulla_3d7\": \"<string>\",\n        \"est2f\": \"<string>\",\n        \"cupidatatf7\": \"<string>\",\n        \"cupidatata\": \"<string>\",\n        \"enimc4\": \"<string>\",\n        \"eiusmod_2a\": \"<string>\",\n        \"consequat_361\": \"<string>\",\n        \"sint_a29\": \"<string>\",\n        \"ea_2\": \"<string>\",\n        \"ut_0\": \"<string>\",\n        \"veniam38\": \"<string>\",\n        \"ut8a0\": \"<string>\",\n        \"amet148\": \"<string>\",\n        \"eabd\": \"<string>\",\n        \"ullamcoc43\": \"<string>\",\n        \"quisc\": \"<string>\",\n        \"cillum_0ce\": \"<string>\",\n        \"labore2_d\": \"<string>\",\n        \"sedb8\": \"<string>\",\n        \"commodo_3f8\": \"<string>\",\n        \"consequatb_\": \"<string>\",\n        \"Loremd\": \"<string>\",\n        \"id_e14\": \"<string>\",\n        \"eiusmod93\": \"<string>\",\n        \"tempor_478\": \"<string>\",\n        \"enim_dd\": \"<string>\",\n        \"aliquip35\": \"<string>\",\n        \"magnaa51\": \"<string>\",\n        \"adipisicing1\": \"<string>\",\n        \"reprehenderitc\": \"<string>\",\n        \"in__3\": \"<string>\",\n        \"non_42\": \"<string>\",\n        \"laborum70\": \"<string>\",\n        \"exercitationa1\": \"<string>\",\n        \"sed62\": \"<string>\",\n        \"aliquip_9a\": \"<string>\",\n        \"quis_32\": \"<string>\",\n        \"esse_94\": \"<string>\",\n        \"minimf\": \"<string>\",\n        \"dolor_0a\": \"<string>\",\n        \"Duis_8\": \"<string>\",\n        \"ut_8\": \"<string>\",\n        \"ad_7f4\": \"<string>\",\n        \"doc1\": \"<string>\",\n        \"Duis9\": \"<string>\",\n        \"dolore_f\": \"<string>\",\n        \"est_8\": \"<string>\",\n        \"consectetur_b1\": \"<string>\",\n        \"nostrud_e3\": \"<string>\",\n        \"Lorem9fe\": \"<string>\",\n        \"eiusmod_74\": \"<string>\",\n        \"dolor_7\": \"<string>\",\n        \"ad1_\": \"<string>\",\n        \"dolore2\": \"<string>\",\n        \"ea_1\": \"<string>\",\n        \"velit95d\": \"<string>\",\n        \"deserunt__0\": \"<string>\",\n        \"ex_7\": \"<string>\",\n        \"sint_b\": \"<string>\",\n        \"dolor_\": \"<string>\",\n        \"aliquip5a\": \"<string>\",\n        \"consectetur_d16\": \"<string>\",\n        \"qui_8f2\": \"<string>\",\n        \"anim_e\": \"<string>\",\n        \"reprehenderit_7\": \"<string>\",\n        \"dolore__\": \"<string>\",\n        \"commodo15e\": \"<string>\",\n        \"non_f\": \"<string>\",\n        \"dolor_c\": \"<string>\",\n        \"consequat__2\": \"<string>\",\n        \"cillum_b0\": \"<string>\",\n        \"sunte\": \"<string>\",\n        \"non_6e\": \"<string>\",\n        \"elit_032\": \"<string>\",\n        \"proident0e4\": \"<string>\",\n        \"sedaa\": \"<string>\",\n        \"sit_84\": \"<string>\",\n        \"ea56\": \"<string>\",\n        \"dolore4\": \"<string>\",\n        \"voluptate9\": \"<string>\",\n        \"adipisicing_481\": \"<string>\",\n        \"sunt9\": \"<string>\",\n        \"in_2\": \"<string>\",\n        \"commodo_ad\": \"<string>\",\n        \"laborea\": \"<string>\",\n        \"labore_82\": \"<string>\",\n        \"non2\": \"<string>\",\n        \"dolor9f1\": \"<string>\",\n        \"in_7\": \"<string>\",\n        \"sint_9\": \"<string>\",\n        \"esse_79b\": \"<string>\",\n        \"eu_1\": \"<string>\",\n        \"amet1\": \"<string>\"\n      },\n      \"RecipeVersion\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:22:59.000Z",
+              "updatedAt": "2026-07-28T10:22:59.000Z",
+              "uid": "35240-035ac7ee-faf5-41d7-83bb-6ad880a68d1a"
+            },
+            {
+              "id": "376b3756-cf7b-475d-b0f3-a8bdca0dc9a6",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/recipeVersions?maxResults=<integer>&nextToken=<string>&name=<string>&MaxResults=<string>&NextToken=<string>#name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipeVersions"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in this request. ",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token returned by a previous call to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the recipe for which to return version information.",
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "name"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:59.000Z",
+              "updatedAt": "2026-07-28T10:22:59.000Z",
+              "uid": "35240-376b3756-cf7b-475d-b0f3-a8bdca0dc9a6"
+            }
+          ],
+          "createdAt": "2026-07-28T10:22:59.000Z",
+          "updatedAt": "2026-07-28T10:22:59.000Z",
+          "uid": "35240-e1c6adde-b7a2-491d-bc08-2e0c26ed10c4"
+        }
+      ],
+      "id": "3aa66e65-4c69-4bbc-acb5-cda3e6b254d3",
+      "createdAt": "2026-07-28T10:22:59.000Z",
+      "updatedAt": "2026-07-28T10:22:59.000Z",
+      "uid": "35240-3aa66e65-4c69-4bbc-acb5-cda3e6b254d3"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://databrew.{{region}}.amazonaws.com"
+    }
+  ]
+}

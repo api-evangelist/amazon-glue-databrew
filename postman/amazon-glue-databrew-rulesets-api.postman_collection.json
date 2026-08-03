@@ -1,0 +1,1844 @@
+{
+  "info": {
+    "_postman_id": "c07283dc-d1c3-4000-83f4-c67263e78c51",
+    "name": "AWS Glue DataBrew Datasets Rulesets API",
+    "description": "Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:00.000Z",
+    "updatedAt": "2026-07-28T10:23:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c07283dc-d1c3-4000-83f4-c67263e78c51"
+  },
+  "item": [
+    {
+      "name": "rulesets",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "Amazon Glue DataBrew Delete Ruleset",
+              "id": "bb954a0e-a03e-43fe-95b8-30ff22c1f72e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "6efd714c-e8d4-402b-9bb7-119ce9b45d03",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the ruleset to be deleted."
+                    }
+                  ]
+                },
+                "description": "Deletes a ruleset."
+              },
+              "response": [
+                {
+                  "id": "d072954f-bc90-4b94-abf7-81ac4ba44314",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-d072954f-bc90-4b94-abf7-81ac4ba44314"
+                },
+                {
+                  "id": "fea15692-6e66-4cbb-98a1-df190f2da26a",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-fea15692-6e66-4cbb-98a1-df190f2da26a"
+                },
+                {
+                  "id": "af597a2b-7311-42ba-ae90-76173b17db16",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-af597a2b-7311-42ba-ae90-76173b17db16"
+                },
+                {
+                  "id": "03aaadff-8181-4871-ad5b-5eccd505b3ce",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-03aaadff-8181-4871-ad5b-5eccd505b3ce"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-bb954a0e-a03e-43fe-95b8-30ff22c1f72e"
+            },
+            {
+              "name": "Amazon Glue DataBrew Describe Ruleset",
+              "id": "ae2cd9ce-2aac-4a27-a438-e7b3ba6c52f7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "158d94ef-a838-43a9-aacc-516326e6d3ef",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the ruleset to be described."
+                    }
+                  ]
+                },
+                "description": "Retrieves detailed information about the ruleset."
+              },
+              "response": [
+                {
+                  "id": "fc93604c-2c95-4d69-9e8a-144a75269265",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"TargetArn\": \"<string>\",\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"Hb4!3AwMQ\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"nullac\": \"<string>\",\n        \"infb\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"LESS_THAN\",\n        \"Unit\": \"PERCENTAGE\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"CreateDate\": \"<dateTime>\",\n  \"CreatedBy\": \"<string>\",\n  \"LastModifiedBy\": \"<string>\",\n  \"LastModifiedDate\": \"<dateTime>\",\n  \"ResourceArn\": \"<string>\",\n  \"Tags\": {\n    \"Duis2\": \"<string>\",\n    \"est_3\": \"<string>\",\n    \"id4\": \"<string>\",\n    \"reprehenderit_b4\": \"<string>\",\n    \"proident_f\": \"<string>\",\n    \"consequat_9\": \"<string>\",\n    \"ut20_\": \"<string>\",\n    \"laboris_a5\": \"<string>\",\n    \"veniam_0\": \"<string>\",\n    \"fugiat0f\": \"<string>\",\n    \"id_ac\": \"<string>\",\n    \"seda\": \"<string>\",\n    \"occaecat2\": \"<string>\",\n    \"eab6\": \"<string>\",\n    \"nulla_6b6\": \"<string>\",\n    \"mollit8\": \"<string>\",\n    \"cillum797\": \"<string>\",\n    \"ut4\": \"<string>\",\n    \"voluptate_0\": \"<string>\",\n    \"sedfaa\": \"<string>\",\n    \"sintc\": \"<string>\",\n    \"fugiat_fd\": \"<string>\",\n    \"est5db\": \"<string>\",\n    \"consequat_3_e\": \"<string>\",\n    \"minim7\": \"<string>\",\n    \"enim__b7\": \"<string>\",\n    \"nostruda26\": \"<string>\",\n    \"reprehenderit_8e\": \"<string>\",\n    \"nostrud_68\": \"<string>\",\n    \"sit85\": \"<string>\",\n    \"in_c1\": \"<string>\",\n    \"nulla69\": \"<string>\",\n    \"tempor0ae\": \"<string>\",\n    \"labore_f\": \"<string>\",\n    \"incididunt_c3\": \"<string>\",\n    \"labore_9a\": \"<string>\",\n    \"Excepteurf\": \"<string>\",\n    \"exercitation47\": \"<string>\",\n    \"sit_7c\": \"<string>\",\n    \"Excepteur_566\": \"<string>\",\n    \"cupidatat1\": \"<string>\",\n    \"laborebc\": \"<string>\",\n    \"esse_822\": \"<string>\",\n    \"eub\": \"<string>\",\n    \"do_3cc\": \"<string>\",\n    \"in_40\": \"<string>\",\n    \"ipsum39f\": \"<string>\",\n    \"dolore_72\": \"<string>\",\n    \"tempor86\": \"<string>\",\n    \"id22\": \"<string>\",\n    \"magna_4\": \"<string>\",\n    \"sedeb\": \"<string>\",\n    \"aute16\": \"<string>\",\n    \"nostrud33\": \"<string>\",\n    \"pariatur_bfa\": \"<string>\",\n    \"velit_d\": \"<string>\",\n    \"commodo3\": \"<string>\",\n    \"nullaa3\": \"<string>\",\n    \"ut_a\": \"<string>\",\n    \"dolor_50\": \"<string>\",\n    \"eue\": \"<string>\",\n    \"eiusmod__\": \"<string>\",\n    \"reprehenderitb56\": \"<string>\",\n    \"reprehenderit_8\": \"<string>\",\n    \"consectetur_c\": \"<string>\",\n    \"ullamco_40e\": \"<string>\",\n    \"ipsum_ca\": \"<string>\",\n    \"nostrud_d\": \"<string>\",\n    \"consectetur7\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-fc93604c-2c95-4d69-9e8a-144a75269265"
+                },
+                {
+                  "id": "48fc4c9c-7958-482d-a45a-4b7713754e75",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-48fc4c9c-7958-482d-a45a-4b7713754e75"
+                },
+                {
+                  "id": "936c2fe7-6044-463a-afeb-c8e0588e7489",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-936c2fe7-6044-463a-afeb-c8e0588e7489"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-ae2cd9ce-2aac-4a27-a438-e7b3ba6c52f7"
+            },
+            {
+              "name": "Amazon Glue DataBrew Update Ruleset",
+              "id": "9e609a14-5c96-43f3-b8b8-36a8425e2e61",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"TJqiisVwL\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"laborum_a\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"LESS_THAN\",\n        \"Unit\": \"PERCENTAGE\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "f5f07d44-80c6-4a5a-98c4-5be928533444",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the ruleset to be updated."
+                    }
+                  ]
+                },
+                "description": "Updates specified ruleset."
+              },
+              "response": [
+                {
+                  "id": "09296472-4e65-4bdd-86fc-8c4eeb6f3ae6",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"TJqiisVwL\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"laborum_a\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"LESS_THAN\",\n        \"Unit\": \"PERCENTAGE\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-09296472-4e65-4bdd-86fc-8c4eeb6f3ae6"
+                },
+                {
+                  "id": "da4573b4-ba53-4621-8440-5c206a06cd07",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"TJqiisVwL\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"laborum_a\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"LESS_THAN\",\n        \"Unit\": \"PERCENTAGE\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-da4573b4-ba53-4621-8440-5c206a06cd07"
+                },
+                {
+                  "id": "2eac36d1-d6e7-43c8-892c-96bd61fd775c",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"TJqiisVwL\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"laborum_a\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"LESS_THAN\",\n        \"Unit\": \"PERCENTAGE\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/rulesets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "rulesets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:00.000Z",
+                  "updatedAt": "2026-07-28T10:23:00.000Z",
+                  "uid": "35240-2eac36d1-d6e7-43c8-892c-96bd61fd775c"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-9e609a14-5c96-43f3-b8b8-36a8425e2e61"
+            }
+          ],
+          "id": "1b30eaf2-0e05-490a-b0a5-d1acf1795046",
+          "createdAt": "2026-07-28T10:23:00.000Z",
+          "updatedAt": "2026-07-28T10:23:00.000Z",
+          "uid": "35240-1b30eaf2-0e05-490a-b0a5-d1acf1795046"
+        },
+        {
+          "name": "Amazon Glue DataBrew Create Ruleset",
+          "id": "5e6e1e70-5a62-4da1-8c0b-bd78c724dc07",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"TargetArn\": \"<string>\",\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"(YM8WKxolRa\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"do8\": \"<string>\",\n        \"ex_a6b\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"GREATER_THAN_OR_EQUAL\",\n        \"Unit\": \"COUNT\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"in_edd\": \"<string>\",\n    \"dolorf\": \"<string>\",\n    \"aute9e\": \"<string>\",\n    \"cillum_9c\": \"<string>\",\n    \"velit7_\": \"<string>\",\n    \"deserunt_0\": \"<string>\",\n    \"minim09b\": \"<string>\",\n    \"culpa54\": \"<string>\",\n    \"commodo_b9d\": \"<string>\",\n    \"irure_1_\": \"<string>\",\n    \"temporbe8\": \"<string>\",\n    \"enim3\": \"<string>\",\n    \"Excepteur_7a\": \"<string>\",\n    \"dolore_c\": \"<string>\",\n    \"sint05a\": \"<string>\",\n    \"sed39\": \"<string>\",\n    \"dolor_85\": \"<string>\",\n    \"et_2\": \"<string>\",\n    \"enim_87\": \"<string>\",\n    \"nulla5\": \"<string>\",\n    \"adipisicing_f\": \"<string>\",\n    \"ad_e6\": \"<string>\",\n    \"eiusmod8\": \"<string>\",\n    \"veniam9\": \"<string>\",\n    \"Ut0_\": \"<string>\",\n    \"nulla_0\": \"<string>\",\n    \"dolore_4\": \"<string>\",\n    \"aliquip_1c\": \"<string>\",\n    \"amet__bc\": \"<string>\",\n    \"adipisicingb7\": \"<string>\",\n    \"dolore_7_0\": \"<string>\",\n    \"pariatur_a_\": \"<string>\",\n    \"dolore__d\": \"<string>\",\n    \"ipsum_67\": \"<string>\",\n    \"eu_63\": \"<string>\",\n    \"aliquabb\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"exercitation13\": \"<string>\",\n    \"veniam_181\": \"<string>\",\n    \"aliquip_d8\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"laborum6\": \"<string>\",\n    \"esse_3b\": \"<string>\",\n    \"nulla_73\": \"<string>\",\n    \"eiusmod_02\": \"<string>\",\n    \"commodo_5\": \"<string>\",\n    \"nonb\": \"<string>\",\n    \"sint_11\": \"<string>\",\n    \"sed_3e4\": \"<string>\",\n    \"amet_a\": \"<string>\",\n    \"animb\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"veniam_74\": \"<string>\",\n    \"dolor_0\": \"<string>\",\n    \"eiusmod_806\": \"<string>\",\n    \"officiac_5\": \"<string>\",\n    \"aliquipa\": \"<string>\",\n    \"ex_471\": \"<string>\",\n    \"dolorecf\": \"<string>\",\n    \"veniamdd\": \"<string>\",\n    \"laboris_de\": \"<string>\",\n    \"aliquip__3\": \"<string>\",\n    \"ad9\": \"<string>\",\n    \"id03\": \"<string>\",\n    \"dolore_8\": \"<string>\",\n    \"ade\": \"<string>\",\n    \"in5e\": \"<string>\",\n    \"consectetura6\": \"<string>\",\n    \"eiusmode8\": \"<string>\",\n    \"elit0\": \"<string>\",\n    \"quie\": \"<string>\",\n    \"ullamco28\": \"<string>\",\n    \"ex2\": \"<string>\",\n    \"veniam_e\": \"<string>\",\n    \"consectetur20_\": \"<string>\",\n    \"ea229\": \"<string>\",\n    \"dolore_47\": \"<string>\",\n    \"sunt_908\": \"<string>\",\n    \"nisi_a\": \"<string>\",\n    \"occaecat_2b\": \"<string>\",\n    \"eta\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"veniam__d1\": \"<string>\",\n    \"reprehenderit8e\": \"<string>\",\n    \"esta\": \"<string>\",\n    \"officia_4\": \"<string>\",\n    \"aliqua7e\": \"<string>\",\n    \"dolor5e\": \"<string>\",\n    \"commodo_d6\": \"<string>\",\n    \"deserunt30\": \"<string>\",\n    \"voluptate54\": \"<string>\",\n    \"reprehenderit_4_\": \"<string>\",\n    \"qui__c\": \"<string>\",\n    \"tempor_7\": \"<string>\",\n    \"aute_23\": \"<string>\",\n    \"nisie\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"inbc\": \"<string>\",\n    \"ex_f\": \"<string>\",\n    \"aliqua0\": \"<string>\",\n    \"Lorem_c6\": \"<string>\",\n    \"magna_b\": \"<string>\",\n    \"aute4b\": \"<string>\",\n    \"consectetur3c7\": \"<string>\",\n    \"Excepteur_7\": \"<string>\",\n    \"velit_5\": \"<string>\",\n    \"nostrud98e\": \"<string>\",\n    \"dolore_5\": \"<string>\",\n    \"Duis_6_\": \"<string>\",\n    \"laboris3\": \"<string>\",\n    \"idc\": \"<string>\",\n    \"sunta\": \"<string>\",\n    \"fugiat_57f\": \"<string>\",\n    \"consectetur_3d9\": \"<string>\",\n    \"enim_f0\": \"<string>\",\n    \"irure_cd2\": \"<string>\",\n    \"consequatb\": \"<string>\",\n    \"suntfe8\": \"<string>\",\n    \"nulla52_\": \"<string>\",\n    \"officia__\": \"<string>\",\n    \"culpa75\": \"<string>\",\n    \"etb\": \"<string>\",\n    \"proident9\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"mollit_69\": \"<string>\",\n    \"consequate4e\": \"<string>\",\n    \"irured57\": \"<string>\",\n    \"esse53\": \"<string>\",\n    \"velita3\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"dolor_f\": \"<string>\",\n    \"sunt_e8\": \"<string>\",\n    \"pariatur_0e\": \"<string>\",\n    \"cupidatate\": \"<string>\",\n    \"adipisicingd6\": \"<string>\",\n    \"Ut_4c6\": \"<string>\",\n    \"id85_\": \"<string>\",\n    \"fugiat_a3\": \"<string>\",\n    \"dolore_2\": \"<string>\",\n    \"dolor3\": \"<string>\",\n    \"consectetur_e\": \"<string>\",\n    \"pariatur_42\": \"<string>\",\n    \"sint_e6\": \"<string>\",\n    \"et8e6\": \"<string>\",\n    \"elit_3c\": \"<string>\",\n    \"sita82\": \"<string>\",\n    \"ete_\": \"<string>\",\n    \"laborum741\": \"<string>\",\n    \"mollit6e\": \"<string>\",\n    \"ut_0_\": \"<string>\",\n    \"exc43\": \"<string>\",\n    \"quisa89\": \"<string>\",\n    \"sunt_9\": \"<string>\",\n    \"ad_6a\": \"<string>\",\n    \"qui_2f0\": \"<string>\",\n    \"eiusmod_bf\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"dolor__95\": \"<string>\",\n    \"commodo_7c_\": \"<string>\",\n    \"Lorem4da\": \"<string>\",\n    \"ad5ed\": \"<string>\",\n    \"proidentcf\": \"<string>\",\n    \"esse_09\": \"<string>\",\n    \"est_949\": \"<string>\",\n    \"in_d7\": \"<string>\",\n    \"dolord2_\": \"<string>\",\n    \"deserunt55\": \"<string>\",\n    \"aliqua_b\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"ad_7_\": \"<string>\",\n    \"mollit_3cb\": \"<string>\",\n    \"deserunta8c\": \"<string>\",\n    \"eaaf\": \"<string>\",\n    \"Ut9\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/rulesets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rulesets"
+              ]
+            },
+            "description": "Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset."
+          },
+          "response": [
+            {
+              "id": "6a9b31c2-84f3-4abd-9d96-e14a46879731",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"TargetArn\": \"<string>\",\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"(YM8WKxolRa\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"do8\": \"<string>\",\n        \"ex_a6b\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"GREATER_THAN_OR_EQUAL\",\n        \"Unit\": \"COUNT\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"in_edd\": \"<string>\",\n    \"dolorf\": \"<string>\",\n    \"aute9e\": \"<string>\",\n    \"cillum_9c\": \"<string>\",\n    \"velit7_\": \"<string>\",\n    \"deserunt_0\": \"<string>\",\n    \"minim09b\": \"<string>\",\n    \"culpa54\": \"<string>\",\n    \"commodo_b9d\": \"<string>\",\n    \"irure_1_\": \"<string>\",\n    \"temporbe8\": \"<string>\",\n    \"enim3\": \"<string>\",\n    \"Excepteur_7a\": \"<string>\",\n    \"dolore_c\": \"<string>\",\n    \"sint05a\": \"<string>\",\n    \"sed39\": \"<string>\",\n    \"dolor_85\": \"<string>\",\n    \"et_2\": \"<string>\",\n    \"enim_87\": \"<string>\",\n    \"nulla5\": \"<string>\",\n    \"adipisicing_f\": \"<string>\",\n    \"ad_e6\": \"<string>\",\n    \"eiusmod8\": \"<string>\",\n    \"veniam9\": \"<string>\",\n    \"Ut0_\": \"<string>\",\n    \"nulla_0\": \"<string>\",\n    \"dolore_4\": \"<string>\",\n    \"aliquip_1c\": \"<string>\",\n    \"amet__bc\": \"<string>\",\n    \"adipisicingb7\": \"<string>\",\n    \"dolore_7_0\": \"<string>\",\n    \"pariatur_a_\": \"<string>\",\n    \"dolore__d\": \"<string>\",\n    \"ipsum_67\": \"<string>\",\n    \"eu_63\": \"<string>\",\n    \"aliquabb\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"exercitation13\": \"<string>\",\n    \"veniam_181\": \"<string>\",\n    \"aliquip_d8\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"laborum6\": \"<string>\",\n    \"esse_3b\": \"<string>\",\n    \"nulla_73\": \"<string>\",\n    \"eiusmod_02\": \"<string>\",\n    \"commodo_5\": \"<string>\",\n    \"nonb\": \"<string>\",\n    \"sint_11\": \"<string>\",\n    \"sed_3e4\": \"<string>\",\n    \"amet_a\": \"<string>\",\n    \"animb\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"veniam_74\": \"<string>\",\n    \"dolor_0\": \"<string>\",\n    \"eiusmod_806\": \"<string>\",\n    \"officiac_5\": \"<string>\",\n    \"aliquipa\": \"<string>\",\n    \"ex_471\": \"<string>\",\n    \"dolorecf\": \"<string>\",\n    \"veniamdd\": \"<string>\",\n    \"laboris_de\": \"<string>\",\n    \"aliquip__3\": \"<string>\",\n    \"ad9\": \"<string>\",\n    \"id03\": \"<string>\",\n    \"dolore_8\": \"<string>\",\n    \"ade\": \"<string>\",\n    \"in5e\": \"<string>\",\n    \"consectetura6\": \"<string>\",\n    \"eiusmode8\": \"<string>\",\n    \"elit0\": \"<string>\",\n    \"quie\": \"<string>\",\n    \"ullamco28\": \"<string>\",\n    \"ex2\": \"<string>\",\n    \"veniam_e\": \"<string>\",\n    \"consectetur20_\": \"<string>\",\n    \"ea229\": \"<string>\",\n    \"dolore_47\": \"<string>\",\n    \"sunt_908\": \"<string>\",\n    \"nisi_a\": \"<string>\",\n    \"occaecat_2b\": \"<string>\",\n    \"eta\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"veniam__d1\": \"<string>\",\n    \"reprehenderit8e\": \"<string>\",\n    \"esta\": \"<string>\",\n    \"officia_4\": \"<string>\",\n    \"aliqua7e\": \"<string>\",\n    \"dolor5e\": \"<string>\",\n    \"commodo_d6\": \"<string>\",\n    \"deserunt30\": \"<string>\",\n    \"voluptate54\": \"<string>\",\n    \"reprehenderit_4_\": \"<string>\",\n    \"qui__c\": \"<string>\",\n    \"tempor_7\": \"<string>\",\n    \"aute_23\": \"<string>\",\n    \"nisie\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"inbc\": \"<string>\",\n    \"ex_f\": \"<string>\",\n    \"aliqua0\": \"<string>\",\n    \"Lorem_c6\": \"<string>\",\n    \"magna_b\": \"<string>\",\n    \"aute4b\": \"<string>\",\n    \"consectetur3c7\": \"<string>\",\n    \"Excepteur_7\": \"<string>\",\n    \"velit_5\": \"<string>\",\n    \"nostrud98e\": \"<string>\",\n    \"dolore_5\": \"<string>\",\n    \"Duis_6_\": \"<string>\",\n    \"laboris3\": \"<string>\",\n    \"idc\": \"<string>\",\n    \"sunta\": \"<string>\",\n    \"fugiat_57f\": \"<string>\",\n    \"consectetur_3d9\": \"<string>\",\n    \"enim_f0\": \"<string>\",\n    \"irure_cd2\": \"<string>\",\n    \"consequatb\": \"<string>\",\n    \"suntfe8\": \"<string>\",\n    \"nulla52_\": \"<string>\",\n    \"officia__\": \"<string>\",\n    \"culpa75\": \"<string>\",\n    \"etb\": \"<string>\",\n    \"proident9\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"mollit_69\": \"<string>\",\n    \"consequate4e\": \"<string>\",\n    \"irured57\": \"<string>\",\n    \"esse53\": \"<string>\",\n    \"velita3\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"dolor_f\": \"<string>\",\n    \"sunt_e8\": \"<string>\",\n    \"pariatur_0e\": \"<string>\",\n    \"cupidatate\": \"<string>\",\n    \"adipisicingd6\": \"<string>\",\n    \"Ut_4c6\": \"<string>\",\n    \"id85_\": \"<string>\",\n    \"fugiat_a3\": \"<string>\",\n    \"dolore_2\": \"<string>\",\n    \"dolor3\": \"<string>\",\n    \"consectetur_e\": \"<string>\",\n    \"pariatur_42\": \"<string>\",\n    \"sint_e6\": \"<string>\",\n    \"et8e6\": \"<string>\",\n    \"elit_3c\": \"<string>\",\n    \"sita82\": \"<string>\",\n    \"ete_\": \"<string>\",\n    \"laborum741\": \"<string>\",\n    \"mollit6e\": \"<string>\",\n    \"ut_0_\": \"<string>\",\n    \"exc43\": \"<string>\",\n    \"quisa89\": \"<string>\",\n    \"sunt_9\": \"<string>\",\n    \"ad_6a\": \"<string>\",\n    \"qui_2f0\": \"<string>\",\n    \"eiusmod_bf\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"dolor__95\": \"<string>\",\n    \"commodo_7c_\": \"<string>\",\n    \"Lorem4da\": \"<string>\",\n    \"ad5ed\": \"<string>\",\n    \"proidentcf\": \"<string>\",\n    \"esse_09\": \"<string>\",\n    \"est_949\": \"<string>\",\n    \"in_d7\": \"<string>\",\n    \"dolord2_\": \"<string>\",\n    \"deserunt55\": \"<string>\",\n    \"aliqua_b\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"ad_7_\": \"<string>\",\n    \"mollit_3cb\": \"<string>\",\n    \"deserunta8c\": \"<string>\",\n    \"eaaf\": \"<string>\",\n    \"Ut9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Name\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-6a9b31c2-84f3-4abd-9d96-e14a46879731"
+            },
+            {
+              "id": "1b663df8-f4cc-49fa-84c0-b45338a1ff28",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"TargetArn\": \"<string>\",\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"(YM8WKxolRa\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"do8\": \"<string>\",\n        \"ex_a6b\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"GREATER_THAN_OR_EQUAL\",\n        \"Unit\": \"COUNT\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"in_edd\": \"<string>\",\n    \"dolorf\": \"<string>\",\n    \"aute9e\": \"<string>\",\n    \"cillum_9c\": \"<string>\",\n    \"velit7_\": \"<string>\",\n    \"deserunt_0\": \"<string>\",\n    \"minim09b\": \"<string>\",\n    \"culpa54\": \"<string>\",\n    \"commodo_b9d\": \"<string>\",\n    \"irure_1_\": \"<string>\",\n    \"temporbe8\": \"<string>\",\n    \"enim3\": \"<string>\",\n    \"Excepteur_7a\": \"<string>\",\n    \"dolore_c\": \"<string>\",\n    \"sint05a\": \"<string>\",\n    \"sed39\": \"<string>\",\n    \"dolor_85\": \"<string>\",\n    \"et_2\": \"<string>\",\n    \"enim_87\": \"<string>\",\n    \"nulla5\": \"<string>\",\n    \"adipisicing_f\": \"<string>\",\n    \"ad_e6\": \"<string>\",\n    \"eiusmod8\": \"<string>\",\n    \"veniam9\": \"<string>\",\n    \"Ut0_\": \"<string>\",\n    \"nulla_0\": \"<string>\",\n    \"dolore_4\": \"<string>\",\n    \"aliquip_1c\": \"<string>\",\n    \"amet__bc\": \"<string>\",\n    \"adipisicingb7\": \"<string>\",\n    \"dolore_7_0\": \"<string>\",\n    \"pariatur_a_\": \"<string>\",\n    \"dolore__d\": \"<string>\",\n    \"ipsum_67\": \"<string>\",\n    \"eu_63\": \"<string>\",\n    \"aliquabb\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"exercitation13\": \"<string>\",\n    \"veniam_181\": \"<string>\",\n    \"aliquip_d8\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"laborum6\": \"<string>\",\n    \"esse_3b\": \"<string>\",\n    \"nulla_73\": \"<string>\",\n    \"eiusmod_02\": \"<string>\",\n    \"commodo_5\": \"<string>\",\n    \"nonb\": \"<string>\",\n    \"sint_11\": \"<string>\",\n    \"sed_3e4\": \"<string>\",\n    \"amet_a\": \"<string>\",\n    \"animb\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"veniam_74\": \"<string>\",\n    \"dolor_0\": \"<string>\",\n    \"eiusmod_806\": \"<string>\",\n    \"officiac_5\": \"<string>\",\n    \"aliquipa\": \"<string>\",\n    \"ex_471\": \"<string>\",\n    \"dolorecf\": \"<string>\",\n    \"veniamdd\": \"<string>\",\n    \"laboris_de\": \"<string>\",\n    \"aliquip__3\": \"<string>\",\n    \"ad9\": \"<string>\",\n    \"id03\": \"<string>\",\n    \"dolore_8\": \"<string>\",\n    \"ade\": \"<string>\",\n    \"in5e\": \"<string>\",\n    \"consectetura6\": \"<string>\",\n    \"eiusmode8\": \"<string>\",\n    \"elit0\": \"<string>\",\n    \"quie\": \"<string>\",\n    \"ullamco28\": \"<string>\",\n    \"ex2\": \"<string>\",\n    \"veniam_e\": \"<string>\",\n    \"consectetur20_\": \"<string>\",\n    \"ea229\": \"<string>\",\n    \"dolore_47\": \"<string>\",\n    \"sunt_908\": \"<string>\",\n    \"nisi_a\": \"<string>\",\n    \"occaecat_2b\": \"<string>\",\n    \"eta\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"veniam__d1\": \"<string>\",\n    \"reprehenderit8e\": \"<string>\",\n    \"esta\": \"<string>\",\n    \"officia_4\": \"<string>\",\n    \"aliqua7e\": \"<string>\",\n    \"dolor5e\": \"<string>\",\n    \"commodo_d6\": \"<string>\",\n    \"deserunt30\": \"<string>\",\n    \"voluptate54\": \"<string>\",\n    \"reprehenderit_4_\": \"<string>\",\n    \"qui__c\": \"<string>\",\n    \"tempor_7\": \"<string>\",\n    \"aute_23\": \"<string>\",\n    \"nisie\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"inbc\": \"<string>\",\n    \"ex_f\": \"<string>\",\n    \"aliqua0\": \"<string>\",\n    \"Lorem_c6\": \"<string>\",\n    \"magna_b\": \"<string>\",\n    \"aute4b\": \"<string>\",\n    \"consectetur3c7\": \"<string>\",\n    \"Excepteur_7\": \"<string>\",\n    \"velit_5\": \"<string>\",\n    \"nostrud98e\": \"<string>\",\n    \"dolore_5\": \"<string>\",\n    \"Duis_6_\": \"<string>\",\n    \"laboris3\": \"<string>\",\n    \"idc\": \"<string>\",\n    \"sunta\": \"<string>\",\n    \"fugiat_57f\": \"<string>\",\n    \"consectetur_3d9\": \"<string>\",\n    \"enim_f0\": \"<string>\",\n    \"irure_cd2\": \"<string>\",\n    \"consequatb\": \"<string>\",\n    \"suntfe8\": \"<string>\",\n    \"nulla52_\": \"<string>\",\n    \"officia__\": \"<string>\",\n    \"culpa75\": \"<string>\",\n    \"etb\": \"<string>\",\n    \"proident9\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"mollit_69\": \"<string>\",\n    \"consequate4e\": \"<string>\",\n    \"irured57\": \"<string>\",\n    \"esse53\": \"<string>\",\n    \"velita3\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"dolor_f\": \"<string>\",\n    \"sunt_e8\": \"<string>\",\n    \"pariatur_0e\": \"<string>\",\n    \"cupidatate\": \"<string>\",\n    \"adipisicingd6\": \"<string>\",\n    \"Ut_4c6\": \"<string>\",\n    \"id85_\": \"<string>\",\n    \"fugiat_a3\": \"<string>\",\n    \"dolore_2\": \"<string>\",\n    \"dolor3\": \"<string>\",\n    \"consectetur_e\": \"<string>\",\n    \"pariatur_42\": \"<string>\",\n    \"sint_e6\": \"<string>\",\n    \"et8e6\": \"<string>\",\n    \"elit_3c\": \"<string>\",\n    \"sita82\": \"<string>\",\n    \"ete_\": \"<string>\",\n    \"laborum741\": \"<string>\",\n    \"mollit6e\": \"<string>\",\n    \"ut_0_\": \"<string>\",\n    \"exc43\": \"<string>\",\n    \"quisa89\": \"<string>\",\n    \"sunt_9\": \"<string>\",\n    \"ad_6a\": \"<string>\",\n    \"qui_2f0\": \"<string>\",\n    \"eiusmod_bf\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"dolor__95\": \"<string>\",\n    \"commodo_7c_\": \"<string>\",\n    \"Lorem4da\": \"<string>\",\n    \"ad5ed\": \"<string>\",\n    \"proidentcf\": \"<string>\",\n    \"esse_09\": \"<string>\",\n    \"est_949\": \"<string>\",\n    \"in_d7\": \"<string>\",\n    \"dolord2_\": \"<string>\",\n    \"deserunt55\": \"<string>\",\n    \"aliqua_b\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"ad_7_\": \"<string>\",\n    \"mollit_3cb\": \"<string>\",\n    \"deserunta8c\": \"<string>\",\n    \"eaaf\": \"<string>\",\n    \"Ut9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-1b663df8-f4cc-49fa-84c0-b45338a1ff28"
+            },
+            {
+              "id": "d9dafd77-8947-483b-bf58-d1f8a57c9b42",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"TargetArn\": \"<string>\",\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"(YM8WKxolRa\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"do8\": \"<string>\",\n        \"ex_a6b\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"GREATER_THAN_OR_EQUAL\",\n        \"Unit\": \"COUNT\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"in_edd\": \"<string>\",\n    \"dolorf\": \"<string>\",\n    \"aute9e\": \"<string>\",\n    \"cillum_9c\": \"<string>\",\n    \"velit7_\": \"<string>\",\n    \"deserunt_0\": \"<string>\",\n    \"minim09b\": \"<string>\",\n    \"culpa54\": \"<string>\",\n    \"commodo_b9d\": \"<string>\",\n    \"irure_1_\": \"<string>\",\n    \"temporbe8\": \"<string>\",\n    \"enim3\": \"<string>\",\n    \"Excepteur_7a\": \"<string>\",\n    \"dolore_c\": \"<string>\",\n    \"sint05a\": \"<string>\",\n    \"sed39\": \"<string>\",\n    \"dolor_85\": \"<string>\",\n    \"et_2\": \"<string>\",\n    \"enim_87\": \"<string>\",\n    \"nulla5\": \"<string>\",\n    \"adipisicing_f\": \"<string>\",\n    \"ad_e6\": \"<string>\",\n    \"eiusmod8\": \"<string>\",\n    \"veniam9\": \"<string>\",\n    \"Ut0_\": \"<string>\",\n    \"nulla_0\": \"<string>\",\n    \"dolore_4\": \"<string>\",\n    \"aliquip_1c\": \"<string>\",\n    \"amet__bc\": \"<string>\",\n    \"adipisicingb7\": \"<string>\",\n    \"dolore_7_0\": \"<string>\",\n    \"pariatur_a_\": \"<string>\",\n    \"dolore__d\": \"<string>\",\n    \"ipsum_67\": \"<string>\",\n    \"eu_63\": \"<string>\",\n    \"aliquabb\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"exercitation13\": \"<string>\",\n    \"veniam_181\": \"<string>\",\n    \"aliquip_d8\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"laborum6\": \"<string>\",\n    \"esse_3b\": \"<string>\",\n    \"nulla_73\": \"<string>\",\n    \"eiusmod_02\": \"<string>\",\n    \"commodo_5\": \"<string>\",\n    \"nonb\": \"<string>\",\n    \"sint_11\": \"<string>\",\n    \"sed_3e4\": \"<string>\",\n    \"amet_a\": \"<string>\",\n    \"animb\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"veniam_74\": \"<string>\",\n    \"dolor_0\": \"<string>\",\n    \"eiusmod_806\": \"<string>\",\n    \"officiac_5\": \"<string>\",\n    \"aliquipa\": \"<string>\",\n    \"ex_471\": \"<string>\",\n    \"dolorecf\": \"<string>\",\n    \"veniamdd\": \"<string>\",\n    \"laboris_de\": \"<string>\",\n    \"aliquip__3\": \"<string>\",\n    \"ad9\": \"<string>\",\n    \"id03\": \"<string>\",\n    \"dolore_8\": \"<string>\",\n    \"ade\": \"<string>\",\n    \"in5e\": \"<string>\",\n    \"consectetura6\": \"<string>\",\n    \"eiusmode8\": \"<string>\",\n    \"elit0\": \"<string>\",\n    \"quie\": \"<string>\",\n    \"ullamco28\": \"<string>\",\n    \"ex2\": \"<string>\",\n    \"veniam_e\": \"<string>\",\n    \"consectetur20_\": \"<string>\",\n    \"ea229\": \"<string>\",\n    \"dolore_47\": \"<string>\",\n    \"sunt_908\": \"<string>\",\n    \"nisi_a\": \"<string>\",\n    \"occaecat_2b\": \"<string>\",\n    \"eta\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"veniam__d1\": \"<string>\",\n    \"reprehenderit8e\": \"<string>\",\n    \"esta\": \"<string>\",\n    \"officia_4\": \"<string>\",\n    \"aliqua7e\": \"<string>\",\n    \"dolor5e\": \"<string>\",\n    \"commodo_d6\": \"<string>\",\n    \"deserunt30\": \"<string>\",\n    \"voluptate54\": \"<string>\",\n    \"reprehenderit_4_\": \"<string>\",\n    \"qui__c\": \"<string>\",\n    \"tempor_7\": \"<string>\",\n    \"aute_23\": \"<string>\",\n    \"nisie\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"inbc\": \"<string>\",\n    \"ex_f\": \"<string>\",\n    \"aliqua0\": \"<string>\",\n    \"Lorem_c6\": \"<string>\",\n    \"magna_b\": \"<string>\",\n    \"aute4b\": \"<string>\",\n    \"consectetur3c7\": \"<string>\",\n    \"Excepteur_7\": \"<string>\",\n    \"velit_5\": \"<string>\",\n    \"nostrud98e\": \"<string>\",\n    \"dolore_5\": \"<string>\",\n    \"Duis_6_\": \"<string>\",\n    \"laboris3\": \"<string>\",\n    \"idc\": \"<string>\",\n    \"sunta\": \"<string>\",\n    \"fugiat_57f\": \"<string>\",\n    \"consectetur_3d9\": \"<string>\",\n    \"enim_f0\": \"<string>\",\n    \"irure_cd2\": \"<string>\",\n    \"consequatb\": \"<string>\",\n    \"suntfe8\": \"<string>\",\n    \"nulla52_\": \"<string>\",\n    \"officia__\": \"<string>\",\n    \"culpa75\": \"<string>\",\n    \"etb\": \"<string>\",\n    \"proident9\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"mollit_69\": \"<string>\",\n    \"consequate4e\": \"<string>\",\n    \"irured57\": \"<string>\",\n    \"esse53\": \"<string>\",\n    \"velita3\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"dolor_f\": \"<string>\",\n    \"sunt_e8\": \"<string>\",\n    \"pariatur_0e\": \"<string>\",\n    \"cupidatate\": \"<string>\",\n    \"adipisicingd6\": \"<string>\",\n    \"Ut_4c6\": \"<string>\",\n    \"id85_\": \"<string>\",\n    \"fugiat_a3\": \"<string>\",\n    \"dolore_2\": \"<string>\",\n    \"dolor3\": \"<string>\",\n    \"consectetur_e\": \"<string>\",\n    \"pariatur_42\": \"<string>\",\n    \"sint_e6\": \"<string>\",\n    \"et8e6\": \"<string>\",\n    \"elit_3c\": \"<string>\",\n    \"sita82\": \"<string>\",\n    \"ete_\": \"<string>\",\n    \"laborum741\": \"<string>\",\n    \"mollit6e\": \"<string>\",\n    \"ut_0_\": \"<string>\",\n    \"exc43\": \"<string>\",\n    \"quisa89\": \"<string>\",\n    \"sunt_9\": \"<string>\",\n    \"ad_6a\": \"<string>\",\n    \"qui_2f0\": \"<string>\",\n    \"eiusmod_bf\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"dolor__95\": \"<string>\",\n    \"commodo_7c_\": \"<string>\",\n    \"Lorem4da\": \"<string>\",\n    \"ad5ed\": \"<string>\",\n    \"proidentcf\": \"<string>\",\n    \"esse_09\": \"<string>\",\n    \"est_949\": \"<string>\",\n    \"in_d7\": \"<string>\",\n    \"dolord2_\": \"<string>\",\n    \"deserunt55\": \"<string>\",\n    \"aliqua_b\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"ad_7_\": \"<string>\",\n    \"mollit_3cb\": \"<string>\",\n    \"deserunta8c\": \"<string>\",\n    \"eaaf\": \"<string>\",\n    \"Ut9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-d9dafd77-8947-483b-bf58-d1f8a57c9b42"
+            },
+            {
+              "id": "b57dcdb0-8c24-40a5-b1fe-3c47a2b33344",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"TargetArn\": \"<string>\",\n  \"Rules\": [\n    {\n      \"Name\": \"<string>\",\n      \"CheckExpression\": \"(YM8WKxolRa\",\n      \"Disabled\": \"<boolean>\",\n      \"SubstitutionMap\": {\n        \"do8\": \"<string>\",\n        \"ex_a6b\": \"<string>\"\n      },\n      \"Threshold\": {\n        \"Value\": \"<double>\",\n        \"Type\": \"GREATER_THAN_OR_EQUAL\",\n        \"Unit\": \"COUNT\"\n      },\n      \"ColumnSelectors\": [\n        {\n          \"Regex\": \"<string>\",\n          \"Name\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"in_edd\": \"<string>\",\n    \"dolorf\": \"<string>\",\n    \"aute9e\": \"<string>\",\n    \"cillum_9c\": \"<string>\",\n    \"velit7_\": \"<string>\",\n    \"deserunt_0\": \"<string>\",\n    \"minim09b\": \"<string>\",\n    \"culpa54\": \"<string>\",\n    \"commodo_b9d\": \"<string>\",\n    \"irure_1_\": \"<string>\",\n    \"temporbe8\": \"<string>\",\n    \"enim3\": \"<string>\",\n    \"Excepteur_7a\": \"<string>\",\n    \"dolore_c\": \"<string>\",\n    \"sint05a\": \"<string>\",\n    \"sed39\": \"<string>\",\n    \"dolor_85\": \"<string>\",\n    \"et_2\": \"<string>\",\n    \"enim_87\": \"<string>\",\n    \"nulla5\": \"<string>\",\n    \"adipisicing_f\": \"<string>\",\n    \"ad_e6\": \"<string>\",\n    \"eiusmod8\": \"<string>\",\n    \"veniam9\": \"<string>\",\n    \"Ut0_\": \"<string>\",\n    \"nulla_0\": \"<string>\",\n    \"dolore_4\": \"<string>\",\n    \"aliquip_1c\": \"<string>\",\n    \"amet__bc\": \"<string>\",\n    \"adipisicingb7\": \"<string>\",\n    \"dolore_7_0\": \"<string>\",\n    \"pariatur_a_\": \"<string>\",\n    \"dolore__d\": \"<string>\",\n    \"ipsum_67\": \"<string>\",\n    \"eu_63\": \"<string>\",\n    \"aliquabb\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"exercitation13\": \"<string>\",\n    \"veniam_181\": \"<string>\",\n    \"aliquip_d8\": \"<string>\",\n    \"reprehenderit_2\": \"<string>\",\n    \"laborum6\": \"<string>\",\n    \"esse_3b\": \"<string>\",\n    \"nulla_73\": \"<string>\",\n    \"eiusmod_02\": \"<string>\",\n    \"commodo_5\": \"<string>\",\n    \"nonb\": \"<string>\",\n    \"sint_11\": \"<string>\",\n    \"sed_3e4\": \"<string>\",\n    \"amet_a\": \"<string>\",\n    \"animb\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"veniam_74\": \"<string>\",\n    \"dolor_0\": \"<string>\",\n    \"eiusmod_806\": \"<string>\",\n    \"officiac_5\": \"<string>\",\n    \"aliquipa\": \"<string>\",\n    \"ex_471\": \"<string>\",\n    \"dolorecf\": \"<string>\",\n    \"veniamdd\": \"<string>\",\n    \"laboris_de\": \"<string>\",\n    \"aliquip__3\": \"<string>\",\n    \"ad9\": \"<string>\",\n    \"id03\": \"<string>\",\n    \"dolore_8\": \"<string>\",\n    \"ade\": \"<string>\",\n    \"in5e\": \"<string>\",\n    \"consectetura6\": \"<string>\",\n    \"eiusmode8\": \"<string>\",\n    \"elit0\": \"<string>\",\n    \"quie\": \"<string>\",\n    \"ullamco28\": \"<string>\",\n    \"ex2\": \"<string>\",\n    \"veniam_e\": \"<string>\",\n    \"consectetur20_\": \"<string>\",\n    \"ea229\": \"<string>\",\n    \"dolore_47\": \"<string>\",\n    \"sunt_908\": \"<string>\",\n    \"nisi_a\": \"<string>\",\n    \"occaecat_2b\": \"<string>\",\n    \"eta\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"veniam__d1\": \"<string>\",\n    \"reprehenderit8e\": \"<string>\",\n    \"esta\": \"<string>\",\n    \"officia_4\": \"<string>\",\n    \"aliqua7e\": \"<string>\",\n    \"dolor5e\": \"<string>\",\n    \"commodo_d6\": \"<string>\",\n    \"deserunt30\": \"<string>\",\n    \"voluptate54\": \"<string>\",\n    \"reprehenderit_4_\": \"<string>\",\n    \"qui__c\": \"<string>\",\n    \"tempor_7\": \"<string>\",\n    \"aute_23\": \"<string>\",\n    \"nisie\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"inbc\": \"<string>\",\n    \"ex_f\": \"<string>\",\n    \"aliqua0\": \"<string>\",\n    \"Lorem_c6\": \"<string>\",\n    \"magna_b\": \"<string>\",\n    \"aute4b\": \"<string>\",\n    \"consectetur3c7\": \"<string>\",\n    \"Excepteur_7\": \"<string>\",\n    \"velit_5\": \"<string>\",\n    \"nostrud98e\": \"<string>\",\n    \"dolore_5\": \"<string>\",\n    \"Duis_6_\": \"<string>\",\n    \"laboris3\": \"<string>\",\n    \"idc\": \"<string>\",\n    \"sunta\": \"<string>\",\n    \"fugiat_57f\": \"<string>\",\n    \"consectetur_3d9\": \"<string>\",\n    \"enim_f0\": \"<string>\",\n    \"irure_cd2\": \"<string>\",\n    \"consequatb\": \"<string>\",\n    \"suntfe8\": \"<string>\",\n    \"nulla52_\": \"<string>\",\n    \"officia__\": \"<string>\",\n    \"culpa75\": \"<string>\",\n    \"etb\": \"<string>\",\n    \"proident9\": \"<string>\",\n    \"Excepteur_6\": \"<string>\",\n    \"mollit_69\": \"<string>\",\n    \"consequate4e\": \"<string>\",\n    \"irured57\": \"<string>\",\n    \"esse53\": \"<string>\",\n    \"velita3\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"dolor_f\": \"<string>\",\n    \"sunt_e8\": \"<string>\",\n    \"pariatur_0e\": \"<string>\",\n    \"cupidatate\": \"<string>\",\n    \"adipisicingd6\": \"<string>\",\n    \"Ut_4c6\": \"<string>\",\n    \"id85_\": \"<string>\",\n    \"fugiat_a3\": \"<string>\",\n    \"dolore_2\": \"<string>\",\n    \"dolor3\": \"<string>\",\n    \"consectetur_e\": \"<string>\",\n    \"pariatur_42\": \"<string>\",\n    \"sint_e6\": \"<string>\",\n    \"et8e6\": \"<string>\",\n    \"elit_3c\": \"<string>\",\n    \"sita82\": \"<string>\",\n    \"ete_\": \"<string>\",\n    \"laborum741\": \"<string>\",\n    \"mollit6e\": \"<string>\",\n    \"ut_0_\": \"<string>\",\n    \"exc43\": \"<string>\",\n    \"quisa89\": \"<string>\",\n    \"sunt_9\": \"<string>\",\n    \"ad_6a\": \"<string>\",\n    \"qui_2f0\": \"<string>\",\n    \"eiusmod_bf\": \"<string>\",\n    \"nostrud_\": \"<string>\",\n    \"dolor__95\": \"<string>\",\n    \"commodo_7c_\": \"<string>\",\n    \"Lorem4da\": \"<string>\",\n    \"ad5ed\": \"<string>\",\n    \"proidentcf\": \"<string>\",\n    \"esse_09\": \"<string>\",\n    \"est_949\": \"<string>\",\n    \"in_d7\": \"<string>\",\n    \"dolord2_\": \"<string>\",\n    \"deserunt55\": \"<string>\",\n    \"aliqua_b\": \"<string>\",\n    \"sunt3\": \"<string>\",\n    \"ad_7_\": \"<string>\",\n    \"mollit_3cb\": \"<string>\",\n    \"deserunta8c\": \"<string>\",\n    \"eaaf\": \"<string>\",\n    \"Ut9\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-b57dcdb0-8c24-40a5-b1fe-3c47a2b33344"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:00.000Z",
+          "updatedAt": "2026-07-28T10:23:00.000Z",
+          "uid": "35240-5e6e1e70-5a62-4da1-8c0b-bd78c724dc07"
+        },
+        {
+          "name": "Amazon Glue DataBrew List Rulesets",
+          "id": "e3ff039e-d767-4fec-9a47-fbb97a553a99",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/rulesets?targetArn=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rulesets"
+              ],
+              "query": [
+                {
+                  "description": "The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.",
+                  "key": "targetArn",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of results to return in this request.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "List all rulesets available in the current account or rulesets associated with a specific resource (dataset)."
+          },
+          "response": [
+            {
+              "id": "b31f3abd-5e7a-446e-86bb-c7da6741c3a7",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets?targetArn=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets"
+                  ],
+                  "query": [
+                    {
+                      "description": "The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.",
+                      "key": "targetArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this request.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Rulesets\": [\n    {\n      \"Name\": \"<string>\",\n      \"TargetArn\": \"<string>\",\n      \"AccountId\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"Description\": \"<string>\",\n      \"LastModifiedBy\": \"<string>\",\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"ResourceArn\": \"<string>\",\n      \"RuleCount\": \"<integer>\",\n      \"Tags\": {\n        \"veniam81f\": \"<string>\",\n        \"aliqua_058\": \"<string>\",\n        \"minim17\": \"<string>\",\n        \"minim1fb\": \"<string>\",\n        \"nullac\": \"<string>\",\n        \"laborum0\": \"<string>\",\n        \"Utf\": \"<string>\",\n        \"in_8\": \"<string>\",\n        \"laborea5\": \"<string>\",\n        \"cillum66\": \"<string>\",\n        \"consectetur_8\": \"<string>\",\n        \"labore_2f\": \"<string>\",\n        \"elit_896\": \"<string>\",\n        \"enim_36\": \"<string>\",\n        \"laborum_f3a\": \"<string>\",\n        \"sed_a2c\": \"<string>\",\n        \"veniama\": \"<string>\",\n        \"tempor_6_\": \"<string>\",\n        \"proident_c\": \"<string>\",\n        \"irure_a\": \"<string>\"\n      }\n    },\n    {\n      \"Name\": \"<string>\",\n      \"TargetArn\": \"<string>\",\n      \"AccountId\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"Description\": \"<string>\",\n      \"LastModifiedBy\": \"<string>\",\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"ResourceArn\": \"<string>\",\n      \"RuleCount\": \"<integer>\",\n      \"Tags\": {\n        \"velit_2c\": \"<string>\",\n        \"labore_2\": \"<string>\",\n        \"labore__8\": \"<string>\",\n        \"laborum_af\": \"<string>\",\n        \"officia_39\": \"<string>\",\n        \"adipisicing_51\": \"<string>\",\n        \"Ut5\": \"<string>\",\n        \"quis_8\": \"<string>\",\n        \"amet_7\": \"<string>\",\n        \"deserunt_4\": \"<string>\",\n        \"adipisicing_6\": \"<string>\",\n        \"culpad\": \"<string>\",\n        \"anim_231\": \"<string>\",\n        \"magna_5_f\": \"<string>\",\n        \"incididunte\": \"<string>\",\n        \"consectetur5a\": \"<string>\",\n        \"in_b\": \"<string>\",\n        \"elit_4c\": \"<string>\",\n        \"sintc\": \"<string>\",\n        \"eiusmod_b7\": \"<string>\",\n        \"fugiat6c\": \"<string>\",\n        \"non_f5a\": \"<string>\",\n        \"velitdd\": \"<string>\",\n        \"elit_b5\": \"<string>\",\n        \"sed0\": \"<string>\",\n        \"quis_7\": \"<string>\",\n        \"ut91e\": \"<string>\",\n        \"fugiatae1\": \"<string>\",\n        \"nostrud_2_1\": \"<string>\",\n        \"occaecatb\": \"<string>\",\n        \"ullamco_560\": \"<string>\",\n        \"veniam_d\": \"<string>\",\n        \"culpa_9\": \"<string>\",\n        \"aliquaa\": \"<string>\",\n        \"dolore_47\": \"<string>\",\n        \"fugiat6__\": \"<string>\",\n        \"mollitb6_\": \"<string>\",\n        \"aliquip_2c\": \"<string>\",\n        \"exercitation_53\": \"<string>\",\n        \"quisf\": \"<string>\",\n        \"dolore_55\": \"<string>\",\n        \"aliquip98\": \"<string>\",\n        \"laborum_f89\": \"<string>\",\n        \"est__a\": \"<string>\",\n        \"elit02\": \"<string>\",\n        \"consequat_3\": \"<string>\",\n        \"Lorem_a\": \"<string>\",\n        \"pariatur_dae\": \"<string>\",\n        \"dolore_e\": \"<string>\",\n        \"sit0\": \"<string>\",\n        \"dolore_ef\": \"<string>\",\n        \"nisif\": \"<string>\",\n        \"in_7\": \"<string>\",\n        \"exercitation80b\": \"<string>\",\n        \"veniam2\": \"<string>\",\n        \"esta5\": \"<string>\",\n        \"labore6b\": \"<string>\",\n        \"ea78a\": \"<string>\",\n        \"esse_ff3\": \"<string>\",\n        \"dolor0b2\": \"<string>\",\n        \"ut_692\": \"<string>\",\n        \"sedfcc\": \"<string>\",\n        \"dolor74\": \"<string>\",\n        \"irureca\": \"<string>\",\n        \"ut25\": \"<string>\",\n        \"veniam_e7b\": \"<string>\",\n        \"commodo36\": \"<string>\",\n        \"Ut_a\": \"<string>\",\n        \"do8f\": \"<string>\",\n        \"ipsum_0d\": \"<string>\",\n        \"eu9_\": \"<string>\",\n        \"sint_3_c\": \"<string>\",\n        \"pariatur3b\": \"<string>\",\n        \"magna_988\": \"<string>\",\n        \"dolore_8\": \"<string>\",\n        \"ea87\": \"<string>\",\n        \"adf_f\": \"<string>\",\n        \"quis0f\": \"<string>\",\n        \"culpa_6\": \"<string>\",\n        \"ipsum_e\": \"<string>\",\n        \"exercitation9\": \"<string>\",\n        \"incididunt__\": \"<string>\",\n        \"minim_fe8\": \"<string>\",\n        \"dolor_a8e\": \"<string>\",\n        \"Duis_3a\": \"<string>\",\n        \"utb20\": \"<string>\",\n        \"sint_e\": \"<string>\",\n        \"anim_8\": \"<string>\",\n        \"in1\": \"<string>\",\n        \"consectetur_2_0\": \"<string>\",\n        \"in__\": \"<string>\",\n        \"do_2_0\": \"<string>\",\n        \"tempor_8_2\": \"<string>\",\n        \"ined\": \"<string>\",\n        \"essee08\": \"<string>\",\n        \"nostrud_4c\": \"<string>\",\n        \"exbe\": \"<string>\",\n        \"utbe4\": \"<string>\",\n        \"irureb\": \"<string>\",\n        \"labore5\": \"<string>\",\n        \"sed_24\": \"<string>\",\n        \"minim7\": \"<string>\",\n        \"labore4\": \"<string>\",\n        \"cupidatat4\": \"<string>\",\n        \"pariatur_9\": \"<string>\",\n        \"ut28a\": \"<string>\",\n        \"id_3\": \"<string>\",\n        \"velit_ae\": \"<string>\",\n        \"pariatur_34d\": \"<string>\",\n        \"in72\": \"<string>\",\n        \"in_c\": \"<string>\",\n        \"irure_44\": \"<string>\",\n        \"ullamco9\": \"<string>\",\n        \"sint_fce\": \"<string>\",\n        \"labore_02\": \"<string>\",\n        \"magna_8d\": \"<string>\",\n        \"officiae\": \"<string>\",\n        \"esse_f\": \"<string>\",\n        \"ullamco_71a\": \"<string>\",\n        \"dolor_6e\": \"<string>\",\n        \"velit_8c\": \"<string>\",\n        \"dolorf5\": \"<string>\",\n        \"non_d78\": \"<string>\",\n        \"adipisicing_a_9\": \"<string>\",\n        \"dolore85\": \"<string>\",\n        \"commodoe6\": \"<string>\",\n        \"dolora61\": \"<string>\",\n        \"cupidatat_86\": \"<string>\",\n        \"non53\": \"<string>\",\n        \"suntce\": \"<string>\",\n        \"nisi_22\": \"<string>\",\n        \"esse3c\": \"<string>\",\n        \"quise\": \"<string>\",\n        \"ameteb1\": \"<string>\",\n        \"magnab0d\": \"<string>\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-b31f3abd-5e7a-446e-86bb-c7da6741c3a7"
+            },
+            {
+              "id": "89eaf9d9-48b4-4ccf-9a23-3f243fcccc4f",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets?targetArn=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets"
+                  ],
+                  "query": [
+                    {
+                      "description": "The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.",
+                      "key": "targetArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this request.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-89eaf9d9-48b4-4ccf-9a23-3f243fcccc4f"
+            },
+            {
+              "id": "0289e55b-f08a-4dec-97d9-747ed6e35016",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/rulesets?targetArn=<string>&maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "rulesets"
+                  ],
+                  "query": [
+                    {
+                      "description": "The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.",
+                      "key": "targetArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this request.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:00.000Z",
+              "updatedAt": "2026-07-28T10:23:00.000Z",
+              "uid": "35240-0289e55b-f08a-4dec-97d9-747ed6e35016"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:00.000Z",
+          "updatedAt": "2026-07-28T10:23:00.000Z",
+          "uid": "35240-e3ff039e-d767-4fec-9a47-fbb97a553a99"
+        }
+      ],
+      "id": "85ce4c20-ce10-4782-9074-e5f4779ba967",
+      "createdAt": "2026-07-28T10:23:00.000Z",
+      "updatedAt": "2026-07-28T10:23:00.000Z",
+      "uid": "35240-85ce4c20-ce10-4782-9074-e5f4779ba967"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://databrew.{{region}}.amazonaws.com"
+    }
+  ]
+}

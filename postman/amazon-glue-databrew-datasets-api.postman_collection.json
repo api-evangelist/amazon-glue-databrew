@@ -1,0 +1,1904 @@
+{
+  "info": {
+    "_postman_id": "19aa7eca-b9a0-426e-80b8-f185f7879c72",
+    "name": "AWS Glue DataBrew Datasets API",
+    "description": "Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:22:29.000Z",
+    "updatedAt": "2026-07-28T10:22:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-19aa7eca-b9a0-426e-80b8-f185f7879c72"
+  },
+  "item": [
+    {
+      "name": "datasets",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "Amazon Glue DataBrew Delete Dataset",
+              "id": "1739a9f7-d3e9-454f-9316-663e9aa8a4af",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/datasets/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "faeac12e-92fe-4ded-8739-6a0de601a41f",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the dataset to be deleted."
+                    }
+                  ]
+                },
+                "description": "Deletes a dataset from DataBrew."
+              },
+              "response": [
+                {
+                  "id": "92fbfed6-5e1d-43e7-b707-f70c48d38dc2",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-92fbfed6-5e1d-43e7-b707-f70c48d38dc2"
+                },
+                {
+                  "id": "b6207b98-ad00-4020-886e-38bbfff76886",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-b6207b98-ad00-4020-886e-38bbfff76886"
+                },
+                {
+                  "id": "60941725-b65c-464a-8b3f-76655625313d",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-60941725-b65c-464a-8b3f-76655625313d"
+                },
+                {
+                  "id": "586bccd9-f6be-4690-9ebf-e63951d0437a",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-586bccd9-f6be-4690-9ebf-e63951d0437a"
+                }
+              ],
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-1739a9f7-d3e9-454f-9316-663e9aa8a4af"
+            },
+            {
+              "name": "Amazon Glue DataBrew Describe Dataset",
+              "id": "78d2ad07-e665-4cba-b98b-6e75e5d07e93",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/datasets/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "a08bdef7-0be0-454c-98fc-62571d4eff37",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the dataset to be described."
+                    }
+                  ]
+                },
+                "description": "Returns the definition of a specific DataBrew dataset."
+              },
+              "response": [
+                {
+                  "id": "2bf8ade5-b14c-49c1-bcc5-93111934050b",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\",\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"573880133206\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"551116672176\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"992819320480\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"CreatedBy\": \"<string>\",\n  \"CreateDate\": \"<dateTime>\",\n  \"Format\": \"CSV\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"LastModifiedDate\": \"<dateTime>\",\n  \"LastModifiedBy\": \"<string>\",\n  \"Source\": \"S3\",\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"HHHH\",\n      \"ValuesMap\": {\n        \"et_b\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"DESCENDING\"\n    },\n    \"Parameters\": {\n      \"minimf8a\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"gSiUz\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"B8kiV6h4!Sr\",\n          \"ValuesMap\": {\n            \"eta\": \"<string>\"\n          }\n        }\n      },\n      \"cilluma4\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"ZeeaGsW#mE9\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"t2Vs9\",\n          \"ValuesMap\": {\n            \"labore4\": \"<string>\"\n          }\n        }\n      },\n      \"tempor3f\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+0\",\n          \"LocaleCode\": \"KS\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"voC8t\",\n          \"ValuesMap\": {\n            \"do09\": \"<string>\",\n            \"Excepteur_94\": \"<string>\"\n          }\n        }\n      },\n      \"Duis_bd4\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"3wMncL2xtd\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"_ToaOFv<Y\",\n          \"ValuesMap\": {\n            \"ex_b8_\": \"<string>\",\n            \"adipisicing1\": \"<string>\"\n          }\n        }\n      },\n      \"voluptated74\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-60:39\",\n          \"LocaleCode\": \"URA56RPkw\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"75n2W\",\n          \"ValuesMap\": {\n            \"ex_15c\": \"<string>\",\n            \"Excepteur3\": \"<string>\"\n          }\n        }\n      },\n      \"seda\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"DAGz0\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \":2A:2A\",\n          \"ValuesMap\": {\n            \"ut_f8\": \"<string>\",\n            \"eu_71\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_dd9\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"lUPbzE\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"x!SpTuA\",\n          \"ValuesMap\": {\n            \"sint_8\": \"<string>\",\n            \"add\": \"<string>\"\n          }\n        }\n      },\n      \"nullac54\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+41\",\n          \"LocaleCode\": \"c.Q_KaRQcf\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"=:v<tTg11Y\",\n          \"ValuesMap\": {\n            \"ea738\": \"<string>\",\n            \"aliqua_1c3\": \"<string>\"\n          }\n        }\n      },\n      \"eu5d0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-49:51\",\n          \"LocaleCode\": \"8TU\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"DlDl\",\n          \"ValuesMap\": {\n            \"consectetur_37\": \"<string>\",\n            \"culpa62\": \"<string>\"\n          }\n        }\n      }\n    }\n  },\n  \"Tags\": {\n    \"commodo_b97\": \"<string>\",\n    \"reprehenderit55b\": \"<string>\",\n    \"dolora9\": \"<string>\",\n    \"eiusmod_f9b\": \"<string>\",\n    \"ullamco8a\": \"<string>\",\n    \"sed_f8\": \"<string>\",\n    \"reprehenderit_1a_\": \"<string>\",\n    \"esse_e\": \"<string>\",\n    \"Excepteurf\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"eaf_c\": \"<string>\",\n    \"labore80e\": \"<string>\",\n    \"Ut_c9\": \"<string>\",\n    \"dolor_a\": \"<string>\",\n    \"adipisicing_6a\": \"<string>\",\n    \"velitc7\": \"<string>\",\n    \"ut_44\": \"<string>\",\n    \"sint_4f7\": \"<string>\",\n    \"fugiat__fb\": \"<string>\",\n    \"autef8\": \"<string>\",\n    \"minim_b_9\": \"<string>\",\n    \"laborisec\": \"<string>\",\n    \"ipsum_3c4\": \"<string>\",\n    \"irure_0\": \"<string>\",\n    \"do_90\": \"<string>\",\n    \"exercitationa0e\": \"<string>\",\n    \"nisi__24\": \"<string>\",\n    \"cupidatat0\": \"<string>\",\n    \"doab0\": \"<string>\",\n    \"Lorem_5d\": \"<string>\",\n    \"voluptate_bcb\": \"<string>\"\n  },\n  \"ResourceArn\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-2bf8ade5-b14c-49c1-bcc5-93111934050b"
+                },
+                {
+                  "id": "f9d0153f-a5cd-445c-9e78-d404fb030296",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-f9d0153f-a5cd-445c-9e78-d404fb030296"
+                },
+                {
+                  "id": "8fc76ed6-ac7f-4433-a43c-98e21eaa8e5d",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-8fc76ed6-ac7f-4433-a43c-98e21eaa8e5d"
+                }
+              ],
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-78d2ad07-e665-4cba-b98b-6e75e5d07e93"
+            },
+            {
+              "name": "Amazon Glue DataBrew Update Dataset",
+              "id": "e2ed069d-5d85-4292-86f7-8897dcf411ca",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"844348440349\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"916250795097\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"557458796721\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"CSV\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"jU! \",\n      \"ValuesMap\": {\n        \"in_b\": \"<string>\",\n        \"Lorem3\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"ASCENDING\"\n    },\n    \"Parameters\": {\n      \"aliquae0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+35:35\",\n          \"LocaleCode\": \"dkfSpo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"WxOmN ,2:28\",\n          \"ValuesMap\": {\n            \"eiusmod_6\": \"<string>\",\n            \"laboris4\": \"<string>\"\n          }\n        }\n      },\n      \"ullamco_bf\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"@2Mpf5Wbhrc\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"n7 pZhCF\",\n          \"ValuesMap\": {\n            \"enim_17\": \"<string>\",\n            \"nullab6\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_1b\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"ARceuKz\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"lezZEP\",\n          \"ValuesMap\": {\n            \"nulla_2d\": \"<string>\"\n          }\n        }\n      },\n      \"occaecat8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+97:68\",\n          \"LocaleCode\": \"R0_WMELYPW\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"c6)y.\",\n          \"ValuesMap\": {\n            \"elit2a\": \"<string>\",\n            \"veniamfe3\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_88\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"oo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"wPf3wNa.w\",\n          \"ValuesMap\": {\n            \"ullamcoe\": \"<string>\"\n          }\n        }\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/datasets/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "56eb46f5-9da3-4e73-8c35-d03a129a6df3",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the dataset to be updated."
+                    }
+                  ]
+                },
+                "description": "Modifies the definition of an existing DataBrew dataset."
+              },
+              "response": [
+                {
+                  "id": "9fd1f630-c062-49d1-963d-e8ecdbdaa2be",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"844348440349\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"916250795097\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"557458796721\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"CSV\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"jU! \",\n      \"ValuesMap\": {\n        \"in_b\": \"<string>\",\n        \"Lorem3\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"ASCENDING\"\n    },\n    \"Parameters\": {\n      \"aliquae0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+35:35\",\n          \"LocaleCode\": \"dkfSpo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"WxOmN ,2:28\",\n          \"ValuesMap\": {\n            \"eiusmod_6\": \"<string>\",\n            \"laboris4\": \"<string>\"\n          }\n        }\n      },\n      \"ullamco_bf\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"@2Mpf5Wbhrc\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"n7 pZhCF\",\n          \"ValuesMap\": {\n            \"enim_17\": \"<string>\",\n            \"nullab6\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_1b\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"ARceuKz\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"lezZEP\",\n          \"ValuesMap\": {\n            \"nulla_2d\": \"<string>\"\n          }\n        }\n      },\n      \"occaecat8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+97:68\",\n          \"LocaleCode\": \"R0_WMELYPW\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"c6)y.\",\n          \"ValuesMap\": {\n            \"elit2a\": \"<string>\",\n            \"veniamfe3\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_88\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"oo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"wPf3wNa.w\",\n          \"ValuesMap\": {\n            \"ullamcoe\": \"<string>\"\n          }\n        }\n      }\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-9fd1f630-c062-49d1-963d-e8ecdbdaa2be"
+                },
+                {
+                  "id": "32076e58-6b5a-4305-ba87-cd212ba48324",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"844348440349\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"916250795097\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"557458796721\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"CSV\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"jU! \",\n      \"ValuesMap\": {\n        \"in_b\": \"<string>\",\n        \"Lorem3\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"ASCENDING\"\n    },\n    \"Parameters\": {\n      \"aliquae0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+35:35\",\n          \"LocaleCode\": \"dkfSpo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"WxOmN ,2:28\",\n          \"ValuesMap\": {\n            \"eiusmod_6\": \"<string>\",\n            \"laboris4\": \"<string>\"\n          }\n        }\n      },\n      \"ullamco_bf\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"@2Mpf5Wbhrc\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"n7 pZhCF\",\n          \"ValuesMap\": {\n            \"enim_17\": \"<string>\",\n            \"nullab6\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_1b\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"ARceuKz\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"lezZEP\",\n          \"ValuesMap\": {\n            \"nulla_2d\": \"<string>\"\n          }\n        }\n      },\n      \"occaecat8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+97:68\",\n          \"LocaleCode\": \"R0_WMELYPW\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"c6)y.\",\n          \"ValuesMap\": {\n            \"elit2a\": \"<string>\",\n            \"veniamfe3\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_88\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"oo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"wPf3wNa.w\",\n          \"ValuesMap\": {\n            \"ullamcoe\": \"<string>\"\n          }\n        }\n      }\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-32076e58-6b5a-4305-ba87-cd212ba48324"
+                },
+                {
+                  "id": "73350205-814b-4dc2-ad61-5983eb8b6cf7",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"844348440349\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"916250795097\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"557458796721\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"CSV\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"jU! \",\n      \"ValuesMap\": {\n        \"in_b\": \"<string>\",\n        \"Lorem3\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"ASCENDING\"\n    },\n    \"Parameters\": {\n      \"aliquae0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+35:35\",\n          \"LocaleCode\": \"dkfSpo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"WxOmN ,2:28\",\n          \"ValuesMap\": {\n            \"eiusmod_6\": \"<string>\",\n            \"laboris4\": \"<string>\"\n          }\n        }\n      },\n      \"ullamco_bf\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"@2Mpf5Wbhrc\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"n7 pZhCF\",\n          \"ValuesMap\": {\n            \"enim_17\": \"<string>\",\n            \"nullab6\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_1b\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"ARceuKz\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"lezZEP\",\n          \"ValuesMap\": {\n            \"nulla_2d\": \"<string>\"\n          }\n        }\n      },\n      \"occaecat8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+97:68\",\n          \"LocaleCode\": \"R0_WMELYPW\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"c6)y.\",\n          \"ValuesMap\": {\n            \"elit2a\": \"<string>\",\n            \"veniamfe3\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_88\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"oo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"wPf3wNa.w\",\n          \"ValuesMap\": {\n            \"ullamcoe\": \"<string>\"\n          }\n        }\n      }\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-73350205-814b-4dc2-ad61-5983eb8b6cf7"
+                },
+                {
+                  "id": "edeeffd2-c5c9-4905-b7ca-4857eb68d269",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"844348440349\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"916250795097\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"557458796721\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"CSV\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"jU! \",\n      \"ValuesMap\": {\n        \"in_b\": \"<string>\",\n        \"Lorem3\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"ASCENDING\"\n    },\n    \"Parameters\": {\n      \"aliquae0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+35:35\",\n          \"LocaleCode\": \"dkfSpo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"WxOmN ,2:28\",\n          \"ValuesMap\": {\n            \"eiusmod_6\": \"<string>\",\n            \"laboris4\": \"<string>\"\n          }\n        }\n      },\n      \"ullamco_bf\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"@2Mpf5Wbhrc\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"n7 pZhCF\",\n          \"ValuesMap\": {\n            \"enim_17\": \"<string>\",\n            \"nullab6\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_1b\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"ARceuKz\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"lezZEP\",\n          \"ValuesMap\": {\n            \"nulla_2d\": \"<string>\"\n          }\n        }\n      },\n      \"occaecat8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+97:68\",\n          \"LocaleCode\": \"R0_WMELYPW\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"c6)y.\",\n          \"ValuesMap\": {\n            \"elit2a\": \"<string>\",\n            \"veniamfe3\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit_88\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"oo\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"wPf3wNa.w\",\n          \"ValuesMap\": {\n            \"ullamcoe\": \"<string>\"\n          }\n        }\n      }\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:29.000Z",
+                  "updatedAt": "2026-07-28T10:22:29.000Z",
+                  "uid": "35240-edeeffd2-c5c9-4905-b7ca-4857eb68d269"
+                }
+              ],
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-e2ed069d-5d85-4292-86f7-8897dcf411ca"
+            }
+          ],
+          "id": "1ff46e89-640f-451f-88e7-1945a8bd6417",
+          "createdAt": "2026-07-28T10:22:29.000Z",
+          "updatedAt": "2026-07-28T10:22:29.000Z",
+          "uid": "35240-1ff46e89-640f-451f-88e7-1945a8bd6417"
+        },
+        {
+          "name": "Amazon Glue DataBrew Create Dataset",
+          "id": "e0309530-5594-4e70-b6a3-1df38d6e920d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"041748595104\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"972219946725\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"812931182830\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"JSON\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"!01>n\",\n      \"ValuesMap\": {\n        \"amet7af\": \"<string>\",\n        \"velitd6c\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"DESCENDING\"\n    },\n    \"Parameters\": {\n      \"mollit_8d0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"XQ1E\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"UY<N=6wJ711\",\n          \"ValuesMap\": {\n            \"ut7\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt_8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+5610\",\n          \"LocaleCode\": \"JVSPf0g\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"BZ1z\",\n          \"ValuesMap\": {\n            \"etb5\": \"<string>\",\n            \"ut_7_5\": \"<string>\",\n            \"dolore2\": \"<string>\"\n          }\n        }\n      },\n      \"eiusmod_74_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+3\",\n          \"LocaleCode\": \"GOkXxwgbV\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"N6N6\",\n          \"ValuesMap\": {\n            \"et_6_9\": \"<string>\",\n            \"laborec\": \"<string>\",\n            \"anim89b\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt2\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+1693\",\n          \"LocaleCode\": \"zuei\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"FseF\",\n          \"ValuesMap\": {\n            \"fugiat_3\": \"<string>\",\n            \"ea_15d\": \"<string>\",\n            \"voluptate_e_\": \"<string>\"\n          }\n        }\n      },\n      \"deserunt_683\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"qAmmxkvn0\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"d)d)\",\n          \"ValuesMap\": {\n            \"sit_678\": \"<string>\",\n            \"consectetur_1\": \"<string>\",\n            \"ut_b\": \"<string>\",\n            \"nonf0\": \"<string>\"\n          }\n        }\n      },\n      \"ut_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"xx\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"L57L57\",\n          \"ValuesMap\": {\n            \"in_4fd\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit5_7\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"33\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"9RI9RI\",\n          \"ValuesMap\": {\n            \"doloreb8\": \"<string>\"\n          }\n        }\n      },\n      \"labore_48\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-37\",\n          \"LocaleCode\": \"Kl4EU0Q@\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"e.2zd7).\",\n          \"ValuesMap\": {\n            \"nonb66\": \"<string>\",\n            \"ametcc\": \"<string>\"\n          }\n        }\n      },\n      \"consectetur_7e\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-13\",\n          \"LocaleCode\": \"bn.WQ7\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"vgavga\",\n          \"ValuesMap\": {\n            \"occaecat0_2\": \"<string>\"\n          }\n        }\n      },\n      \"anim_c6\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"C0HiOsSgC\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"PXDO=pRB.=\",\n          \"ValuesMap\": {\n            \"Duis_c\": \"<string>\"\n          }\n        }\n      }\n    }\n  },\n  \"Tags\": {\n    \"reprehenderita9d\": \"<string>\",\n    \"ullamco_f8b\": \"<string>\",\n    \"sint_c\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"dolor_431\": \"<string>\",\n    \"reprehenderit_545\": \"<string>\",\n    \"nostrud_230\": \"<string>\",\n    \"Excepteur166\": \"<string>\",\n    \"quis_a\": \"<string>\",\n    \"est7\": \"<string>\",\n    \"mollit_c25\": \"<string>\",\n    \"pariatur_e_1\": \"<string>\",\n    \"dolor9e\": \"<string>\",\n    \"consectetur_4\": \"<string>\",\n    \"minim_3_\": \"<string>\",\n    \"ut_9f2\": \"<string>\",\n    \"nisi4cc\": \"<string>\",\n    \"incididunt_\": \"<string>\",\n    \"ea_d\": \"<string>\",\n    \"Excepteur__\": \"<string>\",\n    \"reprehenderit48\": \"<string>\",\n    \"laborum72e\": \"<string>\",\n    \"velit9b5\": \"<string>\",\n    \"occaecat0a\": \"<string>\",\n    \"id6\": \"<string>\",\n    \"eud83\": \"<string>\",\n    \"qui_7\": \"<string>\",\n    \"inb03\": \"<string>\",\n    \"officia_e\": \"<string>\",\n    \"sed_89\": \"<string>\",\n    \"dolore_a4\": \"<string>\",\n    \"consectetur_c4d\": \"<string>\",\n    \"velit_1a2\": \"<string>\",\n    \"Duis6\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"occaecat95c\": \"<string>\",\n    \"labore_23a\": \"<string>\",\n    \"minim7\": \"<string>\",\n    \"veniam_0ca\": \"<string>\",\n    \"dolor_32_\": \"<string>\",\n    \"sint3c\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"reprehenderit_911\": \"<string>\",\n    \"pariatur_df\": \"<string>\",\n    \"estd\": \"<string>\",\n    \"sit_f2\": \"<string>\",\n    \"velit7c\": \"<string>\",\n    \"laboreb\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"Ut_a\": \"<string>\",\n    \"eu3\": \"<string>\",\n    \"Excepteur_43\": \"<string>\",\n    \"et0_d\": \"<string>\",\n    \"occaecat_84d\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"Excepteur8\": \"<string>\",\n    \"occaecatd34\": \"<string>\",\n    \"quisbd0\": \"<string>\",\n    \"Lorem907\": \"<string>\",\n    \"incididunt_f\": \"<string>\",\n    \"ullamco_b\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"sunt24\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"enim_d5\": \"<string>\",\n    \"voluptate_36c\": \"<string>\",\n    \"commodob_\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"nisi64\": \"<string>\",\n    \"laborumb\": \"<string>\",\n    \"id_c7d\": \"<string>\",\n    \"Lorem4b2\": \"<string>\",\n    \"nulla_fb\": \"<string>\",\n    \"nullaea6\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"quis___0\": \"<string>\",\n    \"eiusmod_b71\": \"<string>\",\n    \"aliquip16b\": \"<string>\",\n    \"fugiat_7a\": \"<string>\",\n    \"amet_4c\": \"<string>\",\n    \"in0\": \"<string>\",\n    \"amet8\": \"<string>\",\n    \"aliqua1\": \"<string>\",\n    \"dolore_d22\": \"<string>\",\n    \"dolor_4\": \"<string>\",\n    \"cillum0db\": \"<string>\",\n    \"enim_1d\": \"<string>\",\n    \"laborum_f7\": \"<string>\",\n    \"sunt_4d\": \"<string>\",\n    \"est_9ea\": \"<string>\",\n    \"aliquip_7_d\": \"<string>\",\n    \"aliquipd3\": \"<string>\",\n    \"inf64\": \"<string>\",\n    \"Ut378\": \"<string>\",\n    \"Duisf7\": \"<string>\",\n    \"ex_9\": \"<string>\",\n    \"ullamcoba2\": \"<string>\",\n    \"ea377\": \"<string>\",\n    \"culpa1\": \"<string>\",\n    \"amet97\": \"<string>\",\n    \"ullamco7\": \"<string>\",\n    \"Lorem_c\": \"<string>\",\n    \"occaecat_35\": \"<string>\",\n    \"nisi04\": \"<string>\",\n    \"ad_c89\": \"<string>\",\n    \"aliquip69\": \"<string>\",\n    \"laborum1\": \"<string>\",\n    \"sintc47\": \"<string>\",\n    \"velit_76c\": \"<string>\",\n    \"cillumd0\": \"<string>\",\n    \"magna02f\": \"<string>\",\n    \"esse_4e\": \"<string>\",\n    \"ipsum_a\": \"<string>\",\n    \"veniam_1b\": \"<string>\",\n    \"laboris_3_\": \"<string>\",\n    \"fugiat8c2\": \"<string>\",\n    \"Duis8_\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"irure__60\": \"<string>\",\n    \"exercitation_d9e\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/datasets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets"
+              ]
+            },
+            "description": "Creates a new DataBrew dataset."
+          },
+          "response": [
+            {
+              "id": "3a974ab0-6774-499f-a140-1260017c10ca",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"041748595104\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"972219946725\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"812931182830\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"JSON\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"!01>n\",\n      \"ValuesMap\": {\n        \"amet7af\": \"<string>\",\n        \"velitd6c\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"DESCENDING\"\n    },\n    \"Parameters\": {\n      \"mollit_8d0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"XQ1E\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"UY<N=6wJ711\",\n          \"ValuesMap\": {\n            \"ut7\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt_8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+5610\",\n          \"LocaleCode\": \"JVSPf0g\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"BZ1z\",\n          \"ValuesMap\": {\n            \"etb5\": \"<string>\",\n            \"ut_7_5\": \"<string>\",\n            \"dolore2\": \"<string>\"\n          }\n        }\n      },\n      \"eiusmod_74_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+3\",\n          \"LocaleCode\": \"GOkXxwgbV\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"N6N6\",\n          \"ValuesMap\": {\n            \"et_6_9\": \"<string>\",\n            \"laborec\": \"<string>\",\n            \"anim89b\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt2\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+1693\",\n          \"LocaleCode\": \"zuei\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"FseF\",\n          \"ValuesMap\": {\n            \"fugiat_3\": \"<string>\",\n            \"ea_15d\": \"<string>\",\n            \"voluptate_e_\": \"<string>\"\n          }\n        }\n      },\n      \"deserunt_683\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"qAmmxkvn0\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"d)d)\",\n          \"ValuesMap\": {\n            \"sit_678\": \"<string>\",\n            \"consectetur_1\": \"<string>\",\n            \"ut_b\": \"<string>\",\n            \"nonf0\": \"<string>\"\n          }\n        }\n      },\n      \"ut_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"xx\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"L57L57\",\n          \"ValuesMap\": {\n            \"in_4fd\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit5_7\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"33\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"9RI9RI\",\n          \"ValuesMap\": {\n            \"doloreb8\": \"<string>\"\n          }\n        }\n      },\n      \"labore_48\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-37\",\n          \"LocaleCode\": \"Kl4EU0Q@\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"e.2zd7).\",\n          \"ValuesMap\": {\n            \"nonb66\": \"<string>\",\n            \"ametcc\": \"<string>\"\n          }\n        }\n      },\n      \"consectetur_7e\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-13\",\n          \"LocaleCode\": \"bn.WQ7\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"vgavga\",\n          \"ValuesMap\": {\n            \"occaecat0_2\": \"<string>\"\n          }\n        }\n      },\n      \"anim_c6\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"C0HiOsSgC\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"PXDO=pRB.=\",\n          \"ValuesMap\": {\n            \"Duis_c\": \"<string>\"\n          }\n        }\n      }\n    }\n  },\n  \"Tags\": {\n    \"reprehenderita9d\": \"<string>\",\n    \"ullamco_f8b\": \"<string>\",\n    \"sint_c\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"dolor_431\": \"<string>\",\n    \"reprehenderit_545\": \"<string>\",\n    \"nostrud_230\": \"<string>\",\n    \"Excepteur166\": \"<string>\",\n    \"quis_a\": \"<string>\",\n    \"est7\": \"<string>\",\n    \"mollit_c25\": \"<string>\",\n    \"pariatur_e_1\": \"<string>\",\n    \"dolor9e\": \"<string>\",\n    \"consectetur_4\": \"<string>\",\n    \"minim_3_\": \"<string>\",\n    \"ut_9f2\": \"<string>\",\n    \"nisi4cc\": \"<string>\",\n    \"incididunt_\": \"<string>\",\n    \"ea_d\": \"<string>\",\n    \"Excepteur__\": \"<string>\",\n    \"reprehenderit48\": \"<string>\",\n    \"laborum72e\": \"<string>\",\n    \"velit9b5\": \"<string>\",\n    \"occaecat0a\": \"<string>\",\n    \"id6\": \"<string>\",\n    \"eud83\": \"<string>\",\n    \"qui_7\": \"<string>\",\n    \"inb03\": \"<string>\",\n    \"officia_e\": \"<string>\",\n    \"sed_89\": \"<string>\",\n    \"dolore_a4\": \"<string>\",\n    \"consectetur_c4d\": \"<string>\",\n    \"velit_1a2\": \"<string>\",\n    \"Duis6\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"occaecat95c\": \"<string>\",\n    \"labore_23a\": \"<string>\",\n    \"minim7\": \"<string>\",\n    \"veniam_0ca\": \"<string>\",\n    \"dolor_32_\": \"<string>\",\n    \"sint3c\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"reprehenderit_911\": \"<string>\",\n    \"pariatur_df\": \"<string>\",\n    \"estd\": \"<string>\",\n    \"sit_f2\": \"<string>\",\n    \"velit7c\": \"<string>\",\n    \"laboreb\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"Ut_a\": \"<string>\",\n    \"eu3\": \"<string>\",\n    \"Excepteur_43\": \"<string>\",\n    \"et0_d\": \"<string>\",\n    \"occaecat_84d\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"Excepteur8\": \"<string>\",\n    \"occaecatd34\": \"<string>\",\n    \"quisbd0\": \"<string>\",\n    \"Lorem907\": \"<string>\",\n    \"incididunt_f\": \"<string>\",\n    \"ullamco_b\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"sunt24\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"enim_d5\": \"<string>\",\n    \"voluptate_36c\": \"<string>\",\n    \"commodob_\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"nisi64\": \"<string>\",\n    \"laborumb\": \"<string>\",\n    \"id_c7d\": \"<string>\",\n    \"Lorem4b2\": \"<string>\",\n    \"nulla_fb\": \"<string>\",\n    \"nullaea6\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"quis___0\": \"<string>\",\n    \"eiusmod_b71\": \"<string>\",\n    \"aliquip16b\": \"<string>\",\n    \"fugiat_7a\": \"<string>\",\n    \"amet_4c\": \"<string>\",\n    \"in0\": \"<string>\",\n    \"amet8\": \"<string>\",\n    \"aliqua1\": \"<string>\",\n    \"dolore_d22\": \"<string>\",\n    \"dolor_4\": \"<string>\",\n    \"cillum0db\": \"<string>\",\n    \"enim_1d\": \"<string>\",\n    \"laborum_f7\": \"<string>\",\n    \"sunt_4d\": \"<string>\",\n    \"est_9ea\": \"<string>\",\n    \"aliquip_7_d\": \"<string>\",\n    \"aliquipd3\": \"<string>\",\n    \"inf64\": \"<string>\",\n    \"Ut378\": \"<string>\",\n    \"Duisf7\": \"<string>\",\n    \"ex_9\": \"<string>\",\n    \"ullamcoba2\": \"<string>\",\n    \"ea377\": \"<string>\",\n    \"culpa1\": \"<string>\",\n    \"amet97\": \"<string>\",\n    \"ullamco7\": \"<string>\",\n    \"Lorem_c\": \"<string>\",\n    \"occaecat_35\": \"<string>\",\n    \"nisi04\": \"<string>\",\n    \"ad_c89\": \"<string>\",\n    \"aliquip69\": \"<string>\",\n    \"laborum1\": \"<string>\",\n    \"sintc47\": \"<string>\",\n    \"velit_76c\": \"<string>\",\n    \"cillumd0\": \"<string>\",\n    \"magna02f\": \"<string>\",\n    \"esse_4e\": \"<string>\",\n    \"ipsum_a\": \"<string>\",\n    \"veniam_1b\": \"<string>\",\n    \"laboris_3_\": \"<string>\",\n    \"fugiat8c2\": \"<string>\",\n    \"Duis8_\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"irure__60\": \"<string>\",\n    \"exercitation_d9e\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/datasets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Name\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-3a974ab0-6774-499f-a140-1260017c10ca"
+            },
+            {
+              "id": "9733e3a7-42a9-4c94-9a69-a33d475a5173",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"041748595104\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"972219946725\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"812931182830\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"JSON\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"!01>n\",\n      \"ValuesMap\": {\n        \"amet7af\": \"<string>\",\n        \"velitd6c\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"DESCENDING\"\n    },\n    \"Parameters\": {\n      \"mollit_8d0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"XQ1E\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"UY<N=6wJ711\",\n          \"ValuesMap\": {\n            \"ut7\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt_8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+5610\",\n          \"LocaleCode\": \"JVSPf0g\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"BZ1z\",\n          \"ValuesMap\": {\n            \"etb5\": \"<string>\",\n            \"ut_7_5\": \"<string>\",\n            \"dolore2\": \"<string>\"\n          }\n        }\n      },\n      \"eiusmod_74_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+3\",\n          \"LocaleCode\": \"GOkXxwgbV\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"N6N6\",\n          \"ValuesMap\": {\n            \"et_6_9\": \"<string>\",\n            \"laborec\": \"<string>\",\n            \"anim89b\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt2\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+1693\",\n          \"LocaleCode\": \"zuei\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"FseF\",\n          \"ValuesMap\": {\n            \"fugiat_3\": \"<string>\",\n            \"ea_15d\": \"<string>\",\n            \"voluptate_e_\": \"<string>\"\n          }\n        }\n      },\n      \"deserunt_683\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"qAmmxkvn0\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"d)d)\",\n          \"ValuesMap\": {\n            \"sit_678\": \"<string>\",\n            \"consectetur_1\": \"<string>\",\n            \"ut_b\": \"<string>\",\n            \"nonf0\": \"<string>\"\n          }\n        }\n      },\n      \"ut_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"xx\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"L57L57\",\n          \"ValuesMap\": {\n            \"in_4fd\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit5_7\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"33\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"9RI9RI\",\n          \"ValuesMap\": {\n            \"doloreb8\": \"<string>\"\n          }\n        }\n      },\n      \"labore_48\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-37\",\n          \"LocaleCode\": \"Kl4EU0Q@\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"e.2zd7).\",\n          \"ValuesMap\": {\n            \"nonb66\": \"<string>\",\n            \"ametcc\": \"<string>\"\n          }\n        }\n      },\n      \"consectetur_7e\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-13\",\n          \"LocaleCode\": \"bn.WQ7\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"vgavga\",\n          \"ValuesMap\": {\n            \"occaecat0_2\": \"<string>\"\n          }\n        }\n      },\n      \"anim_c6\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"C0HiOsSgC\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"PXDO=pRB.=\",\n          \"ValuesMap\": {\n            \"Duis_c\": \"<string>\"\n          }\n        }\n      }\n    }\n  },\n  \"Tags\": {\n    \"reprehenderita9d\": \"<string>\",\n    \"ullamco_f8b\": \"<string>\",\n    \"sint_c\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"dolor_431\": \"<string>\",\n    \"reprehenderit_545\": \"<string>\",\n    \"nostrud_230\": \"<string>\",\n    \"Excepteur166\": \"<string>\",\n    \"quis_a\": \"<string>\",\n    \"est7\": \"<string>\",\n    \"mollit_c25\": \"<string>\",\n    \"pariatur_e_1\": \"<string>\",\n    \"dolor9e\": \"<string>\",\n    \"consectetur_4\": \"<string>\",\n    \"minim_3_\": \"<string>\",\n    \"ut_9f2\": \"<string>\",\n    \"nisi4cc\": \"<string>\",\n    \"incididunt_\": \"<string>\",\n    \"ea_d\": \"<string>\",\n    \"Excepteur__\": \"<string>\",\n    \"reprehenderit48\": \"<string>\",\n    \"laborum72e\": \"<string>\",\n    \"velit9b5\": \"<string>\",\n    \"occaecat0a\": \"<string>\",\n    \"id6\": \"<string>\",\n    \"eud83\": \"<string>\",\n    \"qui_7\": \"<string>\",\n    \"inb03\": \"<string>\",\n    \"officia_e\": \"<string>\",\n    \"sed_89\": \"<string>\",\n    \"dolore_a4\": \"<string>\",\n    \"consectetur_c4d\": \"<string>\",\n    \"velit_1a2\": \"<string>\",\n    \"Duis6\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"occaecat95c\": \"<string>\",\n    \"labore_23a\": \"<string>\",\n    \"minim7\": \"<string>\",\n    \"veniam_0ca\": \"<string>\",\n    \"dolor_32_\": \"<string>\",\n    \"sint3c\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"reprehenderit_911\": \"<string>\",\n    \"pariatur_df\": \"<string>\",\n    \"estd\": \"<string>\",\n    \"sit_f2\": \"<string>\",\n    \"velit7c\": \"<string>\",\n    \"laboreb\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"Ut_a\": \"<string>\",\n    \"eu3\": \"<string>\",\n    \"Excepteur_43\": \"<string>\",\n    \"et0_d\": \"<string>\",\n    \"occaecat_84d\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"Excepteur8\": \"<string>\",\n    \"occaecatd34\": \"<string>\",\n    \"quisbd0\": \"<string>\",\n    \"Lorem907\": \"<string>\",\n    \"incididunt_f\": \"<string>\",\n    \"ullamco_b\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"sunt24\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"enim_d5\": \"<string>\",\n    \"voluptate_36c\": \"<string>\",\n    \"commodob_\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"nisi64\": \"<string>\",\n    \"laborumb\": \"<string>\",\n    \"id_c7d\": \"<string>\",\n    \"Lorem4b2\": \"<string>\",\n    \"nulla_fb\": \"<string>\",\n    \"nullaea6\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"quis___0\": \"<string>\",\n    \"eiusmod_b71\": \"<string>\",\n    \"aliquip16b\": \"<string>\",\n    \"fugiat_7a\": \"<string>\",\n    \"amet_4c\": \"<string>\",\n    \"in0\": \"<string>\",\n    \"amet8\": \"<string>\",\n    \"aliqua1\": \"<string>\",\n    \"dolore_d22\": \"<string>\",\n    \"dolor_4\": \"<string>\",\n    \"cillum0db\": \"<string>\",\n    \"enim_1d\": \"<string>\",\n    \"laborum_f7\": \"<string>\",\n    \"sunt_4d\": \"<string>\",\n    \"est_9ea\": \"<string>\",\n    \"aliquip_7_d\": \"<string>\",\n    \"aliquipd3\": \"<string>\",\n    \"inf64\": \"<string>\",\n    \"Ut378\": \"<string>\",\n    \"Duisf7\": \"<string>\",\n    \"ex_9\": \"<string>\",\n    \"ullamcoba2\": \"<string>\",\n    \"ea377\": \"<string>\",\n    \"culpa1\": \"<string>\",\n    \"amet97\": \"<string>\",\n    \"ullamco7\": \"<string>\",\n    \"Lorem_c\": \"<string>\",\n    \"occaecat_35\": \"<string>\",\n    \"nisi04\": \"<string>\",\n    \"ad_c89\": \"<string>\",\n    \"aliquip69\": \"<string>\",\n    \"laborum1\": \"<string>\",\n    \"sintc47\": \"<string>\",\n    \"velit_76c\": \"<string>\",\n    \"cillumd0\": \"<string>\",\n    \"magna02f\": \"<string>\",\n    \"esse_4e\": \"<string>\",\n    \"ipsum_a\": \"<string>\",\n    \"veniam_1b\": \"<string>\",\n    \"laboris_3_\": \"<string>\",\n    \"fugiat8c2\": \"<string>\",\n    \"Duis8_\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"irure__60\": \"<string>\",\n    \"exercitation_d9e\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/datasets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-9733e3a7-42a9-4c94-9a69-a33d475a5173"
+            },
+            {
+              "id": "ea6c8ef0-7b75-4bc3-b372-c16f8dfa99f1",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"041748595104\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"972219946725\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"812931182830\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"JSON\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"!01>n\",\n      \"ValuesMap\": {\n        \"amet7af\": \"<string>\",\n        \"velitd6c\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"DESCENDING\"\n    },\n    \"Parameters\": {\n      \"mollit_8d0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"XQ1E\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"UY<N=6wJ711\",\n          \"ValuesMap\": {\n            \"ut7\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt_8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+5610\",\n          \"LocaleCode\": \"JVSPf0g\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"BZ1z\",\n          \"ValuesMap\": {\n            \"etb5\": \"<string>\",\n            \"ut_7_5\": \"<string>\",\n            \"dolore2\": \"<string>\"\n          }\n        }\n      },\n      \"eiusmod_74_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+3\",\n          \"LocaleCode\": \"GOkXxwgbV\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"N6N6\",\n          \"ValuesMap\": {\n            \"et_6_9\": \"<string>\",\n            \"laborec\": \"<string>\",\n            \"anim89b\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt2\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+1693\",\n          \"LocaleCode\": \"zuei\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"FseF\",\n          \"ValuesMap\": {\n            \"fugiat_3\": \"<string>\",\n            \"ea_15d\": \"<string>\",\n            \"voluptate_e_\": \"<string>\"\n          }\n        }\n      },\n      \"deserunt_683\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"qAmmxkvn0\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"d)d)\",\n          \"ValuesMap\": {\n            \"sit_678\": \"<string>\",\n            \"consectetur_1\": \"<string>\",\n            \"ut_b\": \"<string>\",\n            \"nonf0\": \"<string>\"\n          }\n        }\n      },\n      \"ut_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"xx\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"L57L57\",\n          \"ValuesMap\": {\n            \"in_4fd\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit5_7\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"33\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"9RI9RI\",\n          \"ValuesMap\": {\n            \"doloreb8\": \"<string>\"\n          }\n        }\n      },\n      \"labore_48\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-37\",\n          \"LocaleCode\": \"Kl4EU0Q@\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"e.2zd7).\",\n          \"ValuesMap\": {\n            \"nonb66\": \"<string>\",\n            \"ametcc\": \"<string>\"\n          }\n        }\n      },\n      \"consectetur_7e\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-13\",\n          \"LocaleCode\": \"bn.WQ7\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"vgavga\",\n          \"ValuesMap\": {\n            \"occaecat0_2\": \"<string>\"\n          }\n        }\n      },\n      \"anim_c6\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"C0HiOsSgC\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"PXDO=pRB.=\",\n          \"ValuesMap\": {\n            \"Duis_c\": \"<string>\"\n          }\n        }\n      }\n    }\n  },\n  \"Tags\": {\n    \"reprehenderita9d\": \"<string>\",\n    \"ullamco_f8b\": \"<string>\",\n    \"sint_c\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"dolor_431\": \"<string>\",\n    \"reprehenderit_545\": \"<string>\",\n    \"nostrud_230\": \"<string>\",\n    \"Excepteur166\": \"<string>\",\n    \"quis_a\": \"<string>\",\n    \"est7\": \"<string>\",\n    \"mollit_c25\": \"<string>\",\n    \"pariatur_e_1\": \"<string>\",\n    \"dolor9e\": \"<string>\",\n    \"consectetur_4\": \"<string>\",\n    \"minim_3_\": \"<string>\",\n    \"ut_9f2\": \"<string>\",\n    \"nisi4cc\": \"<string>\",\n    \"incididunt_\": \"<string>\",\n    \"ea_d\": \"<string>\",\n    \"Excepteur__\": \"<string>\",\n    \"reprehenderit48\": \"<string>\",\n    \"laborum72e\": \"<string>\",\n    \"velit9b5\": \"<string>\",\n    \"occaecat0a\": \"<string>\",\n    \"id6\": \"<string>\",\n    \"eud83\": \"<string>\",\n    \"qui_7\": \"<string>\",\n    \"inb03\": \"<string>\",\n    \"officia_e\": \"<string>\",\n    \"sed_89\": \"<string>\",\n    \"dolore_a4\": \"<string>\",\n    \"consectetur_c4d\": \"<string>\",\n    \"velit_1a2\": \"<string>\",\n    \"Duis6\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"occaecat95c\": \"<string>\",\n    \"labore_23a\": \"<string>\",\n    \"minim7\": \"<string>\",\n    \"veniam_0ca\": \"<string>\",\n    \"dolor_32_\": \"<string>\",\n    \"sint3c\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"reprehenderit_911\": \"<string>\",\n    \"pariatur_df\": \"<string>\",\n    \"estd\": \"<string>\",\n    \"sit_f2\": \"<string>\",\n    \"velit7c\": \"<string>\",\n    \"laboreb\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"Ut_a\": \"<string>\",\n    \"eu3\": \"<string>\",\n    \"Excepteur_43\": \"<string>\",\n    \"et0_d\": \"<string>\",\n    \"occaecat_84d\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"Excepteur8\": \"<string>\",\n    \"occaecatd34\": \"<string>\",\n    \"quisbd0\": \"<string>\",\n    \"Lorem907\": \"<string>\",\n    \"incididunt_f\": \"<string>\",\n    \"ullamco_b\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"sunt24\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"enim_d5\": \"<string>\",\n    \"voluptate_36c\": \"<string>\",\n    \"commodob_\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"nisi64\": \"<string>\",\n    \"laborumb\": \"<string>\",\n    \"id_c7d\": \"<string>\",\n    \"Lorem4b2\": \"<string>\",\n    \"nulla_fb\": \"<string>\",\n    \"nullaea6\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"quis___0\": \"<string>\",\n    \"eiusmod_b71\": \"<string>\",\n    \"aliquip16b\": \"<string>\",\n    \"fugiat_7a\": \"<string>\",\n    \"amet_4c\": \"<string>\",\n    \"in0\": \"<string>\",\n    \"amet8\": \"<string>\",\n    \"aliqua1\": \"<string>\",\n    \"dolore_d22\": \"<string>\",\n    \"dolor_4\": \"<string>\",\n    \"cillum0db\": \"<string>\",\n    \"enim_1d\": \"<string>\",\n    \"laborum_f7\": \"<string>\",\n    \"sunt_4d\": \"<string>\",\n    \"est_9ea\": \"<string>\",\n    \"aliquip_7_d\": \"<string>\",\n    \"aliquipd3\": \"<string>\",\n    \"inf64\": \"<string>\",\n    \"Ut378\": \"<string>\",\n    \"Duisf7\": \"<string>\",\n    \"ex_9\": \"<string>\",\n    \"ullamcoba2\": \"<string>\",\n    \"ea377\": \"<string>\",\n    \"culpa1\": \"<string>\",\n    \"amet97\": \"<string>\",\n    \"ullamco7\": \"<string>\",\n    \"Lorem_c\": \"<string>\",\n    \"occaecat_35\": \"<string>\",\n    \"nisi04\": \"<string>\",\n    \"ad_c89\": \"<string>\",\n    \"aliquip69\": \"<string>\",\n    \"laborum1\": \"<string>\",\n    \"sintc47\": \"<string>\",\n    \"velit_76c\": \"<string>\",\n    \"cillumd0\": \"<string>\",\n    \"magna02f\": \"<string>\",\n    \"esse_4e\": \"<string>\",\n    \"ipsum_a\": \"<string>\",\n    \"veniam_1b\": \"<string>\",\n    \"laboris_3_\": \"<string>\",\n    \"fugiat8c2\": \"<string>\",\n    \"Duis8_\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"irure__60\": \"<string>\",\n    \"exercitation_d9e\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/datasets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-ea6c8ef0-7b75-4bc3-b372-c16f8dfa99f1"
+            },
+            {
+              "id": "ed300e07-56ed-4070-9fc3-9cd4e08743a8",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"041748595104\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"972219946725\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"812931182830\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"JSON\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"!01>n\",\n      \"ValuesMap\": {\n        \"amet7af\": \"<string>\",\n        \"velitd6c\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"DESCENDING\"\n    },\n    \"Parameters\": {\n      \"mollit_8d0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"XQ1E\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"UY<N=6wJ711\",\n          \"ValuesMap\": {\n            \"ut7\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt_8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+5610\",\n          \"LocaleCode\": \"JVSPf0g\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"BZ1z\",\n          \"ValuesMap\": {\n            \"etb5\": \"<string>\",\n            \"ut_7_5\": \"<string>\",\n            \"dolore2\": \"<string>\"\n          }\n        }\n      },\n      \"eiusmod_74_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+3\",\n          \"LocaleCode\": \"GOkXxwgbV\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"N6N6\",\n          \"ValuesMap\": {\n            \"et_6_9\": \"<string>\",\n            \"laborec\": \"<string>\",\n            \"anim89b\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt2\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+1693\",\n          \"LocaleCode\": \"zuei\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"FseF\",\n          \"ValuesMap\": {\n            \"fugiat_3\": \"<string>\",\n            \"ea_15d\": \"<string>\",\n            \"voluptate_e_\": \"<string>\"\n          }\n        }\n      },\n      \"deserunt_683\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"qAmmxkvn0\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"d)d)\",\n          \"ValuesMap\": {\n            \"sit_678\": \"<string>\",\n            \"consectetur_1\": \"<string>\",\n            \"ut_b\": \"<string>\",\n            \"nonf0\": \"<string>\"\n          }\n        }\n      },\n      \"ut_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"xx\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"L57L57\",\n          \"ValuesMap\": {\n            \"in_4fd\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit5_7\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"33\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"9RI9RI\",\n          \"ValuesMap\": {\n            \"doloreb8\": \"<string>\"\n          }\n        }\n      },\n      \"labore_48\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-37\",\n          \"LocaleCode\": \"Kl4EU0Q@\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"e.2zd7).\",\n          \"ValuesMap\": {\n            \"nonb66\": \"<string>\",\n            \"ametcc\": \"<string>\"\n          }\n        }\n      },\n      \"consectetur_7e\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-13\",\n          \"LocaleCode\": \"bn.WQ7\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"vgavga\",\n          \"ValuesMap\": {\n            \"occaecat0_2\": \"<string>\"\n          }\n        }\n      },\n      \"anim_c6\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"C0HiOsSgC\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"PXDO=pRB.=\",\n          \"ValuesMap\": {\n            \"Duis_c\": \"<string>\"\n          }\n        }\n      }\n    }\n  },\n  \"Tags\": {\n    \"reprehenderita9d\": \"<string>\",\n    \"ullamco_f8b\": \"<string>\",\n    \"sint_c\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"dolor_431\": \"<string>\",\n    \"reprehenderit_545\": \"<string>\",\n    \"nostrud_230\": \"<string>\",\n    \"Excepteur166\": \"<string>\",\n    \"quis_a\": \"<string>\",\n    \"est7\": \"<string>\",\n    \"mollit_c25\": \"<string>\",\n    \"pariatur_e_1\": \"<string>\",\n    \"dolor9e\": \"<string>\",\n    \"consectetur_4\": \"<string>\",\n    \"minim_3_\": \"<string>\",\n    \"ut_9f2\": \"<string>\",\n    \"nisi4cc\": \"<string>\",\n    \"incididunt_\": \"<string>\",\n    \"ea_d\": \"<string>\",\n    \"Excepteur__\": \"<string>\",\n    \"reprehenderit48\": \"<string>\",\n    \"laborum72e\": \"<string>\",\n    \"velit9b5\": \"<string>\",\n    \"occaecat0a\": \"<string>\",\n    \"id6\": \"<string>\",\n    \"eud83\": \"<string>\",\n    \"qui_7\": \"<string>\",\n    \"inb03\": \"<string>\",\n    \"officia_e\": \"<string>\",\n    \"sed_89\": \"<string>\",\n    \"dolore_a4\": \"<string>\",\n    \"consectetur_c4d\": \"<string>\",\n    \"velit_1a2\": \"<string>\",\n    \"Duis6\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"occaecat95c\": \"<string>\",\n    \"labore_23a\": \"<string>\",\n    \"minim7\": \"<string>\",\n    \"veniam_0ca\": \"<string>\",\n    \"dolor_32_\": \"<string>\",\n    \"sint3c\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"reprehenderit_911\": \"<string>\",\n    \"pariatur_df\": \"<string>\",\n    \"estd\": \"<string>\",\n    \"sit_f2\": \"<string>\",\n    \"velit7c\": \"<string>\",\n    \"laboreb\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"Ut_a\": \"<string>\",\n    \"eu3\": \"<string>\",\n    \"Excepteur_43\": \"<string>\",\n    \"et0_d\": \"<string>\",\n    \"occaecat_84d\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"Excepteur8\": \"<string>\",\n    \"occaecatd34\": \"<string>\",\n    \"quisbd0\": \"<string>\",\n    \"Lorem907\": \"<string>\",\n    \"incididunt_f\": \"<string>\",\n    \"ullamco_b\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"sunt24\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"enim_d5\": \"<string>\",\n    \"voluptate_36c\": \"<string>\",\n    \"commodob_\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"nisi64\": \"<string>\",\n    \"laborumb\": \"<string>\",\n    \"id_c7d\": \"<string>\",\n    \"Lorem4b2\": \"<string>\",\n    \"nulla_fb\": \"<string>\",\n    \"nullaea6\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"quis___0\": \"<string>\",\n    \"eiusmod_b71\": \"<string>\",\n    \"aliquip16b\": \"<string>\",\n    \"fugiat_7a\": \"<string>\",\n    \"amet_4c\": \"<string>\",\n    \"in0\": \"<string>\",\n    \"amet8\": \"<string>\",\n    \"aliqua1\": \"<string>\",\n    \"dolore_d22\": \"<string>\",\n    \"dolor_4\": \"<string>\",\n    \"cillum0db\": \"<string>\",\n    \"enim_1d\": \"<string>\",\n    \"laborum_f7\": \"<string>\",\n    \"sunt_4d\": \"<string>\",\n    \"est_9ea\": \"<string>\",\n    \"aliquip_7_d\": \"<string>\",\n    \"aliquipd3\": \"<string>\",\n    \"inf64\": \"<string>\",\n    \"Ut378\": \"<string>\",\n    \"Duisf7\": \"<string>\",\n    \"ex_9\": \"<string>\",\n    \"ullamcoba2\": \"<string>\",\n    \"ea377\": \"<string>\",\n    \"culpa1\": \"<string>\",\n    \"amet97\": \"<string>\",\n    \"ullamco7\": \"<string>\",\n    \"Lorem_c\": \"<string>\",\n    \"occaecat_35\": \"<string>\",\n    \"nisi04\": \"<string>\",\n    \"ad_c89\": \"<string>\",\n    \"aliquip69\": \"<string>\",\n    \"laborum1\": \"<string>\",\n    \"sintc47\": \"<string>\",\n    \"velit_76c\": \"<string>\",\n    \"cillumd0\": \"<string>\",\n    \"magna02f\": \"<string>\",\n    \"esse_4e\": \"<string>\",\n    \"ipsum_a\": \"<string>\",\n    \"veniam_1b\": \"<string>\",\n    \"laboris_3_\": \"<string>\",\n    \"fugiat8c2\": \"<string>\",\n    \"Duis8_\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"irure__60\": \"<string>\",\n    \"exercitation_d9e\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/datasets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-ed300e07-56ed-4070-9fc3-9cd4e08743a8"
+            },
+            {
+              "id": "08434976-bc26-4673-bb83-e34125647871",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Input\": {\n    \"S3InputDefinition\": {\n      \"Bucket\": \"<string>\",\n      \"Key\": \"<string>\",\n      \"BucketOwner\": \"041748595104\"\n    },\n    \"DataCatalogInputDefinition\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"972219946725\"\n      }\n    },\n    \"DatabaseInputDefinition\": {\n      \"GlueConnectionName\": \"<string>\",\n      \"DatabaseTableName\": \"<string>\",\n      \"TempDirectory\": {\n        \"Bucket\": \"<string>\",\n        \"Key\": \"<string>\",\n        \"BucketOwner\": \"812931182830\"\n      },\n      \"QueryString\": \"<string>\"\n    },\n    \"Metadata\": {\n      \"SourceArn\": \"<string>\"\n    }\n  },\n  \"Format\": \"JSON\",\n  \"FormatOptions\": {\n    \"Json\": {\n      \"MultiLine\": \"<boolean>\"\n    },\n    \"Excel\": {\n      \"SheetNames\": [\n        \"<string>\"\n      ],\n      \"SheetIndexes\": [\n        \"<integer>\"\n      ],\n      \"HeaderRow\": \"<boolean>\"\n    },\n    \"Csv\": {\n      \"Delimiter\": \"<string>\",\n      \"HeaderRow\": \"<boolean>\"\n    }\n  },\n  \"PathOptions\": {\n    \"LastModifiedDateCondition\": {\n      \"Expression\": \"!01>n\",\n      \"ValuesMap\": {\n        \"amet7af\": \"<string>\",\n        \"velitd6c\": \"<string>\"\n      }\n    },\n    \"FilesLimit\": {\n      \"MaxFiles\": \"<integer>\",\n      \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n      \"Order\": \"DESCENDING\"\n    },\n    \"Parameters\": {\n      \"mollit_8d0\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-4\",\n          \"LocaleCode\": \"XQ1E\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"UY<N=6wJ711\",\n          \"ValuesMap\": {\n            \"ut7\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt_8\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+5610\",\n          \"LocaleCode\": \"JVSPf0g\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"BZ1z\",\n          \"ValuesMap\": {\n            \"etb5\": \"<string>\",\n            \"ut_7_5\": \"<string>\",\n            \"dolore2\": \"<string>\"\n          }\n        }\n      },\n      \"eiusmod_74_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+3\",\n          \"LocaleCode\": \"GOkXxwgbV\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"N6N6\",\n          \"ValuesMap\": {\n            \"et_6_9\": \"<string>\",\n            \"laborec\": \"<string>\",\n            \"anim89b\": \"<string>\"\n          }\n        }\n      },\n      \"incididunt2\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"+1693\",\n          \"LocaleCode\": \"zuei\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"FseF\",\n          \"ValuesMap\": {\n            \"fugiat_3\": \"<string>\",\n            \"ea_15d\": \"<string>\",\n            \"voluptate_e_\": \"<string>\"\n          }\n        }\n      },\n      \"deserunt_683\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"qAmmxkvn0\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"d)d)\",\n          \"ValuesMap\": {\n            \"sit_678\": \"<string>\",\n            \"consectetur_1\": \"<string>\",\n            \"ut_b\": \"<string>\",\n            \"nonf0\": \"<string>\"\n          }\n        }\n      },\n      \"ut_\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Number\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"xx\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"L57L57\",\n          \"ValuesMap\": {\n            \"in_4fd\": \"<string>\"\n          }\n        }\n      },\n      \"reprehenderit5_7\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"33\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"9RI9RI\",\n          \"ValuesMap\": {\n            \"doloreb8\": \"<string>\"\n          }\n        }\n      },\n      \"labore_48\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-37\",\n          \"LocaleCode\": \"Kl4EU0Q@\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"e.2zd7).\",\n          \"ValuesMap\": {\n            \"nonb66\": \"<string>\",\n            \"ametcc\": \"<string>\"\n          }\n        }\n      },\n      \"consectetur_7e\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"Datetime\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"-13\",\n          \"LocaleCode\": \"bn.WQ7\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"vgavga\",\n          \"ValuesMap\": {\n            \"occaecat0_2\": \"<string>\"\n          }\n        }\n      },\n      \"anim_c6\": {\n        \"Name\": \"<string>\",\n        \"Type\": \"String\",\n        \"DatetimeOptions\": {\n          \"Format\": \"<string>\",\n          \"TimezoneOffset\": \"Z\",\n          \"LocaleCode\": \"C0HiOsSgC\"\n        },\n        \"CreateColumn\": \"<boolean>\",\n        \"Filter\": {\n          \"Expression\": \"PXDO=pRB.=\",\n          \"ValuesMap\": {\n            \"Duis_c\": \"<string>\"\n          }\n        }\n      }\n    }\n  },\n  \"Tags\": {\n    \"reprehenderita9d\": \"<string>\",\n    \"ullamco_f8b\": \"<string>\",\n    \"sint_c\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"dolor_431\": \"<string>\",\n    \"reprehenderit_545\": \"<string>\",\n    \"nostrud_230\": \"<string>\",\n    \"Excepteur166\": \"<string>\",\n    \"quis_a\": \"<string>\",\n    \"est7\": \"<string>\",\n    \"mollit_c25\": \"<string>\",\n    \"pariatur_e_1\": \"<string>\",\n    \"dolor9e\": \"<string>\",\n    \"consectetur_4\": \"<string>\",\n    \"minim_3_\": \"<string>\",\n    \"ut_9f2\": \"<string>\",\n    \"nisi4cc\": \"<string>\",\n    \"incididunt_\": \"<string>\",\n    \"ea_d\": \"<string>\",\n    \"Excepteur__\": \"<string>\",\n    \"reprehenderit48\": \"<string>\",\n    \"laborum72e\": \"<string>\",\n    \"velit9b5\": \"<string>\",\n    \"occaecat0a\": \"<string>\",\n    \"id6\": \"<string>\",\n    \"eud83\": \"<string>\",\n    \"qui_7\": \"<string>\",\n    \"inb03\": \"<string>\",\n    \"officia_e\": \"<string>\",\n    \"sed_89\": \"<string>\",\n    \"dolore_a4\": \"<string>\",\n    \"consectetur_c4d\": \"<string>\",\n    \"velit_1a2\": \"<string>\",\n    \"Duis6\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"occaecat95c\": \"<string>\",\n    \"labore_23a\": \"<string>\",\n    \"minim7\": \"<string>\",\n    \"veniam_0ca\": \"<string>\",\n    \"dolor_32_\": \"<string>\",\n    \"sint3c\": \"<string>\",\n    \"in5\": \"<string>\",\n    \"reprehenderit_911\": \"<string>\",\n    \"pariatur_df\": \"<string>\",\n    \"estd\": \"<string>\",\n    \"sit_f2\": \"<string>\",\n    \"velit7c\": \"<string>\",\n    \"laboreb\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"Ut_a\": \"<string>\",\n    \"eu3\": \"<string>\",\n    \"Excepteur_43\": \"<string>\",\n    \"et0_d\": \"<string>\",\n    \"occaecat_84d\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"Excepteur8\": \"<string>\",\n    \"occaecatd34\": \"<string>\",\n    \"quisbd0\": \"<string>\",\n    \"Lorem907\": \"<string>\",\n    \"incididunt_f\": \"<string>\",\n    \"ullamco_b\": \"<string>\",\n    \"culpa3\": \"<string>\",\n    \"sunt24\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"enim_d5\": \"<string>\",\n    \"voluptate_36c\": \"<string>\",\n    \"commodob_\": \"<string>\",\n    \"dolore__\": \"<string>\",\n    \"nisi64\": \"<string>\",\n    \"laborumb\": \"<string>\",\n    \"id_c7d\": \"<string>\",\n    \"Lorem4b2\": \"<string>\",\n    \"nulla_fb\": \"<string>\",\n    \"nullaea6\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"quis___0\": \"<string>\",\n    \"eiusmod_b71\": \"<string>\",\n    \"aliquip16b\": \"<string>\",\n    \"fugiat_7a\": \"<string>\",\n    \"amet_4c\": \"<string>\",\n    \"in0\": \"<string>\",\n    \"amet8\": \"<string>\",\n    \"aliqua1\": \"<string>\",\n    \"dolore_d22\": \"<string>\",\n    \"dolor_4\": \"<string>\",\n    \"cillum0db\": \"<string>\",\n    \"enim_1d\": \"<string>\",\n    \"laborum_f7\": \"<string>\",\n    \"sunt_4d\": \"<string>\",\n    \"est_9ea\": \"<string>\",\n    \"aliquip_7_d\": \"<string>\",\n    \"aliquipd3\": \"<string>\",\n    \"inf64\": \"<string>\",\n    \"Ut378\": \"<string>\",\n    \"Duisf7\": \"<string>\",\n    \"ex_9\": \"<string>\",\n    \"ullamcoba2\": \"<string>\",\n    \"ea377\": \"<string>\",\n    \"culpa1\": \"<string>\",\n    \"amet97\": \"<string>\",\n    \"ullamco7\": \"<string>\",\n    \"Lorem_c\": \"<string>\",\n    \"occaecat_35\": \"<string>\",\n    \"nisi04\": \"<string>\",\n    \"ad_c89\": \"<string>\",\n    \"aliquip69\": \"<string>\",\n    \"laborum1\": \"<string>\",\n    \"sintc47\": \"<string>\",\n    \"velit_76c\": \"<string>\",\n    \"cillumd0\": \"<string>\",\n    \"magna02f\": \"<string>\",\n    \"esse_4e\": \"<string>\",\n    \"ipsum_a\": \"<string>\",\n    \"veniam_1b\": \"<string>\",\n    \"laboris_3_\": \"<string>\",\n    \"fugiat8c2\": \"<string>\",\n    \"Duis8_\": \"<string>\",\n    \"deseruntc\": \"<string>\",\n    \"irure__60\": \"<string>\",\n    \"exercitation_d9e\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/datasets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-08434976-bc26-4673-bb83-e34125647871"
+            }
+          ],
+          "createdAt": "2026-07-28T10:22:29.000Z",
+          "updatedAt": "2026-07-28T10:22:29.000Z",
+          "uid": "35240-e0309530-5594-4e70-b6a3-1df38d6e920d"
+        },
+        {
+          "name": "Amazon Glue DataBrew List Datasets",
+          "id": "3ff8f62b-d2a1-462b-ad74-06e89dace431",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/datasets?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of results to return in this request. ",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The token returned by a previous call to retrieve the next set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Lists all of the DataBrew datasets."
+          },
+          "response": [
+            {
+              "id": "8c41cdf9-cb44-4eab-a7b3-a5c5e3c2e1f8",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/datasets?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in this request. ",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token returned by a previous call to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Datasets\": [\n    {\n      \"Name\": \"<string>\",\n      \"Input\": {\n        \"S3InputDefinition\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"343841382793\"\n        },\n        \"DataCatalogInputDefinition\": {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"TempDirectory\": {\n            \"Bucket\": \"<string>\",\n            \"Key\": \"<string>\",\n            \"BucketOwner\": \"425095033107\"\n          }\n        },\n        \"DatabaseInputDefinition\": {\n          \"GlueConnectionName\": \"<string>\",\n          \"DatabaseTableName\": \"<string>\",\n          \"TempDirectory\": {\n            \"Bucket\": \"<string>\",\n            \"Key\": \"<string>\",\n            \"BucketOwner\": \"934463775471\"\n          },\n          \"QueryString\": \"<string>\"\n        },\n        \"Metadata\": {\n          \"SourceArn\": \"<string>\"\n        }\n      },\n      \"AccountId\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"Format\": \"CSV\",\n      \"FormatOptions\": {\n        \"Json\": {\n          \"MultiLine\": \"<boolean>\"\n        },\n        \"Excel\": {\n          \"SheetNames\": [\n            \"<string>\"\n          ],\n          \"SheetIndexes\": [\n            \"<integer>\"\n          ],\n          \"HeaderRow\": \"<boolean>\"\n        },\n        \"Csv\": {\n          \"Delimiter\": \"<string>\",\n          \"HeaderRow\": \"<boolean>\"\n        }\n      },\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"LastModifiedBy\": \"<string>\",\n      \"Source\": \"S3\",\n      \"PathOptions\": {\n        \"LastModifiedDateCondition\": {\n          \"Expression\": \"Ap9Z<p4\",\n          \"ValuesMap\": {\n            \"essef24\": \"<string>\",\n            \"proidente2\": \"<string>\"\n          }\n        },\n        \"FilesLimit\": {\n          \"MaxFiles\": \"<integer>\",\n          \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n          \"Order\": \"ASCENDING\"\n        },\n        \"Parameters\": {\n          \"sit__a0\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Number\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"+6\",\n              \"LocaleCode\": \"RpH\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"))e4!\",\n              \"ValuesMap\": {\n                \"veniam05\": \"<string>\",\n                \"labore_1__\": \"<string>\"\n              }\n            }\n          },\n          \"amet_f\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Number\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"+5\",\n              \"LocaleCode\": \"qh5NAZz\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"T=f>QOd\",\n              \"ValuesMap\": {\n                \"et_55\": \"<string>\",\n                \"deserunt_035\": \"<string>\"\n              }\n            }\n          },\n          \"nisi54\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"String\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"-1\",\n              \"LocaleCode\": \"9d8xcnB\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"bM2L0Fl\",\n              \"ValuesMap\": {\n                \"dolore_7\": \"<string>\",\n                \"dolor189\": \"<string>\",\n                \"officia8\": \"<string>\",\n                \"laborum_08e\": \"<string>\"\n              }\n            }\n          },\n          \"est446\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Datetime\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"Z\",\n              \"LocaleCode\": \"HMMOC\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"9999\",\n              \"ValuesMap\": {\n                \"qui_1\": \"<string>\",\n                \"proidentf\": \"<string>\"\n              }\n            }\n          },\n          \"nisi_1a\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Number\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"Z\",\n              \"LocaleCode\": \".bSJqY-YX\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"VVVV\",\n              \"ValuesMap\": {\n                \"elitd23\": \"<string>\"\n              }\n            }\n          },\n          \"docea\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Datetime\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"Z\",\n              \"LocaleCode\": \"LA_530rI-BI\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"WJU>PN\",\n              \"ValuesMap\": {\n                \"in11\": \"<string>\"\n              }\n            }\n          },\n          \"velit71\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Number\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"+77\",\n              \"LocaleCode\": \"IUk8uvr0E\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"4pu4pu\",\n              \"ValuesMap\": {\n                \"temporb\": \"<string>\",\n                \"in_8\": \"<string>\"\n              }\n            }\n          }\n        }\n      },\n      \"Tags\": {\n        \"do89\": \"<string>\",\n        \"ex_95\": \"<string>\",\n        \"in_00\": \"<string>\",\n        \"nulla_0f2\": \"<string>\",\n        \"exe\": \"<string>\",\n        \"Utecd\": \"<string>\",\n        \"eu_88c\": \"<string>\",\n        \"dolorb61\": \"<string>\",\n        \"ex4_\": \"<string>\",\n        \"veniam_66\": \"<string>\",\n        \"est_2\": \"<string>\",\n        \"id9\": \"<string>\",\n        \"nisi__\": \"<string>\",\n        \"dolore_fd\": \"<string>\",\n        \"do_f\": \"<string>\",\n        \"Ut6\": \"<string>\",\n        \"in_0\": \"<string>\",\n        \"minim230\": \"<string>\",\n        \"in830\": \"<string>\",\n        \"voluptate0\": \"<string>\",\n        \"sunt_86\": \"<string>\",\n        \"etc\": \"<string>\",\n        \"do_d14\": \"<string>\",\n        \"aute765\": \"<string>\",\n        \"sit24\": \"<string>\",\n        \"reprehenderit_f6f\": \"<string>\",\n        \"nostrud_aa\": \"<string>\",\n        \"id5_\": \"<string>\",\n        \"cillum_13\": \"<string>\",\n        \"ullamco_f\": \"<string>\",\n        \"sit5b\": \"<string>\",\n        \"cupidatatb_\": \"<string>\",\n        \"culpa_6\": \"<string>\",\n        \"est_1\": \"<string>\",\n        \"laborumd\": \"<string>\",\n        \"eae29\": \"<string>\",\n        \"Excepteur_81\": \"<string>\",\n        \"cupidatat_b52\": \"<string>\",\n        \"ut70\": \"<string>\",\n        \"occaecat850\": \"<string>\",\n        \"minimb6b\": \"<string>\",\n        \"fugiat_4\": \"<string>\",\n        \"nisi_22\": \"<string>\",\n        \"ea_1\": \"<string>\",\n        \"est_30a\": \"<string>\",\n        \"cillum854\": \"<string>\",\n        \"in9fe\": \"<string>\",\n        \"aliquip_2\": \"<string>\",\n        \"sed_7\": \"<string>\",\n        \"est_8\": \"<string>\",\n        \"magna83c\": \"<string>\",\n        \"incididunt6f\": \"<string>\",\n        \"voluptate_\": \"<string>\",\n        \"eu_26\": \"<string>\",\n        \"qui_1_\": \"<string>\",\n        \"utddf\": \"<string>\",\n        \"commodocc\": \"<string>\",\n        \"officia23\": \"<string>\",\n        \"do_945\": \"<string>\",\n        \"aute_d5\": \"<string>\",\n        \"dolore_093\": \"<string>\",\n        \"dolor_c\": \"<string>\",\n        \"nostrud_4\": \"<string>\",\n        \"fugiat_040\": \"<string>\",\n        \"eiusmod__\": \"<string>\",\n        \"aute1\": \"<string>\",\n        \"pariatur5fb\": \"<string>\",\n        \"cillum126\": \"<string>\",\n        \"aliquip5\": \"<string>\",\n        \"proident_b\": \"<string>\",\n        \"sunt_64\": \"<string>\",\n        \"dolor_c9\": \"<string>\",\n        \"eiusmod_08\": \"<string>\",\n        \"eu382\": \"<string>\",\n        \"culpab86\": \"<string>\",\n        \"tempor048\": \"<string>\",\n        \"velit__0\": \"<string>\",\n        \"ex3\": \"<string>\",\n        \"nisic\": \"<string>\",\n        \"voluptateed0\": \"<string>\",\n        \"laborum__bb\": \"<string>\",\n        \"dolore0e\": \"<string>\",\n        \"suntc58\": \"<string>\",\n        \"dolor52\": \"<string>\",\n        \"ut_ca\": \"<string>\",\n        \"commodof9d\": \"<string>\",\n        \"nisi_82c\": \"<string>\",\n        \"in_7\": \"<string>\",\n        \"et_fb7\": \"<string>\",\n        \"exercitation_b76\": \"<string>\",\n        \"sintd\": \"<string>\",\n        \"laborum_4f1\": \"<string>\",\n        \"cillum_2\": \"<string>\",\n        \"aliqua1f1\": \"<string>\",\n        \"qui_53\": \"<string>\",\n        \"nostrud_c\": \"<string>\",\n        \"aliquipb8\": \"<string>\",\n        \"est_39a\": \"<string>\",\n        \"dolor_14\": \"<string>\",\n        \"aute8\": \"<string>\",\n        \"tempor_9c\": \"<string>\",\n        \"excf\": \"<string>\",\n        \"amet_0\": \"<string>\",\n        \"ut_7\": \"<string>\",\n        \"magnaf3c\": \"<string>\",\n        \"tempor_d\": \"<string>\",\n        \"eiusmod3\": \"<string>\",\n        \"sunt_98\": \"<string>\",\n        \"aliquadb\": \"<string>\",\n        \"dolore_554\": \"<string>\",\n        \"quis6d0\": \"<string>\",\n        \"sint2\": \"<string>\",\n        \"doloreeac\": \"<string>\",\n        \"consectetur_069\": \"<string>\",\n        \"Excepteur0\": \"<string>\",\n        \"ea_3a5\": \"<string>\",\n        \"aliqua37f\": \"<string>\",\n        \"inf06\": \"<string>\",\n        \"reprehenderit21a\": \"<string>\",\n        \"non_1d7\": \"<string>\",\n        \"ullamco_ad3\": \"<string>\",\n        \"laborumb9e\": \"<string>\",\n        \"in1\": \"<string>\",\n        \"consectetur_d23\": \"<string>\",\n        \"occaecat_4b\": \"<string>\",\n        \"consequat_e7\": \"<string>\",\n        \"dolore00e\": \"<string>\",\n        \"mollit_4d7\": \"<string>\",\n        \"enim_b\": \"<string>\",\n        \"ut_e\": \"<string>\",\n        \"nulla25\": \"<string>\",\n        \"et_40\": \"<string>\",\n        \"cillum_\": \"<string>\",\n        \"sunt_39\": \"<string>\",\n        \"dolor_043\": \"<string>\",\n        \"ad__\": \"<string>\",\n        \"dolore6\": \"<string>\",\n        \"veniam_7\": \"<string>\",\n        \"nulla_ba\": \"<string>\",\n        \"ut_a04\": \"<string>\",\n        \"commodo_1\": \"<string>\",\n        \"incididunt66\": \"<string>\",\n        \"reprehenderit_7\": \"<string>\",\n        \"laborum46\": \"<string>\",\n        \"deseruntd9\": \"<string>\",\n        \"dolor_4eb\": \"<string>\",\n        \"Ut__2\": \"<string>\",\n        \"ex_e1\": \"<string>\",\n        \"ineb\": \"<string>\",\n        \"consequat_1b3\": \"<string>\",\n        \"do_1c\": \"<string>\",\n        \"ea_fb\": \"<string>\",\n        \"esse71a\": \"<string>\",\n        \"ex_0\": \"<string>\",\n        \"adipisicing_5\": \"<string>\",\n        \"temporf2c\": \"<string>\",\n        \"reprehenderitbfd\": \"<string>\",\n        \"nullad\": \"<string>\",\n        \"amet_e9\": \"<string>\",\n        \"ullamcoe\": \"<string>\",\n        \"Duis_d\": \"<string>\",\n        \"sitfe7\": \"<string>\",\n        \"nisi_6\": \"<string>\",\n        \"id41\": \"<string>\",\n        \"minim7\": \"<string>\",\n        \"Loremc\": \"<string>\",\n        \"laborum_8ee\": \"<string>\",\n        \"anim_3\": \"<string>\",\n        \"voluptate8\": \"<string>\",\n        \"quis_b2\": \"<string>\",\n        \"ex_c\": \"<string>\",\n        \"mollit1\": \"<string>\"\n      },\n      \"ResourceArn\": \"<string>\"\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Input\": {\n        \"S3InputDefinition\": {\n          \"Bucket\": \"<string>\",\n          \"Key\": \"<string>\",\n          \"BucketOwner\": \"807340126396\"\n        },\n        \"DataCatalogInputDefinition\": {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"TempDirectory\": {\n            \"Bucket\": \"<string>\",\n            \"Key\": \"<string>\",\n            \"BucketOwner\": \"647822392545\"\n          }\n        },\n        \"DatabaseInputDefinition\": {\n          \"GlueConnectionName\": \"<string>\",\n          \"DatabaseTableName\": \"<string>\",\n          \"TempDirectory\": {\n            \"Bucket\": \"<string>\",\n            \"Key\": \"<string>\",\n            \"BucketOwner\": \"265850862734\"\n          },\n          \"QueryString\": \"<string>\"\n        },\n        \"Metadata\": {\n          \"SourceArn\": \"<string>\"\n        }\n      },\n      \"AccountId\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"Format\": \"JSON\",\n      \"FormatOptions\": {\n        \"Json\": {\n          \"MultiLine\": \"<boolean>\"\n        },\n        \"Excel\": {\n          \"SheetNames\": [\n            \"<string>\"\n          ],\n          \"SheetIndexes\": [\n            \"<integer>\"\n          ],\n          \"HeaderRow\": \"<boolean>\"\n        },\n        \"Csv\": {\n          \"Delimiter\": \"<string>\",\n          \"HeaderRow\": \"<boolean>\"\n        }\n      },\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"LastModifiedBy\": \"<string>\",\n      \"Source\": \"S3\",\n      \"PathOptions\": {\n        \"LastModifiedDateCondition\": {\n          \"Expression\": \"8bo3NczNIH\",\n          \"ValuesMap\": {\n            \"sunt_5\": \"<string>\",\n            \"nulla_24\": \"<string>\",\n            \"pariatur_5c3\": \"<string>\",\n            \"adipisicing_27d\": \"<string>\"\n          }\n        },\n        \"FilesLimit\": {\n          \"MaxFiles\": \"<integer>\",\n          \"OrderedBy\": \"LAST_MODIFIED_DATE\",\n          \"Order\": \"ASCENDING\"\n        },\n        \"Parameters\": {\n          \"ullamco_105\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Number\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"-01\",\n              \"LocaleCode\": \"1gz#QTWzgD_\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"bYpfimjX\",\n              \"ValuesMap\": {\n                \"pariatur21e\": \"<string>\"\n              }\n            }\n          },\n          \"magna_\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Datetime\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"Z\",\n              \"LocaleCode\": \"O7\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"r!z)VX42\",\n              \"ValuesMap\": {\n                \"anim3\": \"<string>\"\n              }\n            }\n          },\n          \"ullamco_6a1\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Number\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"-2\",\n              \"LocaleCode\": \"gco0Tn7H\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \".j.j\",\n              \"ValuesMap\": {\n                \"in63\": \"<string>\",\n                \"cillumb08\": \"<string>\"\n              }\n            }\n          },\n          \"reprehenderit_7\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"String\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"Z\",\n              \"LocaleCode\": \"MNP6c#7xfB\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"q.MnV\",\n              \"ValuesMap\": {\n                \"reprehenderit18\": \"<string>\",\n                \"Ut_80f\": \"<string>\"\n              }\n            }\n          },\n          \"sed_8\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Number\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"Z\",\n              \"LocaleCode\": \"AA\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"ea9:qA\",\n              \"ValuesMap\": {\n                \"dolor94_\": \"<string>\"\n              }\n            }\n          },\n          \"fugiat6\": {\n            \"Name\": \"<string>\",\n            \"Type\": \"Datetime\",\n            \"DatetimeOptions\": {\n              \"Format\": \"<string>\",\n              \"TimezoneOffset\": \"Z\",\n              \"LocaleCode\": \"rRHXpE\"\n            },\n            \"CreateColumn\": \"<boolean>\",\n            \"Filter\": {\n              \"Expression\": \"HrZHrZ\",\n              \"ValuesMap\": {\n                \"et_86\": \"<string>\",\n                \"nisi_1d\": \"<string>\"\n              }\n            }\n          }\n        }\n      },\n      \"Tags\": {\n        \"aliqua_c\": \"<string>\",\n        \"sintf\": \"<string>\",\n        \"adipisicing952\": \"<string>\",\n        \"ut9d\": \"<string>\",\n        \"in_73\": \"<string>\",\n        \"idd9a\": \"<string>\",\n        \"veniam19\": \"<string>\",\n        \"dolore_ac\": \"<string>\",\n        \"nostrud91\": \"<string>\",\n        \"irure_7c5\": \"<string>\",\n        \"reprehenderitf\": \"<string>\",\n        \"est_5\": \"<string>\",\n        \"esse_7\": \"<string>\",\n        \"adipisicing__c_\": \"<string>\",\n        \"velit_7d\": \"<string>\",\n        \"non_df\": \"<string>\"\n      },\n      \"ResourceArn\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-8c41cdf9-cb44-4eab-a7b3-a5c5e3c2e1f8"
+            },
+            {
+              "id": "eca42868-9ad8-4f88-9044-c6288f80a83e",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/datasets?maxResults=<integer>&nextToken=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in this request. ",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token returned by a previous call to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:29.000Z",
+              "updatedAt": "2026-07-28T10:22:29.000Z",
+              "uid": "35240-eca42868-9ad8-4f88-9044-c6288f80a83e"
+            }
+          ],
+          "createdAt": "2026-07-28T10:22:29.000Z",
+          "updatedAt": "2026-07-28T10:22:29.000Z",
+          "uid": "35240-3ff8f62b-d2a1-462b-ad74-06e89dace431"
+        }
+      ],
+      "id": "2ba70afd-2632-4e73-9b0f-2a1173b43d4f",
+      "createdAt": "2026-07-28T10:22:29.000Z",
+      "updatedAt": "2026-07-28T10:22:29.000Z",
+      "uid": "35240-2ba70afd-2632-4e73-9b0f-2a1173b43d4f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://databrew.{{region}}.amazonaws.com"
+    }
+  ]
+}

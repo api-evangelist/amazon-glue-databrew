@@ -1,0 +1,1065 @@
+{
+  "info": {
+    "_postman_id": "1a4971c4-0e26-4097-a61d-54245964716e",
+    "name": "AWS Glue DataBrew Datasets ProfileJobs API",
+    "description": "Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:22:54.000Z",
+    "updatedAt": "2026-07-28T10:22:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1a4971c4-0e26-4097-a61d-54245964716e"
+  },
+  "item": [
+    {
+      "name": "profileJobs",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "Amazon Glue DataBrew Update Profile Job",
+              "id": "b9c6d880-c5b3-49c0-9d8c-978bf5741248",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"690393648400\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ZOGUE\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"SPI\",\n          \"Parameters\": {\n            \"quis5\": \"<string>\",\n            \"dolore4f7\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"Z\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"MJQKO_\",\n              \"Parameters\": {\n                \"sit_54\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"ORVJCUDd\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"HMOAOZX\"\n          ]\n        }\n      ]\n    }\n  },\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"DISABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/profileJobs/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileJobs",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "db404c7c-984d-4fad-9cc8-7a6d2256f913",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the job to be updated."
+                    }
+                  ]
+                },
+                "description": "Modifies the definition of an existing profile job."
+              },
+              "response": [
+                {
+                  "id": "c09c05b6-6156-45de-84ec-d2dc26373d3c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"690393648400\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ZOGUE\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"SPI\",\n          \"Parameters\": {\n            \"quis5\": \"<string>\",\n            \"dolore4f7\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"Z\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"MJQKO_\",\n              \"Parameters\": {\n                \"sit_54\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"ORVJCUDd\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"HMOAOZX\"\n          ]\n        }\n      ]\n    }\n  },\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"DISABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/profileJobs/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "profileJobs",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:22:55.000Z",
+                  "updatedAt": "2026-07-28T10:22:55.000Z",
+                  "uid": "35240-c09c05b6-6156-45de-84ec-d2dc26373d3c"
+                },
+                {
+                  "id": "d4a49ca4-1037-41e5-aaa9-f6fe641282ab",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"690393648400\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ZOGUE\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"SPI\",\n          \"Parameters\": {\n            \"quis5\": \"<string>\",\n            \"dolore4f7\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"Z\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"MJQKO_\",\n              \"Parameters\": {\n                \"sit_54\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"ORVJCUDd\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"HMOAOZX\"\n          ]\n        }\n      ]\n    }\n  },\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"DISABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/profileJobs/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "profileJobs",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:55.000Z",
+                  "updatedAt": "2026-07-28T10:22:55.000Z",
+                  "uid": "35240-d4a49ca4-1037-41e5-aaa9-f6fe641282ab"
+                },
+                {
+                  "id": "de23c6de-a581-4840-b75d-3608ca50bc8c",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"690393648400\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ZOGUE\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"SPI\",\n          \"Parameters\": {\n            \"quis5\": \"<string>\",\n            \"dolore4f7\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"Z\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"MJQKO_\",\n              \"Parameters\": {\n                \"sit_54\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"ORVJCUDd\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"HMOAOZX\"\n          ]\n        }\n      ]\n    }\n  },\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"DISABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/profileJobs/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "profileJobs",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:55.000Z",
+                  "updatedAt": "2026-07-28T10:22:55.000Z",
+                  "uid": "35240-de23c6de-a581-4840-b75d-3608ca50bc8c"
+                },
+                {
+                  "id": "4476f5a3-d1ab-449a-b857-3f425e28c03e",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"690393648400\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ZOGUE\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"SPI\",\n          \"Parameters\": {\n            \"quis5\": \"<string>\",\n            \"dolore4f7\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"Z\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"MJQKO_\",\n              \"Parameters\": {\n                \"sit_54\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"ORVJCUDd\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"HMOAOZX\"\n          ]\n        }\n      ]\n    }\n  },\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-KMS\",\n  \"LogSubscription\": \"DISABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/profileJobs/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "profileJobs",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:55.000Z",
+                  "updatedAt": "2026-07-28T10:22:55.000Z",
+                  "uid": "35240-4476f5a3-d1ab-449a-b857-3f425e28c03e"
+                }
+              ],
+              "createdAt": "2026-07-28T10:22:55.000Z",
+              "updatedAt": "2026-07-28T10:22:55.000Z",
+              "uid": "35240-b9c6d880-c5b3-49c0-9d8c-978bf5741248"
+            }
+          ],
+          "id": "1b4925ff-b6f7-4302-9dd9-1023fd11f600",
+          "createdAt": "2026-07-28T10:22:55.000Z",
+          "updatedAt": "2026-07-28T10:22:55.000Z",
+          "uid": "35240-1b4925ff-b6f7-4302-9dd9-1023fd11f600"
+        },
+        {
+          "name": "Amazon Glue DataBrew Create Profile Job",
+          "id": "f1c83da0-a924-44e9-8ec6-f31ecd836b19",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatasetName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"117419309670\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ALKY\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"ZO\",\n          \"Parameters\": {\n            \"cupidatat9\": \"<string>\",\n            \"ullamcoca8\": \"<string>\",\n            \"esse0f1\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"XO\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"QCEWHF\",\n              \"Parameters\": {\n                \"proident_fee\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"CdLYEOJ\\\\\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"FIDBZ\"\n          ]\n        }\n      ]\n    }\n  },\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Tags\": {\n    \"Excepteur_3\": \"<string>\",\n    \"sedf2\": \"<string>\",\n    \"aliquip_a\": \"<string>\",\n    \"voluptate85c\": \"<string>\",\n    \"utd1\": \"<string>\",\n    \"incididunt5b\": \"<string>\",\n    \"velit_2e2\": \"<string>\",\n    \"veniam_18\": \"<string>\",\n    \"ipsum_3\": \"<string>\",\n    \"ad_a00\": \"<string>\",\n    \"dolor_6_9\": \"<string>\",\n    \"pariatur_24\": \"<string>\",\n    \"fugiat_9\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"sunt72\": \"<string>\",\n    \"laboris_b1\": \"<string>\",\n    \"anim99\": \"<string>\",\n    \"commodo_51\": \"<string>\",\n    \"Ut9\": \"<string>\",\n    \"est0f6\": \"<string>\",\n    \"minim4\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"tempor_3de\": \"<string>\",\n    \"irure02\": \"<string>\",\n    \"mollit_9f4\": \"<string>\",\n    \"elit_8\": \"<string>\",\n    \"tempor_c4\": \"<string>\",\n    \"sed_3b2\": \"<string>\",\n    \"ea2\": \"<string>\",\n    \"nulla_f4\": \"<string>\",\n    \"esse_9\": \"<string>\",\n    \"tempor3\": \"<string>\",\n    \"consequat__\": \"<string>\",\n    \"proidente03\": \"<string>\",\n    \"est45\": \"<string>\",\n    \"voluptate9\": \"<string>\",\n    \"sed__76\": \"<string>\",\n    \"irureeca\": \"<string>\",\n    \"qui74\": \"<string>\",\n    \"in22\": \"<string>\",\n    \"nostrudcd\": \"<string>\",\n    \"consequat8f\": \"<string>\",\n    \"estd93\": \"<string>\",\n    \"occaecat_fa\": \"<string>\",\n    \"mollit_1cf\": \"<string>\",\n    \"voluptate5\": \"<string>\",\n    \"cupidatatf\": \"<string>\",\n    \"nostrudd5c\": \"<string>\",\n    \"est_641\": \"<string>\",\n    \"Excepteur04b\": \"<string>\",\n    \"eiusmod__4\": \"<string>\",\n    \"quis_349\": \"<string>\",\n    \"reprehenderit_11\": \"<string>\",\n    \"pariatur_9ed\": \"<string>\",\n    \"aliqua_12f\": \"<string>\",\n    \"ullamco_21\": \"<string>\",\n    \"labore18\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"aliquipdc4\": \"<string>\",\n    \"voluptated7a\": \"<string>\",\n    \"et_99\": \"<string>\",\n    \"nostrudc3\": \"<string>\",\n    \"cillum__8\": \"<string>\",\n    \"ullamco_12\": \"<string>\",\n    \"fugiat0e\": \"<string>\",\n    \"quic\": \"<string>\",\n    \"incididunt_85f\": \"<string>\",\n    \"elit_dd\": \"<string>\",\n    \"fugiat_b\": \"<string>\",\n    \"eiusmodd_\": \"<string>\",\n    \"laboris_d\": \"<string>\",\n    \"nostrud_3a\": \"<string>\",\n    \"in_a4f\": \"<string>\",\n    \"labore_a\": \"<string>\",\n    \"enim2_\": \"<string>\",\n    \"sit2_1\": \"<string>\",\n    \"eua3c\": \"<string>\",\n    \"Duis3\": \"<string>\",\n    \"cupidatat__8f\": \"<string>\",\n    \"irure62\": \"<string>\",\n    \"elit762\": \"<string>\",\n    \"nisib\": \"<string>\",\n    \"cillum_f94\": \"<string>\",\n    \"enim__7\": \"<string>\",\n    \"labore_470\": \"<string>\",\n    \"amet_12\": \"<string>\",\n    \"auteb8\": \"<string>\",\n    \"non_1d\": \"<string>\",\n    \"et88a\": \"<string>\",\n    \"aliqua_18\": \"<string>\",\n    \"esse_43e\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"anima6f\": \"<string>\",\n    \"officia_bb\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"sunt_2\": \"<string>\",\n    \"laborum_be\": \"<string>\",\n    \"in62\": \"<string>\",\n    \"amet_8\": \"<string>\",\n    \"nostrud1\": \"<string>\",\n    \"incididunt34\": \"<string>\",\n    \"veniamb21\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"magna_7\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"cupidatat_df9\": \"<string>\",\n    \"in_7\": \"<string>\",\n    \"incididunt_b3\": \"<string>\",\n    \"mollit_7\": \"<string>\",\n    \"exercitation1a\": \"<string>\",\n    \"Excepteur75\": \"<string>\",\n    \"elit7a5\": \"<string>\",\n    \"ut92\": \"<string>\",\n    \"Duis89\": \"<string>\",\n    \"in_47d\": \"<string>\",\n    \"consequat_4d\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"Duis__fa\": \"<string>\",\n    \"quis503\": \"<string>\",\n    \"elit_7\": \"<string>\",\n    \"dolore_b\": \"<string>\",\n    \"ametf7\": \"<string>\",\n    \"dolor_2a\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"sitf\": \"<string>\",\n    \"Excepteur_5\": \"<string>\",\n    \"aliqua28\": \"<string>\",\n    \"eiusmod_2\": \"<string>\",\n    \"adipisicing_1\": \"<string>\",\n    \"labore_eab\": \"<string>\",\n    \"Excepteur_a6\": \"<string>\",\n    \"aliqua7a\": \"<string>\",\n    \"sint8_\": \"<string>\",\n    \"velit_eb\": \"<string>\",\n    \"consectetur_21d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"amet5b3\": \"<string>\",\n    \"dolore6a\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"dolor_a_b\": \"<string>\",\n    \"magna_73\": \"<string>\",\n    \"reprehenderit_51\": \"<string>\",\n    \"sint_5f\": \"<string>\",\n    \"quis_6\": \"<string>\",\n    \"commodod_5\": \"<string>\",\n    \"velitae\": \"<string>\",\n    \"ullamcof_\": \"<string>\",\n    \"ut2\": \"<string>\",\n    \"pariatur59\": \"<string>\",\n    \"non_1cc\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/profileJobs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "profileJobs"
+              ]
+            },
+            "description": "Creates a new job to analyze a dataset and create its data profile."
+          },
+          "response": [
+            {
+              "id": "467efca2-807b-4373-a45d-102e2458cf17",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatasetName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"117419309670\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ALKY\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"ZO\",\n          \"Parameters\": {\n            \"cupidatat9\": \"<string>\",\n            \"ullamcoca8\": \"<string>\",\n            \"esse0f1\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"XO\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"QCEWHF\",\n              \"Parameters\": {\n                \"proident_fee\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"CdLYEOJ\\\\\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"FIDBZ\"\n          ]\n        }\n      ]\n    }\n  },\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Tags\": {\n    \"Excepteur_3\": \"<string>\",\n    \"sedf2\": \"<string>\",\n    \"aliquip_a\": \"<string>\",\n    \"voluptate85c\": \"<string>\",\n    \"utd1\": \"<string>\",\n    \"incididunt5b\": \"<string>\",\n    \"velit_2e2\": \"<string>\",\n    \"veniam_18\": \"<string>\",\n    \"ipsum_3\": \"<string>\",\n    \"ad_a00\": \"<string>\",\n    \"dolor_6_9\": \"<string>\",\n    \"pariatur_24\": \"<string>\",\n    \"fugiat_9\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"sunt72\": \"<string>\",\n    \"laboris_b1\": \"<string>\",\n    \"anim99\": \"<string>\",\n    \"commodo_51\": \"<string>\",\n    \"Ut9\": \"<string>\",\n    \"est0f6\": \"<string>\",\n    \"minim4\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"tempor_3de\": \"<string>\",\n    \"irure02\": \"<string>\",\n    \"mollit_9f4\": \"<string>\",\n    \"elit_8\": \"<string>\",\n    \"tempor_c4\": \"<string>\",\n    \"sed_3b2\": \"<string>\",\n    \"ea2\": \"<string>\",\n    \"nulla_f4\": \"<string>\",\n    \"esse_9\": \"<string>\",\n    \"tempor3\": \"<string>\",\n    \"consequat__\": \"<string>\",\n    \"proidente03\": \"<string>\",\n    \"est45\": \"<string>\",\n    \"voluptate9\": \"<string>\",\n    \"sed__76\": \"<string>\",\n    \"irureeca\": \"<string>\",\n    \"qui74\": \"<string>\",\n    \"in22\": \"<string>\",\n    \"nostrudcd\": \"<string>\",\n    \"consequat8f\": \"<string>\",\n    \"estd93\": \"<string>\",\n    \"occaecat_fa\": \"<string>\",\n    \"mollit_1cf\": \"<string>\",\n    \"voluptate5\": \"<string>\",\n    \"cupidatatf\": \"<string>\",\n    \"nostrudd5c\": \"<string>\",\n    \"est_641\": \"<string>\",\n    \"Excepteur04b\": \"<string>\",\n    \"eiusmod__4\": \"<string>\",\n    \"quis_349\": \"<string>\",\n    \"reprehenderit_11\": \"<string>\",\n    \"pariatur_9ed\": \"<string>\",\n    \"aliqua_12f\": \"<string>\",\n    \"ullamco_21\": \"<string>\",\n    \"labore18\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"aliquipdc4\": \"<string>\",\n    \"voluptated7a\": \"<string>\",\n    \"et_99\": \"<string>\",\n    \"nostrudc3\": \"<string>\",\n    \"cillum__8\": \"<string>\",\n    \"ullamco_12\": \"<string>\",\n    \"fugiat0e\": \"<string>\",\n    \"quic\": \"<string>\",\n    \"incididunt_85f\": \"<string>\",\n    \"elit_dd\": \"<string>\",\n    \"fugiat_b\": \"<string>\",\n    \"eiusmodd_\": \"<string>\",\n    \"laboris_d\": \"<string>\",\n    \"nostrud_3a\": \"<string>\",\n    \"in_a4f\": \"<string>\",\n    \"labore_a\": \"<string>\",\n    \"enim2_\": \"<string>\",\n    \"sit2_1\": \"<string>\",\n    \"eua3c\": \"<string>\",\n    \"Duis3\": \"<string>\",\n    \"cupidatat__8f\": \"<string>\",\n    \"irure62\": \"<string>\",\n    \"elit762\": \"<string>\",\n    \"nisib\": \"<string>\",\n    \"cillum_f94\": \"<string>\",\n    \"enim__7\": \"<string>\",\n    \"labore_470\": \"<string>\",\n    \"amet_12\": \"<string>\",\n    \"auteb8\": \"<string>\",\n    \"non_1d\": \"<string>\",\n    \"et88a\": \"<string>\",\n    \"aliqua_18\": \"<string>\",\n    \"esse_43e\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"anima6f\": \"<string>\",\n    \"officia_bb\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"sunt_2\": \"<string>\",\n    \"laborum_be\": \"<string>\",\n    \"in62\": \"<string>\",\n    \"amet_8\": \"<string>\",\n    \"nostrud1\": \"<string>\",\n    \"incididunt34\": \"<string>\",\n    \"veniamb21\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"magna_7\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"cupidatat_df9\": \"<string>\",\n    \"in_7\": \"<string>\",\n    \"incididunt_b3\": \"<string>\",\n    \"mollit_7\": \"<string>\",\n    \"exercitation1a\": \"<string>\",\n    \"Excepteur75\": \"<string>\",\n    \"elit7a5\": \"<string>\",\n    \"ut92\": \"<string>\",\n    \"Duis89\": \"<string>\",\n    \"in_47d\": \"<string>\",\n    \"consequat_4d\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"Duis__fa\": \"<string>\",\n    \"quis503\": \"<string>\",\n    \"elit_7\": \"<string>\",\n    \"dolore_b\": \"<string>\",\n    \"ametf7\": \"<string>\",\n    \"dolor_2a\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"sitf\": \"<string>\",\n    \"Excepteur_5\": \"<string>\",\n    \"aliqua28\": \"<string>\",\n    \"eiusmod_2\": \"<string>\",\n    \"adipisicing_1\": \"<string>\",\n    \"labore_eab\": \"<string>\",\n    \"Excepteur_a6\": \"<string>\",\n    \"aliqua7a\": \"<string>\",\n    \"sint8_\": \"<string>\",\n    \"velit_eb\": \"<string>\",\n    \"consectetur_21d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"amet5b3\": \"<string>\",\n    \"dolore6a\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"dolor_a_b\": \"<string>\",\n    \"magna_73\": \"<string>\",\n    \"reprehenderit_51\": \"<string>\",\n    \"sint_5f\": \"<string>\",\n    \"quis_6\": \"<string>\",\n    \"commodod_5\": \"<string>\",\n    \"velitae\": \"<string>\",\n    \"ullamcof_\": \"<string>\",\n    \"ut2\": \"<string>\",\n    \"pariatur59\": \"<string>\",\n    \"non_1cc\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/profileJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileJobs"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Name\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:22:55.000Z",
+              "updatedAt": "2026-07-28T10:22:55.000Z",
+              "uid": "35240-467efca2-807b-4373-a45d-102e2458cf17"
+            },
+            {
+              "id": "e4e47fbd-4c0f-4614-9f48-417b39a3cfea",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatasetName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"117419309670\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ALKY\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"ZO\",\n          \"Parameters\": {\n            \"cupidatat9\": \"<string>\",\n            \"ullamcoca8\": \"<string>\",\n            \"esse0f1\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"XO\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"QCEWHF\",\n              \"Parameters\": {\n                \"proident_fee\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"CdLYEOJ\\\\\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"FIDBZ\"\n          ]\n        }\n      ]\n    }\n  },\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Tags\": {\n    \"Excepteur_3\": \"<string>\",\n    \"sedf2\": \"<string>\",\n    \"aliquip_a\": \"<string>\",\n    \"voluptate85c\": \"<string>\",\n    \"utd1\": \"<string>\",\n    \"incididunt5b\": \"<string>\",\n    \"velit_2e2\": \"<string>\",\n    \"veniam_18\": \"<string>\",\n    \"ipsum_3\": \"<string>\",\n    \"ad_a00\": \"<string>\",\n    \"dolor_6_9\": \"<string>\",\n    \"pariatur_24\": \"<string>\",\n    \"fugiat_9\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"sunt72\": \"<string>\",\n    \"laboris_b1\": \"<string>\",\n    \"anim99\": \"<string>\",\n    \"commodo_51\": \"<string>\",\n    \"Ut9\": \"<string>\",\n    \"est0f6\": \"<string>\",\n    \"minim4\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"tempor_3de\": \"<string>\",\n    \"irure02\": \"<string>\",\n    \"mollit_9f4\": \"<string>\",\n    \"elit_8\": \"<string>\",\n    \"tempor_c4\": \"<string>\",\n    \"sed_3b2\": \"<string>\",\n    \"ea2\": \"<string>\",\n    \"nulla_f4\": \"<string>\",\n    \"esse_9\": \"<string>\",\n    \"tempor3\": \"<string>\",\n    \"consequat__\": \"<string>\",\n    \"proidente03\": \"<string>\",\n    \"est45\": \"<string>\",\n    \"voluptate9\": \"<string>\",\n    \"sed__76\": \"<string>\",\n    \"irureeca\": \"<string>\",\n    \"qui74\": \"<string>\",\n    \"in22\": \"<string>\",\n    \"nostrudcd\": \"<string>\",\n    \"consequat8f\": \"<string>\",\n    \"estd93\": \"<string>\",\n    \"occaecat_fa\": \"<string>\",\n    \"mollit_1cf\": \"<string>\",\n    \"voluptate5\": \"<string>\",\n    \"cupidatatf\": \"<string>\",\n    \"nostrudd5c\": \"<string>\",\n    \"est_641\": \"<string>\",\n    \"Excepteur04b\": \"<string>\",\n    \"eiusmod__4\": \"<string>\",\n    \"quis_349\": \"<string>\",\n    \"reprehenderit_11\": \"<string>\",\n    \"pariatur_9ed\": \"<string>\",\n    \"aliqua_12f\": \"<string>\",\n    \"ullamco_21\": \"<string>\",\n    \"labore18\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"aliquipdc4\": \"<string>\",\n    \"voluptated7a\": \"<string>\",\n    \"et_99\": \"<string>\",\n    \"nostrudc3\": \"<string>\",\n    \"cillum__8\": \"<string>\",\n    \"ullamco_12\": \"<string>\",\n    \"fugiat0e\": \"<string>\",\n    \"quic\": \"<string>\",\n    \"incididunt_85f\": \"<string>\",\n    \"elit_dd\": \"<string>\",\n    \"fugiat_b\": \"<string>\",\n    \"eiusmodd_\": \"<string>\",\n    \"laboris_d\": \"<string>\",\n    \"nostrud_3a\": \"<string>\",\n    \"in_a4f\": \"<string>\",\n    \"labore_a\": \"<string>\",\n    \"enim2_\": \"<string>\",\n    \"sit2_1\": \"<string>\",\n    \"eua3c\": \"<string>\",\n    \"Duis3\": \"<string>\",\n    \"cupidatat__8f\": \"<string>\",\n    \"irure62\": \"<string>\",\n    \"elit762\": \"<string>\",\n    \"nisib\": \"<string>\",\n    \"cillum_f94\": \"<string>\",\n    \"enim__7\": \"<string>\",\n    \"labore_470\": \"<string>\",\n    \"amet_12\": \"<string>\",\n    \"auteb8\": \"<string>\",\n    \"non_1d\": \"<string>\",\n    \"et88a\": \"<string>\",\n    \"aliqua_18\": \"<string>\",\n    \"esse_43e\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"anima6f\": \"<string>\",\n    \"officia_bb\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"sunt_2\": \"<string>\",\n    \"laborum_be\": \"<string>\",\n    \"in62\": \"<string>\",\n    \"amet_8\": \"<string>\",\n    \"nostrud1\": \"<string>\",\n    \"incididunt34\": \"<string>\",\n    \"veniamb21\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"magna_7\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"cupidatat_df9\": \"<string>\",\n    \"in_7\": \"<string>\",\n    \"incididunt_b3\": \"<string>\",\n    \"mollit_7\": \"<string>\",\n    \"exercitation1a\": \"<string>\",\n    \"Excepteur75\": \"<string>\",\n    \"elit7a5\": \"<string>\",\n    \"ut92\": \"<string>\",\n    \"Duis89\": \"<string>\",\n    \"in_47d\": \"<string>\",\n    \"consequat_4d\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"Duis__fa\": \"<string>\",\n    \"quis503\": \"<string>\",\n    \"elit_7\": \"<string>\",\n    \"dolore_b\": \"<string>\",\n    \"ametf7\": \"<string>\",\n    \"dolor_2a\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"sitf\": \"<string>\",\n    \"Excepteur_5\": \"<string>\",\n    \"aliqua28\": \"<string>\",\n    \"eiusmod_2\": \"<string>\",\n    \"adipisicing_1\": \"<string>\",\n    \"labore_eab\": \"<string>\",\n    \"Excepteur_a6\": \"<string>\",\n    \"aliqua7a\": \"<string>\",\n    \"sint8_\": \"<string>\",\n    \"velit_eb\": \"<string>\",\n    \"consectetur_21d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"amet5b3\": \"<string>\",\n    \"dolore6a\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"dolor_a_b\": \"<string>\",\n    \"magna_73\": \"<string>\",\n    \"reprehenderit_51\": \"<string>\",\n    \"sint_5f\": \"<string>\",\n    \"quis_6\": \"<string>\",\n    \"commodod_5\": \"<string>\",\n    \"velitae\": \"<string>\",\n    \"ullamcof_\": \"<string>\",\n    \"ut2\": \"<string>\",\n    \"pariatur59\": \"<string>\",\n    \"non_1cc\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/profileJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:55.000Z",
+              "updatedAt": "2026-07-28T10:22:55.000Z",
+              "uid": "35240-e4e47fbd-4c0f-4614-9f48-417b39a3cfea"
+            },
+            {
+              "id": "5a117161-411f-42e4-aa83-834ac6dbe20b",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatasetName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"117419309670\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ALKY\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"ZO\",\n          \"Parameters\": {\n            \"cupidatat9\": \"<string>\",\n            \"ullamcoca8\": \"<string>\",\n            \"esse0f1\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"XO\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"QCEWHF\",\n              \"Parameters\": {\n                \"proident_fee\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"CdLYEOJ\\\\\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"FIDBZ\"\n          ]\n        }\n      ]\n    }\n  },\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Tags\": {\n    \"Excepteur_3\": \"<string>\",\n    \"sedf2\": \"<string>\",\n    \"aliquip_a\": \"<string>\",\n    \"voluptate85c\": \"<string>\",\n    \"utd1\": \"<string>\",\n    \"incididunt5b\": \"<string>\",\n    \"velit_2e2\": \"<string>\",\n    \"veniam_18\": \"<string>\",\n    \"ipsum_3\": \"<string>\",\n    \"ad_a00\": \"<string>\",\n    \"dolor_6_9\": \"<string>\",\n    \"pariatur_24\": \"<string>\",\n    \"fugiat_9\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"sunt72\": \"<string>\",\n    \"laboris_b1\": \"<string>\",\n    \"anim99\": \"<string>\",\n    \"commodo_51\": \"<string>\",\n    \"Ut9\": \"<string>\",\n    \"est0f6\": \"<string>\",\n    \"minim4\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"tempor_3de\": \"<string>\",\n    \"irure02\": \"<string>\",\n    \"mollit_9f4\": \"<string>\",\n    \"elit_8\": \"<string>\",\n    \"tempor_c4\": \"<string>\",\n    \"sed_3b2\": \"<string>\",\n    \"ea2\": \"<string>\",\n    \"nulla_f4\": \"<string>\",\n    \"esse_9\": \"<string>\",\n    \"tempor3\": \"<string>\",\n    \"consequat__\": \"<string>\",\n    \"proidente03\": \"<string>\",\n    \"est45\": \"<string>\",\n    \"voluptate9\": \"<string>\",\n    \"sed__76\": \"<string>\",\n    \"irureeca\": \"<string>\",\n    \"qui74\": \"<string>\",\n    \"in22\": \"<string>\",\n    \"nostrudcd\": \"<string>\",\n    \"consequat8f\": \"<string>\",\n    \"estd93\": \"<string>\",\n    \"occaecat_fa\": \"<string>\",\n    \"mollit_1cf\": \"<string>\",\n    \"voluptate5\": \"<string>\",\n    \"cupidatatf\": \"<string>\",\n    \"nostrudd5c\": \"<string>\",\n    \"est_641\": \"<string>\",\n    \"Excepteur04b\": \"<string>\",\n    \"eiusmod__4\": \"<string>\",\n    \"quis_349\": \"<string>\",\n    \"reprehenderit_11\": \"<string>\",\n    \"pariatur_9ed\": \"<string>\",\n    \"aliqua_12f\": \"<string>\",\n    \"ullamco_21\": \"<string>\",\n    \"labore18\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"aliquipdc4\": \"<string>\",\n    \"voluptated7a\": \"<string>\",\n    \"et_99\": \"<string>\",\n    \"nostrudc3\": \"<string>\",\n    \"cillum__8\": \"<string>\",\n    \"ullamco_12\": \"<string>\",\n    \"fugiat0e\": \"<string>\",\n    \"quic\": \"<string>\",\n    \"incididunt_85f\": \"<string>\",\n    \"elit_dd\": \"<string>\",\n    \"fugiat_b\": \"<string>\",\n    \"eiusmodd_\": \"<string>\",\n    \"laboris_d\": \"<string>\",\n    \"nostrud_3a\": \"<string>\",\n    \"in_a4f\": \"<string>\",\n    \"labore_a\": \"<string>\",\n    \"enim2_\": \"<string>\",\n    \"sit2_1\": \"<string>\",\n    \"eua3c\": \"<string>\",\n    \"Duis3\": \"<string>\",\n    \"cupidatat__8f\": \"<string>\",\n    \"irure62\": \"<string>\",\n    \"elit762\": \"<string>\",\n    \"nisib\": \"<string>\",\n    \"cillum_f94\": \"<string>\",\n    \"enim__7\": \"<string>\",\n    \"labore_470\": \"<string>\",\n    \"amet_12\": \"<string>\",\n    \"auteb8\": \"<string>\",\n    \"non_1d\": \"<string>\",\n    \"et88a\": \"<string>\",\n    \"aliqua_18\": \"<string>\",\n    \"esse_43e\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"anima6f\": \"<string>\",\n    \"officia_bb\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"sunt_2\": \"<string>\",\n    \"laborum_be\": \"<string>\",\n    \"in62\": \"<string>\",\n    \"amet_8\": \"<string>\",\n    \"nostrud1\": \"<string>\",\n    \"incididunt34\": \"<string>\",\n    \"veniamb21\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"magna_7\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"cupidatat_df9\": \"<string>\",\n    \"in_7\": \"<string>\",\n    \"incididunt_b3\": \"<string>\",\n    \"mollit_7\": \"<string>\",\n    \"exercitation1a\": \"<string>\",\n    \"Excepteur75\": \"<string>\",\n    \"elit7a5\": \"<string>\",\n    \"ut92\": \"<string>\",\n    \"Duis89\": \"<string>\",\n    \"in_47d\": \"<string>\",\n    \"consequat_4d\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"Duis__fa\": \"<string>\",\n    \"quis503\": \"<string>\",\n    \"elit_7\": \"<string>\",\n    \"dolore_b\": \"<string>\",\n    \"ametf7\": \"<string>\",\n    \"dolor_2a\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"sitf\": \"<string>\",\n    \"Excepteur_5\": \"<string>\",\n    \"aliqua28\": \"<string>\",\n    \"eiusmod_2\": \"<string>\",\n    \"adipisicing_1\": \"<string>\",\n    \"labore_eab\": \"<string>\",\n    \"Excepteur_a6\": \"<string>\",\n    \"aliqua7a\": \"<string>\",\n    \"sint8_\": \"<string>\",\n    \"velit_eb\": \"<string>\",\n    \"consectetur_21d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"amet5b3\": \"<string>\",\n    \"dolore6a\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"dolor_a_b\": \"<string>\",\n    \"magna_73\": \"<string>\",\n    \"reprehenderit_51\": \"<string>\",\n    \"sint_5f\": \"<string>\",\n    \"quis_6\": \"<string>\",\n    \"commodod_5\": \"<string>\",\n    \"velitae\": \"<string>\",\n    \"ullamcof_\": \"<string>\",\n    \"ut2\": \"<string>\",\n    \"pariatur59\": \"<string>\",\n    \"non_1cc\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/profileJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:55.000Z",
+              "updatedAt": "2026-07-28T10:22:55.000Z",
+              "uid": "35240-5a117161-411f-42e4-aa83-834ac6dbe20b"
+            },
+            {
+              "id": "8f062fb4-bb14-4f38-972e-8052d856e15d",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatasetName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"117419309670\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ALKY\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"ZO\",\n          \"Parameters\": {\n            \"cupidatat9\": \"<string>\",\n            \"ullamcoca8\": \"<string>\",\n            \"esse0f1\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"XO\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"QCEWHF\",\n              \"Parameters\": {\n                \"proident_fee\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"CdLYEOJ\\\\\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"FIDBZ\"\n          ]\n        }\n      ]\n    }\n  },\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Tags\": {\n    \"Excepteur_3\": \"<string>\",\n    \"sedf2\": \"<string>\",\n    \"aliquip_a\": \"<string>\",\n    \"voluptate85c\": \"<string>\",\n    \"utd1\": \"<string>\",\n    \"incididunt5b\": \"<string>\",\n    \"velit_2e2\": \"<string>\",\n    \"veniam_18\": \"<string>\",\n    \"ipsum_3\": \"<string>\",\n    \"ad_a00\": \"<string>\",\n    \"dolor_6_9\": \"<string>\",\n    \"pariatur_24\": \"<string>\",\n    \"fugiat_9\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"sunt72\": \"<string>\",\n    \"laboris_b1\": \"<string>\",\n    \"anim99\": \"<string>\",\n    \"commodo_51\": \"<string>\",\n    \"Ut9\": \"<string>\",\n    \"est0f6\": \"<string>\",\n    \"minim4\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"tempor_3de\": \"<string>\",\n    \"irure02\": \"<string>\",\n    \"mollit_9f4\": \"<string>\",\n    \"elit_8\": \"<string>\",\n    \"tempor_c4\": \"<string>\",\n    \"sed_3b2\": \"<string>\",\n    \"ea2\": \"<string>\",\n    \"nulla_f4\": \"<string>\",\n    \"esse_9\": \"<string>\",\n    \"tempor3\": \"<string>\",\n    \"consequat__\": \"<string>\",\n    \"proidente03\": \"<string>\",\n    \"est45\": \"<string>\",\n    \"voluptate9\": \"<string>\",\n    \"sed__76\": \"<string>\",\n    \"irureeca\": \"<string>\",\n    \"qui74\": \"<string>\",\n    \"in22\": \"<string>\",\n    \"nostrudcd\": \"<string>\",\n    \"consequat8f\": \"<string>\",\n    \"estd93\": \"<string>\",\n    \"occaecat_fa\": \"<string>\",\n    \"mollit_1cf\": \"<string>\",\n    \"voluptate5\": \"<string>\",\n    \"cupidatatf\": \"<string>\",\n    \"nostrudd5c\": \"<string>\",\n    \"est_641\": \"<string>\",\n    \"Excepteur04b\": \"<string>\",\n    \"eiusmod__4\": \"<string>\",\n    \"quis_349\": \"<string>\",\n    \"reprehenderit_11\": \"<string>\",\n    \"pariatur_9ed\": \"<string>\",\n    \"aliqua_12f\": \"<string>\",\n    \"ullamco_21\": \"<string>\",\n    \"labore18\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"aliquipdc4\": \"<string>\",\n    \"voluptated7a\": \"<string>\",\n    \"et_99\": \"<string>\",\n    \"nostrudc3\": \"<string>\",\n    \"cillum__8\": \"<string>\",\n    \"ullamco_12\": \"<string>\",\n    \"fugiat0e\": \"<string>\",\n    \"quic\": \"<string>\",\n    \"incididunt_85f\": \"<string>\",\n    \"elit_dd\": \"<string>\",\n    \"fugiat_b\": \"<string>\",\n    \"eiusmodd_\": \"<string>\",\n    \"laboris_d\": \"<string>\",\n    \"nostrud_3a\": \"<string>\",\n    \"in_a4f\": \"<string>\",\n    \"labore_a\": \"<string>\",\n    \"enim2_\": \"<string>\",\n    \"sit2_1\": \"<string>\",\n    \"eua3c\": \"<string>\",\n    \"Duis3\": \"<string>\",\n    \"cupidatat__8f\": \"<string>\",\n    \"irure62\": \"<string>\",\n    \"elit762\": \"<string>\",\n    \"nisib\": \"<string>\",\n    \"cillum_f94\": \"<string>\",\n    \"enim__7\": \"<string>\",\n    \"labore_470\": \"<string>\",\n    \"amet_12\": \"<string>\",\n    \"auteb8\": \"<string>\",\n    \"non_1d\": \"<string>\",\n    \"et88a\": \"<string>\",\n    \"aliqua_18\": \"<string>\",\n    \"esse_43e\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"anima6f\": \"<string>\",\n    \"officia_bb\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"sunt_2\": \"<string>\",\n    \"laborum_be\": \"<string>\",\n    \"in62\": \"<string>\",\n    \"amet_8\": \"<string>\",\n    \"nostrud1\": \"<string>\",\n    \"incididunt34\": \"<string>\",\n    \"veniamb21\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"magna_7\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"cupidatat_df9\": \"<string>\",\n    \"in_7\": \"<string>\",\n    \"incididunt_b3\": \"<string>\",\n    \"mollit_7\": \"<string>\",\n    \"exercitation1a\": \"<string>\",\n    \"Excepteur75\": \"<string>\",\n    \"elit7a5\": \"<string>\",\n    \"ut92\": \"<string>\",\n    \"Duis89\": \"<string>\",\n    \"in_47d\": \"<string>\",\n    \"consequat_4d\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"Duis__fa\": \"<string>\",\n    \"quis503\": \"<string>\",\n    \"elit_7\": \"<string>\",\n    \"dolore_b\": \"<string>\",\n    \"ametf7\": \"<string>\",\n    \"dolor_2a\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"sitf\": \"<string>\",\n    \"Excepteur_5\": \"<string>\",\n    \"aliqua28\": \"<string>\",\n    \"eiusmod_2\": \"<string>\",\n    \"adipisicing_1\": \"<string>\",\n    \"labore_eab\": \"<string>\",\n    \"Excepteur_a6\": \"<string>\",\n    \"aliqua7a\": \"<string>\",\n    \"sint8_\": \"<string>\",\n    \"velit_eb\": \"<string>\",\n    \"consectetur_21d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"amet5b3\": \"<string>\",\n    \"dolore6a\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"dolor_a_b\": \"<string>\",\n    \"magna_73\": \"<string>\",\n    \"reprehenderit_51\": \"<string>\",\n    \"sint_5f\": \"<string>\",\n    \"quis_6\": \"<string>\",\n    \"commodod_5\": \"<string>\",\n    \"velitae\": \"<string>\",\n    \"ullamcof_\": \"<string>\",\n    \"ut2\": \"<string>\",\n    \"pariatur59\": \"<string>\",\n    \"non_1cc\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/profileJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:55.000Z",
+              "updatedAt": "2026-07-28T10:22:55.000Z",
+              "uid": "35240-8f062fb4-bb14-4f38-972e-8052d856e15d"
+            },
+            {
+              "id": "f71de6bf-7d94-4051-8813-4d801061bdfc",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatasetName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"117419309670\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ALKY\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"ZO\",\n          \"Parameters\": {\n            \"cupidatat9\": \"<string>\",\n            \"ullamcoca8\": \"<string>\",\n            \"esse0f1\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"XO\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"QCEWHF\",\n              \"Parameters\": {\n                \"proident_fee\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"CdLYEOJ\\\\\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"FIDBZ\"\n          ]\n        }\n      ]\n    }\n  },\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Tags\": {\n    \"Excepteur_3\": \"<string>\",\n    \"sedf2\": \"<string>\",\n    \"aliquip_a\": \"<string>\",\n    \"voluptate85c\": \"<string>\",\n    \"utd1\": \"<string>\",\n    \"incididunt5b\": \"<string>\",\n    \"velit_2e2\": \"<string>\",\n    \"veniam_18\": \"<string>\",\n    \"ipsum_3\": \"<string>\",\n    \"ad_a00\": \"<string>\",\n    \"dolor_6_9\": \"<string>\",\n    \"pariatur_24\": \"<string>\",\n    \"fugiat_9\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"sunt72\": \"<string>\",\n    \"laboris_b1\": \"<string>\",\n    \"anim99\": \"<string>\",\n    \"commodo_51\": \"<string>\",\n    \"Ut9\": \"<string>\",\n    \"est0f6\": \"<string>\",\n    \"minim4\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"tempor_3de\": \"<string>\",\n    \"irure02\": \"<string>\",\n    \"mollit_9f4\": \"<string>\",\n    \"elit_8\": \"<string>\",\n    \"tempor_c4\": \"<string>\",\n    \"sed_3b2\": \"<string>\",\n    \"ea2\": \"<string>\",\n    \"nulla_f4\": \"<string>\",\n    \"esse_9\": \"<string>\",\n    \"tempor3\": \"<string>\",\n    \"consequat__\": \"<string>\",\n    \"proidente03\": \"<string>\",\n    \"est45\": \"<string>\",\n    \"voluptate9\": \"<string>\",\n    \"sed__76\": \"<string>\",\n    \"irureeca\": \"<string>\",\n    \"qui74\": \"<string>\",\n    \"in22\": \"<string>\",\n    \"nostrudcd\": \"<string>\",\n    \"consequat8f\": \"<string>\",\n    \"estd93\": \"<string>\",\n    \"occaecat_fa\": \"<string>\",\n    \"mollit_1cf\": \"<string>\",\n    \"voluptate5\": \"<string>\",\n    \"cupidatatf\": \"<string>\",\n    \"nostrudd5c\": \"<string>\",\n    \"est_641\": \"<string>\",\n    \"Excepteur04b\": \"<string>\",\n    \"eiusmod__4\": \"<string>\",\n    \"quis_349\": \"<string>\",\n    \"reprehenderit_11\": \"<string>\",\n    \"pariatur_9ed\": \"<string>\",\n    \"aliqua_12f\": \"<string>\",\n    \"ullamco_21\": \"<string>\",\n    \"labore18\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"aliquipdc4\": \"<string>\",\n    \"voluptated7a\": \"<string>\",\n    \"et_99\": \"<string>\",\n    \"nostrudc3\": \"<string>\",\n    \"cillum__8\": \"<string>\",\n    \"ullamco_12\": \"<string>\",\n    \"fugiat0e\": \"<string>\",\n    \"quic\": \"<string>\",\n    \"incididunt_85f\": \"<string>\",\n    \"elit_dd\": \"<string>\",\n    \"fugiat_b\": \"<string>\",\n    \"eiusmodd_\": \"<string>\",\n    \"laboris_d\": \"<string>\",\n    \"nostrud_3a\": \"<string>\",\n    \"in_a4f\": \"<string>\",\n    \"labore_a\": \"<string>\",\n    \"enim2_\": \"<string>\",\n    \"sit2_1\": \"<string>\",\n    \"eua3c\": \"<string>\",\n    \"Duis3\": \"<string>\",\n    \"cupidatat__8f\": \"<string>\",\n    \"irure62\": \"<string>\",\n    \"elit762\": \"<string>\",\n    \"nisib\": \"<string>\",\n    \"cillum_f94\": \"<string>\",\n    \"enim__7\": \"<string>\",\n    \"labore_470\": \"<string>\",\n    \"amet_12\": \"<string>\",\n    \"auteb8\": \"<string>\",\n    \"non_1d\": \"<string>\",\n    \"et88a\": \"<string>\",\n    \"aliqua_18\": \"<string>\",\n    \"esse_43e\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"anima6f\": \"<string>\",\n    \"officia_bb\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"sunt_2\": \"<string>\",\n    \"laborum_be\": \"<string>\",\n    \"in62\": \"<string>\",\n    \"amet_8\": \"<string>\",\n    \"nostrud1\": \"<string>\",\n    \"incididunt34\": \"<string>\",\n    \"veniamb21\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"magna_7\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"cupidatat_df9\": \"<string>\",\n    \"in_7\": \"<string>\",\n    \"incididunt_b3\": \"<string>\",\n    \"mollit_7\": \"<string>\",\n    \"exercitation1a\": \"<string>\",\n    \"Excepteur75\": \"<string>\",\n    \"elit7a5\": \"<string>\",\n    \"ut92\": \"<string>\",\n    \"Duis89\": \"<string>\",\n    \"in_47d\": \"<string>\",\n    \"consequat_4d\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"Duis__fa\": \"<string>\",\n    \"quis503\": \"<string>\",\n    \"elit_7\": \"<string>\",\n    \"dolore_b\": \"<string>\",\n    \"ametf7\": \"<string>\",\n    \"dolor_2a\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"sitf\": \"<string>\",\n    \"Excepteur_5\": \"<string>\",\n    \"aliqua28\": \"<string>\",\n    \"eiusmod_2\": \"<string>\",\n    \"adipisicing_1\": \"<string>\",\n    \"labore_eab\": \"<string>\",\n    \"Excepteur_a6\": \"<string>\",\n    \"aliqua7a\": \"<string>\",\n    \"sint8_\": \"<string>\",\n    \"velit_eb\": \"<string>\",\n    \"consectetur_21d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"amet5b3\": \"<string>\",\n    \"dolore6a\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"dolor_a_b\": \"<string>\",\n    \"magna_73\": \"<string>\",\n    \"reprehenderit_51\": \"<string>\",\n    \"sint_5f\": \"<string>\",\n    \"quis_6\": \"<string>\",\n    \"commodod_5\": \"<string>\",\n    \"velitae\": \"<string>\",\n    \"ullamcof_\": \"<string>\",\n    \"ut2\": \"<string>\",\n    \"pariatur59\": \"<string>\",\n    \"non_1cc\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/profileJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:55.000Z",
+              "updatedAt": "2026-07-28T10:22:55.000Z",
+              "uid": "35240-f71de6bf-7d94-4051-8813-4d801061bdfc"
+            },
+            {
+              "id": "dc47dae1-cfaf-4613-b09d-164b39847d8c",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatasetName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"OutputLocation\": {\n    \"Bucket\": \"<string>\",\n    \"Key\": \"<string>\",\n    \"BucketOwner\": \"117419309670\"\n  },\n  \"RoleArn\": \"<string>\",\n  \"EncryptionKeyArn\": \"<string>\",\n  \"EncryptionMode\": \"SSE-S3\",\n  \"LogSubscription\": \"ENABLE\",\n  \"MaxCapacity\": \"<integer>\",\n  \"MaxRetries\": \"<integer>\",\n  \"Configuration\": {\n    \"DatasetStatisticsConfiguration\": {\n      \"IncludedStatistics\": [\n        \"ALKY\"\n      ],\n      \"Overrides\": [\n        {\n          \"Statistic\": \"ZO\",\n          \"Parameters\": {\n            \"cupidatat9\": \"<string>\",\n            \"ullamcoca8\": \"<string>\",\n            \"esse0f1\": \"<string>\"\n          }\n        }\n      ]\n    },\n    \"ProfileColumns\": [\n      {\n        \"Regex\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    ],\n    \"ColumnStatisticsConfigurations\": [\n      {\n        \"Statistics\": {\n          \"IncludedStatistics\": [\n            \"XO\"\n          ],\n          \"Overrides\": [\n            {\n              \"Statistic\": \"QCEWHF\",\n              \"Parameters\": {\n                \"proident_fee\": \"<string>\"\n              }\n            }\n          ]\n        },\n        \"Selectors\": [\n          {\n            \"Regex\": \"<string>\",\n            \"Name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"EntityDetectorConfiguration\": {\n      \"EntityTypes\": [\n        \"CdLYEOJ\\\\\"\n      ],\n      \"AllowedStatistics\": [\n        {\n          \"Statistics\": [\n            \"FIDBZ\"\n          ]\n        }\n      ]\n    }\n  },\n  \"ValidationConfigurations\": [\n    {\n      \"RulesetArn\": \"<string>\",\n      \"ValidationMode\": \"CHECK_ALL\"\n    }\n  ],\n  \"Tags\": {\n    \"Excepteur_3\": \"<string>\",\n    \"sedf2\": \"<string>\",\n    \"aliquip_a\": \"<string>\",\n    \"voluptate85c\": \"<string>\",\n    \"utd1\": \"<string>\",\n    \"incididunt5b\": \"<string>\",\n    \"velit_2e2\": \"<string>\",\n    \"veniam_18\": \"<string>\",\n    \"ipsum_3\": \"<string>\",\n    \"ad_a00\": \"<string>\",\n    \"dolor_6_9\": \"<string>\",\n    \"pariatur_24\": \"<string>\",\n    \"fugiat_9\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"sunt72\": \"<string>\",\n    \"laboris_b1\": \"<string>\",\n    \"anim99\": \"<string>\",\n    \"commodo_51\": \"<string>\",\n    \"Ut9\": \"<string>\",\n    \"est0f6\": \"<string>\",\n    \"minim4\": \"<string>\",\n    \"elit3\": \"<string>\",\n    \"tempor_3de\": \"<string>\",\n    \"irure02\": \"<string>\",\n    \"mollit_9f4\": \"<string>\",\n    \"elit_8\": \"<string>\",\n    \"tempor_c4\": \"<string>\",\n    \"sed_3b2\": \"<string>\",\n    \"ea2\": \"<string>\",\n    \"nulla_f4\": \"<string>\",\n    \"esse_9\": \"<string>\",\n    \"tempor3\": \"<string>\",\n    \"consequat__\": \"<string>\",\n    \"proidente03\": \"<string>\",\n    \"est45\": \"<string>\",\n    \"voluptate9\": \"<string>\",\n    \"sed__76\": \"<string>\",\n    \"irureeca\": \"<string>\",\n    \"qui74\": \"<string>\",\n    \"in22\": \"<string>\",\n    \"nostrudcd\": \"<string>\",\n    \"consequat8f\": \"<string>\",\n    \"estd93\": \"<string>\",\n    \"occaecat_fa\": \"<string>\",\n    \"mollit_1cf\": \"<string>\",\n    \"voluptate5\": \"<string>\",\n    \"cupidatatf\": \"<string>\",\n    \"nostrudd5c\": \"<string>\",\n    \"est_641\": \"<string>\",\n    \"Excepteur04b\": \"<string>\",\n    \"eiusmod__4\": \"<string>\",\n    \"quis_349\": \"<string>\",\n    \"reprehenderit_11\": \"<string>\",\n    \"pariatur_9ed\": \"<string>\",\n    \"aliqua_12f\": \"<string>\",\n    \"ullamco_21\": \"<string>\",\n    \"labore18\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"aliquipdc4\": \"<string>\",\n    \"voluptated7a\": \"<string>\",\n    \"et_99\": \"<string>\",\n    \"nostrudc3\": \"<string>\",\n    \"cillum__8\": \"<string>\",\n    \"ullamco_12\": \"<string>\",\n    \"fugiat0e\": \"<string>\",\n    \"quic\": \"<string>\",\n    \"incididunt_85f\": \"<string>\",\n    \"elit_dd\": \"<string>\",\n    \"fugiat_b\": \"<string>\",\n    \"eiusmodd_\": \"<string>\",\n    \"laboris_d\": \"<string>\",\n    \"nostrud_3a\": \"<string>\",\n    \"in_a4f\": \"<string>\",\n    \"labore_a\": \"<string>\",\n    \"enim2_\": \"<string>\",\n    \"sit2_1\": \"<string>\",\n    \"eua3c\": \"<string>\",\n    \"Duis3\": \"<string>\",\n    \"cupidatat__8f\": \"<string>\",\n    \"irure62\": \"<string>\",\n    \"elit762\": \"<string>\",\n    \"nisib\": \"<string>\",\n    \"cillum_f94\": \"<string>\",\n    \"enim__7\": \"<string>\",\n    \"labore_470\": \"<string>\",\n    \"amet_12\": \"<string>\",\n    \"auteb8\": \"<string>\",\n    \"non_1d\": \"<string>\",\n    \"et88a\": \"<string>\",\n    \"aliqua_18\": \"<string>\",\n    \"esse_43e\": \"<string>\",\n    \"inc\": \"<string>\",\n    \"anima6f\": \"<string>\",\n    \"officia_bb\": \"<string>\",\n    \"consequat_7\": \"<string>\",\n    \"sunt_2\": \"<string>\",\n    \"laborum_be\": \"<string>\",\n    \"in62\": \"<string>\",\n    \"amet_8\": \"<string>\",\n    \"nostrud1\": \"<string>\",\n    \"incididunt34\": \"<string>\",\n    \"veniamb21\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"nulla_3\": \"<string>\",\n    \"magna_7\": \"<string>\",\n    \"dolorb\": \"<string>\",\n    \"cupidatat_df9\": \"<string>\",\n    \"in_7\": \"<string>\",\n    \"incididunt_b3\": \"<string>\",\n    \"mollit_7\": \"<string>\",\n    \"exercitation1a\": \"<string>\",\n    \"Excepteur75\": \"<string>\",\n    \"elit7a5\": \"<string>\",\n    \"ut92\": \"<string>\",\n    \"Duis89\": \"<string>\",\n    \"in_47d\": \"<string>\",\n    \"consequat_4d\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"Duis__fa\": \"<string>\",\n    \"quis503\": \"<string>\",\n    \"elit_7\": \"<string>\",\n    \"dolore_b\": \"<string>\",\n    \"ametf7\": \"<string>\",\n    \"dolor_2a\": \"<string>\",\n    \"officia2\": \"<string>\",\n    \"sitf\": \"<string>\",\n    \"Excepteur_5\": \"<string>\",\n    \"aliqua28\": \"<string>\",\n    \"eiusmod_2\": \"<string>\",\n    \"adipisicing_1\": \"<string>\",\n    \"labore_eab\": \"<string>\",\n    \"Excepteur_a6\": \"<string>\",\n    \"aliqua7a\": \"<string>\",\n    \"sint8_\": \"<string>\",\n    \"velit_eb\": \"<string>\",\n    \"consectetur_21d\": \"<string>\",\n    \"magna_\": \"<string>\",\n    \"amet5b3\": \"<string>\",\n    \"dolore6a\": \"<string>\",\n    \"officia4\": \"<string>\",\n    \"dolor_a_b\": \"<string>\",\n    \"magna_73\": \"<string>\",\n    \"reprehenderit_51\": \"<string>\",\n    \"sint_5f\": \"<string>\",\n    \"quis_6\": \"<string>\",\n    \"commodod_5\": \"<string>\",\n    \"velitae\": \"<string>\",\n    \"ullamcof_\": \"<string>\",\n    \"ut2\": \"<string>\",\n    \"pariatur59\": \"<string>\",\n    \"non_1cc\": \"<string>\"\n  },\n  \"Timeout\": \"<integer>\",\n  \"JobSample\": {\n    \"Mode\": \"FULL_DATASET\",\n    \"Size\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/profileJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileJobs"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:55.000Z",
+              "updatedAt": "2026-07-28T10:22:55.000Z",
+              "uid": "35240-dc47dae1-cfaf-4613-b09d-164b39847d8c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:22:55.000Z",
+          "updatedAt": "2026-07-28T10:22:55.000Z",
+          "uid": "35240-f1c83da0-a924-44e9-8ec6-f31ecd836b19"
+        }
+      ],
+      "id": "83b7609b-dea7-4516-8f2d-6fc28a9b4606",
+      "createdAt": "2026-07-28T10:22:55.000Z",
+      "updatedAt": "2026-07-28T10:22:55.000Z",
+      "uid": "35240-83b7609b-dea7-4516-8f2d-6fc28a9b4606"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://databrew.{{region}}.amazonaws.com"
+    }
+  ]
+}

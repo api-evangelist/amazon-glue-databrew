@@ -1,0 +1,2723 @@
+{
+  "info": {
+    "_postman_id": "a4e9328c-927d-4ffe-b10e-25c90e27e2f0",
+    "name": "AWS Glue DataBrew Datasets Recipes API",
+    "description": "Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:22:58.000Z",
+    "updatedAt": "2026-07-28T10:22:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a4e9328c-927d-4ffe-b10e-25c90e27e2f0"
+  },
+  "item": [
+    {
+      "name": "recipes",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "batchDeleteRecipeVersion",
+              "item": [
+                {
+                  "name": "Amazon Glue DataBrew Batch Delete Recipe Version",
+                  "id": "f142bdbb-73fd-406a-a1dc-6d75fc99cd9a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"RecipeVersions\": [\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipes/:name/batchDeleteRecipeVersion",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipes",
+                        ":name",
+                        "batchDeleteRecipeVersion"
+                      ],
+                      "variable": [
+                        {
+                          "id": "8395dfdd-531f-42f2-bd86-ca4b0ad248c1",
+                          "key": "name",
+                          "value": "<string>",
+                          "description": "(Required) The name of the recipe whose versions are to be deleted."
+                        }
+                      ]
+                    },
+                    "description": "<p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li> <p>There is an invalid version identifier in the list of versions.</p> </li> <li> <p>The version list is empty.</p> </li> <li> <p>The version list size exceeds 50.</p> </li> <li> <p>The version list contains duplicate entries.</p> </li> </ul> <p>The request will complete successfully, but with partial failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A version is being used by a job.</p> </li> <li> <p>You specify <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li> <p>The version fails to be deleted.</p> </li> </ul> <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "a8e00d6c-b5e9-41d3-8df0-6eb4e4d9fa8b",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"RecipeVersions\": [\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/batchDeleteRecipeVersion",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "batchDeleteRecipeVersion"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Name\": \"<string>\",\n  \"Errors\": [\n    {\n      \"ErrorCode\": \"274\",\n      \"ErrorMessage\": \"<string>\",\n      \"RecipeVersion\": \"<string>\"\n    },\n    {\n      \"ErrorCode\": \"456\",\n      \"ErrorMessage\": \"<string>\",\n      \"RecipeVersion\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-a8e00d6c-b5e9-41d3-8df0-6eb4e4d9fa8b"
+                    },
+                    {
+                      "id": "c60cbf82-7799-418b-b414-d827542812e1",
+                      "name": "ConflictException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"RecipeVersions\": [\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/batchDeleteRecipeVersion",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "batchDeleteRecipeVersion"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-c60cbf82-7799-418b-b414-d827542812e1"
+                    },
+                    {
+                      "id": "289a5c9a-aefb-46c6-a2fd-506a3343bfd6",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"RecipeVersions\": [\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/batchDeleteRecipeVersion",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "batchDeleteRecipeVersion"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-289a5c9a-aefb-46c6-a2fd-506a3343bfd6"
+                    },
+                    {
+                      "id": "3b9f5879-999d-4c32-b756-5066dcc4bc1a",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"RecipeVersions\": [\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/batchDeleteRecipeVersion",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "batchDeleteRecipeVersion"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-3b9f5879-999d-4c32-b756-5066dcc4bc1a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-f142bdbb-73fd-406a-a1dc-6d75fc99cd9a"
+                }
+              ],
+              "id": "1f82df26-b52d-43ee-89bf-00b891a1d30e",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-1f82df26-b52d-43ee-89bf-00b891a1d30e"
+            },
+            {
+              "name": "recipeVersion",
+              "item": [
+                {
+                  "name": "{recipeVersion}",
+                  "item": [
+                    {
+                      "name": "Amazon Glue DataBrew Delete Recipe Version",
+                      "id": "5e10ace9-4226-4688-b256-f61e2b3e24a5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/recipeVersion/:recipeVersion",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "recipeVersion",
+                            ":recipeVersion"
+                          ],
+                          "variable": [
+                            {
+                              "id": "9d85b3f8-a1d0-46b4-8eea-ff6ee0671165",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) The name of the recipe."
+                            },
+                            {
+                              "id": "736196ab-ecd4-4213-8acd-8942d02623c6",
+                              "key": "recipeVersion",
+                              "value": "<string>",
+                              "description": "(Required) The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported."
+                            }
+                          ]
+                        },
+                        "description": "Deletes a single version of a DataBrew recipe."
+                      },
+                      "response": [
+                        {
+                          "id": "07b2d6d8-135f-4361-9ca4-641a3811dcab",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/recipes/:name/recipeVersion/:recipeVersion",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "recipes",
+                                ":name",
+                                "recipeVersion",
+                                ":recipeVersion"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "recipeVersion"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"Name\": \"<string>\",\n  \"RecipeVersion\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T10:22:58.000Z",
+                          "updatedAt": "2026-07-28T10:22:58.000Z",
+                          "uid": "35240-07b2d6d8-135f-4361-9ca4-641a3811dcab"
+                        },
+                        {
+                          "id": "ad9406a7-66f4-45ca-8cfe-5c6bccfc2996",
+                          "name": "ConflictException",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/recipes/:name/recipeVersion/:recipeVersion",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "recipes",
+                                ":name",
+                                "recipeVersion",
+                                ":recipeVersion"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "recipeVersion"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:22:58.000Z",
+                          "updatedAt": "2026-07-28T10:22:58.000Z",
+                          "uid": "35240-ad9406a7-66f4-45ca-8cfe-5c6bccfc2996"
+                        },
+                        {
+                          "id": "d187b2b3-637b-4ebd-9eb7-deb6fcca9f27",
+                          "name": "ResourceNotFoundException",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/recipes/:name/recipeVersion/:recipeVersion",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "recipes",
+                                ":name",
+                                "recipeVersion",
+                                ":recipeVersion"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "recipeVersion"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:22:58.000Z",
+                          "updatedAt": "2026-07-28T10:22:58.000Z",
+                          "uid": "35240-d187b2b3-637b-4ebd-9eb7-deb6fcca9f27"
+                        },
+                        {
+                          "id": "ec988918-a784-400d-ac54-281cfdf7b94e",
+                          "name": "ValidationException",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/recipes/:name/recipeVersion/:recipeVersion",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "recipes",
+                                ":name",
+                                "recipeVersion",
+                                ":recipeVersion"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "recipeVersion"
+                                }
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:22:58.000Z",
+                          "updatedAt": "2026-07-28T10:22:58.000Z",
+                          "uid": "35240-ec988918-a784-400d-ac54-281cfdf7b94e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-5e10ace9-4226-4688-b256-f61e2b3e24a5"
+                    }
+                  ],
+                  "id": "0b817ac5-b771-4b6f-b1e6-a040641c9ce3",
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-0b817ac5-b771-4b6f-b1e6-a040641c9ce3"
+                }
+              ],
+              "id": "738312e0-3dee-421e-9fa6-ed2b1cc84e62",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-738312e0-3dee-421e-9fa6-ed2b1cc84e62"
+            },
+            {
+              "name": "publishRecipe",
+              "item": [
+                {
+                  "name": "Amazon Glue DataBrew Publish Recipe",
+                  "id": "8b38f697-cf48-4833-b73c-d1beed9aadae",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipes/:name/publishRecipe",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipes",
+                        ":name",
+                        "publishRecipe"
+                      ],
+                      "variable": [
+                        {
+                          "id": "a1c53917-90e5-4d90-87a2-95dace9560ba",
+                          "key": "name",
+                          "value": "<string>",
+                          "description": "(Required) The name of the recipe to be published."
+                        }
+                      ]
+                    },
+                    "description": "Publishes a new version of a DataBrew recipe."
+                  },
+                  "response": [
+                    {
+                      "id": "6d2cc71b-05af-4291-990e-fce62b676d91",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/publishRecipe",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "publishRecipe"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"Name\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-6d2cc71b-05af-4291-990e-fce62b676d91"
+                    },
+                    {
+                      "id": "aea65f5c-4e2a-401b-b335-b6f93a1c06a0",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/publishRecipe",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "publishRecipe"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-aea65f5c-4e2a-401b-b335-b6f93a1c06a0"
+                    },
+                    {
+                      "id": "c2b88812-d035-450d-8bc8-00d61a8834ba",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/publishRecipe",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "publishRecipe"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-c2b88812-d035-450d-8bc8-00d61a8834ba"
+                    },
+                    {
+                      "id": "7de4b3f7-2bc5-4afd-9553-948cadda00d1",
+                      "name": "ServiceQuotaExceededException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/recipes/:name/publishRecipe",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "recipes",
+                            ":name",
+                            "publishRecipe"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:22:58.000Z",
+                      "updatedAt": "2026-07-28T10:22:58.000Z",
+                      "uid": "35240-7de4b3f7-2bc5-4afd-9553-948cadda00d1"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-8b38f697-cf48-4833-b73c-d1beed9aadae"
+                }
+              ],
+              "id": "dd22a614-14cc-467e-b289-468b1bea0e9f",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-dd22a614-14cc-467e-b289-468b1bea0e9f"
+            },
+            {
+              "name": "Amazon Glue DataBrew Describe Recipe",
+              "id": "c422d916-cc1a-41a1-a713-be486cc3ae3d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/recipes/:name?recipeVersion=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipes",
+                    ":name"
+                  ],
+                  "query": [
+                    {
+                      "description": "The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.",
+                      "key": "recipeVersion",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "ece1de77-5676-4eef-8506-17efc29e7626",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the recipe to be described."
+                    }
+                  ]
+                },
+                "description": "Returns the definition of a specific DataBrew recipe corresponding to a particular version."
+              },
+              "response": [
+                {
+                  "id": "cd6a2355-d084-415c-89cd-7702cb37fead",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/recipes/:name?recipeVersion=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipes",
+                        ":name"
+                      ],
+                      "query": [
+                        {
+                          "description": "The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.",
+                          "key": "recipeVersion",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\",\n  \"CreatedBy\": \"<string>\",\n  \"CreateDate\": \"<dateTime>\",\n  \"LastModifiedBy\": \"<string>\",\n  \"LastModifiedDate\": \"<dateTime>\",\n  \"ProjectName\": \"<string>\",\n  \"PublishedBy\": \"<string>\",\n  \"PublishedDate\": \"<dateTime>\",\n  \"Description\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"NNQKTBA_PK\",\n        \"Parameters\": {\n          \"eu__8\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"I\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"SBH\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"D\",\n        \"Parameters\": {\n          \"dolor1\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"EN\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"B_R\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Tags\": {\n    \"Duis41b\": \"<string>\",\n    \"cillum___6\": \"<string>\",\n    \"fugiat3b\": \"<string>\",\n    \"proident81\": \"<string>\",\n    \"magna_5\": \"<string>\",\n    \"qui_d\": \"<string>\",\n    \"exercitation_1\": \"<string>\",\n    \"dolor_39\": \"<string>\",\n    \"ipsum_85\": \"<string>\",\n    \"mollit_0be\": \"<string>\",\n    \"sint3_6\": \"<string>\",\n    \"officia0\": \"<string>\",\n    \"adipisicing4\": \"<string>\",\n    \"doda3\": \"<string>\",\n    \"fugiat9d\": \"<string>\",\n    \"amet_a\": \"<string>\",\n    \"ullamco__d\": \"<string>\",\n    \"enim_c3f\": \"<string>\",\n    \"eaa3\": \"<string>\",\n    \"cillum_61\": \"<string>\",\n    \"consequat_5\": \"<string>\",\n    \"cillum_6\": \"<string>\",\n    \"idc3_\": \"<string>\",\n    \"pariatur_94\": \"<string>\",\n    \"consequat_f\": \"<string>\",\n    \"occaecat96_\": \"<string>\",\n    \"idf\": \"<string>\",\n    \"aute_a1\": \"<string>\",\n    \"temporba\": \"<string>\",\n    \"qui_068\": \"<string>\",\n    \"enim_34\": \"<string>\",\n    \"minim_bf\": \"<string>\",\n    \"minim72\": \"<string>\",\n    \"minime9a\": \"<string>\",\n    \"velit_3\": \"<string>\",\n    \"ex13\": \"<string>\",\n    \"consectetur_e\": \"<string>\",\n    \"nullaee6\": \"<string>\",\n    \"in_4\": \"<string>\",\n    \"ipsum_9\": \"<string>\",\n    \"laborumc\": \"<string>\",\n    \"ipsum_a\": \"<string>\",\n    \"Utfd1\": \"<string>\",\n    \"nulla0d\": \"<string>\",\n    \"labore_b22\": \"<string>\",\n    \"officia_73c\": \"<string>\",\n    \"reprehenderite1\": \"<string>\",\n    \"magna_19d\": \"<string>\",\n    \"ad2\": \"<string>\",\n    \"minim__4\": \"<string>\",\n    \"ullamco_0f\": \"<string>\",\n    \"voluptate_b3_\": \"<string>\",\n    \"minim51\": \"<string>\",\n    \"amete34\": \"<string>\",\n    \"mollit__\": \"<string>\",\n    \"est__5b\": \"<string>\",\n    \"eub81\": \"<string>\",\n    \"ex4f\": \"<string>\",\n    \"veniam9\": \"<string>\",\n    \"laboris_b0\": \"<string>\",\n    \"quis_8c5\": \"<string>\",\n    \"pariatur_e7\": \"<string>\",\n    \"ad_6\": \"<string>\",\n    \"laborum5e\": \"<string>\",\n    \"exercitation464\": \"<string>\",\n    \"exercitation82\": \"<string>\",\n    \"incididunt_54\": \"<string>\",\n    \"sint9\": \"<string>\",\n    \"Duis_\": \"<string>\",\n    \"consectetur__f\": \"<string>\",\n    \"culpa_0d\": \"<string>\",\n    \"incididunt_cd2\": \"<string>\",\n    \"voluptate510\": \"<string>\",\n    \"officia__1\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"aliqua8da\": \"<string>\",\n    \"mollit_bc\": \"<string>\",\n    \"sinta\": \"<string>\",\n    \"non1\": \"<string>\",\n    \"nonb\": \"<string>\",\n    \"dolore_1\": \"<string>\",\n    \"ullamco_04\": \"<string>\",\n    \"ut_fa\": \"<string>\",\n    \"ipsum5\": \"<string>\",\n    \"ea_1da\": \"<string>\",\n    \"deserunt9\": \"<string>\",\n    \"aliquip_7\": \"<string>\",\n    \"nisi_a0\": \"<string>\",\n    \"veniam94d\": \"<string>\",\n    \"ullamcod\": \"<string>\",\n    \"ullamco1d\": \"<string>\",\n    \"eu_6d9\": \"<string>\",\n    \"tempor_94_\": \"<string>\",\n    \"nisi8d2\": \"<string>\",\n    \"occaecat__\": \"<string>\",\n    \"deserunt_c64\": \"<string>\",\n    \"sed3e6\": \"<string>\",\n    \"sunt_7\": \"<string>\",\n    \"mollit3d\": \"<string>\",\n    \"nond70\": \"<string>\",\n    \"ea2\": \"<string>\",\n    \"eafdc\": \"<string>\",\n    \"dolor_5\": \"<string>\",\n    \"euf\": \"<string>\",\n    \"exercitation3\": \"<string>\",\n    \"et_9\": \"<string>\",\n    \"tempor_2b\": \"<string>\",\n    \"Duis_97\": \"<string>\",\n    \"ullamco624\": \"<string>\",\n    \"dolore_c91\": \"<string>\",\n    \"Lorem_3\": \"<string>\",\n    \"occaecat_9\": \"<string>\",\n    \"do_0_6\": \"<string>\",\n    \"exercitation74b\": \"<string>\",\n    \"ad9e\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"proident_92\": \"<string>\",\n    \"ut_c\": \"<string>\",\n    \"adipisicingd\": \"<string>\",\n    \"ex_1\": \"<string>\",\n    \"exc3f\": \"<string>\",\n    \"in2\": \"<string>\",\n    \"consequat2\": \"<string>\",\n    \"in__3\": \"<string>\",\n    \"elit2f\": \"<string>\",\n    \"ipsum6\": \"<string>\",\n    \"consequatf06\": \"<string>\",\n    \"occaecat_96e\": \"<string>\",\n    \"cillum_3\": \"<string>\",\n    \"pariatur2\": \"<string>\",\n    \"sunt_0\": \"<string>\",\n    \"proidentac\": \"<string>\",\n    \"incididunt_4\": \"<string>\",\n    \"anim_25\": \"<string>\",\n    \"sed7e\": \"<string>\",\n    \"culpa_5c\": \"<string>\",\n    \"ipsum_3ad\": \"<string>\",\n    \"est915\": \"<string>\",\n    \"adipisicing_fe_\": \"<string>\",\n    \"utcb1\": \"<string>\",\n    \"voluptate6\": \"<string>\",\n    \"in0ed\": \"<string>\",\n    \"tempor_c54\": \"<string>\",\n    \"dolor_8f9\": \"<string>\",\n    \"nisi8\": \"<string>\",\n    \"sede01\": \"<string>\",\n    \"veniam_1a\": \"<string>\",\n    \"Loremce\": \"<string>\",\n    \"in_516\": \"<string>\",\n    \"ut9_\": \"<string>\",\n    \"pariatur_742\": \"<string>\",\n    \"in_1\": \"<string>\",\n    \"in9b\": \"<string>\",\n    \"proident_4\": \"<string>\",\n    \"Excepteur_a6\": \"<string>\",\n    \"ut_000\": \"<string>\",\n    \"Ut_0\": \"<string>\",\n    \"consequat4\": \"<string>\",\n    \"eubd\": \"<string>\",\n    \"nisi_6a\": \"<string>\",\n    \"Lorem_34_\": \"<string>\",\n    \"aliquaf\": \"<string>\",\n    \"exercitation_75\": \"<string>\",\n    \"sunt71d\": \"<string>\",\n    \"laboris_0b\": \"<string>\",\n    \"labore_99\": \"<string>\",\n    \"aliquip1\": \"<string>\",\n    \"ute97\": \"<string>\",\n    \"commodoe\": \"<string>\",\n    \"velit_26\": \"<string>\",\n    \"quis_55\": \"<string>\",\n    \"do_5\": \"<string>\",\n    \"deserunt15\": \"<string>\",\n    \"id_d68\": \"<string>\",\n    \"amet_3a\": \"<string>\",\n    \"consequate3\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"sunt9c3\": \"<string>\",\n    \"dolore571\": \"<string>\"\n  },\n  \"ResourceArn\": \"<string>\",\n  \"RecipeVersion\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-cd6a2355-d084-415c-89cd-7702cb37fead"
+                },
+                {
+                  "id": "109fa823-4061-4ea0-816a-2687b2de5741",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/recipes/:name?recipeVersion=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipes",
+                        ":name"
+                      ],
+                      "query": [
+                        {
+                          "description": "The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.",
+                          "key": "recipeVersion",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-109fa823-4061-4ea0-816a-2687b2de5741"
+                },
+                {
+                  "id": "3610ca55-e1a9-461d-b29c-244c9c0ae24f",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/recipes/:name?recipeVersion=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipes",
+                        ":name"
+                      ],
+                      "query": [
+                        {
+                          "description": "The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.",
+                          "key": "recipeVersion",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-3610ca55-e1a9-461d-b29c-244c9c0ae24f"
+                }
+              ],
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-c422d916-cc1a-41a1-a713-be486cc3ae3d"
+            },
+            {
+              "name": "Amazon Glue DataBrew Update Recipe",
+              "id": "0d96b965-713a-4d22-a59f-f7eaf0b1fbae",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Description\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"VE_TWQQ\",\n        \"Parameters\": {\n          \"id_874\": \"<string>\",\n          \"laboris3_\": \"<string>\",\n          \"pariatur_b\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"Z\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"OHUJLA\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"FN\",\n        \"Parameters\": {\n          \"voluptatee1\": \"<string>\",\n          \"amet519\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"PQHVON\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"T\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipes/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipes",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "2f6b59c8-b3ff-4b75-8c91-1c35210ed745",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) The name of the recipe to be updated."
+                    }
+                  ]
+                },
+                "description": "Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe."
+              },
+              "response": [
+                {
+                  "id": "9198d03b-b8d2-4bef-94fa-e0ea3cac59ca",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Description\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"VE_TWQQ\",\n        \"Parameters\": {\n          \"id_874\": \"<string>\",\n          \"laboris3_\": \"<string>\",\n          \"pariatur_b\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"Z\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"OHUJLA\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"FN\",\n        \"Parameters\": {\n          \"voluptatee1\": \"<string>\",\n          \"amet519\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"PQHVON\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"T\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipes/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipes",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"Name\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-9198d03b-b8d2-4bef-94fa-e0ea3cac59ca"
+                },
+                {
+                  "id": "db2356ed-1b53-4e93-826f-8ed7bc341323",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Description\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"VE_TWQQ\",\n        \"Parameters\": {\n          \"id_874\": \"<string>\",\n          \"laboris3_\": \"<string>\",\n          \"pariatur_b\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"Z\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"OHUJLA\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"FN\",\n        \"Parameters\": {\n          \"voluptatee1\": \"<string>\",\n          \"amet519\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"PQHVON\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"T\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipes/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipes",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-db2356ed-1b53-4e93-826f-8ed7bc341323"
+                },
+                {
+                  "id": "51931d2d-017c-4bb2-937c-60c87237a9d8",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"Description\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"VE_TWQQ\",\n        \"Parameters\": {\n          \"id_874\": \"<string>\",\n          \"laboris3_\": \"<string>\",\n          \"pariatur_b\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"Z\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"OHUJLA\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"FN\",\n        \"Parameters\": {\n          \"voluptatee1\": \"<string>\",\n          \"amet519\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"PQHVON\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"T\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/recipes/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "recipes",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:22:58.000Z",
+                  "updatedAt": "2026-07-28T10:22:58.000Z",
+                  "uid": "35240-51931d2d-017c-4bb2-937c-60c87237a9d8"
+                }
+              ],
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-0d96b965-713a-4d22-a59f-f7eaf0b1fbae"
+            }
+          ],
+          "id": "1b7fb0f3-8072-4b81-86dd-6cf62f70c8d6",
+          "createdAt": "2026-07-28T10:22:58.000Z",
+          "updatedAt": "2026-07-28T10:22:58.000Z",
+          "uid": "35240-1b7fb0f3-8072-4b81-86dd-6cf62f70c8d6"
+        },
+        {
+          "name": "Amazon Glue DataBrew Create Recipe",
+          "id": "6a68314e-8eda-4cf9-b5fb-d1cc9599256e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"JUNVBIJWTO\",\n        \"Parameters\": {\n          \"irure_6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"VEZZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"R\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"UQKJBAQ\",\n        \"Parameters\": {\n          \"adipisicing_bb0\": \"<string>\",\n          \"sunt_593\": \"<string>\",\n          \"Ut_b\": \"<string>\",\n          \"nulla6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"_PZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"LECDCJG\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"cupidatat__3\": \"<string>\",\n    \"doac_\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"Duis71f\": \"<string>\",\n    \"exercitation4ea\": \"<string>\",\n    \"minim_e\": \"<string>\",\n    \"proident_e49\": \"<string>\",\n    \"do6\": \"<string>\",\n    \"tempor_\": \"<string>\",\n    \"sunt_64\": \"<string>\",\n    \"dolor8_\": \"<string>\",\n    \"ad7b\": \"<string>\",\n    \"magna8d\": \"<string>\",\n    \"incididunt2ca\": \"<string>\",\n    \"incc\": \"<string>\",\n    \"ut_00c\": \"<string>\",\n    \"nisi_3\": \"<string>\",\n    \"dolor_6f\": \"<string>\",\n    \"esse_2fc\": \"<string>\",\n    \"deserunt_ff\": \"<string>\",\n    \"Excepteurf83\": \"<string>\",\n    \"magna_73b\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"officia83\": \"<string>\",\n    \"dofce\": \"<string>\",\n    \"incididunt__a3\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"incididunt_6d\": \"<string>\",\n    \"voluptate_9_\": \"<string>\",\n    \"consectetur_b0\": \"<string>\",\n    \"reprehenderit67a\": \"<string>\",\n    \"in_1a\": \"<string>\",\n    \"inba\": \"<string>\",\n    \"dolor7b\": \"<string>\",\n    \"proident_3\": \"<string>\",\n    \"irure_6ce\": \"<string>\",\n    \"dolor7\": \"<string>\",\n    \"et9\": \"<string>\",\n    \"Duis_b5a\": \"<string>\",\n    \"Excepteur_0f8\": \"<string>\",\n    \"consequate5\": \"<string>\",\n    \"quis5_\": \"<string>\",\n    \"mollit4cd\": \"<string>\",\n    \"do_136\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"doloreefb\": \"<string>\",\n    \"quis_6_\": \"<string>\",\n    \"irurea\": \"<string>\",\n    \"anim_c\": \"<string>\",\n    \"non3c\": \"<string>\",\n    \"laborum6d\": \"<string>\",\n    \"qui_d42\": \"<string>\",\n    \"sunt_6\": \"<string>\",\n    \"Excepteur85\": \"<string>\",\n    \"et_9\": \"<string>\",\n    \"culpa58\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"nostrud_cb\": \"<string>\",\n    \"tempor__1\": \"<string>\",\n    \"id_ce\": \"<string>\",\n    \"non0\": \"<string>\",\n    \"exercitationa5d\": \"<string>\",\n    \"velit28\": \"<string>\",\n    \"dolore_891\": \"<string>\",\n    \"sunt__\": \"<string>\",\n    \"sed_3e\": \"<string>\",\n    \"nisi_9\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"minim_7fe\": \"<string>\",\n    \"veniam16\": \"<string>\",\n    \"dolore1\": \"<string>\",\n    \"quis16f\": \"<string>\",\n    \"deserunt_55\": \"<string>\",\n    \"ut_8e6\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/recipes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recipes"
+              ]
+            },
+            "description": "Creates a new DataBrew recipe."
+          },
+          "response": [
+            {
+              "id": "48212582-6b72-41fe-af9b-403e34ea10e4",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"JUNVBIJWTO\",\n        \"Parameters\": {\n          \"irure_6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"VEZZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"R\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"UQKJBAQ\",\n        \"Parameters\": {\n          \"adipisicing_bb0\": \"<string>\",\n          \"sunt_593\": \"<string>\",\n          \"Ut_b\": \"<string>\",\n          \"nulla6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"_PZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"LECDCJG\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"cupidatat__3\": \"<string>\",\n    \"doac_\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"Duis71f\": \"<string>\",\n    \"exercitation4ea\": \"<string>\",\n    \"minim_e\": \"<string>\",\n    \"proident_e49\": \"<string>\",\n    \"do6\": \"<string>\",\n    \"tempor_\": \"<string>\",\n    \"sunt_64\": \"<string>\",\n    \"dolor8_\": \"<string>\",\n    \"ad7b\": \"<string>\",\n    \"magna8d\": \"<string>\",\n    \"incididunt2ca\": \"<string>\",\n    \"incc\": \"<string>\",\n    \"ut_00c\": \"<string>\",\n    \"nisi_3\": \"<string>\",\n    \"dolor_6f\": \"<string>\",\n    \"esse_2fc\": \"<string>\",\n    \"deserunt_ff\": \"<string>\",\n    \"Excepteurf83\": \"<string>\",\n    \"magna_73b\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"officia83\": \"<string>\",\n    \"dofce\": \"<string>\",\n    \"incididunt__a3\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"incididunt_6d\": \"<string>\",\n    \"voluptate_9_\": \"<string>\",\n    \"consectetur_b0\": \"<string>\",\n    \"reprehenderit67a\": \"<string>\",\n    \"in_1a\": \"<string>\",\n    \"inba\": \"<string>\",\n    \"dolor7b\": \"<string>\",\n    \"proident_3\": \"<string>\",\n    \"irure_6ce\": \"<string>\",\n    \"dolor7\": \"<string>\",\n    \"et9\": \"<string>\",\n    \"Duis_b5a\": \"<string>\",\n    \"Excepteur_0f8\": \"<string>\",\n    \"consequate5\": \"<string>\",\n    \"quis5_\": \"<string>\",\n    \"mollit4cd\": \"<string>\",\n    \"do_136\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"doloreefb\": \"<string>\",\n    \"quis_6_\": \"<string>\",\n    \"irurea\": \"<string>\",\n    \"anim_c\": \"<string>\",\n    \"non3c\": \"<string>\",\n    \"laborum6d\": \"<string>\",\n    \"qui_d42\": \"<string>\",\n    \"sunt_6\": \"<string>\",\n    \"Excepteur85\": \"<string>\",\n    \"et_9\": \"<string>\",\n    \"culpa58\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"nostrud_cb\": \"<string>\",\n    \"tempor__1\": \"<string>\",\n    \"id_ce\": \"<string>\",\n    \"non0\": \"<string>\",\n    \"exercitationa5d\": \"<string>\",\n    \"velit28\": \"<string>\",\n    \"dolore_891\": \"<string>\",\n    \"sunt__\": \"<string>\",\n    \"sed_3e\": \"<string>\",\n    \"nisi_9\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"minim_7fe\": \"<string>\",\n    \"veniam16\": \"<string>\",\n    \"dolore1\": \"<string>\",\n    \"quis16f\": \"<string>\",\n    \"deserunt_55\": \"<string>\",\n    \"ut_8e6\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Name\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-48212582-6b72-41fe-af9b-403e34ea10e4"
+            },
+            {
+              "id": "ecbb9d95-2594-466a-8abf-5e2e793719ed",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"JUNVBIJWTO\",\n        \"Parameters\": {\n          \"irure_6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"VEZZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"R\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"UQKJBAQ\",\n        \"Parameters\": {\n          \"adipisicing_bb0\": \"<string>\",\n          \"sunt_593\": \"<string>\",\n          \"Ut_b\": \"<string>\",\n          \"nulla6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"_PZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"LECDCJG\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"cupidatat__3\": \"<string>\",\n    \"doac_\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"Duis71f\": \"<string>\",\n    \"exercitation4ea\": \"<string>\",\n    \"minim_e\": \"<string>\",\n    \"proident_e49\": \"<string>\",\n    \"do6\": \"<string>\",\n    \"tempor_\": \"<string>\",\n    \"sunt_64\": \"<string>\",\n    \"dolor8_\": \"<string>\",\n    \"ad7b\": \"<string>\",\n    \"magna8d\": \"<string>\",\n    \"incididunt2ca\": \"<string>\",\n    \"incc\": \"<string>\",\n    \"ut_00c\": \"<string>\",\n    \"nisi_3\": \"<string>\",\n    \"dolor_6f\": \"<string>\",\n    \"esse_2fc\": \"<string>\",\n    \"deserunt_ff\": \"<string>\",\n    \"Excepteurf83\": \"<string>\",\n    \"magna_73b\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"officia83\": \"<string>\",\n    \"dofce\": \"<string>\",\n    \"incididunt__a3\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"incididunt_6d\": \"<string>\",\n    \"voluptate_9_\": \"<string>\",\n    \"consectetur_b0\": \"<string>\",\n    \"reprehenderit67a\": \"<string>\",\n    \"in_1a\": \"<string>\",\n    \"inba\": \"<string>\",\n    \"dolor7b\": \"<string>\",\n    \"proident_3\": \"<string>\",\n    \"irure_6ce\": \"<string>\",\n    \"dolor7\": \"<string>\",\n    \"et9\": \"<string>\",\n    \"Duis_b5a\": \"<string>\",\n    \"Excepteur_0f8\": \"<string>\",\n    \"consequate5\": \"<string>\",\n    \"quis5_\": \"<string>\",\n    \"mollit4cd\": \"<string>\",\n    \"do_136\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"doloreefb\": \"<string>\",\n    \"quis_6_\": \"<string>\",\n    \"irurea\": \"<string>\",\n    \"anim_c\": \"<string>\",\n    \"non3c\": \"<string>\",\n    \"laborum6d\": \"<string>\",\n    \"qui_d42\": \"<string>\",\n    \"sunt_6\": \"<string>\",\n    \"Excepteur85\": \"<string>\",\n    \"et_9\": \"<string>\",\n    \"culpa58\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"nostrud_cb\": \"<string>\",\n    \"tempor__1\": \"<string>\",\n    \"id_ce\": \"<string>\",\n    \"non0\": \"<string>\",\n    \"exercitationa5d\": \"<string>\",\n    \"velit28\": \"<string>\",\n    \"dolore_891\": \"<string>\",\n    \"sunt__\": \"<string>\",\n    \"sed_3e\": \"<string>\",\n    \"nisi_9\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"minim_7fe\": \"<string>\",\n    \"veniam16\": \"<string>\",\n    \"dolore1\": \"<string>\",\n    \"quis16f\": \"<string>\",\n    \"deserunt_55\": \"<string>\",\n    \"ut_8e6\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipes"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-ecbb9d95-2594-466a-8abf-5e2e793719ed"
+            },
+            {
+              "id": "6e239978-73e7-4dd9-800e-195b615e76a1",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"JUNVBIJWTO\",\n        \"Parameters\": {\n          \"irure_6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"VEZZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"R\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"UQKJBAQ\",\n        \"Parameters\": {\n          \"adipisicing_bb0\": \"<string>\",\n          \"sunt_593\": \"<string>\",\n          \"Ut_b\": \"<string>\",\n          \"nulla6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"_PZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"LECDCJG\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"cupidatat__3\": \"<string>\",\n    \"doac_\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"Duis71f\": \"<string>\",\n    \"exercitation4ea\": \"<string>\",\n    \"minim_e\": \"<string>\",\n    \"proident_e49\": \"<string>\",\n    \"do6\": \"<string>\",\n    \"tempor_\": \"<string>\",\n    \"sunt_64\": \"<string>\",\n    \"dolor8_\": \"<string>\",\n    \"ad7b\": \"<string>\",\n    \"magna8d\": \"<string>\",\n    \"incididunt2ca\": \"<string>\",\n    \"incc\": \"<string>\",\n    \"ut_00c\": \"<string>\",\n    \"nisi_3\": \"<string>\",\n    \"dolor_6f\": \"<string>\",\n    \"esse_2fc\": \"<string>\",\n    \"deserunt_ff\": \"<string>\",\n    \"Excepteurf83\": \"<string>\",\n    \"magna_73b\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"officia83\": \"<string>\",\n    \"dofce\": \"<string>\",\n    \"incididunt__a3\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"incididunt_6d\": \"<string>\",\n    \"voluptate_9_\": \"<string>\",\n    \"consectetur_b0\": \"<string>\",\n    \"reprehenderit67a\": \"<string>\",\n    \"in_1a\": \"<string>\",\n    \"inba\": \"<string>\",\n    \"dolor7b\": \"<string>\",\n    \"proident_3\": \"<string>\",\n    \"irure_6ce\": \"<string>\",\n    \"dolor7\": \"<string>\",\n    \"et9\": \"<string>\",\n    \"Duis_b5a\": \"<string>\",\n    \"Excepteur_0f8\": \"<string>\",\n    \"consequate5\": \"<string>\",\n    \"quis5_\": \"<string>\",\n    \"mollit4cd\": \"<string>\",\n    \"do_136\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"doloreefb\": \"<string>\",\n    \"quis_6_\": \"<string>\",\n    \"irurea\": \"<string>\",\n    \"anim_c\": \"<string>\",\n    \"non3c\": \"<string>\",\n    \"laborum6d\": \"<string>\",\n    \"qui_d42\": \"<string>\",\n    \"sunt_6\": \"<string>\",\n    \"Excepteur85\": \"<string>\",\n    \"et_9\": \"<string>\",\n    \"culpa58\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"nostrud_cb\": \"<string>\",\n    \"tempor__1\": \"<string>\",\n    \"id_ce\": \"<string>\",\n    \"non0\": \"<string>\",\n    \"exercitationa5d\": \"<string>\",\n    \"velit28\": \"<string>\",\n    \"dolore_891\": \"<string>\",\n    \"sunt__\": \"<string>\",\n    \"sed_3e\": \"<string>\",\n    \"nisi_9\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"minim_7fe\": \"<string>\",\n    \"veniam16\": \"<string>\",\n    \"dolore1\": \"<string>\",\n    \"quis16f\": \"<string>\",\n    \"deserunt_55\": \"<string>\",\n    \"ut_8e6\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipes"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-6e239978-73e7-4dd9-800e-195b615e76a1"
+            },
+            {
+              "id": "e5012afc-1cd7-43c9-b4a2-4e61d377c356",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Steps\": [\n    {\n      \"Action\": {\n        \"Operation\": \"JUNVBIJWTO\",\n        \"Parameters\": {\n          \"irure_6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"VEZZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"R\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"Action\": {\n        \"Operation\": \"UQKJBAQ\",\n        \"Parameters\": {\n          \"adipisicing_bb0\": \"<string>\",\n          \"sunt_593\": \"<string>\",\n          \"Ut_b\": \"<string>\",\n          \"nulla6\": \"<string>\"\n        }\n      },\n      \"ConditionExpressions\": [\n        {\n          \"Condition\": \"_PZ\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Condition\": \"LECDCJG\",\n          \"TargetColumn\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"cupidatat__3\": \"<string>\",\n    \"doac_\": \"<string>\",\n    \"proident_\": \"<string>\",\n    \"Duis71f\": \"<string>\",\n    \"exercitation4ea\": \"<string>\",\n    \"minim_e\": \"<string>\",\n    \"proident_e49\": \"<string>\",\n    \"do6\": \"<string>\",\n    \"tempor_\": \"<string>\",\n    \"sunt_64\": \"<string>\",\n    \"dolor8_\": \"<string>\",\n    \"ad7b\": \"<string>\",\n    \"magna8d\": \"<string>\",\n    \"incididunt2ca\": \"<string>\",\n    \"incc\": \"<string>\",\n    \"ut_00c\": \"<string>\",\n    \"nisi_3\": \"<string>\",\n    \"dolor_6f\": \"<string>\",\n    \"esse_2fc\": \"<string>\",\n    \"deserunt_ff\": \"<string>\",\n    \"Excepteurf83\": \"<string>\",\n    \"magna_73b\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"officia83\": \"<string>\",\n    \"dofce\": \"<string>\",\n    \"incididunt__a3\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"incididunt_6d\": \"<string>\",\n    \"voluptate_9_\": \"<string>\",\n    \"consectetur_b0\": \"<string>\",\n    \"reprehenderit67a\": \"<string>\",\n    \"in_1a\": \"<string>\",\n    \"inba\": \"<string>\",\n    \"dolor7b\": \"<string>\",\n    \"proident_3\": \"<string>\",\n    \"irure_6ce\": \"<string>\",\n    \"dolor7\": \"<string>\",\n    \"et9\": \"<string>\",\n    \"Duis_b5a\": \"<string>\",\n    \"Excepteur_0f8\": \"<string>\",\n    \"consequate5\": \"<string>\",\n    \"quis5_\": \"<string>\",\n    \"mollit4cd\": \"<string>\",\n    \"do_136\": \"<string>\",\n    \"ina\": \"<string>\",\n    \"doloreefb\": \"<string>\",\n    \"quis_6_\": \"<string>\",\n    \"irurea\": \"<string>\",\n    \"anim_c\": \"<string>\",\n    \"non3c\": \"<string>\",\n    \"laborum6d\": \"<string>\",\n    \"qui_d42\": \"<string>\",\n    \"sunt_6\": \"<string>\",\n    \"Excepteur85\": \"<string>\",\n    \"et_9\": \"<string>\",\n    \"culpa58\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"nostrud_cb\": \"<string>\",\n    \"tempor__1\": \"<string>\",\n    \"id_ce\": \"<string>\",\n    \"non0\": \"<string>\",\n    \"exercitationa5d\": \"<string>\",\n    \"velit28\": \"<string>\",\n    \"dolore_891\": \"<string>\",\n    \"sunt__\": \"<string>\",\n    \"sed_3e\": \"<string>\",\n    \"nisi_9\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"minim_7fe\": \"<string>\",\n    \"veniam16\": \"<string>\",\n    \"dolore1\": \"<string>\",\n    \"quis16f\": \"<string>\",\n    \"deserunt_55\": \"<string>\",\n    \"ut_8e6\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/recipes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipes"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-e5012afc-1cd7-43c9-b4a2-4e61d377c356"
+            }
+          ],
+          "createdAt": "2026-07-28T10:22:58.000Z",
+          "updatedAt": "2026-07-28T10:22:58.000Z",
+          "uid": "35240-6a68314e-8eda-4cf9-b5fb-d1cc9599256e"
+        },
+        {
+          "name": "Amazon Glue DataBrew List Recipes",
+          "id": "734acb9d-1815-4019-ac05-f4179abcde4f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/recipes?maxResults=<integer>&nextToken=<string>&recipeVersion=<string>&MaxResults=<string>&NextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recipes"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of results to return in this request. ",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The token returned by a previous call to retrieve the next set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>",
+                  "key": "recipeVersion",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Lists all of the DataBrew recipes that are defined."
+          },
+          "response": [
+            {
+              "id": "72ec8c3b-ac40-493b-b732-341b3b779258",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/recipes?maxResults=<integer>&nextToken=<string>&recipeVersion=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipes"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in this request. ",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token returned by a previous call to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>",
+                      "key": "recipeVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Recipes\": [\n    {\n      \"Name\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"LastModifiedBy\": \"<string>\",\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"ProjectName\": \"<string>\",\n      \"PublishedBy\": \"<string>\",\n      \"PublishedDate\": \"<dateTime>\",\n      \"Description\": \"<string>\",\n      \"ResourceArn\": \"<string>\",\n      \"Steps\": [\n        {\n          \"Action\": {\n            \"Operation\": \"T\",\n            \"Parameters\": {\n              \"aute_45\": \"<string>\",\n              \"sunt28\": \"<string>\"\n            }\n          },\n          \"ConditionExpressions\": [\n            {\n              \"Condition\": \"JAOOSOYEVO\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            },\n            {\n              \"Condition\": \"K\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"Action\": {\n            \"Operation\": \"GHLR\",\n            \"Parameters\": {\n              \"elit_8e\": \"<string>\"\n            }\n          },\n          \"ConditionExpressions\": [\n            {\n              \"Condition\": \"ZO\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            },\n            {\n              \"Condition\": \"WCCC\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            }\n          ]\n        }\n      ],\n      \"Tags\": {\n        \"aute_c1\": \"<string>\",\n        \"eiusmod_774\": \"<string>\",\n        \"magnaee6\": \"<string>\",\n        \"laboris_c3\": \"<string>\",\n        \"sit_7e4\": \"<string>\",\n        \"ex_2_a\": \"<string>\",\n        \"aute_50\": \"<string>\",\n        \"cupidatat6a\": \"<string>\",\n        \"dolore_f_c\": \"<string>\",\n        \"exebf\": \"<string>\",\n        \"reprehenderit3\": \"<string>\",\n        \"eiusmod_07\": \"<string>\",\n        \"fugiat36e\": \"<string>\",\n        \"officia_fe8\": \"<string>\",\n        \"etd\": \"<string>\",\n        \"eue\": \"<string>\",\n        \"commodof\": \"<string>\",\n        \"consectetur8e3\": \"<string>\",\n        \"dolore_354\": \"<string>\"\n      },\n      \"RecipeVersion\": \"<string>\"\n    },\n    {\n      \"Name\": \"<string>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreateDate\": \"<dateTime>\",\n      \"LastModifiedBy\": \"<string>\",\n      \"LastModifiedDate\": \"<dateTime>\",\n      \"ProjectName\": \"<string>\",\n      \"PublishedBy\": \"<string>\",\n      \"PublishedDate\": \"<dateTime>\",\n      \"Description\": \"<string>\",\n      \"ResourceArn\": \"<string>\",\n      \"Steps\": [\n        {\n          \"Action\": {\n            \"Operation\": \"DMV\",\n            \"Parameters\": {\n              \"auteb3\": \"<string>\"\n            }\n          },\n          \"ConditionExpressions\": [\n            {\n              \"Condition\": \"ZFO\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            },\n            {\n              \"Condition\": \"YFUDVWRVMA\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"Action\": {\n            \"Operation\": \"NMXFIT\",\n            \"Parameters\": {\n              \"enim_c\": \"<string>\"\n            }\n          },\n          \"ConditionExpressions\": [\n            {\n              \"Condition\": \"VPQTKNK\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            },\n            {\n              \"Condition\": \"ZRD_JLZM\",\n              \"TargetColumn\": \"<string>\",\n              \"Value\": \"<string>\"\n            }\n          ]\n        }\n      ],\n      \"Tags\": {\n        \"est_903\": \"<string>\",\n        \"anim02c\": \"<string>\",\n        \"ullamco_f\": \"<string>\",\n        \"tempor767\": \"<string>\",\n        \"mollit_a\": \"<string>\",\n        \"nisi_74\": \"<string>\",\n        \"eu__13\": \"<string>\",\n        \"deserunt_b\": \"<string>\",\n        \"ada\": \"<string>\",\n        \"sit65\": \"<string>\",\n        \"id_5\": \"<string>\",\n        \"occaecat2b\": \"<string>\",\n        \"culpa_9a\": \"<string>\",\n        \"Duis5c\": \"<string>\",\n        \"mollitc6\": \"<string>\",\n        \"eu_32f\": \"<string>\",\n        \"et_4\": \"<string>\",\n        \"incididunt_0_d\": \"<string>\",\n        \"nostrudf6\": \"<string>\",\n        \"aliqua_8\": \"<string>\",\n        \"tempor0\": \"<string>\",\n        \"ea_6\": \"<string>\",\n        \"esse4\": \"<string>\",\n        \"sunt0b3\": \"<string>\",\n        \"ut_5d_\": \"<string>\",\n        \"nulla_e1e\": \"<string>\",\n        \"laboris_af7\": \"<string>\",\n        \"dolore_c\": \"<string>\",\n        \"sit_32c\": \"<string>\",\n        \"sunt_c89\": \"<string>\",\n        \"proident_b2\": \"<string>\",\n        \"nulla_f\": \"<string>\",\n        \"esse_8\": \"<string>\",\n        \"Loremc1\": \"<string>\",\n        \"qui6_\": \"<string>\",\n        \"eiusmod1\": \"<string>\",\n        \"occaecat_ff\": \"<string>\",\n        \"dolord4\": \"<string>\",\n        \"minimc0_\": \"<string>\",\n        \"laborum_2\": \"<string>\",\n        \"ut_7f6\": \"<string>\",\n        \"idaf\": \"<string>\",\n        \"in4b9\": \"<string>\",\n        \"deserunt8\": \"<string>\",\n        \"eiusmod_1\": \"<string>\",\n        \"cillum_4c\": \"<string>\",\n        \"aute_ca1\": \"<string>\",\n        \"id2\": \"<string>\",\n        \"consectetur_b1_\": \"<string>\",\n        \"exd58\": \"<string>\",\n        \"quisb\": \"<string>\",\n        \"quief\": \"<string>\",\n        \"consectetur_262\": \"<string>\",\n        \"enim3\": \"<string>\",\n        \"aliquip_8f\": \"<string>\",\n        \"est_85\": \"<string>\",\n        \"ipsumb\": \"<string>\",\n        \"ipsum61a\": \"<string>\",\n        \"laborumb4\": \"<string>\",\n        \"sunt_8be\": \"<string>\",\n        \"Lorem_f\": \"<string>\",\n        \"fugiat_9\": \"<string>\",\n        \"nostrud_f07\": \"<string>\",\n        \"eiusmod_e\": \"<string>\",\n        \"proident_8\": \"<string>\",\n        \"etb0_\": \"<string>\",\n        \"consecteturb92\": \"<string>\",\n        \"exercitation_4_6\": \"<string>\",\n        \"ipsum_f\": \"<string>\",\n        \"eiusmod_38\": \"<string>\",\n        \"anim_08e\": \"<string>\",\n        \"esse_e2\": \"<string>\",\n        \"irure_f\": \"<string>\",\n        \"laboris83\": \"<string>\",\n        \"occaecat_c49\": \"<string>\",\n        \"laboris_1\": \"<string>\",\n        \"officiade\": \"<string>\",\n        \"in__\": \"<string>\",\n        \"esse491\": \"<string>\",\n        \"laborum801\": \"<string>\",\n        \"do_d92\": \"<string>\",\n        \"do_811\": \"<string>\",\n        \"enim_0e\": \"<string>\",\n        \"laborum_67\": \"<string>\",\n        \"Loremae\": \"<string>\",\n        \"in_bc\": \"<string>\",\n        \"voluptate_3\": \"<string>\",\n        \"Excepteur__1\": \"<string>\",\n        \"cupidatat_4\": \"<string>\",\n        \"non_871\": \"<string>\",\n        \"Excepteur564\": \"<string>\",\n        \"utad\": \"<string>\",\n        \"nulla3\": \"<string>\",\n        \"nisi6\": \"<string>\",\n        \"incididunt_5\": \"<string>\",\n        \"labore_1\": \"<string>\",\n        \"nisi__e\": \"<string>\",\n        \"est_1\": \"<string>\",\n        \"dolor__f\": \"<string>\",\n        \"id_a\": \"<string>\",\n        \"incididunt_6\": \"<string>\",\n        \"ex_60\": \"<string>\",\n        \"Utcea\": \"<string>\",\n        \"exercitationc\": \"<string>\",\n        \"nisi0\": \"<string>\",\n        \"exercitation__71\": \"<string>\",\n        \"consectetur5\": \"<string>\",\n        \"eu_e\": \"<string>\",\n        \"dolored5\": \"<string>\",\n        \"sit0b\": \"<string>\",\n        \"utc5\": \"<string>\",\n        \"exercitation_8\": \"<string>\",\n        \"eiusmod05\": \"<string>\",\n        \"reprehenderit_55b\": \"<string>\",\n        \"ullamco_62a\": \"<string>\",\n        \"ut0_\": \"<string>\",\n        \"magna41\": \"<string>\",\n        \"eu_1\": \"<string>\",\n        \"anim8\": \"<string>\",\n        \"commodo_f39\": \"<string>\",\n        \"aliquip36\": \"<string>\",\n        \"proident__6\": \"<string>\",\n        \"eu_41\": \"<string>\",\n        \"ina08\": \"<string>\",\n        \"sint7\": \"<string>\",\n        \"voluptate_db\": \"<string>\",\n        \"dolor2\": \"<string>\",\n        \"incididunt2\": \"<string>\",\n        \"dolore_23\": \"<string>\",\n        \"etadc\": \"<string>\",\n        \"veniam1\": \"<string>\",\n        \"nisi_d\": \"<string>\"\n      },\n      \"RecipeVersion\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-72ec8c3b-ac40-493b-b732-341b3b779258"
+            },
+            {
+              "id": "69aa3ff4-d084-481d-8a4c-2538848fbce5",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/recipes?maxResults=<integer>&nextToken=<string>&recipeVersion=<string>&MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "recipes"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in this request. ",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token returned by a previous call to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>",
+                      "key": "recipeVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:22:58.000Z",
+              "updatedAt": "2026-07-28T10:22:58.000Z",
+              "uid": "35240-69aa3ff4-d084-481d-8a4c-2538848fbce5"
+            }
+          ],
+          "createdAt": "2026-07-28T10:22:58.000Z",
+          "updatedAt": "2026-07-28T10:22:58.000Z",
+          "uid": "35240-734acb9d-1815-4019-ac05-f4179abcde4f"
+        }
+      ],
+      "id": "0ea9302f-bb56-4b5a-a2e9-84d0aa03f65f",
+      "createdAt": "2026-07-28T10:22:58.000Z",
+      "updatedAt": "2026-07-28T10:22:58.000Z",
+      "uid": "35240-0ea9302f-bb56-4b5a-a2e9-84d0aa03f65f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://databrew.{{region}}.amazonaws.com"
+    }
+  ]
+}
