@@ -55,8 +55,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-jobs-api
   name: Amazon Glue DataBrew Jobs API
   description: The Jobs API from Amazon Glue DataBrew — 6 operation(s) for jobs.
@@ -83,8 +81,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-profilejobs-api
   name: Amazon Glue DataBrew ProfileJobs API
   description: The ProfileJobs API from Amazon Glue DataBrew — 2 operation(s) for profilejobs.
@@ -111,8 +107,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-projects-api
   name: Amazon Glue DataBrew Projects API
   description: The Projects API from Amazon Glue DataBrew — 4 operation(s) for projects.
@@ -139,8 +133,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-recipejobs-api
   name: Amazon Glue DataBrew RecipeJobs API
   description: The RecipeJobs API from Amazon Glue DataBrew — 2 operation(s) for recipejobs.
@@ -167,8 +159,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-recipes-api
   name: Amazon Glue DataBrew Recipes API
   description: The Recipes API from Amazon Glue DataBrew — 5 operation(s) for recipes.
@@ -195,8 +185,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-recipeversions-name-api
   name: Amazon Glue DataBrew RecipeVersions#name API
   description: >-
@@ -224,8 +212,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-rulesets-api
   name: Amazon Glue DataBrew Rulesets API
   description: The Rulesets API from Amazon Glue DataBrew — 2 operation(s) for rulesets.
@@ -252,8 +238,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-schedules-api
   name: Amazon Glue DataBrew Schedules API
   description: The Schedules API from Amazon Glue DataBrew — 2 operation(s) for schedules.
@@ -280,8 +264,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 - aid: amazon-glue-databrew:amazon-glue-databrew-tags-api
   name: Amazon Glue DataBrew Tags API
   description: The Tags API from Amazon Glue DataBrew — 2 operation(s) for tags.
@@ -308,8 +290,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-glue-databrew.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-glue-databrew/overview
