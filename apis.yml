@@ -23,6 +23,12 @@ tags:
 - Data Analytics
 - Data Preparation
 - ETL
+- Machine-Learning
+tags_raw:
+- AWS
+- Data Analytics
+- Data Preparation
+- ETL
 - Machine Learning
 url: https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -61,6 +67,8 @@ apis:
   humanURL: https://aws.amazon.com/glue/features/databrew/
   baseURL: https://databrew.amazonaws.com
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -113,6 +121,8 @@ apis:
   humanURL: https://aws.amazon.com/glue/features/databrew/
   baseURL: https://databrew.amazonaws.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
