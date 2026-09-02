@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Glue DataBrew Datasets Schedules API
   description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
@@ -494,36 +494,6 @@ paths:
       - Schedules
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
@@ -536,8 +506,117 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    UpdateScheduleResponse:
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    ConflictException: {}
+    JobName:
+      type: string
+      minLength: 1
+      maxLength: 240
+    ScheduleName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    DescribeScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the schedule was created.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: 'The identifier (user name) of the user who created the schedule. '
+        JobNames:
+          allOf:
+          - $ref: '#/components/schemas/JobNameList'
+          - description: The name or names of one or more jobs to be run by using the schedule.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The identifier (user name) of the user who last modified the schedule.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the schedule was last modified.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the schedule.
+        CronExpression:
+          allOf:
+          - $ref: '#/components/schemas/CronExpression'
+          - description: The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags associated with this schedule.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule.
+    ServiceQuotaExceededException: {}
+    ListSchedulesResponse:
+      type: object
+      required:
+      - Schedules
+      properties:
+        Schedules:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleList'
+          - description: A list of schedules that are defined.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    ResourceNotFoundException: {}
+    DeleteScheduleResponse:
       type: object
       required:
       - Name
@@ -545,7 +624,18 @@ components:
         Name:
           allOf:
           - $ref: '#/components/schemas/ScheduleName'
-          - description: The name of the schedule that was updated.
+          - description: The name of the schedule that was deleted.
+    ScheduleList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Schedule'
+    CreatedBy:
+      type: string
+    Date:
+      type: string
+      format: date-time
+    LastModifiedBy:
+      type: string
     Schedule:
       type: object
       required:
@@ -592,38 +682,31 @@ components:
           - $ref: '#/components/schemas/ScheduleName'
           - description: The name of the schedule.
       description: Represents one or more dates and times when a job is to run.
-    ListSchedulesResponse:
-      type: object
-      required:
-      - Schedules
-      properties:
-        Schedules:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleList'
-          - description: A list of schedules that are defined.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token that you can use in a subsequent call to retrieve the next set of results.
     AccountId:
       type: string
       maxLength: 255
+    JobNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobName'
+      maxItems: 50
+    ValidationException: {}
+    UpdateScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule that was updated.
     TagValue:
       type: string
       maxLength: 256
-    ConflictException: {}
-    ScheduleList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Schedule'
-    ServiceQuotaExceededException: {}
-    JobName:
+    CronExpression:
       type: string
       minLength: 1
-      maxLength: 240
-    Date:
-      type: string
-      format: date-time
+      maxLength: 512
     CreateScheduleResponse:
       type: object
       required:
@@ -633,89 +716,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScheduleName'
           - description: The name of the schedule that was created.
-    JobNameList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobName'
-      maxItems: 50
-    ResourceNotFoundException: {}
-    CreatedBy:
-      type: string
-    LastModifiedBy:
-      type: string
-    ScheduleName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2000
-    CronExpression:
-      type: string
-      minLength: 1
-      maxLength: 512
-    ValidationException: {}
-    DeleteScheduleResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleName'
-          - description: The name of the schedule that was deleted.
-    DescribeScheduleResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        CreateDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the schedule was created.
-        CreatedBy:
-          allOf:
-          - $ref: '#/components/schemas/CreatedBy'
-          - description: 'The identifier (user name) of the user who created the schedule. '
-        JobNames:
-          allOf:
-          - $ref: '#/components/schemas/JobNameList'
-          - description: The name or names of one or more jobs to be run by using the schedule.
-        LastModifiedBy:
-          allOf:
-          - $ref: '#/components/schemas/LastModifiedBy'
-          - description: The identifier (user name) of the user who last modified the schedule.
-        LastModifiedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the schedule was last modified.
-        ResourceArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the schedule.
-        CronExpression:
-          allOf:
-          - $ref: '#/components/schemas/CronExpression'
-          - description: The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: Metadata tags associated with this schedule.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleName'
-          - description: The name of the schedule.
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
   securitySchemes:
     hmac:
       type: apiKey

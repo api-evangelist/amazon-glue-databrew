@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Glue DataBrew Datasets Tags API
   description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
@@ -361,20 +361,26 @@ paths:
       - Tags
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -391,12 +397,6 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
@@ -404,18 +404,11 @@ components:
         type: string
       required: false
   schemas:
-    UntagResourceResponse:
-      type: object
-      properties: {}
-    ValidationException: {}
-    InternalServerException: {}
-    TagResourceResponse:
-      type: object
-      properties: {}
     TagKey:
       type: string
       minLength: 1
       maxLength: 128
+    ValidationException: {}
     ListTagsForResourceResponse:
       type: object
       properties:
@@ -423,16 +416,23 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: A list of tags associated with the DataBrew resource.
+    InternalServerException: {}
+    TagResourceResponse:
+      type: object
+      properties: {}
     ResourceNotFoundException: {}
-    TagValue:
-      type: string
-      maxLength: 256
+    UntagResourceResponse:
+      type: object
+      properties: {}
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 200
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
+    TagValue:
+      type: string
+      maxLength: 256
   securitySchemes:
     hmac:
       type: apiKey
