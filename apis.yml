@@ -1,8 +1,8 @@
 aid: amazon-glue-databrew
 name: Amazon Glue DataBrew
-description: AWS Glue DataBrew is a visual data preparation tool that makes it easy for data analysts and data scientists
-  to clean and normalize data to prepare it for analytics and machine learning. It provides over 250 pre-built transformations
-  to automate data preparation tasks.
+description: AWS Glue DataBrew is a visual data preparation tool that makes it easy for data analysts
+  and data scientists to clean and normalize data to prepare it for analytics and machine learning. It
+  provides over 250 pre-built transformations to automate data preparation tasks.
 type: Index
 deliveryModel:
   model: saas
@@ -45,7 +45,7 @@ tags_raw:
 - Machine Learning
 url: https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-glue-databrew:amazon-glue-databrew-datasets-api
@@ -210,8 +210,7 @@ apis:
     url: json-ld/amazon-glue-databrew-context.jsonld
 - aid: amazon-glue-databrew:amazon-glue-databrew-recipeversions-name-api
   name: Amazon Glue DataBrew RecipeVersions#name API
-  description: >-
-    The RecipeVersions#name API from Amazon Glue DataBrew — 1 operation(s) for recipeversions#name.
+  description: The RecipeVersions#name API from Amazon Glue DataBrew — 1 operation(s) for recipeversions#name.
   humanURL: https://aws.amazon.com/glue/features/databrew/
   baseURL: https://databrew.amazonaws.com
   tags:
@@ -314,6 +313,8 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
 common:
+- type: Website
+  url: https://amazon.com
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-glue-databrew/overview
 - type: AgenticAccess
@@ -355,12 +356,13 @@ common:
 - type: Features
   data:
   - name: 250+ Pre-Built Transformations
-    description: Apply over 250 ready-to-use transformations without writing code, including filtering, normalizing, aggregating,
-      and reformatting data.
+    description: Apply over 250 ready-to-use transformations without writing code, including filtering,
+      normalizing, aggregating, and reformatting data.
   - name: Visual Data Preparation Interface
     description: Interactive visual interface to explore and transform data without writing code.
   - name: Recipe-Based Transformations
-    description: Save transformation steps as reusable recipes that can be versioned and shared across teams.
+    description: Save transformation steps as reusable recipes that can be versioned and shared across
+      teams.
   - name: Data Profiling
     description: Automatically profile datasets to understand data quality, distribution, and statistics.
   - name: Data Quality Rules
