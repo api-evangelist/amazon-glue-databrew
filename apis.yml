@@ -102,32 +102,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-- aid: amazon-glue-databrew:amazon-glue-databrew-profilejobs-api
-  name: Amazon Glue DataBrew ProfileJobs API
-  description: The ProfileJobs API from Amazon Glue DataBrew — 2 operation(s) for profilejobs.
-  humanURL: https://aws.amazon.com/glue/features/databrew/
-  baseURL: https://databrew.amazonaws.com
-  tags:
-  - ProfileJobs
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-glue-databrew-profilejobs-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/glue/features/databrew/
-  - type: Pricing
-    url: https://aws.amazon.com/glue/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/glue/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/glue-databrew-dataset-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-glue-databrew-context.jsonld
 - aid: amazon-glue-databrew:amazon-glue-databrew-projects-api
   name: Amazon Glue DataBrew Projects API
   description: The Projects API from Amazon Glue DataBrew — 4 operation(s) for projects.
@@ -140,32 +114,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-glue-databrew-projects-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/glue/features/databrew/
-  - type: Pricing
-    url: https://aws.amazon.com/glue/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/glue/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/glue-databrew-dataset-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-glue-databrew-context.jsonld
-- aid: amazon-glue-databrew:amazon-glue-databrew-recipejobs-api
-  name: Amazon Glue DataBrew RecipeJobs API
-  description: The RecipeJobs API from Amazon Glue DataBrew — 2 operation(s) for recipejobs.
-  humanURL: https://aws.amazon.com/glue/features/databrew/
-  baseURL: https://databrew.amazonaws.com
-  tags:
-  - RecipeJobs
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-glue-databrew-recipejobs-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
   - type: GettingStarted
@@ -210,7 +158,8 @@ apis:
     url: json-ld/amazon-glue-databrew-context.jsonld
 - aid: amazon-glue-databrew:amazon-glue-databrew-recipeversions-name-api
   name: Amazon Glue DataBrew RecipeVersions#name API
-  description: The RecipeVersions#name API from Amazon Glue DataBrew — 1 operation(s) for recipeversions#name.
+  description: >-
+    The RecipeVersions#name API from Amazon Glue DataBrew — 1 operation(s) for recipeversions#name.
   humanURL: https://aws.amazon.com/glue/features/databrew/
   baseURL: https://databrew.amazonaws.com
   tags:
@@ -296,6 +245,58 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-glue-databrew-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/glue/features/databrew/
+  - type: Pricing
+    url: https://aws.amazon.com/glue/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/glue/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONSchema
+    url: json-schema/glue-databrew-dataset-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-glue-databrew-context.jsonld
+- aid: amazon-glue-databrew:amazon-glue-databrew-profile-jobs-api
+  name: Amazon Glue DataBrew Profile Jobs API
+  description: The Profile Jobs API from Amazon Glue DataBrew — 2 operation(s) for profile jobs.
+  humanURL: https://aws.amazon.com/glue/features/databrew/
+  baseURL: https://databrew.amazonaws.com
+  tags:
+  - Profile Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-glue-databrew-profile-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/glue/features/databrew/
+  - type: Pricing
+    url: https://aws.amazon.com/glue/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/glue/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONSchema
+    url: json-schema/glue-databrew-dataset-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-glue-databrew-context.jsonld
+- aid: amazon-glue-databrew:amazon-glue-databrew-recipe-jobs-api
+  name: Amazon Glue DataBrew Recipe Jobs API
+  description: The Recipe Jobs API from Amazon Glue DataBrew — 2 operation(s) for recipe jobs.
+  humanURL: https://aws.amazon.com/glue/features/databrew/
+  baseURL: https://databrew.amazonaws.com
+  tags:
+  - Recipe Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-glue-databrew-recipe-jobs-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
   - type: GettingStarted
