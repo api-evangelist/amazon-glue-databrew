@@ -215,6 +215,8 @@ apis:
   humanURL: https://aws.amazon.com/glue/features/databrew/
   baseURL: https://databrew.amazonaws.com
   tags:
+  - Schedule
+  tags_raw:
   - Schedules
   properties:
   - type: OpenAPI
