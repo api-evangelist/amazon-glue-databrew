@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-07-25
   x-release: v4
-  title: AWS Glue DataBrew Datasets Tags API
+  title: AWS Glue DataBrew Tags API
   description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/databrew-2017-07-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: ListTagsForResource
-      description: 'Lists all the tags for a DataBrew resource. '
+      description: Lists all the tags for a DataBrew resource.
       responses:
         '200':
           description: Success
@@ -361,20 +362,26 @@ paths:
       - Tags
 components:
   parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -397,17 +404,7 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
     ValidationException: {}
     ListTagsForResourceResponse:
       type: object
@@ -416,23 +413,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: A list of tags associated with the DataBrew resource.
-    InternalServerException: {}
     TagResourceResponse:
       type: object
       properties: {}
+    InternalServerException: {}
     ResourceNotFoundException: {}
+    TagValue:
+      type: string
+      maxLength: 256
     UntagResourceResponse:
       type: object
       properties: {}
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 200
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    TagValue:
-      type: string
-      maxLength: 256
   securitySchemes:
     hmac:
       type: apiKey

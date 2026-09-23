@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-07-25
   x-release: v4
-  title: AWS Glue DataBrew Datasets Profile Jobs API
+  title: AWS Glue DataBrew Profile Jobs API
   description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/databrew-2017-07-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: ProfileJobs
+- name: Profile Jobs
 paths:
   /profileJobs:
     parameters:
@@ -321,7 +322,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - ProfileJobs
+      - Profile Jobs
   /profileJobs/{name}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -494,178 +495,19 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - ProfileJobs
+      - Profile Jobs
 components:
   schemas:
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    ColumnSelector:
-      type: object
-      properties:
-        Regex:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: A regular expression for selecting a column from a dataset.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The name of a column from a dataset.
-      description: Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.
-    StatisticsConfiguration:
-      type: object
-      properties:
-        IncludedStatistics:
-          allOf:
-          - $ref: '#/components/schemas/StatisticList'
-          - description: List of included evaluations. When the list is undefined, all supported evaluations will be included.
-        Overrides:
-          allOf:
-          - $ref: '#/components/schemas/StatisticOverrideList'
-          - description: List of overrides for evaluations.
-      description: 'Configuration of evaluations for a profile job. This configuration can be used to select evaluations and override the parameters of selected evaluations. '
-    ConflictException: {}
-    JobName:
-      type: string
-      minLength: 1
-      maxLength: 240
     ColumnSelectorList:
       type: array
       items:
         $ref: '#/components/schemas/ColumnSelector'
-      minItems: 1
-    ValidationMode:
-      type: string
-      enum:
-      - CHECK_ALL
-    Key:
-      type: string
-      minLength: 1
-      maxLength: 1280
-    StatisticOverrideList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StatisticOverride'
-      minItems: 1
-    EntityDetectorConfiguration:
-      type: object
-      required:
-      - EntityTypes
-      properties:
-        EntityTypes:
-          allOf:
-          - $ref: '#/components/schemas/EntityTypeList'
-          - description: <p>Entity types to detect. Can be any of the following:</p> <ul> <li> <p>USA_SSN</p> </li> <li> <p>EMAIL</p> </li> <li> <p>USA_ITIN</p> </li> <li> <p>USA_PASSPORT_NUMBER</p> </li> <li> <p>PHONE_NUMBER</p> </li> <li> <p>USA_DRIVING_LICENSE</p> </li> <li> <p>BANK_ACCOUNT</p> </li> <li> <p>CREDIT_CARD</p> </li> <li> <p>IP_ADDRESS</p> </li> <li> <p>MAC_ADDRESS</p> </li> <li> <p>USA_DEA_NUMBER</p> </li> <li> <p>USA_HCPCS_CODE</p> </li> <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li> <li> <p>USA_NATIONAL_DRUG_CODE</p> </li> <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li> <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li> <li> <p>USA_CPT_CODE</p> </li> <li> <p>PERSON_NAME</p> </li> <li> <p>DATE</p> </li> </ul> <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-        AllowedStatistics:
-          allOf:
-          - $ref: '#/components/schemas/AllowedStatisticList'
-          - description: Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.
-      description: Configuration of entity detection for a profile job. When undefined, entity detection is disabled.
-    ServiceQuotaExceededException: {}
-    BucketOwner:
-      type: string
-      pattern: ^[0-9]{12}$
-      minLength: 12
-      maxLength: 12
-    ResourceNotFoundException: {}
-    ColumnStatisticsConfiguration:
-      type: object
-      required:
-      - Statistics
-      properties:
-        Selectors:
-          allOf:
-          - $ref: '#/components/schemas/ColumnSelectorList'
-          - description: 'List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. '
-        Statistics:
-          allOf:
-          - $ref: '#/components/schemas/StatisticsConfiguration'
-          - description: 'Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. '
-      description: 'Configuration for column evaluations for a profile job. ColumnStatisticsConfiguration can be used to select evaluations and override parameters of evaluations for particular columns. '
-    SampleMode:
-      type: string
-      enum:
-      - FULL_DATASET
-      - CUSTOM_ROWS
-    EntityType:
-      type: string
-      pattern: ^[A-Z_][A-Z\\d_]*$
-      minLength: 1
-      maxLength: 128
-    Statistic:
-      type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
-    JobSize:
-      type: integer
-    ParameterMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ParameterValue'
-    ParameterValue:
-      type: string
-      minLength: 1
-      maxLength: 32768
-    ColumnStatisticsConfigurationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnStatisticsConfiguration'
-      minItems: 1
-    ColumnName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    AllowedStatistics:
-      type: object
-      required:
-      - Statistics
-      properties:
-        Statistics:
-          allOf:
-          - $ref: '#/components/schemas/StatisticList'
-          - description: One or more column statistics to allow for columns that contain detected entities.
-      description: Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.
-    CreateProfileJobResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/JobName'
-          - description: The name of the job that was created.
-    AccessDeniedException: {}
-    UpdateProfileJobResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/JobName'
-          - description: The name of the job that was updated.
-    EntityTypeList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EntityType'
-      minItems: 1
-    ValidationException: {}
-    StatisticList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Statistic'
       minItems: 1
     AllowedStatisticList:
       type: array
       items:
         $ref: '#/components/schemas/AllowedStatistics'
       minItems: 1
-    Bucket:
-      type: string
-      minLength: 3
-      maxLength: 63
     StatisticOverride:
       type: object
       required:
@@ -681,9 +523,108 @@ components:
           - $ref: '#/components/schemas/ParameterMap'
           - description: A map that includes overrides of an evaluation’s parameters.
       description: 'Override of a particular evaluation for a profile job. '
-    TagValue:
+    ValidationException: {}
+    JobSize:
+      type: integer
+    ColumnSelector:
+      type: object
+      properties:
+        Regex:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: A regular expression for selecting a column from a dataset.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of a column from a dataset.
+      description: Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.
+    ResourceNotFoundException: {}
+    EntityDetectorConfiguration:
+      type: object
+      required:
+      - EntityTypes
+      properties:
+        EntityTypes:
+          allOf:
+          - $ref: '#/components/schemas/EntityTypeList'
+          - description: <p>Entity types to detect. Can be any of the following:</p> <ul> <li> <p>USA_SSN</p> </li> <li> <p>EMAIL</p> </li> <li> <p>USA_ITIN</p> </li> <li> <p>USA_PASSPORT_NUMBER</p> </li> <li> <p>PHONE_NUMBER</p> </li> <li> <p>USA_DRIVING_LICENSE</p> </li> <li> <p>BANK_ACCOUNT</p> </li> <li> <p>CREDIT_CARD</p> </li> <li> <p>IP_ADDRESS</p> </li> <li> <p>MAC_ADDRESS</p> </li> <li> <p>USA_DEA_NUMBER</p> </li> <li> <p>USA_HCPCS_CODE</p> </li> <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li> <li> <p>USA_NATIONAL_DRUG_CODE</p> </li> <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li> <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li> <li> <p>USA_CPT_CODE</p> </li> <li> <p>PERSON_NAME</p> </li> <li> <p>DATE</p> </li> </ul> <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
+        AllowedStatistics:
+          allOf:
+          - $ref: '#/components/schemas/AllowedStatisticList'
+          - description: Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.
+      description: Configuration of entity detection for a profile job. When undefined, entity detection is disabled.
+    ValidationMode:
       type: string
-      maxLength: 256
+      enum:
+      - CHECK_ALL
+    AllowedStatistics:
+      type: object
+      required:
+      - Statistics
+      properties:
+        Statistics:
+          allOf:
+          - $ref: '#/components/schemas/StatisticList'
+          - description: One or more column statistics to allow for columns that contain detected entities.
+      description: Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.
+    SampleMode:
+      type: string
+      enum:
+      - FULL_DATASET
+      - CUSTOM_ROWS
+    StatisticOverrideList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StatisticOverride'
+      minItems: 1
+    StatisticsConfiguration:
+      type: object
+      properties:
+        IncludedStatistics:
+          allOf:
+          - $ref: '#/components/schemas/StatisticList'
+          - description: List of included evaluations. When the list is undefined, all supported evaluations will be included.
+        Overrides:
+          allOf:
+          - $ref: '#/components/schemas/StatisticOverrideList'
+          - description: List of overrides for evaluations.
+      description: 'Configuration of evaluations for a profile job. This configuration can be used to select evaluations and override the parameters of selected evaluations. '
+    CreateProfileJobResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/JobName'
+          - description: The name of the job that was created.
+    Key:
+      type: string
+      minLength: 1
+      maxLength: 1280
+    Statistic:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    ConflictException: {}
+    JobName:
+      type: string
+      minLength: 1
+      maxLength: 240
+    ColumnName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    EntityTypeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EntityType'
+      minItems: 1
     ValidationConfiguration:
       type: object
       required:
@@ -698,27 +639,69 @@ components:
           - $ref: '#/components/schemas/ValidationMode'
           - description: Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.
       description: Configuration for data quality validation. Used to select the Rulesets and Validation Mode to be used in the profile job. When ValidationConfiguration is null, the profile job will run without data quality validation.
+    Bucket:
+      type: string
+      minLength: 3
+      maxLength: 63
+    ColumnStatisticsConfigurationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnStatisticsConfiguration'
+      minItems: 1
+    BucketOwner:
+      type: string
+      pattern: ^[0-9]{12}$
+      minLength: 12
+      maxLength: 12
+    ServiceQuotaExceededException: {}
+    ParameterValue:
+      type: string
+      minLength: 1
+      maxLength: 32768
+    ParameterMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParameterValue'
+    ColumnStatisticsConfiguration:
+      type: object
+      required:
+      - Statistics
+      properties:
+        Selectors:
+          allOf:
+          - $ref: '#/components/schemas/ColumnSelectorList'
+          - description: 'List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. '
+        Statistics:
+          allOf:
+          - $ref: '#/components/schemas/StatisticsConfiguration'
+          - description: 'Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. '
+      description: 'Configuration for column evaluations for a profile job. ColumnStatisticsConfiguration can be used to select evaluations and override parameters of evaluations for particular columns. '
+    EntityType:
+      type: string
+      pattern: ^[A-Z_][A-Z\\d_]*$
+      minLength: 1
+      maxLength: 128
+    StatisticList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Statistic'
+      minItems: 1
+    TagValue:
+      type: string
+      maxLength: 256
+    UpdateProfileJobResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/JobName'
+          - description: The name of the job that was updated.
+    AccessDeniedException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -735,8 +718,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

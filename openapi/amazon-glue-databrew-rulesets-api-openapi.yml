@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-07-25
   x-release: v4
-  title: AWS Glue DataBrew Datasets Rulesets API
+  title: AWS Glue DataBrew Rulesets API
   description: Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/databrew-2017-07-25.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -510,6 +511,12 @@ paths:
       - Rulesets
 components:
   schemas:
+    ColumnSelectorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnSelector'
+      minItems: 1
+    ValidationException: {}
     ColumnSelector:
       type: object
       properties:
@@ -522,50 +529,45 @@ components:
           - $ref: '#/components/schemas/ColumnName'
           - description: The name of a column from a dataset.
       description: Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.
-    Arn:
+    ThresholdValue:
+      type: number
+      format: double
+      minimum: 0
+    ThresholdType:
       type: string
-      minLength: 20
-      maxLength: 2048
-    ConflictException: {}
+      enum:
+      - GREATER_THAN_OR_EQUAL
+      - LESS_THAN_OR_EQUAL
+      - GREATER_THAN
+      - LESS_THAN
+    LastModifiedBy:
+      type: string
+    ResourceNotFoundException: {}
+    Disabled:
+      type: boolean
+    Threshold:
+      type: object
+      required:
+      - Value
+      properties:
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ThresholdValue'
+          - description: The value of a threshold.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ThresholdType'
+          - description: The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.
+        Unit:
+          allOf:
+          - $ref: '#/components/schemas/ThresholdUnit'
+          - description: Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.
+      description: The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.
     RuleList:
       type: array
       items:
         $ref: '#/components/schemas/Rule'
       minItems: 1
-    ColumnSelectorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnSelector'
-      minItems: 1
-    ValuesMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ConditionValue'
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    Expression:
-      type: string
-      pattern: ^[<>0-9A-Za-z_.,:)(!= ]+$
-      minLength: 4
-      maxLength: 1024
-    ServiceQuotaExceededException: {}
-    ListRulesetsResponse:
-      type: object
-      required:
-      - Rulesets
-      properties:
-        Rulesets:
-          allOf:
-          - $ref: '#/components/schemas/RulesetItemList'
-          - description: A list of RulesetItem. RulesetItem contains meta data of a ruleset.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token that you can use in a subsequent call to retrieve the next set of results.
     UpdateRulesetResponse:
       type: object
       required:
@@ -575,18 +577,34 @@ components:
           allOf:
           - $ref: '#/components/schemas/RulesetName'
           - description: The name of the updated ruleset.
-    RulesetDescription:
-      type: string
-      maxLength: 1024
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2000
     RulesetItemList:
       type: array
       items:
         $ref: '#/components/schemas/RulesetItem'
-    ResourceNotFoundException: {}
+    CreateRulesetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The unique name of the created ruleset.
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    ConflictException: {}
+    CreatedBy:
+      type: string
+    ColumnName:
+      type: string
+      minLength: 1
+      maxLength: 255
     DescribeRulesetResponse:
       type: object
       required:
@@ -632,6 +650,49 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: Metadata tags that have been applied to the ruleset.
+    ValuesMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ConditionValue'
+    Expression:
+      type: string
+      pattern: ^[<>0-9A-Za-z_.,:)(!= ]+$
+      minLength: 4
+      maxLength: 1024
+    Date:
+      type: string
+      format: date-time
+    RulesetDescription:
+      type: string
+      maxLength: 1024
+    ServiceQuotaExceededException: {}
+    ThresholdUnit:
+      type: string
+      enum:
+      - COUNT
+      - PERCENTAGE
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    ListRulesetsResponse:
+      type: object
+      required:
+      - Rulesets
+      properties:
+        Rulesets:
+          allOf:
+          - $ref: '#/components/schemas/RulesetItemList'
+          - description: A list of RulesetItem. RulesetItem contains meta data of a ruleset.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    RuleCount:
+      type: integer
+      minimum: 0
     RulesetItem:
       type: object
       required:
@@ -714,39 +775,9 @@ components:
           - $ref: '#/components/schemas/ColumnSelectorList'
           - description: List of column selectors. Selectors can be used to select columns using a name or regular expression from the dataset. Rule will be applied to selected columns.
       description: Represents a single data quality requirement that should be validated in the scope of this dataset.
-    CreateRulesetResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/RulesetName'
-          - description: The unique name of the created ruleset.
-    ConditionValue:
+    TagValue:
       type: string
-      maxLength: 1024
-    ThresholdUnit:
-      type: string
-      enum:
-      - COUNT
-      - PERCENTAGE
-    Date:
-      type: string
-      format: date-time
-    LastModifiedBy:
-      type: string
-    CreatedBy:
-      type: string
-    AccountId:
-      type: string
-      maxLength: 255
-    Disabled:
-      type: boolean
-    ColumnName:
-      type: string
-      minLength: 1
-      maxLength: 255
+      maxLength: 256
     DeleteRulesetResponse:
       type: object
       required:
@@ -756,71 +787,23 @@ components:
           allOf:
           - $ref: '#/components/schemas/RulesetName'
           - description: The name of the deleted ruleset.
-    Threshold:
-      type: object
-      required:
-      - Value
-      properties:
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/ThresholdValue'
-          - description: The value of a threshold.
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/ThresholdType'
-          - description: The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.
-        Unit:
-          allOf:
-          - $ref: '#/components/schemas/ThresholdUnit'
-          - description: Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.
-      description: The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.
-    ThresholdType:
-      type: string
-      enum:
-      - GREATER_THAN_OR_EQUAL
-      - LESS_THAN_OR_EQUAL
-      - GREATER_THAN
-      - LESS_THAN
-    ValidationException: {}
     RulesetName:
       type: string
       minLength: 1
       maxLength: 255
-    ThresholdValue:
-      type: number
-      format: double
-      minimum: 0
-    RuleCount:
-      type: integer
-      minimum: 0
-    TagValue:
+    AccountId:
       type: string
-      maxLength: 256
+      maxLength: 255
+    ConditionValue:
+      type: string
+      maxLength: 1024
     RuleName:
       type: string
       minLength: 1
       maxLength: 128
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -833,6 +816,24 @@ components:
       required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
