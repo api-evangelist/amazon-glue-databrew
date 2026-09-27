@@ -36,13 +36,14 @@ tags:
 - Data Analytics
 - Data Preparation
 - ETL
-- Machine-Learning
+- Machine Learning
 tags_raw:
 - AWS
 - Data Analytics
 - Data Preparation
 - ETL
 - Machine Learning
+- Machine-Learning
 url: https://raw.githubusercontent.com/api-evangelist/amazon-glue-databrew/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-09-16'
@@ -156,33 +157,6 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
-- aid: amazon-glue-databrew:amazon-glue-databrew-recipeversions-name-api
-  name: Amazon Glue DataBrew RecipeVersions#name API
-  description: >-
-    The RecipeVersions#name API from Amazon Glue DataBrew — 1 operation(s) for recipeversions#name.
-  humanURL: https://aws.amazon.com/glue/features/databrew/
-  baseURL: https://databrew.amazonaws.com
-  tags:
-  - RecipeVersions#name
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-glue-databrew-recipeversions-name-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/glue/features/databrew/
-  - type: Pricing
-    url: https://aws.amazon.com/glue/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/glue/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/glue-databrew-dataset-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-glue-databrew-context.jsonld
 - aid: amazon-glue-databrew:amazon-glue-databrew-rulesets-api
   name: Amazon Glue DataBrew Rulesets API
   description: The Rulesets API from Amazon Glue DataBrew — 2 operation(s) for rulesets.
@@ -263,6 +237,32 @@ apis:
     url: json-schema/glue-databrew-dataset-schema.json
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
+- aid: amazon-glue-databrew:amazon-glue-databrew-recipeversions-api
+  name: Amazon Glue DataBrew Recipe Versions API
+  description: The RecipeVersions API from Amazon Glue DataBrew — 1 operation(s) for recipeversions.
+  humanURL: https://aws.amazon.com/glue/features/databrew/
+  baseURL: https://databrew.amazonaws.com
+  tags:
+  - RecipeVersions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-glue-databrew-recipeversions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/glue/features/databrew/
+  - type: Pricing
+    url: https://aws.amazon.com/glue/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/glue/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/databrew/latest/dg/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONSchema
+    url: json-schema/glue-databrew-dataset-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-glue-databrew-context.jsonld
 - aid: amazon-glue-databrew:amazon-glue-databrew-profile-jobs-api
   name: Amazon Glue DataBrew Profile Jobs API
   description: The Profile Jobs API from Amazon Glue DataBrew — 2 operation(s) for profile jobs.
@@ -317,7 +317,7 @@ apis:
     url: json-ld/amazon-glue-databrew-context.jsonld
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/glue/features/databrew/
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-glue-databrew/overview
 - type: AgenticAccess
@@ -409,5 +409,5 @@ integrations:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product

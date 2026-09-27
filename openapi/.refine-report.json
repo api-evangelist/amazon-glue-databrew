@@ -9,14 +9,14 @@
     "amazon-glue-databrew-profilejobs-api-openapi.yml",
     "amazon-glue-databrew-projects-api-openapi.yml",
     "amazon-glue-databrew-recipejobs-api-openapi.yml",
-    "amazon-glue-databrew-recipeversions-name-api-openapi.yml",
+    "amazon-glue-databrew-recipeversions-api-openapi.yml",
     "amazon-glue-databrew-recipes-api-openapi.yml",
     "amazon-glue-databrew-rulesets-api-openapi.yml",
     "amazon-glue-databrew-schedules-api-openapi.yml",
     "amazon-glue-databrew-tags-api-openapi.yml"
   ],
   "archived": [
-    "deleted 2 superseded output(s) from the previous generation"
+    "deleted 3 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
@@ -56,7 +56,7 @@
     "amazon-glue-databrew-openapi.yaml: tagged paths PUT /recipes/{name} -> Recipes",
     "amazon-glue-databrew-openapi.yaml: tagged paths GET /jobs/{name}/jobRuns -> Jobs",
     "amazon-glue-databrew-openapi.yaml: tagged paths GET /jobs -> Jobs",
-    "amazon-glue-databrew-openapi.yaml: tagged paths GET /recipeVersions#name -> RecipeVersions#name",
+    "amazon-glue-databrew-openapi.yaml: tagged paths GET /recipeVersions#name -> RecipeVersions",
     "amazon-glue-databrew-openapi.yaml: tagged paths GET /tags/{ResourceArn} -> Tags",
     "amazon-glue-databrew-openapi.yaml: tagged paths POST /tags/{ResourceArn} -> Tags",
     "amazon-glue-databrew-openapi.yaml: tagged paths POST /recipes/{name}/publishRecipe -> Recipes",
@@ -72,13 +72,13 @@
     "amazon-glue-databrew-openapi.yaml: declared missing tag: ProfileJobs",
     "amazon-glue-databrew-openapi.yaml: declared missing tag: Projects",
     "amazon-glue-databrew-openapi.yaml: declared missing tag: RecipeJobs",
-    "amazon-glue-databrew-openapi.yaml: declared missing tag: RecipeVersions#name",
+    "amazon-glue-databrew-openapi.yaml: declared missing tag: RecipeVersions",
     "amazon-glue-databrew-openapi.yaml: declared missing tag: Recipes",
     "amazon-glue-databrew-openapi.yaml: declared missing tag: Rulesets",
     "amazon-glue-databrew-openapi.yaml: declared missing tag: Schedules",
     "amazon-glue-databrew-openapi.yaml: declared missing tag: Tags",
-    "superseded outputs removed: amazon-glue-databrew-profile-jobs-api-openapi.yml, amazon-glue-databrew-recipe-jobs-api-openapi.yml",
-    "apis.yml register: written (+2 apis, 10 total)"
+    "superseded outputs removed: amazon-glue-databrew-profile-jobs-api-openapi.yml, amazon-glue-databrew-recipe-jobs-api-openapi.yml, amazon-glue-databrew-recipeversions-name-api-openapi.yml",
+    "apis.yml register: written (+3 apis, 10 total)"
   ],
   "skipped": [
     "amazon-glue-databrew-datasets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
