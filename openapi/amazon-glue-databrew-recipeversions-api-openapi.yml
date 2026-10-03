@@ -196,11 +196,81 @@ paths:
       tags:
       - RecipeVersions
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    RecipeName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    LastModifiedBy:
+      type: string
     ProjectName:
       type: string
       minLength: 1
       maxLength: 255
+    TargetColumn:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    ConditionExpressionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConditionExpression'
+    Date:
+      type: string
+      format: date-time
+    RecipeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Recipe'
     ListRecipeVersionsResponse:
       type: object
       required:
@@ -214,10 +284,46 @@ components:
           allOf:
           - $ref: '#/components/schemas/RecipeList'
           - description: A list of versions for the specified recipe.
+    ValidationException: {}
+    RecipeVersion:
+      type: string
+      minLength: 1
+      maxLength: 16
+    RecipeStep:
+      type: object
+      required:
+      - Action
+      properties:
+        Action:
+          allOf:
+          - $ref: '#/components/schemas/RecipeAction'
+          - description: The particular action to be performed in the recipe step.
+        ConditionExpressions:
+          allOf:
+          - $ref: '#/components/schemas/ConditionExpressionList'
+          - description: <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>
+      description: Represents a single step from a DataBrew recipe to be performed.
+    CreatedBy:
+      type: string
+    TagValue:
+      type: string
+      maxLength: 256
+    ParameterMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParameterValue'
+    Operation:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
     NextToken:
       type: string
       minLength: 1
       maxLength: 2000
+    RecipeDescription:
+      type: string
+      maxLength: 1024
     PublishedBy:
       type: string
     Condition:
@@ -225,17 +331,14 @@ components:
       pattern: ^[A-Z\_]+$
       minLength: 1
       maxLength: 128
-    RecipeList:
+    RecipeStepList:
       type: array
       items:
-        $ref: '#/components/schemas/Recipe'
-    TargetColumn:
+        $ref: '#/components/schemas/RecipeStep'
+    Arn:
       type: string
-      minLength: 1
-      maxLength: 1024
-    CreatedBy:
-      type: string
-    ValidationException: {}
+      minLength: 20
+      maxLength: 2048
     RecipeAction:
       type: object
       required:
@@ -250,6 +353,25 @@ components:
           - $ref: '#/components/schemas/ParameterMap'
           - description: Contextual parameters for the transformation.
       description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
+    ConditionExpression:
+      type: object
+      required:
+      - Condition
+      - TargetColumn
+      properties:
+        Condition:
+          allOf:
+          - $ref: '#/components/schemas/Condition'
+          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ConditionValue'
+          - description: A value that the condition must evaluate to for the condition to succeed.
+        TargetColumn:
+          allOf:
+          - $ref: '#/components/schemas/TargetColumn'
+          - description: A column to apply this condition to.
+      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
     ParameterValue:
       type: string
       minLength: 1
@@ -315,128 +437,6 @@ components:
     ConditionValue:
       type: string
       maxLength: 1024
-    RecipeStepList:
-      type: array
-      items:
-        $ref: '#/components/schemas/RecipeStep'
-    Date:
-      type: string
-      format: date-time
-    RecipeVersion:
-      type: string
-      minLength: 1
-      maxLength: 16
-    ParameterMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ParameterValue'
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    ConditionExpression:
-      type: object
-      required:
-      - Condition
-      - TargetColumn
-      properties:
-        Condition:
-          allOf:
-          - $ref: '#/components/schemas/Condition'
-          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/ConditionValue'
-          - description: A value that the condition must evaluate to for the condition to succeed.
-        TargetColumn:
-          allOf:
-          - $ref: '#/components/schemas/TargetColumn'
-          - description: A column to apply this condition to.
-      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    LastModifiedBy:
-      type: string
-    ConditionExpressionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConditionExpression'
-    RecipeName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    TagValue:
-      type: string
-      maxLength: 256
-    Operation:
-      type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
-    RecipeDescription:
-      type: string
-      maxLength: 1024
-    RecipeStep:
-      type: object
-      required:
-      - Action
-      properties:
-        Action:
-          allOf:
-          - $ref: '#/components/schemas/RecipeAction'
-          - description: The particular action to be performed in the recipe step.
-        ConditionExpressions:
-          allOf:
-          - $ref: '#/components/schemas/ConditionExpressionList'
-          - description: <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>
-      description: Represents a single step from a DataBrew recipe to be performed.
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

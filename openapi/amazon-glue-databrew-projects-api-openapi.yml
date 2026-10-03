@@ -758,173 +758,20 @@ paths:
       - Projects
 components:
   schemas:
-    ProjectName:
+    HiddenColumnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnName'
+    RecipeName:
       type: string
       minLength: 1
       maxLength: 255
-    ColumnRange:
-      type: integer
-      minimum: 0
-      maximum: 20
-    DescribeProjectResponse:
+    TagMap:
       type: object
-      required:
-      - Name
-      properties:
-        CreateDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the project was created.
-        CreatedBy:
-          allOf:
-          - $ref: '#/components/schemas/CreatedBy'
-          - description: The identifier (user name) of the user who created the project.
-        DatasetName:
-          allOf:
-          - $ref: '#/components/schemas/DatasetName'
-          - description: The dataset associated with the project.
-        LastModifiedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the project was last modified.
-        LastModifiedBy:
-          allOf:
-          - $ref: '#/components/schemas/LastModifiedBy'
-          - description: The identifier (user name) of the user who last modified the project.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project.
-        RecipeName:
-          allOf:
-          - $ref: '#/components/schemas/RecipeName'
-          - description: The recipe associated with this job.
-        ResourceArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the project.
-        Sample:
-          $ref: '#/components/schemas/Sample'
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: Metadata tags associated with this project.
-        SessionStatus:
-          allOf:
-          - $ref: '#/components/schemas/SessionStatus'
-          - description: <p>Describes the current state of the session:</p> <ul> <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li> <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li> <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li> </ul>
-        OpenedBy:
-          allOf:
-          - $ref: '#/components/schemas/OpenedBy'
-          - description: 'The identifier (user name) of the user that opened the project for use. '
-        OpenDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: 'The date and time when the project was opened. '
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2000
-    Condition:
-      type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
-    CreateProjectResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project that you created.
-    TargetColumn:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    StartRowIndex:
-      type: integer
-      minimum: 0
-    CreatedBy:
-      type: string
-    ColumnName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    ValidationException: {}
-    RecipeAction:
-      type: object
-      required:
-      - Operation
-      properties:
-        Operation:
-          allOf:
-          - $ref: '#/components/schemas/Operation'
-          - description: The name of a valid DataBrew transformation to be performed on the data.
-        Parameters:
-          allOf:
-          - $ref: '#/components/schemas/ParameterMap'
-          - description: Contextual parameters for the transformation.
-      description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
-    ParameterValue:
-      type: string
-      minLength: 1
-      maxLength: 32768
-    AnalyticsMode:
-      type: string
-      enum:
-      - ENABLE
-      - DISABLE
-    SessionStatus:
-      type: string
-      enum:
-      - ASSIGNED
-      - FAILED
-      - INITIALIZING
-      - PROVISIONING
-      - READY
-      - RECYCLING
-      - ROTATING
-      - TERMINATED
-      - TERMINATING
-      - UPDATING
-    ConditionValue:
-      type: string
-      maxLength: 1024
-    UpdateProjectResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        LastModifiedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the project was last modified.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project that you updated.
-    ConflictException: {}
-    RowRange:
-      type: integer
-    StartColumnIndex:
-      type: integer
-      minimum: 0
-    InternalServerException: {}
-    DeleteProjectResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project that you deleted.
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
     StartProjectSessionResponse:
       type: object
       required:
@@ -938,43 +785,34 @@ components:
           allOf:
           - $ref: '#/components/schemas/ClientSessionId'
           - description: A system-generated identifier for the session.
-    DatasetName:
+    LastModifiedBy:
+      type: string
+    ProjectName:
       type: string
       minLength: 1
       maxLength: 255
-    Date:
+    ActionId:
+      type: integer
+    ConditionExpressionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConditionExpression'
+    TargetColumn:
       type: string
-      format: date-time
-    AccountId:
-      type: string
-      maxLength: 255
-    Result:
-      type: string
-    SampleType:
-      type: string
-      enum:
-      - FIRST_N
-      - LAST_N
-      - RANDOM
+      minLength: 1
+      maxLength: 1024
+    StartRowIndex:
+      type: integer
+      minimum: 0
     ClientSessionId:
       type: string
       pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]*$
       minLength: 1
       maxLength: 255
       format: password
-    ListProjectsResponse:
-      type: object
-      required:
-      - Projects
-      properties:
-        Projects:
-          allOf:
-          - $ref: '#/components/schemas/ProjectList'
-          - description: A list of projects that are defined .
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    Date:
+      type: string
+      format: date-time
     SendProjectSessionActionResponse:
       type: object
       required:
@@ -992,75 +830,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/ActionId'
           - description: A unique identifier for the action that was performed.
-    ParameterMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ParameterValue'
-    ServiceQuotaExceededException: {}
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    ConditionExpression:
+    CreateProjectResponse:
       type: object
       required:
-      - Condition
-      - TargetColumn
+      - Name
       properties:
-        Condition:
+        Name:
           allOf:
-          - $ref: '#/components/schemas/Condition'
-          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/ConditionValue'
-          - description: A value that the condition must evaluate to for the condition to succeed.
-        TargetColumn:
-          allOf:
-          - $ref: '#/components/schemas/TargetColumn'
-          - description: A column to apply this condition to.
-      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
-    OpenedBy:
-      type: string
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    ResourceNotFoundException: {}
-    SampleSize:
-      type: integer
-      minimum: 1
-      maximum: 5000
-    LastModifiedBy:
-      type: string
-    ConditionExpressionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConditionExpression'
-    Sample:
-      type: object
-      required:
-      - Type
-      properties:
-        Size:
-          allOf:
-          - $ref: '#/components/schemas/SampleSize'
-          - description: The number of rows in the sample.
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/SampleType'
-          - description: The way in which DataBrew obtains rows from a dataset.
-      description: Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
-    RecipeName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    ProjectList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Project'
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that you created.
     Project:
       type: object
       required:
@@ -1124,29 +902,251 @@ components:
           - $ref: '#/components/schemas/Date'
           - description: The date and time when the project was opened.
       description: Represents all of the attributes of a DataBrew project.
+    SampleType:
+      type: string
+      enum:
+      - FIRST_N
+      - LAST_N
+      - RANDOM
+    Sample:
+      type: object
+      required:
+      - Type
+      properties:
+        Size:
+          allOf:
+          - $ref: '#/components/schemas/SampleSize'
+          - description: The number of rows in the sample.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SampleType'
+          - description: The way in which DataBrew obtains rows from a dataset.
+      description: Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
+    UpdateProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the project was last modified.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that you updated.
+    DescribeProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the project was created.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The identifier (user name) of the user who created the project.
+        DatasetName:
+          allOf:
+          - $ref: '#/components/schemas/DatasetName'
+          - description: The dataset associated with the project.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the project was last modified.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The identifier (user name) of the user who last modified the project.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project.
+        RecipeName:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The recipe associated with this job.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the project.
+        Sample:
+          $ref: '#/components/schemas/Sample'
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags associated with this project.
+        SessionStatus:
+          allOf:
+          - $ref: '#/components/schemas/SessionStatus'
+          - description: <p>Describes the current state of the session:</p> <ul> <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li> <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li> <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li> </ul>
+        OpenedBy:
+          allOf:
+          - $ref: '#/components/schemas/OpenedBy'
+          - description: 'The identifier (user name) of the user that opened the project for use. '
+        OpenDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: 'The date and time when the project was opened. '
+    OpenedBy:
+      type: string
+    SampleSize:
+      type: integer
+      minimum: 1
+      maximum: 5000
+    ValidationException: {}
+    CreatedBy:
+      type: string
     TagValue:
       type: string
       maxLength: 256
-    HiddenColumnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnName'
-    ActionId:
+    ColumnRange:
       type: integer
+      minimum: 0
+      maximum: 20
+    ParameterMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParameterValue'
     Operation:
       type: string
       pattern: ^[A-Z\_]+$
       minLength: 1
       maxLength: 128
+    SessionStatus:
+      type: string
+      enum:
+      - ASSIGNED
+      - FAILED
+      - INITIALIZING
+      - PROVISIONING
+      - READY
+      - RECYCLING
+      - ROTATING
+      - TERMINATED
+      - TERMINATING
+      - UPDATING
+    InternalServerException: {}
+    StartColumnIndex:
+      type: integer
+      minimum: 0
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    ColumnName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    Condition:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    DatasetName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ProjectList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Project'
+    RowRange:
+      type: integer
+    RecipeAction:
+      type: object
+      required:
+      - Operation
+      properties:
+        Operation:
+          allOf:
+          - $ref: '#/components/schemas/Operation'
+          - description: The name of a valid DataBrew transformation to be performed on the data.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParameterMap'
+          - description: Contextual parameters for the transformation.
+      description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
+    ParameterValue:
+      type: string
+      minLength: 1
+      maxLength: 32768
+    ResourceNotFoundException: {}
+    ConditionExpression:
+      type: object
+      required:
+      - Condition
+      - TargetColumn
+      properties:
+        Condition:
+          allOf:
+          - $ref: '#/components/schemas/Condition'
+          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ConditionValue'
+          - description: A value that the condition must evaluate to for the condition to succeed.
+        TargetColumn:
+          allOf:
+          - $ref: '#/components/schemas/TargetColumn'
+          - description: A column to apply this condition to.
+      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
+    Result:
+      type: string
+    DeleteProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that you deleted.
+    ConditionValue:
+      type: string
+      maxLength: 1024
+    ListProjectsResponse:
+      type: object
+      required:
+      - Projects
+      properties:
+        Projects:
+          allOf:
+          - $ref: '#/components/schemas/ProjectList'
+          - description: A list of projects that are defined .
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    AnalyticsMode:
+      type: string
+      enum:
+      - ENABLE
+      - DISABLE
+    AccountId:
+      type: string
+      maxLength: 255
+    ServiceQuotaExceededException: {}
+    ConflictException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -1163,8 +1163,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -1175,8 +1175,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

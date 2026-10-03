@@ -495,23 +495,19 @@ paths:
       - Schedules
 components:
   schemas:
-    DeleteScheduleResponse:
+    ScheduleName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ConflictException: {}
+    TagMap:
       type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleName'
-          - description: The name of the schedule that was deleted.
-    CronExpression:
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    LastModifiedBy:
       type: string
-      minLength: 1
-      maxLength: 512
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2000
     UpdateScheduleResponse:
       type: object
       required:
@@ -521,6 +517,82 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScheduleName'
           - description: The name of the schedule that was updated.
+    Date:
+      type: string
+      format: date-time
+    ListSchedulesResponse:
+      type: object
+      required:
+      - Schedules
+      properties:
+        Schedules:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleList'
+          - description: A list of schedules that are defined.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    DescribeScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the schedule was created.
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: 'The identifier (user name) of the user who created the schedule. '
+        JobNames:
+          allOf:
+          - $ref: '#/components/schemas/JobNameList'
+          - description: The name or names of one or more jobs to be run by using the schedule.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The identifier (user name) of the user who last modified the schedule.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the schedule was last modified.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the schedule.
+        CronExpression:
+          allOf:
+          - $ref: '#/components/schemas/CronExpression'
+          - description: The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags associated with this schedule.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule.
+    ValidationException: {}
+    JobName:
+      type: string
+      minLength: 1
+      maxLength: 240
+    CreatedBy:
+      type: string
+    TagValue:
+      type: string
+      maxLength: 256
+    DeleteScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule that was deleted.
     Schedule:
       type: object
       required:
@@ -567,100 +639,6 @@ components:
           - $ref: '#/components/schemas/ScheduleName'
           - description: The name of the schedule.
       description: Represents one or more dates and times when a job is to run.
-    ScheduleList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Schedule'
-    CreatedBy:
-      type: string
-    ValidationException: {}
-    ScheduleName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    ConflictException: {}
-    DescribeScheduleResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        CreateDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the schedule was created.
-        CreatedBy:
-          allOf:
-          - $ref: '#/components/schemas/CreatedBy'
-          - description: 'The identifier (user name) of the user who created the schedule. '
-        JobNames:
-          allOf:
-          - $ref: '#/components/schemas/JobNameList'
-          - description: The name or names of one or more jobs to be run by using the schedule.
-        LastModifiedBy:
-          allOf:
-          - $ref: '#/components/schemas/LastModifiedBy'
-          - description: The identifier (user name) of the user who last modified the schedule.
-        LastModifiedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the schedule was last modified.
-        ResourceArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the schedule.
-        CronExpression:
-          allOf:
-          - $ref: '#/components/schemas/CronExpression'
-          - description: The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: Metadata tags associated with this schedule.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleName'
-          - description: The name of the schedule.
-    ListSchedulesResponse:
-      type: object
-      required:
-      - Schedules
-      properties:
-        Schedules:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleList'
-          - description: A list of schedules that are defined.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token that you can use in a subsequent call to retrieve the next set of results.
-    Date:
-      type: string
-      format: date-time
-    JobNameList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobName'
-      maxItems: 50
-    AccountId:
-      type: string
-      maxLength: 255
-    ServiceQuotaExceededException: {}
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    ResourceNotFoundException: {}
-    LastModifiedBy:
-      type: string
-    TagValue:
-      type: string
-      maxLength: 256
     CreateScheduleResponse:
       type: object
       required:
@@ -670,19 +648,41 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScheduleName'
           - description: The name of the schedule that was created.
-    JobName:
+    NextToken:
       type: string
       minLength: 1
-      maxLength: 240
+      maxLength: 2000
+    CronExpression:
+      type: string
+      minLength: 1
+      maxLength: 512
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    ResourceNotFoundException: {}
+    JobNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobName'
+      maxItems: 50
+    ScheduleList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Schedule'
+    AccountId:
+      type: string
+      maxLength: 255
+    ServiceQuotaExceededException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -699,14 +699,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

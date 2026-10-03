@@ -729,25 +729,6 @@ paths:
       - Recipes
 components:
   schemas:
-    RecipeErrorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/RecipeVersionErrorDetail'
-    RecipeErrorMessage:
-      type: string
-    BatchDeleteRecipeVersionResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/RecipeName'
-          - description: The name of the recipe that was modified.
-        Errors:
-          allOf:
-          - $ref: '#/components/schemas/RecipeErrorList'
-          - description: Errors, if any, that occurred while attempting to delete the recipe versions.
     ListRecipesResponse:
       type: object
       required:
@@ -761,30 +742,55 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: A token that you can use in a subsequent call to retrieve the next set of results.
-    UpdateRecipeResponse:
+    RecipeVersionErrorDetail:
       type: object
-      required:
-      - Name
       properties:
-        Name:
+        ErrorCode:
           allOf:
-          - $ref: '#/components/schemas/RecipeName'
-          - description: The name of the recipe that was updated.
+          - $ref: '#/components/schemas/ErrorCode'
+          - description: The HTTP status code for the error.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/RecipeErrorMessage'
+          - description: The text of the error message.
+        RecipeVersion:
+          allOf:
+          - $ref: '#/components/schemas/RecipeVersion'
+          - description: The identifier for the recipe version associated with this error.
+      description: Represents any errors encountered when attempting to delete multiple recipe versions.
+    RecipeName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    LastModifiedBy:
+      type: string
     ProjectName:
       type: string
       minLength: 1
       maxLength: 255
-    NextToken:
+    TargetColumn:
       type: string
       minLength: 1
-      maxLength: 2000
-    PublishedBy:
+      maxLength: 1024
+    ConditionExpressionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConditionExpression'
+    Date:
       type: string
-    Condition:
+      format: date-time
+    RecipeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Recipe'
+    RecipeErrorMessage:
       type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
     CreateRecipeResponse:
       type: object
       required:
@@ -794,20 +800,127 @@ components:
           allOf:
           - $ref: '#/components/schemas/RecipeName'
           - description: The name of the recipe that you created.
-    RecipeList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Recipe'
-    TargetColumn:
+    ValidationException: {}
+    DescribeRecipeResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        CreatedBy:
+          allOf:
+          - $ref: '#/components/schemas/CreatedBy'
+          - description: The identifier (user name) of the user who created the recipe.
+        CreateDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the recipe was created.
+        LastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/LastModifiedBy'
+          - description: The identifier (user name) of the user who last modified the recipe.
+        LastModifiedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time that the recipe was last modified.
+        ProjectName:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project associated with this recipe.
+        PublishedBy:
+          allOf:
+          - $ref: '#/components/schemas/PublishedBy'
+          - description: The identifier (user name) of the user who last published the recipe.
+        PublishedDate:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          - description: The date and time when the recipe was last published.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/RecipeDescription'
+          - description: The description of the recipe.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe.
+        Steps:
+          allOf:
+          - $ref: '#/components/schemas/RecipeStepList'
+          - description: One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Metadata tags associated with this project.
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the recipe.
+        RecipeVersion:
+          allOf:
+          - $ref: '#/components/schemas/RecipeVersion'
+          - description: The recipe version identifier.
+    RecipeVersion:
       type: string
       minLength: 1
-      maxLength: 1024
-    ErrorCode:
-      type: string
-      pattern: ^[1-5][0-9][0-9]$
+      maxLength: 16
+    RecipeStep:
+      type: object
+      required:
+      - Action
+      properties:
+        Action:
+          allOf:
+          - $ref: '#/components/schemas/RecipeAction'
+          - description: The particular action to be performed in the recipe step.
+        ConditionExpressions:
+          allOf:
+          - $ref: '#/components/schemas/ConditionExpressionList'
+          - description: <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>
+      description: Represents a single step from a DataBrew recipe to be performed.
     CreatedBy:
       type: string
-    ValidationException: {}
+    TagValue:
+      type: string
+      maxLength: 256
+    ParameterMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParameterValue'
+    Operation:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    UpdateRecipeResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe that was updated.
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    RecipeDescription:
+      type: string
+      maxLength: 1024
+    PublishedBy:
+      type: string
+    Condition:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    RecipeStepList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RecipeStep'
     RecipeAction:
       type: object
       required:
@@ -822,19 +935,30 @@ components:
           - $ref: '#/components/schemas/ParameterMap'
           - description: Contextual parameters for the transformation.
       description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
+    ConditionExpression:
+      type: object
+      required:
+      - Condition
+      - TargetColumn
+      properties:
+        Condition:
+          allOf:
+          - $ref: '#/components/schemas/Condition'
+          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ConditionValue'
+          - description: A value that the condition must evaluate to for the condition to succeed.
+        TargetColumn:
+          allOf:
+          - $ref: '#/components/schemas/TargetColumn'
+          - description: A column to apply this condition to.
+      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
     ParameterValue:
       type: string
       minLength: 1
       maxLength: 32768
-    PublishRecipeResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/RecipeName'
-          - description: The name of the recipe that you published.
+    ResourceNotFoundException: {}
     Recipe:
       type: object
       required:
@@ -893,77 +1017,6 @@ components:
           - $ref: '#/components/schemas/RecipeVersion'
           - description: <p>The identifier for the version for the recipe. Must be one of the following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> </ul>
       description: Represents one or more actions to be performed on a DataBrew dataset.
-    ConditionValue:
-      type: string
-      maxLength: 1024
-    ConflictException: {}
-    RecipeStepList:
-      type: array
-      items:
-        $ref: '#/components/schemas/RecipeStep'
-    Date:
-      type: string
-      format: date-time
-    RecipeVersion:
-      type: string
-      minLength: 1
-      maxLength: 16
-    ParameterMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ParameterValue'
-    ServiceQuotaExceededException: {}
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    ConditionExpression:
-      type: object
-      required:
-      - Condition
-      - TargetColumn
-      properties:
-        Condition:
-          allOf:
-          - $ref: '#/components/schemas/Condition'
-          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/ConditionValue'
-          - description: A value that the condition must evaluate to for the condition to succeed.
-        TargetColumn:
-          allOf:
-          - $ref: '#/components/schemas/TargetColumn'
-          - description: A column to apply this condition to.
-      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    ResourceNotFoundException: {}
-    LastModifiedBy:
-      type: string
-    ConditionExpressionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConditionExpression'
-    RecipeName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    TagValue:
-      type: string
-      maxLength: 256
-    Operation:
-      type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
-    RecipeDescription:
-      type: string
-      maxLength: 1024
     DeleteRecipeVersionResponse:
       type: object
       required:
@@ -978,102 +1031,49 @@ components:
           allOf:
           - $ref: '#/components/schemas/RecipeVersion'
           - description: The version of the recipe that was deleted.
-    RecipeStep:
-      type: object
-      required:
-      - Action
-      properties:
-        Action:
-          allOf:
-          - $ref: '#/components/schemas/RecipeAction'
-          - description: The particular action to be performed in the recipe step.
-        ConditionExpressions:
-          allOf:
-          - $ref: '#/components/schemas/ConditionExpressionList'
-          - description: <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>
-      description: Represents a single step from a DataBrew recipe to be performed.
-    DescribeRecipeResponse:
+    ConditionValue:
+      type: string
+      maxLength: 1024
+    BatchDeleteRecipeVersionResponse:
       type: object
       required:
       - Name
       properties:
-        CreatedBy:
-          allOf:
-          - $ref: '#/components/schemas/CreatedBy'
-          - description: The identifier (user name) of the user who created the recipe.
-        CreateDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the recipe was created.
-        LastModifiedBy:
-          allOf:
-          - $ref: '#/components/schemas/LastModifiedBy'
-          - description: The identifier (user name) of the user who last modified the recipe.
-        LastModifiedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time that the recipe was last modified.
-        ProjectName:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project associated with this recipe.
-        PublishedBy:
-          allOf:
-          - $ref: '#/components/schemas/PublishedBy'
-          - description: The identifier (user name) of the user who last published the recipe.
-        PublishedDate:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          - description: The date and time when the recipe was last published.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/RecipeDescription'
-          - description: The description of the recipe.
         Name:
           allOf:
           - $ref: '#/components/schemas/RecipeName'
-          - description: The name of the recipe.
-        Steps:
+          - description: The name of the recipe that was modified.
+        Errors:
           allOf:
-          - $ref: '#/components/schemas/RecipeStepList'
-          - description: One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: Metadata tags associated with this project.
-        ResourceArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the recipe.
-        RecipeVersion:
-          allOf:
-          - $ref: '#/components/schemas/RecipeVersion'
-          - description: The recipe version identifier.
-    RecipeVersionErrorDetail:
+          - $ref: '#/components/schemas/RecipeErrorList'
+          - description: Errors, if any, that occurred while attempting to delete the recipe versions.
+    PublishRecipeResponse:
       type: object
+      required:
+      - Name
       properties:
-        ErrorCode:
+        Name:
           allOf:
-          - $ref: '#/components/schemas/ErrorCode'
-          - description: The HTTP status code for the error.
-        ErrorMessage:
-          allOf:
-          - $ref: '#/components/schemas/RecipeErrorMessage'
-          - description: The text of the error message.
-        RecipeVersion:
-          allOf:
-          - $ref: '#/components/schemas/RecipeVersion'
-          - description: The identifier for the recipe version associated with this error.
-      description: Represents any errors encountered when attempting to delete multiple recipe versions.
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe that you published.
+    RecipeErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RecipeVersionErrorDetail'
+    ErrorCode:
+      type: string
+      pattern: ^[1-5][0-9][0-9]$
+    ServiceQuotaExceededException: {}
+    ConflictException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -1090,8 +1090,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -1102,8 +1102,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
