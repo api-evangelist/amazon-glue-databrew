@@ -316,6 +316,9 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-glue-databrew-capability-edges.yml
+  name: Amazon Glue DataBrew Business Capability Map
 - type: Website
   url: https://aws.amazon.com/glue/features/databrew/
 - type: PostmanWorkspace
