@@ -511,7 +511,105 @@ paths:
       - Rulesets
 components:
   schemas:
-    ConflictException: {}
+    ConditionValue:
+      type: string
+      maxLength: 1024
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    RulesetDescription:
+      type: string
+      maxLength: 1024
+    ThresholdValue:
+      type: number
+      format: double
+      minimum: 0
+    ThresholdType:
+      type: string
+      enum:
+      - GREATER_THAN_OR_EQUAL
+      - LESS_THAN_OR_EQUAL
+      - GREATER_THAN
+      - LESS_THAN
+    ColumnName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ColumnSelector:
+      type: object
+      properties:
+        Regex:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: A regular expression for selecting a column from a dataset.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ColumnName'
+          - description: The name of a column from a dataset.
+      description: Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.
+    DeleteRulesetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The name of the deleted ruleset.
+    AccountId:
+      type: string
+      maxLength: 255
+    ValuesMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ConditionValue'
+    RulesetItemList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RulesetItem'
+    RulesetName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    TagValue:
+      type: string
+      maxLength: 256
+    UpdateRulesetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The name of the updated ruleset.
+    ServiceQuotaExceededException: {}
+    CreateRulesetResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RulesetName'
+          - description: The unique name of the created ruleset.
+    ThresholdUnit:
+      type: string
+      enum:
+      - COUNT
+      - PERCENTAGE
+    LastModifiedBy:
+      type: string
+    ValidationException: {}
+    CreatedBy:
+      type: string
     Rule:
       type: object
       required:
@@ -543,62 +641,6 @@ components:
           - $ref: '#/components/schemas/ColumnSelectorList'
           - description: List of column selectors. Selectors can be used to select columns using a name or regular expression from the dataset. Rule will be applied to selected columns.
       description: Represents a single data quality requirement that should be validated in the scope of this dataset.
-    ListRulesetsResponse:
-      type: object
-      required:
-      - Rulesets
-      properties:
-        Rulesets:
-          allOf:
-          - $ref: '#/components/schemas/RulesetItemList'
-          - description: A list of RulesetItem. RulesetItem contains meta data of a ruleset.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token that you can use in a subsequent call to retrieve the next set of results.
-    RuleList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Rule'
-      minItems: 1
-    ThresholdUnit:
-      type: string
-      enum:
-      - COUNT
-      - PERCENTAGE
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    ColumnSelector:
-      type: object
-      properties:
-        Regex:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: A regular expression for selecting a column from a dataset.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ColumnName'
-          - description: The name of a column from a dataset.
-      description: Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.
-    LastModifiedBy:
-      type: string
-    Date:
-      type: string
-      format: date-time
-    RuleCount:
-      type: integer
-      minimum: 0
-    ThresholdType:
-      type: string
-      enum:
-      - GREATER_THAN_OR_EQUAL
-      - LESS_THAN_OR_EQUAL
-      - GREATER_THAN
-      - LESS_THAN
     RulesetItem:
       type: object
       required:
@@ -650,47 +692,44 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.
       description: Contains metadata about the ruleset.
-    RulesetItemList:
+    Date:
+      type: string
+      format: date-time
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    RuleList:
       type: array
       items:
-        $ref: '#/components/schemas/RulesetItem'
-    ValidationException: {}
-    CreateRulesetResponse:
+        $ref: '#/components/schemas/Rule'
+      minItems: 1
+    ListRulesetsResponse:
       type: object
       required:
-      - Name
+      - Rulesets
       properties:
-        Name:
+        Rulesets:
           allOf:
-          - $ref: '#/components/schemas/RulesetName'
-          - description: The unique name of the created ruleset.
-    ValuesMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ConditionValue'
-    DeleteRulesetResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
+          - $ref: '#/components/schemas/RulesetItemList'
+          - description: A list of RulesetItem. RulesetItem contains meta data of a ruleset.
+        NextToken:
           allOf:
-          - $ref: '#/components/schemas/RulesetName'
-          - description: The name of the deleted ruleset.
-    CreatedBy:
-      type: string
-    TagValue:
-      type: string
-      maxLength: 256
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    Disabled:
+      type: boolean
     ColumnSelectorList:
       type: array
       items:
         $ref: '#/components/schemas/ColumnSelector'
       minItems: 1
+    ConflictException: {}
     RuleName:
       type: string
       minLength: 1
       maxLength: 128
+    ResourceNotFoundException: {}
     DescribeRulesetResponse:
       type: object
       required:
@@ -736,40 +775,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: Metadata tags that have been applied to the ruleset.
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2000
-    ColumnName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    RulesetName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    Disabled:
-      type: boolean
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    ResourceNotFoundException: {}
-    ConditionValue:
-      type: string
-      maxLength: 1024
-    RulesetDescription:
-      type: string
-      maxLength: 1024
-    UpdateRulesetResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/RulesetName'
-          - description: The name of the updated ruleset.
     Expression:
       type: string
       pattern: ^[<>0-9A-Za-z_.,:)(!= ]+$
@@ -793,17 +798,36 @@ components:
           - $ref: '#/components/schemas/ThresholdUnit'
           - description: Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.
       description: The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.
-    ThresholdValue:
-      type: number
-      format: double
+    RuleCount:
+      type: integer
       minimum: 0
-    AccountId:
-      type: string
-      maxLength: 255
-    ServiceQuotaExceededException: {}
   parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -816,30 +840,6 @@ components:
       required: false
     X-Amz-Credential:
       name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

@@ -729,6 +729,9 @@ paths:
       - Recipes
 components:
   schemas:
+    ConditionValue:
+      type: string
+      maxLength: 1024
     ListRecipesResponse:
       type: object
       required:
@@ -742,6 +745,28 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    RecipeDescription:
+      type: string
+      maxLength: 1024
+    Operation:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    ParameterValue:
+      type: string
+      minLength: 1
+      maxLength: 32768
+    RecipeStepList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RecipeStep'
     RecipeVersionErrorDetail:
       type: object
       properties:
@@ -758,40 +783,42 @@ components:
           - $ref: '#/components/schemas/RecipeVersion'
           - description: The identifier for the recipe version associated with this error.
       description: Represents any errors encountered when attempting to delete multiple recipe versions.
-    RecipeName:
+    Condition:
       type: string
+      pattern: ^[A-Z\_]+$
       minLength: 1
-      maxLength: 255
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    LastModifiedBy:
-      type: string
-    ProjectName:
-      type: string
-      minLength: 1
-      maxLength: 255
+      maxLength: 128
     TargetColumn:
       type: string
       minLength: 1
       maxLength: 1024
-    ConditionExpressionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConditionExpression'
-    Date:
-      type: string
-      format: date-time
+    RecipeStep:
+      type: object
+      required:
+      - Action
+      properties:
+        Action:
+          allOf:
+          - $ref: '#/components/schemas/RecipeAction'
+          - description: The particular action to be performed in the recipe step.
+        ConditionExpressions:
+          allOf:
+          - $ref: '#/components/schemas/ConditionExpressionList'
+          - description: <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>
+      description: Represents a single step from a DataBrew recipe to be performed.
     RecipeList:
       type: array
       items:
         $ref: '#/components/schemas/Recipe'
-    RecipeErrorMessage:
+    Arn:
       type: string
-    CreateRecipeResponse:
+      minLength: 20
+      maxLength: 2048
+    TagValue:
+      type: string
+      maxLength: 256
+    ServiceQuotaExceededException: {}
+    PublishRecipeResponse:
       type: object
       required:
       - Name
@@ -799,8 +826,63 @@ components:
         Name:
           allOf:
           - $ref: '#/components/schemas/RecipeName'
-          - description: The name of the recipe that you created.
+          - description: The name of the recipe that you published.
+    ConditionExpression:
+      type: object
+      required:
+      - Condition
+      - TargetColumn
+      properties:
+        Condition:
+          allOf:
+          - $ref: '#/components/schemas/Condition'
+          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ConditionValue'
+          - description: A value that the condition must evaluate to for the condition to succeed.
+        TargetColumn:
+          allOf:
+          - $ref: '#/components/schemas/TargetColumn'
+          - description: A column to apply this condition to.
+      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
+    RecipeVersion:
+      type: string
+      minLength: 1
+      maxLength: 16
+    LastModifiedBy:
+      type: string
     ValidationException: {}
+    CreatedBy:
+      type: string
+    Date:
+      type: string
+      format: date-time
+    ParameterMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParameterValue'
+    RecipeAction:
+      type: object
+      required:
+      - Operation
+      properties:
+        Operation:
+          allOf:
+          - $ref: '#/components/schemas/Operation'
+          - description: The name of a valid DataBrew transformation to be performed on the data.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParameterMap'
+          - description: Contextual parameters for the transformation.
+      description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    ErrorCode:
+      type: string
+      pattern: ^[1-5][0-9][0-9]$
     DescribeRecipeResponse:
       type: object
       required:
@@ -858,39 +940,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/RecipeVersion'
           - description: The recipe version identifier.
-    RecipeVersion:
-      type: string
-      minLength: 1
-      maxLength: 16
-    RecipeStep:
-      type: object
-      required:
-      - Action
-      properties:
-        Action:
-          allOf:
-          - $ref: '#/components/schemas/RecipeAction'
-          - description: The particular action to be performed in the recipe step.
-        ConditionExpressions:
-          allOf:
-          - $ref: '#/components/schemas/ConditionExpressionList'
-          - description: <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> </note>
-      description: Represents a single step from a DataBrew recipe to be performed.
-    CreatedBy:
-      type: string
-    TagValue:
-      type: string
-      maxLength: 256
-    ParameterMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ParameterValue'
-    Operation:
-      type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
-    UpdateRecipeResponse:
+    CreateRecipeResponse:
       type: object
       required:
       - Name
@@ -898,66 +948,25 @@ components:
         Name:
           allOf:
           - $ref: '#/components/schemas/RecipeName'
-          - description: The name of the recipe that was updated.
-    NextToken:
+          - description: The name of the recipe that you created.
+    BatchDeleteRecipeVersionResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/RecipeName'
+          - description: The name of the recipe that was modified.
+        Errors:
+          allOf:
+          - $ref: '#/components/schemas/RecipeErrorList'
+          - description: Errors, if any, that occurred while attempting to delete the recipe versions.
+    ConflictException: {}
+    RecipeErrorMessage:
       type: string
-      minLength: 1
-      maxLength: 2000
-    RecipeDescription:
-      type: string
-      maxLength: 1024
     PublishedBy:
       type: string
-    Condition:
-      type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    RecipeStepList:
-      type: array
-      items:
-        $ref: '#/components/schemas/RecipeStep'
-    RecipeAction:
-      type: object
-      required:
-      - Operation
-      properties:
-        Operation:
-          allOf:
-          - $ref: '#/components/schemas/Operation'
-          - description: The name of a valid DataBrew transformation to be performed on the data.
-        Parameters:
-          allOf:
-          - $ref: '#/components/schemas/ParameterMap'
-          - description: Contextual parameters for the transformation.
-      description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
-    ConditionExpression:
-      type: object
-      required:
-      - Condition
-      - TargetColumn
-      properties:
-        Condition:
-          allOf:
-          - $ref: '#/components/schemas/Condition'
-          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/ConditionValue'
-          - description: A value that the condition must evaluate to for the condition to succeed.
-        TargetColumn:
-          allOf:
-          - $ref: '#/components/schemas/TargetColumn'
-          - description: A column to apply this condition to.
-      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
-    ParameterValue:
-      type: string
-      minLength: 1
-      maxLength: 32768
     ResourceNotFoundException: {}
     Recipe:
       type: object
@@ -1017,6 +1026,18 @@ components:
           - $ref: '#/components/schemas/RecipeVersion'
           - description: <p>The identifier for the version for the recipe. Must be one of the following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> </ul>
       description: Represents one or more actions to be performed on a DataBrew dataset.
+    ProjectName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ConditionExpressionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConditionExpression'
+    RecipeErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RecipeVersionErrorDetail'
     DeleteRecipeVersionResponse:
       type: object
       required:
@@ -1031,10 +1052,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/RecipeVersion'
           - description: The version of the recipe that was deleted.
-    ConditionValue:
-      type: string
-      maxLength: 1024
-    BatchDeleteRecipeVersionResponse:
+    UpdateRecipeResponse:
       type: object
       required:
       - Name
@@ -1042,44 +1060,14 @@ components:
         Name:
           allOf:
           - $ref: '#/components/schemas/RecipeName'
-          - description: The name of the recipe that was modified.
-        Errors:
-          allOf:
-          - $ref: '#/components/schemas/RecipeErrorList'
-          - description: Errors, if any, that occurred while attempting to delete the recipe versions.
-    PublishRecipeResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/RecipeName'
-          - description: The name of the recipe that you published.
-    RecipeErrorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/RecipeVersionErrorDetail'
-    ErrorCode:
+          - description: The name of the recipe that was updated.
+    RecipeName:
       type: string
-      pattern: ^[1-5][0-9][0-9]$
-    ServiceQuotaExceededException: {}
-    ConflictException: {}
+      minLength: 1
+      maxLength: 255
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -1096,14 +1084,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

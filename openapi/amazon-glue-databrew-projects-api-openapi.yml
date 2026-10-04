@@ -758,87 +758,61 @@ paths:
       - Projects
 components:
   schemas:
-    HiddenColumnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnName'
-    RecipeName:
+    ConditionValue:
       type: string
-      minLength: 1
-      maxLength: 255
+      maxLength: 1024
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 200
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    StartProjectSessionResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project to be acted upon.
-        ClientSessionId:
-          allOf:
-          - $ref: '#/components/schemas/ClientSessionId'
-          - description: A system-generated identifier for the session.
-    LastModifiedBy:
+    Operation:
       type: string
-    ProjectName:
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
+    OpenedBy:
+      type: string
+    HiddenColumnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnName'
+    ParameterValue:
+      type: string
+      minLength: 1
+      maxLength: 32768
+    ColumnName:
       type: string
       minLength: 1
       maxLength: 255
-    ActionId:
+    StartColumnIndex:
       type: integer
-    ConditionExpressionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConditionExpression'
+      minimum: 0
+    AccountId:
+      type: string
+      maxLength: 255
+    Condition:
+      type: string
+      pattern: ^[A-Z\_]+$
+      minLength: 1
+      maxLength: 128
     TargetColumn:
       type: string
       minLength: 1
       maxLength: 1024
-    StartRowIndex:
-      type: integer
-      minimum: 0
-    ClientSessionId:
+    InternalServerException: {}
+    Arn:
       type: string
-      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]*$
-      minLength: 1
-      maxLength: 255
-      format: password
-    Date:
+      minLength: 20
+      maxLength: 2048
+    ProjectList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Project'
+    TagValue:
       type: string
-      format: date-time
-    SendProjectSessionActionResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Result:
-          allOf:
-          - $ref: '#/components/schemas/Result'
-          - description: A message indicating the result of performing the action.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project that was affected by the action.
-        ActionId:
-          allOf:
-          - $ref: '#/components/schemas/ActionId'
-          - description: A unique identifier for the action that was performed.
-    CreateProjectResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project that you created.
+      maxLength: 256
     Project:
       type: object
       required:
@@ -902,26 +876,56 @@ components:
           - $ref: '#/components/schemas/Date'
           - description: The date and time when the project was opened.
       description: Represents all of the attributes of a DataBrew project.
-    SampleType:
-      type: string
-      enum:
-      - FIRST_N
-      - LAST_N
-      - RANDOM
-    Sample:
+    ServiceQuotaExceededException: {}
+    ConditionExpression:
       type: object
       required:
-      - Type
+      - Condition
+      - TargetColumn
       properties:
-        Size:
+        Condition:
           allOf:
-          - $ref: '#/components/schemas/SampleSize'
-          - description: The number of rows in the sample.
-        Type:
+          - $ref: '#/components/schemas/Condition'
+          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
+        Value:
           allOf:
-          - $ref: '#/components/schemas/SampleType'
-          - description: The way in which DataBrew obtains rows from a dataset.
-      description: Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
+          - $ref: '#/components/schemas/ConditionValue'
+          - description: A value that the condition must evaluate to for the condition to succeed.
+        TargetColumn:
+          allOf:
+          - $ref: '#/components/schemas/TargetColumn'
+          - description: A column to apply this condition to.
+      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
+    SessionStatus:
+      type: string
+      enum:
+      - ASSIGNED
+      - FAILED
+      - INITIALIZING
+      - PROVISIONING
+      - READY
+      - RECYCLING
+      - ROTATING
+      - TERMINATED
+      - TERMINATING
+      - UPDATING
+    SampleSize:
+      type: integer
+      minimum: 1
+      maximum: 5000
+    LastModifiedBy:
+      type: string
+    DeleteProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that you deleted.
+    CreatedBy:
+      type: string
     UpdateProjectResponse:
       type: object
       required:
@@ -935,6 +939,19 @@ components:
           allOf:
           - $ref: '#/components/schemas/ProjectName'
           - description: The name of the project that you updated.
+    ValidationException: {}
+    CreateProjectResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that you created.
+    Date:
+      type: string
+      format: date-time
     DescribeProjectResponse:
       type: object
       required:
@@ -994,73 +1011,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/Date'
           - description: 'The date and time when the project was opened. '
-    OpenedBy:
-      type: string
-    SampleSize:
-      type: integer
-      minimum: 1
-      maximum: 5000
-    ValidationException: {}
-    CreatedBy:
-      type: string
-    TagValue:
-      type: string
-      maxLength: 256
-    ColumnRange:
-      type: integer
-      minimum: 0
-      maximum: 20
     ParameterMap:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/ParameterValue'
-    Operation:
-      type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
-    SessionStatus:
-      type: string
-      enum:
-      - ASSIGNED
-      - FAILED
-      - INITIALIZING
-      - PROVISIONING
-      - READY
-      - RECYCLING
-      - ROTATING
-      - TERMINATED
-      - TERMINATING
-      - UPDATING
-    InternalServerException: {}
-    StartColumnIndex:
-      type: integer
-      minimum: 0
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2000
-    ColumnName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    Condition:
-      type: string
-      pattern: ^[A-Z\_]+$
-      minLength: 1
-      maxLength: 128
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    DatasetName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    ProjectList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Project'
     RowRange:
       type: integer
     RecipeAction:
@@ -1077,44 +1031,12 @@ components:
           - $ref: '#/components/schemas/ParameterMap'
           - description: Contextual parameters for the transformation.
       description: Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.
-    ParameterValue:
+    ClientSessionId:
       type: string
+      pattern: ^[a-zA-Z0-9][a-zA-Z0-9-]*$
       minLength: 1
-      maxLength: 32768
-    ResourceNotFoundException: {}
-    ConditionExpression:
-      type: object
-      required:
-      - Condition
-      - TargetColumn
-      properties:
-        Condition:
-          allOf:
-          - $ref: '#/components/schemas/Condition'
-          - description: A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/ConditionValue'
-          - description: A value that the condition must evaluate to for the condition to succeed.
-        TargetColumn:
-          allOf:
-          - $ref: '#/components/schemas/TargetColumn'
-          - description: A column to apply this condition to.
-      description: <p>Represents an individual condition that evaluates to true or false.</p> <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
-    Result:
-      type: string
-    DeleteProjectResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ProjectName'
-          - description: The name of the project that you deleted.
-    ConditionValue:
-      type: string
-      maxLength: 1024
+      maxLength: 255
+      format: password
     ListProjectsResponse:
       type: object
       required:
@@ -1128,31 +1050,97 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: A token that you can use in a subsequent call to retrieve the next set of results.
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    SampleType:
+      type: string
+      enum:
+      - FIRST_N
+      - LAST_N
+      - RANDOM
+    SendProjectSessionActionResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Result:
+          allOf:
+          - $ref: '#/components/schemas/Result'
+          - description: A message indicating the result of performing the action.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project that was affected by the action.
+        ActionId:
+          allOf:
+          - $ref: '#/components/schemas/ActionId'
+          - description: A unique identifier for the action that was performed.
+    Sample:
+      type: object
+      required:
+      - Type
+      properties:
+        Size:
+          allOf:
+          - $ref: '#/components/schemas/SampleSize'
+          - description: The number of rows in the sample.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/SampleType'
+          - description: The way in which DataBrew obtains rows from a dataset.
+      description: Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
+    DatasetName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ConflictException: {}
+    ResourceNotFoundException: {}
+    ActionId:
+      type: integer
+    ProjectName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    StartRowIndex:
+      type: integer
+      minimum: 0
     AnalyticsMode:
       type: string
       enum:
       - ENABLE
       - DISABLE
-    AccountId:
+    Result:
       type: string
+    StartProjectSessionResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ProjectName'
+          - description: The name of the project to be acted upon.
+        ClientSessionId:
+          allOf:
+          - $ref: '#/components/schemas/ClientSessionId'
+          - description: A system-generated identifier for the session.
+    ConditionExpressionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConditionExpression'
+    RecipeName:
+      type: string
+      minLength: 1
       maxLength: 255
-    ServiceQuotaExceededException: {}
-    ConflictException: {}
+    ColumnRange:
+      type: integer
+      minimum: 0
+      maximum: 20
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -1169,14 +1157,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
