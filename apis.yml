@@ -316,6 +316,8 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
 common:
+- type: Plans
+  url: plans/amazon-glue-databrew-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/amazon-glue-databrew-capability-edges.yml
   name: Amazon Glue DataBrew Business Capability Map
