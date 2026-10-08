@@ -316,6 +316,12 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-glue-databrew-context.jsonld
 common:
+- type: Pricing
+  url: https://aws.amazon.com/glue/pricing/
+- type: RateLimits
+  url: rate-limits/amazon-glue-databrew-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-glue-databrew-finops.yml
 - type: Plans
   url: plans/amazon-glue-databrew-plans-pricing.yml
 - type: CapabilityMap
