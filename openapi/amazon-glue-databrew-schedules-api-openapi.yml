@@ -495,6 +495,62 @@ paths:
       - Schedules
 components:
   schemas:
+    Date:
+      type: string
+      format: date-time
+    JobNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobName'
+      maxItems: 50
+    CronExpression:
+      type: string
+      minLength: 1
+      maxLength: 512
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    ConflictException: {}
+    LastModifiedBy:
+      type: string
+    TagValue:
+      type: string
+      maxLength: 256
+    ScheduleName:
+      type: string
+      minLength: 1
+      maxLength: 255
+    ScheduleList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Schedule'
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2000
+    CreatedBy:
+      type: string
+    ResourceNotFoundException: {}
+    ListSchedulesResponse:
+      type: object
+      required:
+      - Schedules
+      properties:
+        Schedules:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleList'
+          - description: A list of schedules that are defined.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that you can use in a subsequent call to retrieve the next set of results.
     UpdateScheduleResponse:
       type: object
       required:
@@ -504,12 +560,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScheduleName'
           - description: The name of the schedule that was updated.
-    TagMap:
+    DeleteScheduleResponse:
       type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule that was deleted.
     DescribeScheduleResponse:
       type: object
       required:
@@ -551,79 +610,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScheduleName'
           - description: The name of the schedule.
-    AccountId:
-      type: string
-      maxLength: 255
-    JobNameList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobName'
-      maxItems: 50
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    TagValue:
-      type: string
-      maxLength: 256
-    ServiceQuotaExceededException: {}
-    CronExpression:
-      type: string
-      minLength: 1
-      maxLength: 512
-    ListSchedulesResponse:
-      type: object
-      required:
-      - Schedules
-      properties:
-        Schedules:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleList'
-          - description: A list of schedules that are defined.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token that you can use in a subsequent call to retrieve the next set of results.
-    DeleteScheduleResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleName'
-          - description: The name of the schedule that was deleted.
-    LastModifiedBy:
-      type: string
-    CreateScheduleResponse:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleName'
-          - description: The name of the schedule that was created.
-    ValidationException: {}
-    CreatedBy:
-      type: string
-    Date:
-      type: string
-      format: date-time
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2000
-    ScheduleName:
-      type: string
-      minLength: 1
-      maxLength: 255
-    ConflictException: {}
-    JobName:
-      type: string
-      minLength: 1
-      maxLength: 240
-    ResourceNotFoundException: {}
     Schedule:
       type: object
       required:
@@ -670,17 +656,25 @@ components:
           - $ref: '#/components/schemas/ScheduleName'
           - description: The name of the schedule.
       description: Represents one or more dates and times when a job is to run.
-    ScheduleList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Schedule'
+    ValidationException: {}
+    JobName:
+      type: string
+      minLength: 1
+      maxLength: 240
+    CreateScheduleResponse:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleName'
+          - description: The name of the schedule that was created.
+    AccountId:
+      type: string
+      maxLength: 255
+    ServiceQuotaExceededException: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -693,8 +687,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -707,12 +713,6 @@ components:
       required: false
     X-Amz-Signature:
       name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
